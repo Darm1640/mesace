@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="hr_payroll.report_payslip">
+        <t t-call="web.html_container">
+            <div class="header">
+                <t t-foreach="docs" t-as="o">
+                    <table class="table table-sm" name="jornada">
+                        <thead>
+                            <tr>
+                                <th width="200px"><strong> <img t-if="o.env.user.company_id.logo"
+                                            t-att-src="image_data_uri(o.env.user.company_id.logo)"
+                                            style="max-height: 100px;" />
+                                        <span t-esc="o.env.user.company_id.name" /><br />
+                                        NIT: <span t-esc="o.env.user.company_id.vat" /><br />
+                                        Dirección: <span t-esc="o.env.user.company_id.street" /><br />
+
+                                    </strong></th>
+                                <th width="200px;" style="text-align:right;"><strong>
+                                        <span t-esc="o.contract_id.department_id.name" /><br />
+                                    </strong></th>
+
+                            </tr>
+                        </thead>
+                    </table>
+
+                </t>
+            </div>
+            <div class="footer">
+                <t t-foreach="docs" t-as="o">
+                    <div class="text-muted">
+                        Page:
+                        <span class="page" />
+                        of
+                        <span class="topage" />
+                    </div>
+                </t>
+            </div>
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <style>
+                        .float-right2 {
+                            text-align: right;
+                        }
+                    </style>
+                    <div class="page" style="font-size: 14px; !important">
+                        <h5 align="center">
+                            RECIBO DE PAGO<br />
+                            <span t-esc="str(o.name).split('-')[1]" /> - <span
+                                t-esc="str(o.name).split('-')[2]" /><br />
+                            <span t-esc="o.get_date_employee(o.date_from)" />-<span
+                                t-esc="o.get_date_employee(o.date_to)" />
+                        </h5>
+                        <center>(Expresado en bolivianos)</center>
+                        <table class="table table-sm" style=" margin-bottom: 0px;line-height: 17px;">
+                            <thead>
+                                <tr>
+                                    <th><strong>NOMBRES:</strong></th>
+                                    <th><strong class="float-right2">SUELDO BASICO:</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th><span t-field="o.employee_id.name" /></th>
+                                    <th><span class="float-right2" t-field="o.contract_id.wage" /></th>
+                                </tr>
+                            </tbody>
+
+                            <thead>
+                                <tr>
+                                    <th><strong>CI.:</strong></th>
+                                    <th><strong class="float-right2">DIAS TRABAJADOS:</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th><span class="float-right2" t-esc="o.employee_id.identification_id" /></th>
+                                    <th><span t-field="o.employee_id.resource_calendar_id.as_total_days" /></th>
+                                </tr>
+                            </tbody>
+
+                            <thead>
+                                <tr>
+                                    <th><strong>CARGO:</strong></th>
+                                    <th><strong class="float-right2">MES:</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span t-field="o.contract_id.job_id" /></td>
+                                    <th><span t-esc="o.get_mes_date(o.date_from)" /></th>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th><strong>LUGAR DE TRABAJO:</strong></th>
+                                    <th><strong class="float-right2">FECHA DE INICIO:</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span t-field="o.employee_id.as_lugar_de_trabajo" /></td>
+                                    <td><span t-field="o.contract_id.date_start" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-sm"
+                            style="border-top: 1px solid black; margin-bottom: 0px;line-height: 17px;">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:center"><strong>INGRESOS</strong></th>
+                                    <th style="text-align:center"><strong>EGRESOS</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="vertical-align:top;">
+                                        <table class="table table-sm" width="95%">
+                                            <tr t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)"
+                                                t-as="p">
+                                                <t t-if="('Básico' ==p.category_id.name)">
+                                                    <td style="border: 1px solid #FFFFFF">
+                                                        <strong><span t-field="p.name" /></strong>
+
+                                                    </td>
+                                                    <td style="border: 1px solid #FFFFFF;text-align:right">
+                                                        <span t-field="p.total" />
+                                                    </td>
+                                                </t>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td style="vertical-align:top;">
+                                        <table style="border: 1px solid #FFFFFF" width="100%">
+                                            <tr style="border: 1px solid #FFFFFF"
+                                                t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)"
+                                                t-as="p">
+                                                <t t-if=" ('Deducción' ==p.category_id.name)or(p.code in ('IMRCR'))">
+                                                    <td style="border: 1px solid #FFFFFF">
+                                                        <strong><span t-field="p.name" /></strong>
+
+                                                    </td>
+                                                    <td style="border: 1px solid #FFFFFF;text-align:right">
+                                                        <span t-field="p.total" />
+                                                    </td>
+
+                                                </t>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <strong>TOTAL INGRESO</strong>
+                                  
+                                        <t t-foreach="o.line_ids.filtered('appears_on_payslip')" t-as="p">
+                                            <t t-if="('SUBT' == p.code)">
+                                                <span class="float-right" t-field="p.amount"
+                                                    t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}' />
+                                            </t>
+                                        </t>
+
+                                    </td>
+                                    <td>
+                                        <strong class="ml32">TOTAL EGRESO</strong>
+                                   
+                                        <t t-foreach="o.line_ids.filtered('appears_on_payslip')" t-as="p">
+                                            <t t-if="('TOTALDEI' == p.code)">
+                                                <span class="float-right" t-field="p.amount"
+                                                    t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}' />
+                                            </t>
+                                        </t>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-sm" style="margin-top:20px; border-top:1px 0px solid black;">
+                            <thead>
+                                <tr>
+                                    <td><strong>Fecha</strong></td>
+                                    <td style="text-align:right"><span t-field="o.date_to" /></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>LIQUIDO PAGABLE</strong></td>
+                                    <td style="text-align:right">
+                                        <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)"
+                                            t-as="p">
+                                            <t t-if="('TOTAL' == p.code)"> <span t-esc="p.amount" class="float-right2"
+                                                    t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}' />
+                                            </t>
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>LIQUIDO PAGABLE (literal):</strong></td>
+                                    <td style="text-align:right">
+                                        <t t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)"
+                                            t-as="p">
+                                            <t t-if="('TOTAL' == p.code) and (p.amount>0)"> <span
+                                                    t-esc="o.company_id.currency_id.amount_to_text(p.amount)" /></t>
+                                        </t>
+                                    </td>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="table table-sm">
+                            <tr>
+                                <td colspan="3">
+                                    Certifico que recibí de
+                                    <span t-field="o.env.user.company_id.name" />
+                                    a mi entera satisifación el saldo líquido de la presente
+                                    liquidación, no teniendo cobro alguno que hacer o reclamar por
+                                    los conceptos correspondientes a ella.
+                                    <br></br>
+                                </td>
+                            </tr>
+
+                        </table>
+                        <br />
+                        <table class="table table-sm text-center"
+                            style="margin-top: 1px; border-bottom:3px 1px solid black;">
+                            <tr>
+                                <th colspan="4">
+                                    <strong>RECIBI CONFORME</strong>
+                                </th>
+                                <th>
+                                    <strong>JEFE <span t-esc="o.contract_id.department_id.name.upper()" /></strong>
+                                </th>
+                            </tr>
+                         
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

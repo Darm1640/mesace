@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="as_pdf_report_de_caja_chica_reporte">
+            <div class="header">
+                <style type="text/css">
+                    .header {
+                        margin: 0px;
+                        padding: 0px;
+                    }
+
+                    .cabecera {
+                        font-size: 8px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    .letra {
+                        font-size: 12px !important;
+                        margin: 0px;
+                        max-width: 100%;
+                    }
+
+                    .letratt {
+                        font-size: 12px !important;
+                        margin: 0px;
+                        max-width: 100%;
+                    }
+
+                    .letra3 {
+                        font-size: 13px !important;
+
+                        overflow: hidden;
+                        max-width: 100%;
+                        word-wrap: break-word;
+                    }
+
+                    .cabecera2 {
+                        font-size: 9px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    .columnasr {
+                        font-size: 12px;
+                        font-family: 'Arial' !important;
+                        margin-bottom: 10px;
+                    }
+
+                    .columnas2 {
+                        font-size: 9px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    h3 {
+                        font-family: 'Arial' !important;
+                        font-size: 14px;
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    td {
+                        font-family: 'Arial' !important;
+                        font-size: 12px;
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    h4 {
+                        font-family: 'Arial' !important;
+                        font-size: 12px;
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    span {
+                        font-family: 'Arial' !important;
+
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    body {
+                        font-family: 'Arial' !important;
+                        font-size: 18px;
+                    }
+
+                    hr {
+                        border-bottom: solid;
+                        border-width: 1pt border-top:0px !important;
+                        padding: 0px !important;
+                        margin: 0px !important;
+
+                    }
+
+                    tr.border_bottom td {
+                        border-bottom: 0.5pt solid #cccccc;
+                        margin-right: 3px;
+                        padding-right: 3px;
+                        font-size: 13px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    .borde1 {
+                        border-top: 1px solid black;
+                        border-left: 1px solid black;
+                        border-right: 1px solid black;
+                        border-bottom: 1px solid black;
+                        margin-bottom: 3px;
+
+                    }
+
+                    .borde1 thead tr td {
+                        padding-left: 5px;
+                        padding-right: 5px;
+
+                    }
+
+                    .borde2 {
+                        border-left: 1px solid black;
+                        border-right: 1px solid black;
+                        border-top: 1px solid black;
+                        margin: 3px;
+                    }
+
+                    .titulo {
+                        font-size: 25px;
+                    }
+
+                    .titulo2 {
+                        font-size: 25px;
+                        padding: 1px;
+                    }
+
+                    .letra0 {
+                        font-size: 11px;
+                    }
+                </style>
+                <div class="row mt0 mb0 " id="as_header">
+
+                    <div class="col-8" style="text-align:center; margin-bottom:10px;font-size:15px;line-height : 15px;">
+                        <table width="100%" style='table-layout: fixed;'>
+                            <thead>
+                                <tr>
+                                    <td style="width:55%;" class='letra2'>
+                                        <img t-att-src="image_data_uri(o.env.user.company_id.logo)"
+                                            style="height: 90px; width: 250px; text-align: left;margin-top:-15px;" />
+                                    </td>
+                                    <td style="width:80%;" class='letra2'>
+                                        <h2 class='titulo'>
+                                            <div>
+                                                <br />
+                                                
+                                                <b style="color:#4682B4;">LIBRO DE CAJA</b><br />
+                                            </div>
+                                        </h2>
+                                    </td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+                <table width="100%" id="data_cliente">
+                    <thead>
+                        <tr>
+                            <td style="width:20%;" class='letra3'>
+                                <b style="color:#4682B4;">Caja:</b>
+                            </td>
+                            <td style="width:30%;" class='letra3'>
+                                <t t-esc="o.name" />
+                            </td>
+                            <td style="width:20%;" class='letra3'>
+                                <b style="color:#4682B4;">Fecha de impresion:</b>
+                            </td>
+                            <td style="width:30%;" class='letra3'>
+                                <t t-esc="o.as_date" />
+                            </td>
+
+                        </tr>
+                    </thead>
+                    <thead>
+
+                        <tr>
+                            <td style="width:20%;" class='letra3'>
+                                <b style="color:#4682B4;">Usuario:</b>
+                            </td>
+                            <td style="width:30%;" class='letra3'>
+                                <t t-esc="o.as_user_id.name" />
+                            </td>
+                            <td style="width:20%;" class='letra3'>
+
+                                <!-- <b style="color:#4682B4;">Cod. cliente:</b> -->
+                            </td>
+                            <td style="width:30%;" class='letra3'>
+
+                                <!-- <t t-esc="o.partner_id.id" /> -->
+                            </td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <!-- ************************************************************************* -->
+
+            <div class="footer" style="font-family: 'Arial' !important;">
+                <style type="text/css">
+                    .page {
+                        margin: 0px;
+                        padding: 0px;
+                    }
+
+                    .letra2 {
+                        font-size: 12px;
+                    }
+                </style>
+                <div class="oe_structure" />
+
+            </div>
+            <t t-call="web.basic_layout">
+                <div class="page" style="font-family: 'Arial' !important; ">
+                    <style type="text/css">
+                        .page {
+                            margin: 0px;
+
+                        }
+
+                        .totales1 {
+                            font-family: 'Arial' !important;
+                            font-size: 25px;
+                            font-weight: bold;
+                            border-collapse: collapse;
+                            border-top: solid;
+                            border-width: 2pt
+                        }
+
+                        .totales2 {
+                            font-family: 'Arial' !important;
+                            font-size: 15px;
+                            font-weight: bold;
+                        }
+
+                        .totales3 {
+                            font-family: 'Arial' !important;
+                            font-size: 25px;
+                            font-weight: bold;
+                            border-collapse: collapse;
+                            border-top: solid;
+                            border-bottom: solid;
+                            border-width: 2pt
+                        }
+
+                        .columnas {
+                            font-family: 'Arial' !important;
+                            font-size: 12px;
+                            font-weight: bold;
+                        }
+
+                        body {
+                            font-family: 'Arial' !important;
+                        }
+
+                        .borde1 {
+                            border: 1px solid black;
+
+                        }
+
+                        .borde3 {
+                            border-bottom: 1px solid black;
+
+                        }
+
+                        .borde2 {
+                            border: 1px solid black;
+                            border-radius: 8px 8px 8px 8px;
+                            max-height: 2.5cm;
+                            max-width: 2cm;
+                        }
+
+                        .borde_inferior {
+                            margin-bottom: 5px;
+                            margin-top: 5px;
+                        }
+
+                        .columnasr tr td {
+                            font-size: 15px !important;
+                            font-family: 'Arial' !important;
+                            margin-bottom: 0px;
+                            border-bottom: 0px;
+                        }
+
+                        .letra2 {
+                            font-size: 11px;
+                            color: #000000;
+                            vertical-align: middle;
+                            text-align: center;
+                        }
+
+                        .letraIzq {
+                            font-size: 11px;
+                            color: #000000;
+                            vertical-align: middle;
+                            text-align: left;
+                            margin-left: 4px;
+                        }
+
+                        .letraDer {
+                            font-size: 11px;
+                            color: #000000;
+                            vertical-align: middle;
+                            text-align: right;
+                            margin-right: 4px;
+                        }
+
+                        .letra2f {
+                            font-size: 14px;
+                            text-align: left;
+                            overflow: hidden;
+                            max-width: 30%;
+                            white-space: nowrap;
+                            word-wrap: break-word;
+                            color: #000000;
+                        }
+
+
+                        .letra3 {
+                            font-size: 16px;
+                            text-align: center;
+                            color: #000000;
+
+                        }
+
+                        .letra4 {
+                            font-size: 12px;
+                            color: #000000;
+
+                        }
+
+                        .table thead tr td {
+
+                            color: #000000;
+                            background-color: #FFFFFF;
+                        }
+
+                        .table thead tr th {
+                            padding: 1px;
+                            color: #000000;
+                            background-color: #FFFFFF;
+                            border: 1px solid #FFFFFF;
+                        }
+
+                        .margen {
+                            margin: 3px;
+                        }
+                    </style>
+
+                    <div>
+                        <table width="100%" style='table-layout: fixed;'>
+                            <thead style='border:1px solid black;' id='header_invoice'>
+                                <tr>
+                                    <td style="width:10%;border:1px solid black;color:#ffffff;
+                            background-color:#4682B4;" class='letra2'>
+                                        <b>FECHA</b>
+                                    </td>
+                                    <td style="width:10%;border:1px solid black;color:#ffffff;
+                            background-color:#4682B4;" class='letra2'>
+                                        <b>DOCUMENTO</b>
+                                    </td>
+                                    <td style="width:50%;border:1px solid black;color:#ffffff;
+                            background-color:#4682B4;" class='letra2'>
+                                        <b>DESCRIPCION</b>
+                                    </td>
+                                    <td style="width:10%;border:1px solid black;color:#ffffff;
+                            background-color:#4682B4;" class='letra2'>
+                                        <b>INGRESO</b>
+                                    </td>
+                                    <td style="width:10%;border:1px solid black;color:#ffffff;
+                            background-color:#4682B4;" class='letra2'>
+                                        <b>EGRESO</b>
+                                    </td>
+                                    <td style="width:10%;border:1px solid black;color:#ffffff;
+                            background-color:#4682B4;" class='letra2'>
+                                        <b>SALDO</b>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <thead style='border:1px solid black'>
+                                <div t-foreach="o.as_caja_chica_ids" t-as="d" width="100%">
+                                    <tr>
+                                        <td style="width:10%;border:1px solid black;text-align:right;margin-left:5px;"
+                                            class='letra2'>
+                                            <t t-esc="d.date" />
+                                        </td>
+                                        <td style="width:10%;border:1px solid black;text-align:left;margin-left:5px;"
+                                            class='letra2'>
+                                            <span style="margin-left:5px;" t-esc="d.as_tipo_documento" />
+                                        </td>
+                                        <td style="width:50%; text-align:left;max-width:30%;border:1px solid black;margin-left:5px;"
+                                            class='letraIzq'>
+                                            <!-- <span style="margin-left:5px;" t-esc="d.as_amount" /> -->
+                                        </td>
+                                        <td style="width:10%;border:1px solid black;" class='letraDer'>
+                                            <t t-esc="d.as_amount" />
+                                        </td>
+                                        <td style="width:10%;border:1px solid black;" class='letraDer'>
+                                            <!-- <span style="margin-right:5px;" t-esc="'{:20,.2f}'.format(d.quantity)" /> -->
+                                        </td>
+                                        <td style="width:10%;border:1px solid black;" class='letraDer'>
+                                            <span style="margin-right:5px;" t-esc="d.as_amount"/>
+                                        </td>
+                                        
+                                    </tr>
+
+                                </div>
+                            </thead>
+                            <!-- .....................********* -->
+                            <!-- <thead style='border:1px solid #FFFFFF;'>
+                                <tr>
+                                    <td colspan="5" style="width:5%;text-align:left" class='letra2'>
+                                        <b>SON:</b>
+                                        <span
+                                            t-esc="o.convertir_numero_a_literal((o.acumulador_de_totales_reporte('acumulador_total_neto')-o.as_descuento_adicional))" />
+                                    </td>
+                                    <td colspan="2" style="width:5%;text-align:right;border:1px solid black;"
+                                        class='letra4'>
+                                        <b style="margin-right:8px;"> SUBTOTAL Bs</b>
+                                    </td>
+                                    <td colspan="1"
+                                        style="width:5%;text-align:right;border:1px solid black;margin-right:-5px;"
+                                        class='letra4'>
+                                        <b style="margin-right:2px;">
+                                            <span
+                                                t-esc="'{:20,.2f}'.format(o.acumulador_de_totales_reporte('acumulador_total_neto'))" />
+                                        </b>
+                                        <br />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5" style="width:5%;text-align:left" class='letra2'>
+
+                                    </td>
+                                    <td colspan="2" style="width:5%;text-align:right;border:1px solid black;"
+                                        class='letra4'>
+                                        <b style="margin-right:8px;"> DESCUENTO Bs</b>
+                                    </td>
+                                    <td colspan="1" style="width:5%;text-align:right;border:1px solid black;"
+                                        class='letra4'>
+                                        <b style="margin-right:5px;">
+                                            <t t-esc="'{:20,.2f}'.format(o.as_descuento_adicional)" />
+                                        </b>
+                                    </td>
+                                </tr>
+                                <tr rowspan="1">
+                                    <td colspan="5" style="width:5%;text-align:left">
+
+                                    </td>
+                                    <td colspan="2" style="width:5%;text-align:right;border:1px solid black;"
+                                        class='letra4'>
+                                        <b style="margin-right:8px;"> TOTAL Bs</b>
+                                    </td>
+                                    <td colspan="1" style="width:5%;text-align:right;border:1px solid black;"
+                                        class='letra4'>
+                                        <b style="margin-right:5px;">
+                                            <t
+                                                t-esc="'{:20,.2f}'.format((o.acumulador_de_totales_reporte('acumulador_total_neto')-o.as_descuento_adicional))" />
+                                        </b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5" style="width:5%;text-align:left" class='letra2'>
+
+                                    </td>
+                                    <td colspan="2" style="width:5%;text-align:right;border:1px solid black;"
+                                        class='letra4'>
+                                        <b style="margin-right:8px;"> TOTAL $us.</b>
+                                    </td>
+                                    <td colspan="1" style="width:5%;border:1px solid black;" class='letraDer'>
+                                        <b style="margin-right:5px;">
+                                            <t t-if="o.currency_id.name == 'BOB'">
+                                                <t
+                                                    t-esc="'{:20,.2f}'.format((o.acumulador_de_totales_reporte('acumulador_total_neto')-o.as_verifica_comunicacion_xml('descuentoAdicional'))/6.96)" />
+                                            </t>
+                                            <t t-if="o.currency_id.name != 'BOB'">
+                                                <t
+                                                    t-esc="'{:20,.2f}'.format((o.acumulador_de_totales_reporte('acumulador_total_neto')-o.as_descuento_adicional))" />
+                                            </t>
+
+                                        </b>
+                                    </td>
+                                </tr>
+                            </thead> -->
+                        </table>
+                    </div>
+                </div>
+            </t>
+        </template>
+        <template id="as_pdf_report_de_caja_chica">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+
+                    <t t-call="as_bo_tesoreria.as_pdf_report_de_caja_chica_reporte" t-lang="lang" />
+
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_importador" model="ir.ui.view">
+            <field name="name">Importador General</field>
+            <field name="model">as.importador</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="as_xls_name" />
+                    <field name="as_xls_file" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="as_importador_form" model="ir.ui.view">
+            <field name="name">Importador General</field>
+            <field name="model">as.importador</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button string="Ejecutar" icon="fa-server" name="importar_archivo" type="object"
+                            class="oe_highlight" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="as_xls_name" invisible="1" />
+                            <field name="as_xls_file" widget="binary" filename="xls_name" accept=".csv, .xls, .xlsx" />
+                             <a href="/as_rapport_hr/static/src/xls/survey.user_input_id.xlsx">Descargar formato
+                                    de importacion Excel</a>
+                                <br />
+                        </group>
+                        <notebook>
+                            <page string="Log Completo">
+                                <field name="as_log_completo" />
+                            </page>
+                           
+                        
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" />
+                        <field name="message_ids" widget="mail_thread" />
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_as_import_form" model="ir.actions.act_window">
+            <field name="name">Importador General</field>
+            <field name="res_model">as.importador</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('as_importador')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('as_importador_form')})]" />
+        </record>
+        <menuitem id="as_importador_general" name="Importador KPI" action="action_as_import_form"
+            parent="survey.survey_menu_user_inputs" sequence="30" />
+    </data>
+</odoo>

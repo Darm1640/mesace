@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_add_campos_ci_representante" model="ir.ui.view">
+            <field name="name">as.add.campos.ci.representante</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='favicon']" position="after">
+                  <field name="as_representante"/>
+                  <field name="as_ci_company"/>
+                  <field name="as_nro_empleador_min_trabajo"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

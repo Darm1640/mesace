@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="tax_group_retencion_bienes" model="account.tax.group">
+            <field name="name">Retencion por Bienes</field>
+            <field name="sequence">11</field>
+        </record>
+        <record id="as_tax_retencion_bienes_1" model="account.tax">
+            <field name="name">Retencion IT por pagar (RETENCION BIENES)</field>
+            <field name="description">Retencion IT por pagar (RETENCION BIENES)</field>
+            <field name="sequence">4</field>
+            <field name="amount_type">code</field>
+            <field name="python_compute">result = round((price_unit*quantity)/0.92,2) * -0.03</field>
+            <field name="python_applicable">result = True</field>
+            <field name="tax_scope">consu</field>
+            <field name="price_include" eval="True" />
+            <field name="type_tax_use">purchase</field>
+            <field name="tax_group_id" ref="as_bo_invoice_taxes.tax_group_retencion_bienes" />
+        </record>
+        <record id="as_tax_retencion_bienes_2" model="account.tax">
+            <field name="name">IUE por pagar (RETENCION BIENES)</field>
+            <field name="description">IUE por pagar (RETENCION BIENES)</field>
+            <field name="sequence">4</field>
+            <field name="amount_type">code</field>
+            <field name="python_compute">result = round((price_unit*quantity)/0.92,2) * -0.05</field>
+            <field name="python_applicable">result = True</field>
+            <field name="tax_scope">consu</field>
+            <field name="price_include" eval="True" />
+            <field name="type_tax_use">purchase</field>
+            <field name="tax_group_id" ref="as_bo_invoice_taxes.tax_group_retencion_bienes" />
+        </record>
+        <record id="tax_group_retencion_servicios" model="account.tax.group">
+            <field name="name">Retencion por Servicios</field>
+            <field name="sequence">12</field>
+        </record>
+        <record id="as_tax_retencion_servicios_1" model="account.tax">
+            <field name="name">Retencion IT por pagar (RETENCION SERVICIOS)</field>
+            <field name="description">Retencion IT por pagar (RETENCION SERVICIOS)</field>
+            <field name="sequence">4</field>
+            <field name="amount_type">code</field>
+            <field name="python_compute">result = round((price_unit*quantity)/0.8450,2) * -0.03</field>
+            <field name="python_applicable">result = True</field>
+            <field name="tax_scope">service</field>
+            <field name="price_include" eval="True" />
+            <field name="type_tax_use">purchase</field>
+            <field name="tax_group_id" ref="as_bo_invoice_taxes.tax_group_retencion_servicios" />
+        </record>
+        <record id="as_tax_retencion_servicios_2" model="account.tax">
+            <field name="name">IUE por pagar (RETENCION SERVICIOS)</field>
+            <field name="description">IUE por pagar (RETENCION SERVICIOS)</field>
+            <field name="sequence">4</field>
+            <field name="amount_type">code</field>
+            <field name="python_compute">result = round((price_unit*quantity)/0.8450,2) * -0.125</field>
+            <field name="python_applicable">result = True</field>
+            <field name="tax_scope">service</field>
+            <field name="price_include" eval="True" />
+            <field name="type_tax_use">purchase</field>
+            <field name="tax_group_id" ref="as_bo_invoice_taxes.tax_group_retencion_servicios" />
+        </record>
+        <record id="tax_group_retencion_rciva" model="account.tax.group">
+            <field name="name">RC IVA</field>
+            <field name="sequence">13</field>
+        </record>
+        <record id="as_tax_retencion_rciva_1" model="account.tax">
+            <field name="name">Retencion IT por pagar (RC IVA)</field>
+            <field name="description">Retencion IT por pagar (RC IVA)</field>
+            <field name="sequence">4</field>
+            <field name="amount_type">code</field>
+            <field name="python_compute">result = round((price_unit*quantity)/0.84,2) * -0.03</field>
+            <field name="python_applicable">result = True</field>
+            <field name="tax_scope">service</field>
+            <field name="price_include" eval="True" />
+            <field name="type_tax_use">purchase</field>
+            <field name="tax_group_id" ref="as_bo_invoice_taxes.tax_group_retencion_rciva" />
+        </record>
+        <record id="as_tax_retencion_rciva_2" model="account.tax">
+            <field name="name">IVA por pagar (RC IVA)</field>
+            <field name="description">IVA por pagar (RC IVA)</field>
+            <field name="sequence">4</field>
+            <field name="amount_type">code</field>
+            <field name="python_compute">result = round((price_unit*quantity)/0.84,2) * -0.13</field>
+            <field name="python_applicable">result = True</field>
+            <field name="tax_scope">service</field>
+            <field name="price_include" eval="True" />
+            <field name="type_tax_use">purchase</field>
+            <field name="tax_group_id" ref="as_bo_invoice_taxes.tax_group_retencion_rciva" />
+        </record>
+        <record id="tax_group_retencion_servicios_basicos" model="account.tax.group">
+            <field name="name">Servicios Basicos</field>
+            <field name="sequence">14</field>
+        </record>
+        <record id="as_tax_retencion_serviciosb_2" model="account.tax">
+            <field name="name">IVA (Servicios Basicos)</field>
+            <field name="description">IVA (Servicios Basicos)</field>
+            <field name="sequence">4</field>
+            <field name="amount_type">code</field>
+            <field name="python_compute">result = (base_amount-partner.as_tasas)*0.13</field>
+            <field name="python_applicable">result = True</field>
+            <field name="tax_scope">service</field>
+            <field name="price_include" eval="True" />
+            <field name="type_tax_use">purchase</field>
+            <field name="tax_group_id" ref="as_bo_invoice_taxes.tax_group_retencion_servicios_basicos" />
+        </record>
+        <record id="tax_group_retencion_servicios_combustible" model="account.tax.group">
+            <field name="name">Combustible</field>
+            <field name="sequence">14</field>
+        </record>
+        <record id="as_tax_retencion_combustible_2" model="account.tax">
+            <field name="name">IVA (Combustible)</field>
+            <field name="description">IVA (Combustible)</field>
+            <field name="sequence">4</field>
+            <field name="amount_type">code</field>
+            <field name="python_compute">result = base_amount*0.13*0.70</field>
+            <field name="python_applicable">result = True</field>
+            <field name="tax_scope">service</field>
+            <field name="price_include" eval="True" />
+            <field name="type_tax_use">purchase</field>
+            <field name="tax_group_id" ref="as_bo_invoice_taxes.tax_group_retencion_servicios_combustible" />
+        </record>
+        <record id="tax_group_leasing" model="account.tax.group">
+            <field name="name">Leasing Financiero</field>
+            <field name="sequence">15</field>
+        </record>
+        <record id="as_tax_retencion_leasing_2" model="account.tax">
+            <field name="name">Intereses (Pago Leasing)</field>
+            <field name="description">Intereses (Pago Leasing)</field>
+            <field name="sequence">5</field>
+            <field name="amount_type">code</field>
+            <field name="python_compute">result = (price_unit*quantity)*partner.as_interes</field>
+            <field name="python_applicable">result = True</field>
+            <field name="tax_scope">service</field>
+            <field name="price_include" eval="True" />
+            <field name="type_tax_use">purchase</field>
+            <field name="tax_group_id" ref="as_bo_invoice_taxes.tax_group_leasing" />
+        </record>
+        <record id="as_tax_retencion_leasing_1" model="account.tax">
+            <field name="name">IVA credito fiscal (Pago Leasing)</field>
+            <field name="description">IVA credito fiscal (Pago Leasing)</field>
+            <field name="sequence">6</field>
+            <field name="amount_type">code</field>
+            <field name="python_compute">result = (base_amount)*0.13</field>
+            <field name="python_applicable">result = True</field>
+            <field name="tax_scope">service</field>
+            <field name="price_include" eval="True" />
+            <field name="type_tax_use">purchase</field>
+            <field name="tax_group_id" ref="as_bo_invoice_taxes.tax_group_leasing" />
+        </record>
+        <record id="as_tax_retencion_leasing_3" model="account.tax">
+            <field name="name">Credito Diferido (Pago Leasing)</field>
+            <field name="description">Credito Diferido (Pago Leasing)</field>
+            <field name="sequence">7</field>
+            <field name="amount_type">code</field>
+            <field name="python_compute">result = -(base_amount)*0.13</field>
+            <field name="python_applicable">result = True</field>
+            <field name="tax_scope">service</field>
+            <field name="price_include" eval="True" />
+            <field name="type_tax_use">purchase</field>
+            <field name="tax_group_id" ref="as_bo_invoice_taxes.tax_group_leasing" />
+        </record>
+        <record id="tax_group_anticipados" model="account.tax.group">
+            <field name="name">Seguro Anticipado</field>
+            <field name="sequence">16</field>
+        </record>
+        <record id="as_tax_anticipado_1" model="account.tax">
+            <field name="name">IVA credito fiscal (Seguro Anticipado)</field>
+            <field name="description">IVA credito fiscal (Seguro Anticipado)</field>
+            <field name="sequence">5</field>
+            <field name="amount_type">code</field>
+            <field name="python_compute">result = base_amount*0.13</field>
+            <field name="python_applicable">result = True</field>
+            <field name="tax_scope">service</field>
+            <field name="price_include" eval="True" />
+            <field name="type_tax_use">purchase</field>
+            <field name="tax_group_id" ref="as_bo_invoice_taxes.tax_group_anticipados" />
+        </record>
+        <record id="as_tax_anticipado_2" model="account.tax">
+            <field name="name">Credito Fiscal Transitorio (Seguro Anticipado)</field>
+            <field name="description">Credito Fiscal Transitorio (Seguro Anticipado)</field>
+            <field name="sequence">5</field>
+            <field name="amount_type">code</field>
+            <field name="python_compute">result = - base_amount*0.13</field>
+            <field name="python_applicable">result = True</field>
+            <field name="tax_scope">service</field>
+            <field name="price_include" eval="True" />
+            <field name="type_tax_use">purchase</field>
+            <field name="tax_group_id" ref="as_bo_invoice_taxes.tax_group_anticipados" />
+        </record>
+    </data>
+</odoo>

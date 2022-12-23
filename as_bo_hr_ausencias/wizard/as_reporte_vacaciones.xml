@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_reporte_vacaciones_view" model="ir.ui.view">
+            <field name="name">Reporte de vacaciones</field>
+            <field name="model">as.report.vacaciones</field>
+            <field name="arch" type="xml">
+                <form string="Reporte de vacaciones">
+                    <group col="2">
+                        <group>
+                            <field name="as_nombre_empleado" widget="many2many_tags"
+                                options="{&quot;always_reload&quot;: True, 'no_open': True,'no_create': 1, 'no_create_edit': 1}" />
+                            <field name="as_departamento" />
+                        </group>
+                        <group>
+                            <field name="as_detallado" />
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="export_xls" default_focus="1" string="Exportar a Excel" type="object"
+                            class="oe_highlight" context="{'xls_export':1}" icon="fa-download" />
+                        <!-- <button name="imprimir_reporte_pdf" string="Exportar PDF" type="object" class="oe_highlight" /> -->
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_imprimir_report_vacaciones" model="ir.actions.act_window">
+            <field name="name">Reporte de vacaciones</field>
+            <field name="res_model">as.report.vacaciones</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="as_reporte_vacaciones_view" />
+            <field name="target">new</field>
+        </record>
+
+        <report id="as_reporte_vacaciones_xlsx" model="as.report.vacaciones" string="Reporte de vacaciones"
+            report_type="xlsx" name="as_bo_hr_ausencias.as_reporte_vacaciones_xlsx.xlsx"
+            file="as_bo_hr_ausencias.as_reporte_vacaciones_xlsx.xlsx" attachment_use="False" />
+
+        <menuitem id="as_reporte_de_vacaciones" name="Reporte de vacaciones" action="action_imprimir_report_vacaciones"
+            parent="hr_holidays.menu_hr_holidays_report" sequence="3" groups="base.group_user" />
+    </data>
+</odoo>

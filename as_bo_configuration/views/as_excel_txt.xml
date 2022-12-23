@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_excel_form_extended" model="ir.ui.view">
+        <field name="name">excel.extended.form</field>
+        <field name="model">excel.extended</field>
+        <field name="arch" type="xml">
+            <form string="Archivo de Excel">
+                <group>
+                    <field name="as_excel_file" readonly="1" filename="as_file_name" />
+                    <field name="as_file_name" invisible="1" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+
+    <record id="view_txt_form_extended" model="ir.ui.view">
+        <field name="name">txt.extended.form</field>
+        <field name="model">txt.extended</field>
+        <field name="arch" type="xml">
+            <form string="Archivo de Txt">
+                <group>
+                    <field name="as_txt_file" readonly="1" filename="as_file_name" />
+                    <field name="as_file_name" invisible="1" />
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="action_txt_form" model="ir.actions.act_window">
+        <field name="name">Reporte Facilito en txt </field>
+        <field name="view_id" ref="view_txt_form_extended" />
+        <field name="view_mode">form</field>
+        <field name="res_model">txt.extended</field>
+        <field name="target">new</field>
+    </record>
+    <record id="action_excel_form" model="ir.actions.act_window">
+        <field name="name">Reporte en Excel </field>
+        <field name="view_id" ref="view_excel_form_extended" />
+        <field name="view_mode">form</field>
+        <field name="res_model">excel.extended</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_hr_indicadores_afp_view" model="ir.ui.view">
+            <field name="name">as.hr.employee.afp.view</field>
+            <field name="model">as.hr.employee.afp</field>
+            <field name="arch" type="xml">
+                <form string="AFP Previsionales">
+                    <sheet>
+                        <group col="2">
+                            <field name="name" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="as_hr_indicadores_afp_tree" model="ir.ui.view">
+            <field name="name">as.hr.employee.afp.tree</field>
+            <field name="model">as.hr.employee.afp</field>
+            <field name="arch" type="xml">
+                <!-- <tree string="Bancos" editable="bottom"> -->
+                <tree string="AFP">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <act_window id="as_hr_indicadores_afp_action" name="AFP" res_model="as.hr.employee.afp" 
+            view_mode="tree,form" />
+
+       
+
+    </data>
+</odoo>

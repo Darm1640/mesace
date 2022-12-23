@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="as_approval_purchase_tree" model="ir.ui.view">
+            <field name="name">Niveles de Aprobacion por Monto</field>
+            <field name="model">as.level.approval</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="as_users_ids" widget="many2many_tags" />
+                    <field name="as_amount_min" />
+                    <field name="as_amount_max" />
+                    <field name="as_type" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="as_approval_purchase_form" model="ir.ui.view">
+            <field name="name">Niveles de Aprobacion por Monto</field>
+            <field name="model">as.level.approval</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                            <field name="as_users_ids" widget="many2many_tags" />
+                            <field name="as_amount_min" />
+                            <field name="as_amount_max" />
+                            <field name="as_type" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="as_approval_purchase_action" model="ir.actions.act_window">
+            <field name="name">Niveles de Aprobación</field>
+            <field name="res_model">as.level.approval</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="as_approval_purchase_tree" />
+        </record>
+        <menuitem id="as_approval_purchase_menu1" parent="purchase.menu_purchase_config"
+            name="Niveles de Aprobación" sequence="100" action="as_approval_purchase_action" />
+        <menuitem id="as_approval_purchase_menu2" parent="project.menu_project_config"
+            name="Niveles de Aprobación" sequence="100" action="as_approval_purchase_action" />
+    </data>
+</odoo>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!-- Menu View -->
+	<menuitem id="menu_bo_hr_payroll_master_data" name="Datos Maestros"
+		parent="hr_work_entry_contract.menu_hr_payroll_root" sequence="49" />
+
+	<menuitem id="menu_bo_hr_payroll_indicators" name="Parametrizacion"
+		parent="hr_work_entry_contract.menu_hr_payroll_root" sequence="10" />
+	<menuitem action="hr_payroll.action_hr_payslip_run_tree" id="hr_payroll.menu_hr_payslip_run" sequence="5"
+		parent="hr_work_entry_contract.menu_hr_payroll_root" />
+
+
+	<menuitem id="bo_hr_menu_hr_job_tree" name="Puestos de Trabajo" action="hr.action_hr_job"
+		parent="menu_bo_hr_payroll_master_data" sequence="2" />
+
+	<!-- <menuitem id="bo_hr_menu_hr_department_tree"
+    name="Departamentos"
+		action="hr.open_module_tree_department"
+		parent="menu_bo_hr_payroll_master_data" sequence="3"
+		groups="hr.group_hr_user" /> -->
+
+	<menuitem id="bo_hr_menu_view_employee_category_form" name="Categorías del empleado"
+		action="hr.open_view_categ_form" parent="menu_bo_hr_payroll_master_data" sequence="4"
+		groups="hr.group_hr_user" />
+
+	<menuitem id="bo_hr_partner_bank_account_tree_view" name="Cuentas bancarias"
+		action="base.action_res_partner_bank_account_form" parent="menu_bo_hr_payroll_master_data" sequence="5" />
+
+
+	<menuitem id="bo_hr_resource_calendar_form" name="Planificación de Trabajo"
+		action="resource.action_resource_calendar_form" parent="menu_bo_hr_payroll_master_data" sequence="8" />
+
+	<menuitem id="bo_hr_resource_calendar_leave_tree" name="Tiempos Libres"
+		action="resource.action_resource_calendar_leave_tree" parent="menu_bo_hr_payroll_master_data" sequence="9" />
+	<menuitem id="bo_hr_finiquito_leave_tree" name="Finiquitos" action="hr_finiquito_action"
+		parent="menu_bo_hr_payroll_master_data" sequence="10" />
+
+
+	<menuitem id="as_planilla_afp_report" name="Planilla afp" action="as_action_planilla_afp"
+		parent="hr_payroll.menu_hr_payroll_report" sequence="55" />
+
+	<menuitem id="as_planilla_aporte_patronal_report" name="Planilla de Aportes Patronales"
+		action="as_action_aporte_patronal" parent="hr_payroll.menu_hr_payroll_report" sequence="56" />
+	<menuitem id="as_planilla_sueldos_report" name="Planilla de Sueldos y Salarios" action="as_action_planilla_sueldos"
+		parent="hr_payroll.menu_hr_payroll_report" sequence="57" />
+	<menuitem id="as_planilla_tributaria_report" name="Planilla Tributaria" action="as_action_planilla_tributaria"
+		parent="hr_payroll.menu_hr_payroll_report" sequence="59" />
+	<menuitem id="as_planilla_sueldos_report_txt" name="TXT Banco Sueldos y Salarios"
+		action="as_action_planilla_sueldos_txt" parent="hr_payroll.menu_hr_payroll_report" sequence="60" />
+	<menuitem id="as_planilla_pago_prevision_report" name="Planilla de pago Previsión"
+		action="as_action_planilla_pago_prevision_txt" parent="hr_payroll.menu_hr_payroll_report" sequence="61" />
+	<menuitem id="as_planilla_futuro" name="Planilla de pago Futuro"
+		action="as_action_planilla_pago_futuro_txt" parent="hr_payroll.menu_hr_payroll_report" sequence="62" />
+	<menuitem id="as_planilla_sueldos_report_version_dos" name="Planilla de Sueldos y Salarios V2" action="as_action_sueldos_ver_dos" parent="hr_payroll.menu_hr_payroll_report" sequence="65" />
+	<menuitem id="as_planilla_reporte_aguinaldo" name="Planilla de Aguinaldo" action="as_action_reporte_aguinaldo" parent="hr_payroll.menu_hr_payroll_report" sequence="67" />
+	<menuitem id="hr_smn_menu" parent="menu_bo_hr_payroll_indicators" action="hr_smn_action" sequence="11" />
+	<menuitem id="hr_lugar_trabajo_menu" parent="menu_bo_hr_payroll_indicators" action="hr_lugar_trabajo_action" sequence="22" />
+	<menuitem id="hr_worked_menu" parent="menu_bo_hr_payroll_indicators" action="hr_worked_action" sequence="12" />
+	<menuitem id="hr_inputs_menu" parent="menu_bo_hr_payroll_indicators" action="hr_inputs_action" sequence="12" />
+	<menuitem id="hr_indicadores_afp_menu" name="Tipos de AFP" parent="hr.menu_human_resources_configuration"
+		sequence="4" action="as_hr_indicadores_afp_action" groups="base.group_system" />
+	<menuitem id="hr_indicadores_previsionales_menu" parent="menu_bo_hr_payroll_indicators"
+		action="hr_indicadores_previsionales_action" sequence="10" />
+</odoo>

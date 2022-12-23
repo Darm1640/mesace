@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <!-- Cron to synchronize transaction -->
+    <record id="whatsapp_notifications_cron" model="ir.cron">
+      <field name="name">Facturas: Envio de notificaciones por Whatsapp</field>
+      <field name="model_id" ref="account.model_account_move"/>
+      <field name="state">code</field>
+      <field name="code">model.as_cron_invoice_whatsapp()</field>
+      <field name="interval_number">4</field>
+      <field name="interval_type">hours</field>
+      <field name="numbercall">-1</field>
+    </record>
+    <record id="email_notifications_cron" model="ir.cron">
+      <field name="name">Despacho: Envio de notificaciones de despacho</field>
+      <field name="model_id" ref="stock.model_stock_picking"/>
+      <field name="state">code</field>
+      <field name="code">model.as_get_notification()</field>
+      <field name="interval_number">10</field>
+      <field name="interval_type">minutes</field>
+      <field name="numbercall">-1</field>
+    </record>
+
+  </data>
+</odoo>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="as_detalle_activo_gestion" model="ir.ui.view">
+            <field name="name">account.asset.depreciation.line.pivot</field>
+            <field name="model">account.asset.depreciation.line</field>
+            <field name="arch" type="xml">
+                <tree string="Detalle de cobros realizados">
+                    <field name="name" />
+                    <field name="asset_id" />
+                    <field name="category_id" />
+                    <field name="depreciation_date" />
+                    <field name="move_check" />
+                    <field name="qty" sum="total" force_save="1"/>
+                    <!-- <field name="as_ufv_inicial" sum="total" force_save="1"/>
+                    <field name="as_ufv_final" sum="total" force_save="1"/> -->
+                    <field name="as_value" sum="total"/>
+                    <field name="as_updates" sum="total"/>
+                    <field name="as_value_updates" sum="total"/>
+                    <field name="as_depreciation_store" sum="total"/>
+                    <field name="as_depreciation_update" />
+                    <field name="as_update_depreciation" />
+                    <field name="as_depreciation_periodo" sum="total"/>
+                    <field name="as_depreciation_end" sum="total"/>
+                    <field name="as_valor_neto" sum="total"/>
+
+                </tree>
+            </field>
+        </record>
+       
+        <record id="as_detalle_activo_gestion_action" model="ir.actions.act_window">
+            <field name="name">Detalle de activos por gestion</field>
+            <field name="res_model">account.asset.depreciation.line</field>
+            <!-- <field name="view_type">form</field> -->
+            <field name="view_mode">tree</field>
+            <field name="context">{'state':'open'}</field>
+            <field name="help">Detalle de los activos por gestión.</field>
+        </record>
+
+        <menuitem name="Vista Activos Gestión" action="as_detalle_activo_gestion_action" id="menu_asset_gestion_wizard"
+            parent="account.menu_finance_entries_generate_entries" sequence="112" />
+
+
+    </data>
+</odoo>

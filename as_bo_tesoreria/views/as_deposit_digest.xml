@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_deposit_digest_form" model="ir.ui.view">
+            <field name="name">as.deposit.digest.form</field>
+            <field name="model">as.deposit.digest</field>
+            <field name="arch" type="xml">
+                <form string="Company">
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                        </div>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" />
+                            <h1>
+                                <field name="name" readonly="True" />
+                            </h1>
+                        </div>
+                        <group col="4">
+                            <field name="as_date" />
+                            <field name="as_type_deposit" widget="radio" />
+                            <field name="as_folio" />
+                            <field name="as_extract_efectivo" attrs="{'invisible': [('as_type_deposit', '!=', 'Efectivo')]}"/>
+                            <field name="as_company_id" invisible="True"/>
+                            <field name="as_partner_id" invisible="True"/>
+                            <field name="as_account_bank_id"  context="{'default_partner_id': as_partner_id}"/>
+                            <field name="as_num_cuenta" />
+                            <field name="as_checks_ids" widget="many2many_tags" domain="[('as_type_ckeck', '=', as_type_deposit),('state', '=', 'draft')]" attrs="{'invisible': [('as_type_deposit', '=', 'Efectivo')]}"/>
+                            <field name="as_currency_id" />
+                            <field name="as_amount" />
+                            <field name="as_amount_check" force_save = "1" />
+                            <field name="as_amount_diff"/>
+                            <field name="as_tesoreria_id" invisible="True"/>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_deposit_digest_tree" model="ir.ui.view">
+            <field name="name">as.deposit.digest.tree</field>
+            <field name="model">as.deposit.digest</field>
+            <field name="arch" type="xml">
+                <tree string="Depositos">
+                    <field name="name" />
+                    <field name="as_date" />
+                    <field name="as_folio" />
+                    <field name="as_account_bank_id" />
+                    <field name="as_num_cuenta" />
+                    <field name="as_type_deposit" />
+                    <field name="as_tesoreria_id" />
+                    <field name="as_checks_ids" />
+                    <field name="as_currency_id" />
+                    <field name="as_amount" sum="total"/>
+                    <field name="as_amount_check" sum="total"/>
+                    <field name="as_amount_diff" sum="total"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_deposit_digest_form" model="ir.actions.act_window">
+            <field name="name">Depositos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">as.deposit.digest</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+        <!-- <menuitem action="action_deposit_digest_form" id="menu_action_deposit_digest_form"
+            parent="account.menu_finance_receivables" /> -->
+
+    </data>
+</odoo>

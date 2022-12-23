@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="as_report_product_detail" model="ir.ui.view">
+            <field name="name">Detalle Ventas por Producto</field>
+            <field name="model">as.product.detail.wiz</field>
+            <field name="arch" type="xml">
+                <form string="Detalle Ventas por Producto">
+                    <group col="2">
+                        <group>
+                            <field name="star_date"/>
+                            <field name="asesor" options="{&quot;always_reload&quot;: True, 'no_open': True,'no_create': 1, 'no_create_edit': 1}"/>
+                            <field name="cliente" options="{&quot;always_reload&quot;: True, 'no_open': True,'no_create': 1, 'no_create_edit': 1}" />
+                            <field name="agrupar" widget="radio"/>
+                        </group>
+                        <group>
+                           <field name="end_date"/>
+                            <field name="producto"  options="{&quot;always_reload&quot;: True, 'no_open': True,'no_create': 1, 'no_create_edit': 1}"/>
+                            <field name="producto_categ"/>
+                           
+                          <!-- <field name="as_fuente" widget="radio"/> -->
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="export_xls" default_focus="1" string="Exportar a Excel" type="object"
+                            class="oe_highlight" context="{'xls_export':1}" icon="fa-download" />
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_sales_productos_qweb" model="ir.actions.act_window">
+            <field name="name">Detalle Ventas por Producto</field>
+            <field name="res_model">as.product.detail.wiz</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="as_report_product_detail" />
+            <field name="target">new</field>
+        </record>
+
+        <report 
+            id="product_detail_report_xls" 
+            model="as.product.detail.wiz" 
+            string="Detalle Ventas por Producto" 
+            report_type="xlsx"
+            name="as_bo_sales_reports.product_detail_report_xls.xlsx" 
+            file="as_bo_sales_reports.product_detail_report_xls.xlsx"
+            attachment_use="False" />
+
+        <menuitem id="as_sales_ventas" name="Detalle Ventas por Producto" action="action_sales_productos_qweb"
+            parent="sale.menu_sale_report" sequence="100" groups="base.group_user" />
+            
+
+
+    </data>
+</odoo>

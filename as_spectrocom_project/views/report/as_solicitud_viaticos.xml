@@ -1,0 +1,21 @@
+<odoo>
+    <report
+        id="solicitud_viaticos"
+        model="project.task"
+        string="Solicitud de Viaticos"
+        report_type="xlsx"
+        name="as_spectrocom_project.as_solicitud_viaticos_xlsx"
+        file="Solicitud_viaticos_xlsx"
+        attachment_use="False"/>
+
+        <record id="sequence_project_viaticos" model="ir.sequence">
+            <field name="name">Secuencia para viaticos</field>
+            <field name="code">as.viaticos.code</field>
+            <field name="prefix"></field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field eval="True" name="use_date_range"/>
+            <field eval="False" name="company_id"/>
+            <field name="padding">5</field>
+        </record>
+</odoo>

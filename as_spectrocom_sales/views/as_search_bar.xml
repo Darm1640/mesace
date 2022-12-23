@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="as_account_recisition_views55" model="ir.ui.view">
+        <field name="name">as.sale.order.form5</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="as_numeracion_interna" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_invoice_filter_spe" model="ir.ui.view">
+        <field name="name">view.account.invoice.filter.spe</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="id" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_picking_internal_search_spe" model="ir.ui.view">
+        <field name="name">view.picking.internal.search.spe</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="product_id" string="Nro de serie"
+                    filter_domain="[('lot_id.name','ilike',self)]" />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Buscar por nit en contactos -->
+    <record id="as_view_res_partner_filter" model="ir.ui.view">
+        <field name="name">as.view.res.partner.filter</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='email']" position="after">
+                <field name="phone" string="Nit"
+                    filter_domain="[('vat','ilike',self)]" />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- ocultar opcion suprimir -->
+    <record id="view_despacho_form_inherit2" model="ir.ui.view">
+        <field name="name">view.despacho.form.inherit2</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="attributes">
+                <attribute name="delete">false</attribute>
+                <!-- <attribute name="create">false</attribute> -->
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_stock_return_picking_form_inherit_stock_account_spe" model="ir.ui.view">
+        <field name="name">view.stock.return.picking.form.inherit.stock.account.spe</field>
+        <field name="inherit_id" ref="stock.view_stock_return_picking_form"/>
+        <field name="model">stock.return.picking</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_return_moves']/tree" position="inside">
+                <field name="as_lote" />
+            </xpath>
+             <xpath expr="//field[@name='location_id']" position="after">
+                <field name="as_selector" />
+            </xpath>
+            <xpath expr="//field[@name='product_return_moves']/tree/field[@name='product_id']" position="before">
+                <field name="as_check_devolucion" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

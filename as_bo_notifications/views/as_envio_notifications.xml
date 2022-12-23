@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_form_notifications" model="ir.ui.view">
+            <field name="name">as.as.envio.notifications</field>
+            <field name="model">as.envio.notifications</field>
+            <field name="arch" type="xml">
+                <form string="Dias de Notificaciones">
+                    <sheet>
+                            <group>
+                                <field name="name" />
+                            </group>
+                            <group string="Campos de Instructivas de trabajo">
+                                <field name="as_dias" />
+                            </group>
+                          
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_notifications" model="ir.ui.view">
+            <field name="name">as.as.envio.notifications</field>
+            <field name="model">as.envio.notifications</field>
+            <field name="arch" type="xml">
+                <tree string="Dias de Notificaciones">
+                    <field name="name" />
+                    <field name="as_dias" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_notifications_type">
+            <field name="name">Dias de Notificaciones</field>
+            <field name="res_model">as.envio.notifications</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    
+
+        <menuitem id="as_conditions_type_menu" name="Dias de Notificaciones" parent="account.account_account_menu"
+            action="action_notifications_type" />
+
+    </data>
+</odoo>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="as_report_purchase_order_paperformat" model="report.paperformat">
+      <field name="name">Pedido de Compra PDF</field>
+      <field name="default" eval="True" />
+      <field name="format">Letter</field>
+      <field name="page_height">0</field>
+      <field name="page_width">0</field>
+      <field name="orientation">Portrait</field>
+      <field name="margin_top">60</field>
+      <field name="margin_bottom">7</field>
+      <field name="margin_left">7</field>
+      <field name="margin_right">7</field>
+      <field name="header_line" eval="False" />
+      <field name="header_spacing">52</field>
+      <field name="dpi">90</field>
+      <field name="report_ids" eval="[(4, ref('purchase.action_report_purchase_order'))]" />
+    </record>
+
+    <report id="as_purchase_summary_report_pdf" 
+    model="as.libro.compras" 
+    string="Libro de compras" 
+    report_type="qweb-pdf"
+    name="as_bo_purchase_invoice.as_pdf_report_libro_compras" 
+    file="as_bo_purchase_invoice.as_pdf_report_libro_compras" 
+    menu="True" 
+    />
+    <record id="as_as_sale_summary_report_paperformat" model="report.paperformat">
+      <field name="name">Libro de compras PDF</field>
+      <field name="default" eval="True" />
+      <field name="format">Letter</field>
+      <field name="page_height">0</field>
+      <field name="page_width">0</field>
+      <field name="orientation">Landscape</field>
+      <field name="margin_top">35</field>
+      <field name="margin_bottom">25</field>
+      <field name="margin_left">7</field>
+      <field name="margin_right">7</field>
+      <field name="header_line" eval="False" />
+      <field name="header_spacing">47</field>
+      <field name="dpi">90</field>
+       <field name="report_ids" eval="[(4, ref('as_bo_purchase_invoice.as_purchase_summary_report_pdf'))]" />
+    </record>
+
+    <!-- <record id="as_nota_pedido_purchase_qweb_pdf" model="ir.actions.report">
+      <field name="name">as_nota_pedido_purchase_qweb_pdf</field>
+      <field name="paperformat_id" ref="as_purchase_invoice.as_report_purchase_order_paperformat" />
+      <field name="model">purchase.order</field>
+      <field name="report_type">qweb-pdf</field>
+      <field name="print_report_name">'Pedido de Compra - %s' % (object.name)</field>
+      <field name="report_name">as_purchase_invoice.as_pdf_purchase_pedido</field>
+
+    </record> -->
+    <!-- <report
+    id="action_report_purchase_order" 
+    model="purchase.order" 
+    string="Presupuesto / Orden" 
+    report_type="qweb-pdf"
+    name="as_purchase_invoice.report_purchase_order" 
+    file="as_purchase_invoice.report_purchase_order" 
+    menu="True" /> -->
+
+          <report 
+            string="Purchase Order" 
+            id="purchase.action_report_purchase_order" 
+            model="purchase.order" 
+            report_type="qweb-pdf"
+            name="purchase.report_purchaseorder" 
+            file="purchase.report_purchaseorder" 
+            print_report_name="
+                (object.state in ('draft', 'sent') and 'Request for Quotation - %s' % (object.name) or
+                'Purchase Order - %s' % (object.name))"
+            menu='True'
+        />
+
+        <report 
+            string="Request for Quotation" 
+            id="purchase.report_purchase_quotation" 
+            model="purchase.order" 
+            report_type="qweb-pdf"
+            name="purchase.report_purchasequotation" 
+            file="purchase.report_purchasequotation"
+            print_report_name="'Request for Quotation - %s' % (object.name)"
+            menu='True'
+        />
+
+        <report
+        id="as_reporte_orden_compra"
+        string="Hoja de Compra (PDF)"
+        model="purchase.order"
+        report_type="qweb-pdf"
+        name="as_bo_purchase_invoice.as_purchase_order_custom_pdf"
+        file="as_bo_purchase_invoice.as_purchase_order_custom_pdf"
+        menu="True"
+      />
+      <record id="as_reporte_purchase_order" model="report.paperformat">
+        <field name="name">Reporte Hoja de Ruta PDF</field>
+        <field name="default" eval="True" />
+        <field name="format">custom</field>
+        <field name="page_height">278</field>
+        <field name="page_width">214</field>
+        <field name="margin_top">34</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="orientation">Portrait</field>
+        <field name="header_spacing">35</field>
+        <field name="report_ids" eval="[(4, ref('as_bo_purchase_invoice.as_reporte_orden_compra'))]"/>
+      </record>
+  </data>
+</odoo>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="as_template_purchase_email" model="mail.template">
+            <field name="name">COMPRAS: Solicitud de Aprobación por monto</field>
+            <field name="model_id" ref="purchase.model_purchase_order" />
+            <field name="subject">Solicitud Aprobación Orden de Compra: Ref(${object.name})</field>
+            <field name="email_from">${object.company_id.partner_id.email}</field>
+            <field name="email_to"></field>
+            <field name="body_html" type="html">
+                <div>
+                    Estimado(s) usuario<br />
+                    Tienes la compra <b><a
+                        href='${website_url}/web#id=${object.id}&amp;action=1006&amp;active_id=22&amp;model=purchase.order&amp;view_type=form&amp;cids=${object.company_id.id}&amp;menu_id=677'>${object.name}</a></b>
+                    que espera tu aprobación.
+                    <br />
+                    <br />
+
+                    Gracias,
+                </div>
+            </field>
+        </record>
+        <record id="as_template_approval_purchase_email" model="mail.template">
+            <field name="name">COMPRAS: Aprobación por monto</field>
+            <field name="model_id" ref="purchase.model_purchase_order" />
+            <field name="subject">Aprobación Orden de Compra: Ref(${object.name})</field>
+            <field name="email_from">${object.company_id.partner_id.email}</field>
+            <field name="email_to"></field>
+            <field name="body_html" type="html">
+                <div>
+                    Estimado(s) usuario<br />
+                   La compra <b><a
+                        href='${website_url}/web#id=${object.id}&amp;action=1006&amp;active_id=22&amp;model=purchase.order&amp;view_type=form&amp;cids=${object.company_id.id}&amp;menu_id=677'>${object.name}</a></b>
+                    fue aprobada satisfactoriamente.
+                    <br />
+                    <br />
+
+                    Gracias,
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

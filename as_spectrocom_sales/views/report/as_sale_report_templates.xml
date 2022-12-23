@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="as_pdf_report_sales">
+
+            <div class="header">
+                <style type="text/css">
+                    html {
+                        margin: 0;
+                    }
+
+                    .header {
+                        margin: 0px;
+                        padding: 0px;
+                        line-height: 17px;
+                    }
+
+                    @font-face {
+                        font-family: 'Courier Prime';
+                        src: url('/as_spectrocom_sales/static/Courier Prime.ttf') format('truetype');
+                        font-weight: normal;
+                        font-style: normal;
+                    }
+
+                    body {
+                        font-family: Courier Prime !important;
+                    }
+
+                    .letra {
+                        font-family: Courier Prime !important;
+                        font-size: 12px !important;
+                        margin: 0px;
+
+                    }
+
+                    .letrafont {
+                        font-family: Courier Prime !important;
+                        font-size: 14px !important;
+                        margin: 0px;
+                        color: #8c8c8c;
+                    }
+
+                    .letrablue {
+                        font-family: Courier Prime !important;
+                        font-size: 13px !important;
+                        margin: 0px;
+                        color: #465f7a;
+                    }
+
+                    .class {
+                        text-align: left:
+                    }
+
+                    .content {
+                        background: #8c8c8c;
+                        padding: 5px;
+                        color: #fff;
+                        border: 2px solid #8c8c8c;
+                    }
+
+                    .content2 {
+                        background: #fff;
+                        color: red;
+                        padding: 5px;
+                        border: 2px solid #8c8c8c;
+                    }
+                </style>
+                <div class="row mt0 mb0 as_header">
+                    <div class="col-4" style="text-align:center;">
+                        <br />
+                        <br />
+                        <t t-if="o.company_id.logo">
+                            <img t-att-src="image_data_uri(o.company_id.logo)" style="width:100%" />
+                        </t>
+                        <!-- <span t-esc="o.company_id.street" class="letra" /><br />
+                        <span t-esc="o.company_id.phone" class="letra" /> -->
+                    </div>
+                    <div class="col-4" style="text-align:center;" name='as_titulo'>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <t t-if="o.state == 'draft'" width="100%">
+                            <h2 class='titulo'>
+                                <div>
+                                    <b>COTIZACION</b><br />
+                                </div>
+                            </h2>
+                        </t>
+                        <t t-if="o.state != 'draft'" width="100%">
+                            <h2 class='titulo'>
+                                <div style='padding-top:30px'>
+                                    <b>PEDIDO DE VENTA</b><br />
+                                </div>
+                            </h2>
+                        </t>
+
+                    </div>
+                    <div class="col-4" style="text-align:center;">
+                        <br />
+                        <br />
+                        <div style="text-align:center;border:2px solid #ccc;font-size:15px">
+                            <b>
+                                <br />
+                                Fecha: <span t-if="o.date_order" t-esc="o.date_order.strftime('%d/%m/%Y')" /><br />
+                                Cotizador:
+                                <t t-esc="o.user_id.partner_id.name" /><br />
+                                Cargo:
+                                <t t-esc="o.get_cargo()" /><br /><br />
+                            </b>
+                        </div>
+                        <br />
+                        <p style="float:right">Pág. <label class="page" />/<label class="topage" /></p>
+
+                    </div>
+
+                </div>
+                <table width="100%" style="border:1px solid black;">
+                    <tr>
+                        <td style="width:20%;" class='letra3' colspan="1">
+                            <b>Cliente:</b>
+                        </td>
+                        <td style="width:80%;" class='letra3' colspan="3">
+                            <t t-esc="o.partner_id.name" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:11%;" class='letra3'>
+                            <b>Propuesta Nº:</b>
+                        </td>
+                        <td style="width:39%;" class='letra3'>
+                            <t t-esc="o.as_template_id.name" />
+                        </td>
+                        <td style="width:10%;" class='letra3'>
+                            <b>Email:</b>
+                        </td>
+                        <td style="width:40%;" class='letra3'>
+                            <t t-esc="o.partner_id.email" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:20%;" class='letra3' colspan="1">
+                            <b>Referencia:</b>
+                        </td>
+                        <td style="width:80%;" class='letra3' colspan="3">
+                            <t t-esc="o.as_referencia" />
+                        </td>
+                    </tr>
+                </table>
+                <br />
+
+            </div>
+        <t t-call="web.internal_layout">
+            <div class="page">
+                <style type="text/css">
+                    html {
+                        margin: 0;
+                    }
+
+                    @font-face {
+                        font-family: 'Courier Prime';
+                        src: url('/as_spectrocom_sales/static/Courier Prime.ttf') format('truetype');
+                        font-weight: normal;
+                        font-style: normal;
+                    }
+                    
+                    body {
+                        font-family: Courier Prime !important;
+                    }
+
+                
+                    .letra {
+                        font-family: Courier Prime !important;
+                        font-size: 13px !important;
+                        margin: 0px;
+                    }
+
+                    .letrafont {
+                        font-family: Courier Prime !important;
+                        font-size: 13px !important;
+                        margin: 0px;
+                        color: #8c8c8c;
+                    }
+
+                    .letrablue {
+                        font-family: Courier Prime !important;
+                        font-size: 13px !important;
+                        margin: 0px;
+                        color: #465f7a !important;
+                    }
+
+                    .class {
+                        text-align: left:
+                    }
+
+                    .content {
+                        background: #8c8c8c;
+                        padding: 5px;
+                        color: #fff;
+                    }
+
+                    .content2 {
+                        background: #fff;
+                        color: red;
+                        padding: 5px;
+                        border: 2px solid #8c8c8c;
+                    }
+
+                    .letra {
+                        font-family: Courier Prime !important;
+                        font-size: 13px !important;
+
+                    }
+
+                    .letrafont {
+                        font-family: Courier Prime !important;
+                        font-size: 13px !important;
+
+                        color: #465f7a;
+                        background: #fff !important;
+                    }
+
+                    .content {
+                        font-family: Courier Prime !important;
+                        font-size: 10px !important;
+                        color: #8c8c8c;
+
+                    }
+
+                    .header_table {
+                        background: blue;
+                        color: #fff;
+                        font-size: 12px !important;
+                    }
+
+                    .invoice_tbody {
+                        border: 2 px solid blue !important;
+                        font-size: 12px !important;
+                    }
+
+                    .text2 {
+                        font-family: Courier Prime !important;
+                        font-size: 13px !important;
+
+                        color: #465f7a;
+                    }
+
+                    .class {
+                        text-align: left:
+                    }
+
+                    .content2 {
+                        background: #fff;
+                        color: red;
+                        padding: 5px;
+                        border: 2px solid #8c8c8c;
+                    }
+
+                    .table_info {
+                        border: 2px solid #fff;
+                        width: 100%;
+                        font-size: 10px !important;
+                    }
+
+                    .invoice_tbody .border {
+                        border-left: 2px solid blue !important;
+                        border-right: 2px solid blue !important;
+                        font-size: 13px !important;
+                    }
+
+                    .parrafo2 {
+                        font-size: 12px;
+                        text-align: justify;
+                        line-height: 18px;
+                        background: #ccc;
+                        padding: 5px;
+                        line-height: 15px;
+                    }
+
+                    .parrafo22 {
+                        font-size: 12px;
+                        text-align: justify;
+                        line-height: 15px;
+                        width: 700px;
+                        font-family: Courier Prime !important;
+                    }
+
+                    .class {
+                        text-align: left:
+                    }
+
+                    table  td {
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    table  .stilo {
+                        border-left: 1px solid black !important;
+                        border-right: 1px solid black !important;
+                        border-collapse: collapse;
+                        font-size: 12px;
+                        src: url('/as_spectrocom_sales/static/Courier Prime.ttf') format('truetype');
+                    }
+
+                    table  .stilo1 {
+                        border-collapse: collapse;
+                        font-size: 12px;
+                        text-align: left;
+                        src: url('/as_spectrocom_sales/static/Courier Prime.ttf') format('truetype');
+                    }
+
+                    table  .stilo7 {
+                        border-collapse: collapse;
+                        border: 1px solid black;
+                        font-size: 15px;
+                        text-align: center;
+                        src: url('/as_spectrocom_sales/static/Courier Prime.ttf') format('truetype');
+                    }
+
+                    table  .stilo2 {
+                        border-collapse: collapse;
+                        font-size: 12px;
+                        text-align: right;
+                        src: url('/as_spectrocom_sales/static/Courier Prime.ttf') format('truetype');
+                    }
+
+                    .avoid {
+    page-break-inside: avoid !important;
+    margin: 4px 0 4px 0;  /* to keep the page break from cutting too close to the text in the div */
+  }
+                </style>
+
+
+                <div t-foreach="o.get_line_business_name()" t-as="business_line" width="100%" class="avoid">
+                    <table width="100%" name='page_table' style="border-collapse:collapse;">
+
+
+                        <t t-if="business_line['type'] == 'section'">
+                            
+                                <tr style="page-break-inside: avoid !important;">
+                                
+                                    <td style="background:#ccc;text-transform: uppercase;" colspan="8" class="text-center">
+                                        <t t-esc="business_line['name']" />
+                                    </td>
+                                
+                                </tr>
+                            
+                            
+                        
+
+                                <tr style="background:#1C4484;page-break-inside: avoid !important;">
+                                    <td style="width:5%;color:white" class="stilo7">
+                                        <b>Nro</b>
+                                    </td>
+                                    <!-- <td style="width:10%;color:white" class="stilo7">
+                                        <b>CODIGO</b>
+                                    </td> -->
+                                    <td style="width:35%;color:white" class="stilo7">
+                                        <b>DETALLE</b>
+                                    </td>
+                                    <td style="width:10%;color:white" class="stilo7">
+                                        <b>UD</b>
+                                    </td>
+                                    <td style="width:10%;color:white" class="stilo7">
+                                        <b>CANT.</b>
+                                    </td>
+                                    <td style="width:10%;color:white" class="stilo7">
+                                        <b>P.UNIT.</b>
+                                    </td>
+                                    <td style="width:10%;color:white" class="stilo7">
+                                        <b>TOTAL USD</b>
+                                    </td>
+                                    <td style="width:10%;color:white" class="stilo7">
+                                        <b>TOTAL BS</b>
+                                    </td>
+                                </tr>
+                            
+                        </t>
+                        
+                        <t t-if="business_line['type'] == 'line'">
+                            <tr>
+                                <td style="width:5%;text-align: center;" class="stilo1">
+                                    <t t-esc="business_line['num']" />
+                                </td>
+                                <!-- <td style="width:10%;text-align: center;" class="stilo1">
+                                    <t t-esc="business_line['default_code']" />
+                                </td> -->
+                                <td style="width:35%;" class="stilo1">
+                                    <t t-esc="business_line['name']" />
+                                </td>
+                                <td style="width:10%;text-align: center;" class="stilo1">
+                                    <t t-esc="business_line['udm']" />
+                                </td>
+                                <td style="width:10%;text-align: center;" class="stilo1">
+                                    <t t-esc="'{:20,.2f}'.format(business_line['product_uom_qty'])" />
+                                </td>
+                                <td style="width:10%;text-align:center" class="stilo1">
+                                    <t t-esc="'{:20,.2f}'.format(business_line['price_unit'])" />
+                                </td>
+                                <td style="width:10%;text-align:center" class="stilo2">
+                                    <t t-if="o.currency_id.name == 'USD'">
+                                    <t t-esc="'{:20,.2f}'.format(business_line['total_obedece'])" />
+                                    </t>
+                                    <t t-if="o.currency_id.name == 'BOB'">
+                                    <t t-esc="'{:20,.2f}'.format((business_line['price_unit']/6.96) * business_line['product_uom_qty'] )" />
+                                    </t>
+                                        <!-- <t t-esc="'{:20,.2f}'.format(business_line['total_us'])" /> -->
+                                </td>
+                                <td style="width:10%;text-align:center" class="stilo2">
+                                    <!-- <t t-esc="'{:20,.2f}'.format(business_line['total_bob'])" /> -->
+                                    <t t-if="o.currency_id.name == 'USD'">
+                                    <t t-esc="'{:20,.2f}'.format(round(business_line['price_unit']*6.96,2) * business_line['product_uom_qty'] )" />
+                                    </t>
+                                    <t t-if="o.currency_id.name == 'BOB'">
+                                    <t t-esc="'{:20,.2f}'.format(business_line['total_obedece'])" />
+                                    </t>
+                                </td>
+                            </tr>
+                        </t>
+                        <t t-if="business_line['type'] == 'note'">
+                            <tr>
+                                <td style="width:5%;text-align: center;" class="stilo1">
+                                </td>
+                                <!-- <td style="width:10%;text-align: center;" class="stilo1">
+                                </td> -->
+                                <td style="width:35%;text-align: left;" class="stilo1">
+                                    <p style="font-style: italic !important;text-align:justify!important;">
+                                        
+                                        <t t-raw="business_line['name'].replace('\n','&lt;br/&gt;')" />
+                                    </p>
+                                </td>
+                                <td style="width:10%;text-align: center;" class="stilo1">
+                                </td>
+                                <td style="width:10%;text-align: center;" class="stilo1">
+                                </td>
+                                <td style="width:10%;text-align: center;" class="stilo1">
+                                </td>
+                                <td style="width:10%;text-align: center;" class="stilo2">
+                                </td>
+                                <td style="width:10%;text-align: center;" class="stilo2">
+                                </td>
+                            </tr>
+                        </t>
+                        <t t-if="business_line['type'] == 'total'">
+                            <tr style="">
+                                <td style="width:80%;border-top:1px solid #000000 !important" class="stilo1">
+                                    <b>
+                                        <t t-esc="business_line['name']" /></b>
+                                </td>
+
+                                <td style="width:7%;text-align:center;border-top:1px solid #000000 !important"
+                                    class="stilo2">
+                                    <b>
+                                        <t t-esc="'{:20,.2f}'.format(business_line['total_us'])" /></b>
+                                </td>
+                                <td style="width:13%;text-align:right;padding-right: 18px;border-top:1px solid #000000 !important" class="stilo2">
+                                    <b>
+                                        <t t-esc="'{:20,.2f}'.format(business_line['total_bob'])" /></b>
+                                </td>
+                            </tr>
+                        </t>
+                    </table>
+                </div>
+                <t t-if="o.as_cotizacion_con_resumen == 'con_resumen'">
+                <table width="100%">
+                    <tr style="width:5%;background:#ccc;">
+                        <td style="border:1px solid black;text-align:center;font-family:'Courier Prime' !important;" colspan="3">
+                            <b>RESUMEN</b>
+                        </td>
+                    </tr>
+                    <tr style="width:5%">
+                        <td style="width:60%;" class="stilo1">
+                            <!-- <b>DESCRIPCION</b> -->
+                        </td>
+                        <td style="width:10%;text-align: center" class="stilo1">
+                            <b>TOTAL $US</b>
+                        </td>
+                        <td style="width:10%;text-align: center" class="stilo1">
+                            <b>TOTAL BOB</b>
+                        </td>
+                    </tr>
+                    <div t-foreach="o.get_total_line_business_aux()" t-as="total_business">
+                        <!-- <t t-if="total_business['type'] == 'line'"> -->
+                        <tr>
+                            <td style="width:5%;" class="stilo1">
+
+                                <t t-if="total_business['name'] != 'inicio'">
+                                    <b>
+                                        <t t-esc="total_business['name']" />
+                                    </b>
+                                </t>
+                            </td>
+
+                            <td style="width:10%;text-align: center" class="stilo2">
+                                <t t-if="total_business['total_us_aux'] != 0">
+                                    <b>
+                                        <t t-esc="'{:20,.2f}'.format(total_business['total_us_aux'])" />
+                                    </b>
+                                </t>
+
+                            </td>
+                            <td style="width:10%;text-align: center" class="stilo2">
+                                <t t-if="total_business['total_bob_aux'] != 0">
+                                    <b>
+                                        <t t-esc="'{:20,.2f}'.format(total_business['total_bob_aux'])" />
+                                    </b>
+                                </t>
+
+                            </td>
+
+
+                        </tr>
+                        <!-- </t> -->
+                        <!-- <t t-if="total_business['type'] == 'total'">
+                            <tr>
+                                <td style="width:5%;border-top:1px solid #000000 !important" class="stilo1">
+
+                                </td>
+
+                                <td style="width:10%;text-align:left;border-top:1px solid #000000 !important"
+                                    class="stilo2">
+                                    <b>
+                                        <t t-esc="'{:20,.2f}'.format(total_business['total_us'])" /></b>
+                                </td>
+                                <td style="width:10%;border-top:1px solid #000000 !important" class="stilo2">
+                                    <b>
+                                        <t t-esc="'{:20,.2f}'.format(total_business['total_bob'])" /></b>
+                                </td>
+
+
+                            </tr>
+                        </t> -->
+                    </div>
+                       <tr>
+                                <td style="width:5%;border-top:1px solid #000000 !important" class="stilo1">
+                                       <b> TOTALES</b>
+                                </td>
+
+                                <td style="width:10%;text-align:center;border-top:1px solid #000000 !important"
+                                    class="stilo2">
+                                    <b>
+                                        <t t-esc="'{:20,.2f}'.format(o.as_get_totales()[0])" /></b>
+                                </td>
+                                <td style="width:10%;text-align:center;border-top:1px solid #000000 !important" class="stilo2">
+                                    <b>
+                                     <t t-esc="'{:20,.2f}'.format(o.as_get_totales()[1])" /></b>
+                                </td>
+
+
+                            </tr>
+
+                </table>
+                </t>
+                <table width="100%">
+                    <tr>
+                        <td style="width:5%;background:#ccc;text-align:center; " class="stilo">
+                            <t t-if="o.note">
+                                ACLARACIONES
+                            </t>
+                        </td>
+
+
+                    </tr>
+                    <tr>
+                        <td class="text-left">
+                            <t t-raw="o.note.replace('\n','&lt;br/&gt;')" />
+                            <!-- <t t-esc="o.note" /> -->
+                        </td>
+
+
+                    </tr>
+
+                </table>
+                <table width="100%">
+                    <tr style="width:5%;background:#ccc;">
+                        <td style="border:1px solid black;text-align:center;font-family:'Courier Prime' !important;" colspan="2" >
+                            CONDICIONES DE LA PROPUESTA
+                        </td>
+
+
+                    </tr>
+                    <div t-foreach="o.as_conditions_lines" t-as="line_con">
+                        <t t-if="line_con.as_valor">
+                            <tr>
+                                <td style="width:40%;" class="stilo1">
+                                    <b>
+                                        <t t-esc="line_con.name" /></b>
+                                </td>
+
+                                <td style="width:60%;text-align:left" class="stilo1">
+                                    <b>
+                                        <t t-esc="line_con.as_valor" /></b>
+                                </td>
+                            </tr>
+                        </t>
+
+                    </div>
+
+
+                </table>
+
+
+            </div>
+        </t>
+
+            <div class="footer" style="font-family: Courier Prime !important;">
+                <style>
+                    html {
+                        margin: 0;
+                    }
+
+                    .parrafo {
+                    
+                        text-align: justify;
+                        line-height: 18px;
+                        background: #ccc;
+                        padding: 5px;
+                        line-height: 15px;
+                    }
+
+                    @font-face {
+                        font-family: 'Courier Prime';
+                        src: url('/as_spectrocom_sales/static/Courier Prime.ttf') format('truetype');
+                        font-weight: normal;
+                        font-style: normal;
+                    }
+
+                    .parrafo2 {
+                        font-size: 12px;
+                        text-align: justify;
+                        line-height: 15px;
+                    }
+
+                    body {
+                        font-family: Courier Prime !important;
+                    }
+
+                    .letra {
+                        font-family: Courier Prime !important;
+                        font-size: 12px !important;
+                    }
+
+                    .letrafont {
+                        font-family: Courier Prime !important;
+                        font-size: 12px !important;
+                        color: #8c8c8c;
+                    }
+
+                    .letrablue {
+                        font-family: Courier Prime !important;
+                        font-size: 12px !important;
+                        color: #465f7a;
+                    }
+
+                    .class {
+                        text-align: left:
+                    }
+                </style>
+                <div style="font-size:14px !important;line-height: 15px">
+                    <b>
+                        <table width="100%">
+
+                            <tr>
+                                <td style="width:10%;color:#1C4484;text-align:center">
+                                    SUCURSAL VILLAMONTES
+                                </td>
+                                <td style="width:10%;color:#1C4484;text-align:center">
+                                    CENTRAL SANTA CRUZ
+                                </td>
+                                <!-- <td style="width:5%;color:#1C4484;text-align:center">
+                                    SUCURSAL CAMIRI
+                                </td>
+                                <td style="width:5%;color:#1C4484;text-align:center">
+                                    SUCURSAL LA PAZ
+                                </td> -->
+                            </tr>
+                            <tr>
+                                <td style="width:10%;text-align:center">
+                                    Av. Heroes del Chaco<br />
+                                    esq. Boqueron<br />
+                                    telf. (591) 46724108<br />
+                                </td>
+                                <td style="width:10%;text-align:center">
+                                    Av. Alemana c/Mapajo #31<br />
+                                    Entre 3er Anillo Ext. e Int.<br />
+                                    telf. (591) 33446687<br />
+                                </td>
+                                <!-- <td style="width:5%;text-align:center">
+                                    Av. Tte. Cnl Manual<br />
+                                    Manzana #1.<br />
+                                    telf. (591) 39523534<br />
+                                </td>
+                                <td style="width:5%;text-align:center;font-family:'Courier Prime'">
+                                    c/Francisco Orosco #578<br />
+                                    Edificio Bussiness Center "Q".<br />
+                                    telf. (591) 22731890<br />
+                                </td> -->
+                            </tr>
+
+
+
+                        </table>
+                        <hr />
+                        <center>
+                            Codigo: <span t-esc="o.as_alias_lugar" />|
+                            Versión: <span t-esc="o.as_cont_id" />|
+                            Edición: <span t-if="o.date_order" t-esc="o.date_order.strftime('%d/%m/%Y')" />|
+                        </center>
+
+                    </b>
+                </div>
+
+
+            </div>
+
+        </template>
+        <template id="as_pdf_nota_pedido">
+            <t t-call="web.html_container">
+
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="as_spectrocom_sales.as_pdf_report_sales" t-lang="lang" />
+
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_account_stock_action" model="ir.ui.view">
+            <field name="name">Tipo de Acción en Movimiento</field>
+            <field name="model">as.stock.account.action</field>
+            <field name="arch" type="xml">
+                <tree string="Tipo de factura">
+                    <field name="name" />
+                    <field name="as_code_struct" />
+                    <field name="as_code_cost" />
+                </tree>
+            </field>
+        </record>
+        <record id="as_action_stock_form" model="ir.ui.view">
+            <field name="name">Tipo de Acción en Movimiento</field>
+            <field name="model">as.stock.account.action</field>
+            <field name="arch" type="xml">
+                <form string="Tipo de accion en mavimientos">
+                    <sheet>
+                        <div class="oe_title">
+                            <label class="oe_edit_only" for="name" string="Nombre del método de pago" />
+                            <h1>
+                                <field name="name" placeholder="Accion en movimiento" />
+                            </h1>
+                        </div>
+                        <group col="4">
+                            <group co="2">
+                                <field name="as_code_struct" />
+                                <field name="as_code_cost" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="as_account_stock_action_action" model="ir.actions.act_window">
+            <field name="name">Tipo de Acción en movimiento</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">as.stock.account.action</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="as_account_stock_action" />
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Haga clic aquí para empezar a crear su primer accion de movimiento de inventario.
+                </p>
+            </field>
+        </record>
+        <menuitem id="as_menuaccion_nucleo" action="as_account_stock_action_action" sequence="30"
+            parent="stock.menu_warehouse_config" />
+    </data>
+</odoo>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="enpoint_siat_1" model="as.siat.endpoint">
+            <field name="name">/ahorasoft/v1/token</field>
+            <field name="as_type">Token</field>
+        </record>
+        <record id="enpoint_siat_2" model="as.siat.endpoint">
+            <field name="name">/ahorasoft/v1/solicitudcuis</field>
+            <field name="as_type">CUIS</field>
+        </record>
+        <record id="enpoint_siat_3" model="as.siat.endpoint">
+            <field name="name">/ahorasoft/v1/registropuntoventa</field>
+            <field name="as_type">PDV</field>
+        </record>
+        <record id="enpoint_siat_4" model="as.siat.endpoint">
+            <field name="name">/ahorasoft/v1/cierrepuntoventa</field>
+            <field name="as_type">CierrePDV</field>
+        </record>
+        <record id="enpoint_siat_5" model="as.siat.endpoint">
+            <field name="name">/ahorasoft/v1/solicitudcufd</field>
+            <field name="as_type">CUFD</field>
+        </record>
+        <record id="enpoint_siat_6" model="as.siat.endpoint">
+            <field name="name">/ahorasoft/v1/sincronizacioncatalogo</field>
+            <field name="as_type">Catalogos</field>
+        </record>
+        <record id="enpoint_siat_7" model="as.siat.endpoint">
+            <field name="name">/ahorasoft/v1/facturacomputarizada</field>
+            <field name="as_type">Factura</field>
+        </record>
+        <record id="enpoint_siat_8" model="as.siat.endpoint">
+            <field name="name">/ahorasoft/v1/facturaelectronica</field>
+            <field name="as_type">Factura Electronica</field>
+        </record>
+        <record id="enpoint_siat_9" model="as.siat.endpoint">
+            <field name="name">/ahorasoft/v1/facturacomputarizada/recepcion</field>
+            <field name="as_type">Recepción de Factura</field>
+        </record>
+        <record id="enpoint_siat_10" model="as.siat.endpoint">
+            <field name="name">/ahorasoft/v1/facturacomputarizada/cancelarfactura</field>
+            <field name="as_type">Cancelar Factura</field>
+        </record>
+        <record id="enpoint_siat_11" model="as.siat.endpoint">
+            <field name="name">/ahorasoft/v1/facturanotadebitocredito</field>
+            <field name="as_type">NDC</field>
+        </record>
+        <record id="enpoint_siat_12" model="as.siat.endpoint">
+            <field name="name">/ahorasoft/v1/facturacomputarizada/recepciondebitocredito</field>
+            <field name="as_type">Recepción de NDC</field>
+        </record>
+        <record id="enpoint_siat_13" model="as.siat.endpoint">
+            <field name="name">/ahorasoft/v1/facturacomputarizada/cancelardebitocredito</field>
+            <field name="as_type">Cancelar NDC</field>
+        </record>
+        <record id="enpoint_siat_14" model="as.siat.endpoint">
+            <field name="name">/ahorasoft/v1/enviomasivo</field>
+            <field name="as_type">Recepción Envio Masivo</field>
+        </record>
+        <record id="enpoint_siat_15" model="as.siat.endpoint">
+            <field name="name">/ahorasoft/v1/enviomasivo/recpecion</field>
+            <field name="as_type">Validación Envio Masivo</field>
+        </record>
+        <record id="enpoint_siat_16" model="as.siat.endpoint">
+            <field name="name">/ahorasoft/v1/contingencia</field>
+            <field name="as_type">Crear Contingencia</field>
+        </record>
+        <record id="enpoint_siat_17" model="as.siat.endpoint">
+            <field name="name">/ahorasoft/v1/enviocontingencia</field>
+            <field name="as_type">Recepción Envio Contingencia</field>
+        </record>
+        <record id="enpoint_siat_18" model="as.siat.endpoint">
+            <field name="name">/ahorasoft/v1/enviocontingencia/recpecionevento</field>
+            <field name="as_type">Validación Envio Contingencia</field>
+        </record>
+        <record id="enpoint_siat_19" model="as.siat.endpoint"> 
+            <field name="name">/ahorasoft/v1/verificarnit</field>
+            <field name="as_type">NIT</field>
+        </record>
+        <record id="enpoint_siat_20" model="as.siat.endpoint"> 
+            <field name="name">/ahorasoft/v1/consultacliente</field>
+            <field name="as_type">Consultar Cliente</field>
+        </record>
+        <record id="enpoint_siat_22" model="as.siat.endpoint"> 
+            <field name="name">/ahorasoft/v1/verificacomunicacion</field>
+            <field name="as_type">Verifica Comunicación</field>
+        </record>
+        <record id="enpoint_siat_23" model="as.siat.endpoint"> 
+            <field name="name">/ahorasoft/v1/consultafactura</field>
+            <field name="as_type">Factura Consulta</field>
+        </record>
+        <record id="enpoint_siat_24" model="as.siat.endpoint"> 
+            <field name="name">/ahorasoft/v1/facturacomputarizada/cancelarfacturacuf</field>
+            <field name="as_type">Factura Cancelar</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_order_form_change_button1_pagos" model="ir.ui.view">
+        <field name="name">sale.order.form.change_button</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_view_invoice']" position="after">
+                <button type="object" name="stat_pagos" class="oe_stat_button" icon="fa-money">
+                    <field name="as_pagado" widget="statinfo" />
+                </button>
+                <button type="object" name="stat_saldo" class="oe_stat_button" icon="fa-usd">
+                    <field name="as_saldo" widget="statinfo" />
+                </button>
+            </xpath>
+            <xpath expr="//button[@name='action_view_invoice']" position="before">
+                <button type="object" name="action_view_payment" class="oe_stat_button" icon="fa-usd">
+                    <field name="payment_count" widget="statinfo" string="Payments" />
+                </button>
+            </xpath>
+            <xpath expr="//field[@name='amount_total']" position="after">
+                <field name="as_saldo_sale" widget='monetary' options="{'currency_field': 'currency_id'}" />
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="as_type_docu" invisible="True"/>
+            </xpath>
+            <xpath expr="//field[@name='currency_id']" position="after">
+                <!-- <field name="as_porcentaje" attrs="{'invisible': [('as_type_docu', '!=', 'Factura-Venta')]}"/> -->
+                <field name="as_porcentaje" invisible="True"/>
+            </xpath>
+            <xpath expr="//group[@name='note_group']" position="replace">
+                <group name="note_group" col="6" class="mt-2 mt-md-0">
+                    <group colspan="4">
+                        <field name="note" nolabel="1" placeholder="Terms and conditions..."/>
+                    </group>
+                    <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+                        <field name="amount_untaxed" invisible="True"/>
+                        <field name="amount_tax" invisible="True"/>
+                        <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                            <label for="amount_total" />
+                        </div>
+                        <field name="amount_total" nolabel="1" class="oe_subtotal_footer_separator" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                    </group>
+                    <div class="oe_clear"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="as_sale_view_sale_order_form" model="ir.ui.view">
+        <field name="name">as.sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="sale.view_order_tree" />
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='amount_total']" position="after">
+                <field name="as_pagado" sum="total" />
+                <field name="as_saldo" sum="total" />
+            </xpath>
+
+        </field>
+    </record>
+    <record id="action_update_sale_open" model="ir.actions.server">
+            <field name="name">Abrir para Facturar</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="binding_model_id" ref="sale.model_sale_order"/>
+            <field name="binding_view_types">form</field>
+            <field name="state">code</field>
+            <field name="code">if records:
+                action = records.as_open_form()
+            </field>
+        </record>
+</odoo>

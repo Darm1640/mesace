@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_purchase_warehouse_view" model="ir.ui.view">
+            <field name="name">as.warehouse.order.import.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form" />
+            <field name="type">form</field>
+            <field name="priority" eval="40" />
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='button_cancel']" position="replace">
+                    <button name="button_return_compra" string="Devolver Stock" type="object" states="draft,sent,purchase,done"
+                        confirm="Se reversara el stock la compra.
+						Esta seguro que desea realizar la acción?" groups="purchase.group_purchase_manager" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

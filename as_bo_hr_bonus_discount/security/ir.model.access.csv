@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_as_bonus_reason,as_bonus_reason,model_as_bonus_reason,stock.group_stock_user,1,1,1,1
+access_as_employee_bonus,as_employee_bonus,model_as_employee_bonus,stock.group_stock_user,1,1,1,1
+access_as_generate_bonus_discount,as_generate_bonus_discount,model_as_generate_bonus_discount,stock.group_stock_user,1,1,1,1
+access_as_asignar_bonus_discount,as_asignar_bonus_discount,model_as_asignar_bonus_discount,stock.group_stock_user,1,1,1,1
+access_as_bonus_discount_line,as_bonus_discount_line,model_as_bonus_discount_line,stock.group_stock_user,1,1,1,1
+access_as_hr_employees,as_hr_employees,model_as_hr_employees,stock.group_stock_user,1,1,1,1
+access_as_hr_employees_line,as_hr_employees_line,model_as_hr_employees_line,stock.group_stock_user,1,1,1,1
+access_as_payment_bonus,as_payment_bonus,model_as_payment_bonus,stock.group_stock_user,1,1,1,1

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_agroup_invoice_values_tree" model="ir.ui.view">
+            <field name="name">Agrupador Catálogos Códigos</field>
+            <field name="model">as.siat.group</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="as_endpoint_name" />
+                    <field name="as_index" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="as_agroup_invoice_values_form" model="ir.ui.view">
+            <field name="name">Agrupador Catálogos Códigos</field>
+            <field name="model">as.siat.group</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="as_endpoint_name" />
+                            <field name="as_index" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="as_agroup_invoice_values_action" model="ir.actions.act_window">
+            <field name="name">Agrupador Catálogos Códigos</field>
+            <field name="res_model">as.siat.group</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="as_agroup_invoice_values_tree" />
+        </record>
+
+        <record id="action_update_catalogos" model="ir.actions.server">
+            <field name="name">Generador de Catalogos</field>
+            <field name="model_id" ref="as_bo_invoice_client.model_as_siat_group"/>
+            <field name="binding_model_id" ref="as_bo_invoice_client.model_as_siat_group"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">if records:
+                action = records.action_register_catalogos()
+            </field>
+        </record>
+        
+        <menuitem id="as_agroup_invoice_values_menu" action="as_agroup_invoice_values_action"
+            parent="as_bo_invoice_client.as_invoice_bolivia_menu" name="Agrupador de Catálogos" sequence="1"
+            groups="account.group_account_manager" />
+
+        <record id="as_invoice_values_tree" model="ir.ui.view">
+            <field name="name">Catálogos Códigos</field>
+            <field name="model">as.siat.catalogos</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="as_group" />
+                    <field name="as_code" />
+                    <field name="as_actividad" />
+                    <field name="as_respuesta" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="as_invoice_values_form" model="ir.ui.view">
+            <field name="name">Catálogos Códigos</field>
+            <field name="model">as.siat.catalogos</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                        <field name="name" />
+                        <field name="as_group" />
+                        <field name="as_code" />
+                        <field name="as_actividad" />
+                        <field name="as_respuesta" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="as_invoice_values_action" model="ir.actions.act_window">
+            <field name="name">Catálogos Códigos</field>
+            <field name="res_model">as.siat.catalogos</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="as_invoice_values_tree" />
+        </record>
+
+        <menuitem id="as_invoice_values_menu" action="as_invoice_values_action"
+            parent="as_bo_invoice_client.as_invoice_bolivia_menu" name="Catálogos de Códigos" sequence="2"
+            groups="account.group_account_manager" />
+
+    </data>
+</odoo>

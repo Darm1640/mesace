@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_periodo_view" model="ir.ui.view">
+            <field name="name">as.hr.periodo.view</field>
+            <field name="model">as.hr.periodo</field>
+            <field name="arch" type="xml">
+                <form string="Periodos Nacional">
+                    <sheet>
+                        <div>
+                            
+
+                            <group col="2" string="Período">
+                                <field name="as_date_from" />
+                                <field name="as_date_to" />
+                                <field name="as_disponible" />
+                                <field name="as_usados" />
+                                <field name="as_saldo" />
+                            </group>
+
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="hr_periodo_tree" model="ir.ui.view">
+            <field name="name">as.hr.periodo.tree</field>
+            <field name="model">as.hr.periodo</field>
+            <field name="arch" type="xml">
+                <!-- <tree string="Bancos" editable="bottom"> -->
+                <tree string="Periodos">
+                <field name="as_date_from" />
+                                <field name="as_date_to" />
+                                <field name="as_disponible" />
+                                <field name="as_usados" />
+                                <field name="as_saldo" />
+                </tree>
+            </field>
+        </record>
+
+        <act_window id="hr_periodo_action" 
+        name="Periodos" 
+        res_model="as.hr.periodo" 
+        view_mode="tree,form" />
+
+     
+    </data>
+</odoo>

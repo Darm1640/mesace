@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_purchase_setting_view" model="ir.ui.view">
+            <field name="name">as.res.user.form</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="purchase.res_config_settings_view_form_purchase" />
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='purchase_setting_container']" position="inside">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="as_ingreso_confirmado" />
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="as_ingreso_confirmado" />
+                            <div class="text-muted">
+                                Dejara crear factura si los productos fueron ingresados al almacen
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="as_facturas_confirmadas" /><br/>
+                            <field name="as_facturas_confirmadas" />
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="tipo_factura_defecto" /><br/>
+                            <field name="tipo_factura_defecto" options="{'no_create': True,'no_open': True}" />
+                        </div>
+                    </div>
+                    <!-- <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="group_escanner_codigo_qr" options="{'no_create': True,'no_open': True}" />
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="group_escanner_codigo_qr" />
+                            <div class="text-muted">
+                                Habilita plan de pagos visual en el formulario de Facturas de proveedores
+                            </div>
+                        </div>
+                    </div> -->
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

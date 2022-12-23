@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>  
+
+     
+<data>
+        <!-- <record id="as_boton_prefactura" model="ir.ui.view">
+            <field name="name">as.boton.reparado</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//form/header" position="inside">
+                    <button name="action_prefactura" string="GENERAR PREFACTURA" type="object" class="oe_highlight" states="draft"/>
+                </xpath>
+               
+            </field>
+        </record> -->
+        <report
+        id="as_reporte_prefactura"
+        string="Prefactura PDF"
+        model="account.move"
+        report_type="qweb-pdf"
+        name="as_spectrocom_sales.as_reporte_prefactura_pdf"
+        file="as_spectrocom_sales.as_reporte_prefactura_pdf"
+        menu="True"
+        print_report_name = "(str(object.as_escritura_prefactura)+'.pdf')"
+      />
+      <record id="as_orden_trabajo" model="report.paperformat">
+        <field name="name">Reporte de existencias PDF</field>
+        <field name="default" eval="True" />
+        <field name="format">custom</field>
+        <field name="page_height">278</field>
+        <field name="page_width">214</field>
+        <field name="margin_top">0</field>
+        <field name="margin_bottom">40</field>
+        <field name="margin_left">4</field>
+        <field name="margin_right">4</field>
+        <field name="orientation">Portrait</field>
+        <field name="header_spacing">0</field>
+        <field name="report_ids" eval="[(4, ref('as_spectrocom_sales.as_reporte_prefactura'))]"/>
+      </record> 
+    </data>     
+</odoo>

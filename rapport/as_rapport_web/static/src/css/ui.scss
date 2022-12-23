@@ -1,0 +1,41 @@
+// Shared with web client and login screen
+.o_home_menu_background {
+    background: url(/as_rapport_hr/static/img/rapport-odoo.jpg),
+        linear-gradient(to right bottom, #77717e, #c9a8a9);
+    background-size: 100% 100%;
+}
+
+.o_class_negrilla{
+    font-weight: bold;
+}
+.o_class_rojo{
+    background: red;
+    color: white;
+}
+.o_class_azul{
+    background: #1E90FF;
+    color: white;
+}
+.o_class_gris{
+    background: #808080;
+    color: white;
+}
+.o_class_purpura{
+    background: #800080;
+    color: white;
+}
+.o_class_amarillo{
+    background: #FFD700;
+    color: white;
+
+}
+.o_class_verde{
+    background: green;
+    color: white;
+
+}
+.o_class_marron{
+    background:#B8860B;
+    color: white;
+
+}

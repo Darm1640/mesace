@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="as_template_project_email" model="mail.template">
+            <field name="name">PROYECTO: notificaciones de proyectos con diferencia</field>
+            <field name="model_id" ref="project.model_project_task" />
+            <field name="subject">Proyecto Pendiente: Ref(${object.name})</field>
+            <field name="email_from">${object.company_id.partner_id.email}</field>
+            <field name="email_to">${object.partner_id.email}</field>
+            <field name="body_html" type="html">
+                <div>
+                    Estimado(s) usuario<br />
+                    Proyecto SO: <b>${object.as_codigo}</b>, tarea <b><a
+                            href='${website_url}/web#id=${object.id}&amp;action=500&amp;active_id=${object.id}&amp;model=project.task&amp;view_type=form&amp;cids=${object.company_id.id}&amp;menu_id=340'>${object.name}</a></b>
+                    <br />
+                    tiene cargo de cuenta <b>${object.as_diff} Bs.</b><br />
+
+                    Gracias!!
+                </div>
+            </field>
+        </record>
+        <record id="as_template_project_to_approval_email" model="mail.template">
+            <field name="name">PROYECTO: solicitud de aprobación de tareas</field>
+            <field name="model_id" ref="project.model_project_task" />
+            <field name="subject">Solicitud de aprobación de viatico Ref(${object.name})</field>
+            <field name="email_from">${object.company_id.partner_id.email}</field>
+            <field name="email_to"></field>
+            <field name="body_html" type="html">
+                <div>
+                    Estimado(s) usuario<br />
+                    Tienes el Viatico del Proyecto <b><a
+                            href='${website_url}/web#id=${object.id}&amp;action=500&amp;active_id=${object.id}&amp;model=project.task&amp;view_type=form&amp;cids=${object.company_id.id}&amp;menu_id=340'>${object.name}
+                            ${object.as_codigo}</a></b>
+                    <br />
+                    que espera tu aprobacion.<br />
+
+                    Gracias!!
+                </div>
+            </field>
+        </record>
+        <record id="as_template_project_approval_email" model="mail.template">
+            <field name="name">PROYECTO: solicitud de aprobación de tareas</field>
+            <field name="model_id" ref="project.model_project_task" />
+            <field name="subject">Aprobación de viatico de proyecto Ref(${object.name})</field>
+            <field name="email_from">${object.company_id.partner_id.email}</field>
+            <field name="email_to"></field>
+            <field name="body_html" type="html">
+                <div>
+                    Estimado(s) usuario<br />
+                    El proyecto Fue aprobado <b><a
+                            href='${website_url}/web#id=${object.id}&amp;action=500&amp;active_id=${object.id}&amp;model=project.task&amp;view_type=form&amp;cids=${object.company_id.id}&amp;menu_id=340'>${object.name}
+                            ${object.as_codigo}</a></b>
+                    <br />
+                    satisfactoriamente.<br />
+
+                    Gracias!!
+                </div>
+            </field>
+        </record>
+        <record id="email_notifications_cron_project" model="ir.cron">
+            <field name="name">Proyecto: notificaciones de proyecto</field>
+            <field name="model_id" ref="project.model_project_task" />
+            <field name="state">code</field>
+            <field name="code">model.as_get_notification()</field>
+            <field name="interval_number">10</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+        </record>
+        <record id="as_jefe_almacen4" model="res.users.role">
+            <field name="name">Tesoreria</field>
+        </record>
+
+        <record id="as_template_pick_email_gestion_viajes" model="mail.template">
+            <field name="name">DESPACHO DE GESTION DE VIAJES: Correo enviado a encargados de almacen</field>
+            <field name="model_id" ref="as_spectrocom_project.model_as_gestion_viaje" />
+            <field name="subject">APROBAR LA SOLICITUD DE VIAJE DE: Ref(${object.name})</field>
+            <field name="email_from">${object.company_id.partner_id.email}</field>
+            <field name="email_to">alex.aviles@espectrocom.com, jean.camara@espectrocom.com, erick.gamio@espectrocom.com, victor.abrego@espectrocom.com</field>
+            <field name="email_cc">oscar.morant@espectrocom.com, ronald.quiroga@espectrocom.com</field>
+            <field name="body_html" type="html">
+                <div>
+                    Usted,<br/>
+                    tiene una SOLICITUD DE VIAJE por Aprobar
+                    <br/>
+                    <b><a href='${website_url}/web#id=${object.id}&amp;action=1247&amp;active_id=${object.id}&amp;model=as.gestion.viaje&amp;view_type=form&amp;cids=${object.company_id.id}&amp;menu_id=620'>${object.name}</a></b><br/>
+                    Aprobar a la brevedad posible. Gracias,
+                </div>
+            </field>
+        </record>
+
+    </data>
+</odoo>

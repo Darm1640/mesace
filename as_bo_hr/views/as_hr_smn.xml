@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_smn_view" model="ir.ui.view">
+            <field name="name">as.hr.smn.view</field>
+            <field name="model">as.hr.smn</field>
+            <field name="arch" type="xml">
+                <form string="Sueldo minimo Nacional">
+                    <sheet>
+                        <div>
+                            <field name="name" />
+
+                            <group col="2" string="Período">
+                                <field name="as_fecha" />
+                                <field name="amount" />
+                                <field name="porcentaje" />
+                                <field name="state" />
+                            </group>
+
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="hr_smn_tree" model="ir.ui.view">
+            <field name="name">as.hr.smn.tree</field>
+            <field name="model">as.hr.smn</field>
+            <field name="arch" type="xml">
+                <!-- <tree string="Bancos" editable="bottom"> -->
+                <tree string="Sueldo minimo">
+                    <field name="name" />
+                    <field name="as_fecha" />
+                    <field name="amount" />
+                    <field name="porcentaje" />
+                     <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <act_window id="hr_smn_action" 
+        name="Sueldo minimo" 
+        res_model="as.hr.smn" 
+        view_mode="tree,form" />
+
+     
+    </data>
+</odoo>

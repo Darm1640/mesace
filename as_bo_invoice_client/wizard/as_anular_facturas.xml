@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <record id="as_cancelar_facturas2" model="ir.ui.view">
+        <field name="name">Cancelar Facturas del SIAT</field>
+        <field name="model">as.anular.factura</field>
+        <field name="arch" type="xml">
+            <form string="Cancelar Facturas del SIAT">
+                <group col="4">
+                    
+                    <field name="as_fiscal_document_code" />
+                    <field name="as_sector_type" />
+                    <field name="as_emission_type" />
+                    <field name="as_codigo_sistema" />
+                    <field name="as_branch_office" />
+                    <field name="as_pdv_id" />
+                    <field name="as_motivo_anulacion" />
+                    <field name="as_cufd" />
+                    <field name="as_cuf" />
+                </group>
+                <footer>
+                    <button name="get_sale_process" type="object" default_focus="1" string="Procesar"
+                        context="{'xlsx_export':1}"  class="oe_highlight" />
+                    or
+                    <button string="Cancelar" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="as_cancelar_facturas" model="ir.actions.act_window">
+        <field name="name">Cancelar Facturas del SIAT</field>
+        <field name="res_model">as.anular.factura</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="as_cancelar_facturas2" />
+        <field name="target">new</field>
+    </record>
+        <menuitem id="as_cancelar_facturasu" action="as_cancelar_facturas" parent="as_bo_invoice_client.as_invoice_bolivia_menu" name="Cancelar Facturas SIAT" sequence="10" groups="account.group_account_manager"/>  
+    </data>
+
+</odoo>

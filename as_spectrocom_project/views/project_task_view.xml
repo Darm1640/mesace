@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_task_form2_inherit" model="ir.ui.view">
+        <field name="name">project.task.form</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='oe_button_box']" position="inside">
+                <button name="action_hr_expense" type="object" class="oe_stat_button" icon="fa-money">
+                    <field name="expense_count" widget="statinfo" string="Gastos" />
+                </button>
+                <button name="action_request_expense" type="object" class="oe_stat_button" icon="fa-briefcase">
+                    <field name="request_count" widget="statinfo" string="Solicitudes" />
+                </button>
+                <button name="action_picking_expense" type="object" class="oe_stat_button" icon="fa-bus">
+                    <field name="picking_count" widget="statinfo" string="Movimientos" />
+                </button>
+                <button name="action_purchase_order" type="object" class="oe_stat_button" icon="fa-table">
+                    <field name="as_purchase_count" widget="statinfo" string="Compras" />
+                </button>
+                <button name="action_budget" type="object" class="oe_stat_button" icon="fa-table">
+                    <field name="as_budget_count" widget="statinfo" string="Budget" />
+                </button>
+                <button name="action_gestion_viaje" type="object" class="oe_stat_button" icon="fa-table">
+                    <field name="as_gestion_viaje_count" widget="statinfo" string="Gestion de viajes" />
+                </button>
+            </xpath>
+            <xpath expr="//button[@name='action_assign_to_me']" position="after">
+                <button name="generate_request_material" type="object" string="Solicitud Materiales" />
+                <button name="generate_request_purchase" type="object" string="Crear Compra" />
+            </xpath>
+            <xpath expr="//field[@name='partner_phone']" position="after">
+                <field name="picking_type_id" />
+                <field name="as_diff" />
+            </xpath>
+            <xpath expr="//field[@name='remaining_hours']" position="after">
+                <field name="as_employee_mensual" />
+                <field name="as_employee_event" />
+            </xpath>
+            <xpath expr="//field[@name='project_id']" position="after">
+                <field name="as_codigo" />
+                <field name="as_nro_tarea" readonly = "True"/>
+            </xpath>
+            <xpath expr="//field[@name='recurring_task']" position="after">
+                <field name="as_presupuesto" />
+                <field name="as_tipo_presupuesto" widget="radio" />
+                <field name="as_frecuencia" attrs="{'invisible': [('as_tipo_presupuesto',  '=', 'Fijo')]}" />
+                <!-- <field name="as_monto" attrs="{'invisible': [('as_tipo_presupuesto',  '=', 'Frecuencia')]}" /> -->
+                <button name="button_presupuesto" string="Presupuesto" type="object" class="oe_highlight"
+                    attrs="{'invisible': [('as_tipo_presupuesto',  '=', 'Fijo')]}" />
+                <button name="button_gestion_viajes" string="Crear gestion de viajes" type="object"
+                    class="oe_highlight" />
+            </xpath>
+            <xpath expr="//page[@name='extra_info']" position="after">
+                <page name="firma" string="Firmas">
+                    <group>
+                        <field name="as_responsable"/>
+                        <field name="as_worker_signature" widget="signature" />
+                        <field name="as_cliente"/>
+                        <field name="as_customer_signature" widget="signature" />
+                        <field name="as_fiscal"/>
+                        <field name="as_fiscal_signature" widget="signature" />
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+    <record id="agregar_field_viajeros" model="ir.ui.view">
+        <field name="name">project.task.form_viajero</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2" />
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='sale_line_id']" position="after">
+                <field name="as_viajeros" widget="many2many_tags" />
+            </xpath>
+
+        </field>
+    </record>
+    <record id="agregar_field_ot_sales" model="ir.ui.view">
+        <field name="name">project.task.form.ot</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2" />
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='as_viajeros']" position="after">
+                <field name="as_ot" readonly="True" />
+                <field name="as_analytic_account_id" />
+            </xpath>
+
+        </field>
+    </record>
+    <record id="as_proyect_task_type" model="ir.ui.view">
+        <field name="name">project.task.type.form.ot</field>
+        <field name="model">project.task.type</field>
+        <field name="inherit_id" ref="project.task_type_edit" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='sequence']" position="after">
+                <field name="as_repartir" />
+                <field name="as_repartir_nuevo" />
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

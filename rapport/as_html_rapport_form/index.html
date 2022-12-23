@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>RAPPORT</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg bg-light text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+
+            <a class="navbar-brand" href="#page-top"><img src="assets/img/logo.png" width="150px" alt="..."></a>
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse bg-light" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="#contact">Formulario</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Avatar Image-->
+            <img class="masthead-avatar mb-5" src="assets/img/avataaars.png" alt="..." />
+            <!-- Masthead Heading-->
+            <h1 class="masthead-heading text-uppercase mb-0">Encuesta Demo</h1>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Masthead Subheading-->
+
+            <p id="as_message" class="masthead-subheading font-weight-light mb-0">Aqui viene el mensaje Inicio</p>
+        </div>
+    </header>
+    <!-- Portfolio Section-->
+
+    <!-- Contact Section-->
+    <section class="page-section" id="contact">
+        <div class="container">
+            <!-- Contact Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Formulario Demo</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Contact Section Form-->
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-7">
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- * * SB Forms Contact Form * *-->
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- This form is pre-integrated with SB Forms.-->
+                    <!-- To make this form functional, sign up at-->
+                    <!-- https://startbootstrap.com/solution/contact-forms-->
+                    <!-- to get an API token!-->
+                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                        <!-- Name input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="as_cliente" name="as_cliente" type="text"
+                                placeholder="Ingresa Nombre..." data-sb-validations="required" required="required" />
+                            <label for="as_cliente">Nombre</label>
+                            <div class="invalid-feedback" data-sb-feedback="name:required">Este campo es Requerido.
+                            </div>
+                        </div>
+                        <!-- Email address input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="as_email" name="as_email" type="email"
+                                placeholder="name@example.com" data-sb-validations="required,email"
+                                required="required" />
+                            <label for="as_email">Correo Electrónico</label>
+                            <div class="invalid-feedback" data-sb-feedback="email:required">Email es Requerido.</div>
+                            <div class="invalid-feedback" data-sb-feedback="email:email">Email no es valido.</div>
+                        </div>
+                        <!-- Phone number input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="as_mobile" name="as_mobile" type="tel"
+                                placeholder="(123) 456-7890" data-sb-validations="required" required="required" />
+                            <label for="as_mobile">Numero Célular</label>
+                            <div class="invalid-feedback" data-sb-feedback="phone:required">Célular es requerido.</div>
+                        </div>
+                        <!-- Phone number input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="as_empresa" name="as_empresa" type="text"
+                                placeholder="RAPPORT" data-sb-validations="required" required="required" />
+                            <label for="as_empresa">Empresa</label>
+                            <div class="invalid-feedback" data-sb-feedback="phone:required">Empresa es requerido.</div>
+                        </div>
+                        <!-- Phone number input-->
+                        <div class="row">
+                            <div class="col-md-3 col-xl-3 col-xs-3 col-sm-3 col-lg-3">
+                                <center><b style="text-align:center">Compromiso</b></center>
+                                <hr />
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_compromiso" id="as_compromiso_10" value="10">
+                                    <label class="form-check-label" for="as_compromiso_10">
+                                        NINGUNO/A</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_compromiso" id="as_compromiso_20" value="20">
+                                    <label class="form-check-label" for="as_compromiso_20">
+                                        DEMASIADO BAJO</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_compromiso" id="as_compromiso_30" value="30">
+                                    <label class="form-check-label" for="as_compromiso_30">
+                                        UN POCO BAJO</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_compromiso" id="as_compromiso_40" value="40">
+                                    <label class="form-check-label" for="as_compromiso_40">
+                                        BAJO</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_compromiso" id="as_compromiso_50" value="50">
+                                    <label class="form-check-label" for="as_compromiso_50">
+                                        MEDIO/BAJO</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_compromiso" id="as_compromiso_60" value="60">
+                                    <label class="form-check-label" for="as_compromiso_60">
+                                        MEDIO</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_compromiso" id="as_compromiso_70" value="70">
+                                    <label class="form-check-label" for="as_compromiso_70">
+                                        MEDIO/ALTO</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_compromiso" id="as_compromiso_80" value="80">
+                                    <label class="form-check-label" for="as_compromiso_80">
+                                        ALTO</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_compromiso" id="as_compromiso_90" value="90">
+                                    <label class="form-check-label" for="as_compromiso_90">
+                                        MUY ALTO</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_compromiso" id="as_compromiso_100" value="100">
+                                    <label class="form-check-label" for="as_compromiso_100">
+                                        DESTACADO</label>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3 col-xl-3 col-xs-3 col-sm-3 col-lg-3">
+
+                                <center> <b style="text-align:center">Habilidades</b></center>
+                                <hr />
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_habilidades" id="as_habilidades_10" value="10">
+                                    <label class="form-check-label" for="as_habilidades_10">
+                                        NINGUNO/A</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_habilidades" id="as_habilidades_20" value="20">
+                                    <label class="form-check-label" for="as_habilidades_20">
+                                        DEMASIADO BAJO</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_habilidades" id="as_habilidades_30" value="30">
+                                    <label class="form-check-label" for="as_habilidades_30">
+                                        UN UN POCO BAJO</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_habilidades" id="as_habilidades_40" value="40">
+                                    <label class="form-check-label" for="as_habilidades_40">BAJO</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_habilidades" id="as_habilidades_50" value="50">
+                                    <label class="form-check-label" for="as_habilidades_50">
+                                        MEDIO/BAJO</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_habilidades" id="as_habilidades_60" value="60">
+                                    <label class="form-check-label" for="as_habilidades_60">
+                                        MEDIO</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_habilidades" id="as_habilidades_70" value="70">
+                                    <label class="form-check-label" for="as_habilidades_70">
+                                        MEDIO/ALTO</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_habilidades" id="as_habilidades_80" value="80">
+                                    <label class="form-check-label" for="as_habilidades_80">ALTO</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_habilidades" id="as_habilidades_90" value="90">
+                                    <label class="form-check-label" for="as_habilidades_90">
+                                        MUY ALTO</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_habilidades" id="as_habilidades_100" value="100">
+                                    <label class="form-check-label" for="as_habilidades_100">
+                                        DESTACADO</label>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3 col-xl-3 col-xs-3 col-sm-3 col-lg-3">
+                                <center><b style="text-align:center">Antiguedad</b></center>
+                                <hr />
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_antiguedad" id="as_antiguedad_5" value="5">
+                                    <label class="form-check-label" for="as_antiguedad_5">
+                                        MENOS 1 A 2</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_antiguedad" id="as_antiguedad_90" value="90">
+                                    <label class="form-check-label" for="as_antiguedad_90">
+                                        2.1 A 4</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_antiguedad" id="as_antiguedad_100" value="100">
+                                    <label class="form-check-label" for="as_antiguedad_100">
+                                        4.1 A 5</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_antiguedad" id="as_antiguedad_80" value="80">
+                                    <label class="form-check-label" for="as_antiguedad_80">5.1 A 6</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_antiguedad" id="as_antiguedad_70" value="70">
+                                    <label class="form-check-label" for="as_antiguedad_70">
+                                        6.1 A 6.5</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_antiguedad" id="as_antiguedad_60" value="60">
+                                    <label class="form-check-label" for="as_antiguedad_60">
+                                        6.6 A 7</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_antiguedad" id="as_antiguedad_50" value="50">
+                                    <label class="form-check-label" for="as_antiguedad_50">7.1 A 7.5</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_antiguedad" id="as_antiguedad_40" value="40">
+                                    <label class="form-check-label" for="as_antiguedad_40">
+                                        7.6 A 8</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_antiguedad" id="as_antiguedad_30" value="30">
+                                    <label class="form-check-label" for="as_antiguedad_30">
+                                        8.1 A 10</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_antiguedad" id="as_antiguedad_20" value="20">
+                                    <label class="form-check-label" for="as_antiguedad_20">
+                                        10.1 A 13</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required"
+                                        name="as_antiguedad" id="as_antiguedad_10" value="10">
+                                    <label class="form-check-label" for="as_antiguedad_10">
+                                        13.1 O MAS</label>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3 col-xl-3 col-xs-3 col-sm-3 col-lg-3">
+
+                                <center><b style="text-align:center">Edad</b></center>
+                                <hr />
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required" name="as_edad"
+                                        id="as_edad_10" value="10">
+                                    <label class="form-check-label" for="as_edad_10">
+                                        60 O MAS</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required" name="as_edad"
+                                        id="as_edad_20" value="20">
+                                    <label class="form-check-label" for="as_edad_20">
+                                        56 Y 59</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required" name="as_edad"
+                                        id="as_edad_30" value="30">
+                                    <label class="form-check-label" for="as_edad_30">
+                                        52 A 55</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required" name="as_edad"
+                                        id="as_edad_40" value="40">
+                                    <label class="form-check-label" for="as_edad_40">
+                                        49 Y 51</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required" name="as_edad"
+                                        id="as_edad_50" value="50">
+                                    <label class="form-check-label" for="as_edad_50">
+                                        46 Y 48</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required" name="as_edad"
+                                        id="as_edad_60" value="60">
+                                    <label class="form-check-label" for="as_edad_60">
+                                        43 Y 45</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required" name="as_edad"
+                                        id="as_edad_70" value="70">
+                                    <label class="form-check-label" for="as_edad_70">
+                                        40 Y 42</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required" name="as_edad"
+                                        id="as_edad_80" value="80">
+                                    <label class="form-check-label" for="as_edad_80">
+                                        38 y 39</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required" name="as_edad"
+                                        id="as_edad_90" value="90">
+                                    <label class="form-check-label" for="as_edad_90">
+                                        34 y 37</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required="required" name="as_edad"
+                                        id="as_edad_100" value="100">
+                                    <label class="form-check-label" for="as_edad_100">
+                                        27 y 33</label>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+
+
+                        <hr />
+
+
+
+                        <div class="d-none" id="submitSuccessMessage">
+                            <div class="text-center mb-3">
+                                <div class="fw-bolder">Form submission successful!</div>
+                                To activate this form, sign up at
+                                <br />
+                                <a
+                                    href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                            </div>
+                        </div>
+                        <!-- Submit error message-->
+                        <!---->
+                        <!-- This is what your users will see when there is-->
+                        <!-- an error submitting the form-->
+                        <div class="d-none" id="submitErrorMessage">
+                            <div class="text-center text-danger mb-3">Error sending message!</div>
+                        </div>
+                        <!-- Submit Button-->
+                        <center> <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Enviar</button>
+                        </center>
+                    </form>
+                    <div id="as_mensaje_fin">
+                        <p id="as_message_end" class="masthead-subheading font-weight-light mb-0">Aqui viene el mensaje
+                            bla bla bla</p>
+                        <p id="as_message_error" style="color:red" class="masthead-subheading font-weight-light mb-0">
+                            Ocurrio un error al serializar</p>
+                        <br />
+                        <br />
+                        <center> <button class="btn btn-primary" id="as_formulario" type="button">Volver al
+                                formulario</button> </center>
+                        <br />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Location-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Direccion</h4>
+                    <p class="lead mb-0">
+                        Av. Apoquindo 6550 oficina 205,
+                        <br /> Las Condes, Región Metropolitana
+                    </p>
+                    <p class="lead mb-0">
+                        <i class="bi bi-envelope">
+                            <a href="contacto@rapport-chile.cl">contacto@rapport-chile.cl</a> .
+                        </i>
+                    </p>
+                </div>
+                <!-- Footer Social Icons-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Presentes en la red</h4>
+                    <a class="btn btn-outline-light btn-social mx-1" target="_blank"
+                        href="https://www.facebook.com/FacilitandoConciencias"><i
+                            class="fab fa-fw fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" target="_blank"
+                        href="https://www.instagram.com/rapportchile/"><i class="fab fa-fw fa-instagram"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" target="_blank"
+                        href="https://www.linkedin.com/company/rapport-chile/?viewAsMember=true"><i
+                            class="fab fa-fw fa-linkedin-in"></i></a>
+                </div>
+                <!-- Footer About Text-->
+                <div class="col-lg-4">
+                    <h4 class="text-uppercase mb-4 text-center">Contacto</h4>
+
+                    <div class="row">
+                        <div class="col-lg-5 text-center mb-5 mb-lg-0">
+                            <i class="bi-phone fs3 mb-6 ">
+                                <div>+56 9 5402 1314</div>
+                            </i>
+                        </div>
+                        <div class="col-lg-5 text-center mb-5 mb-lg-0">
+                            <i class="bi bi-whatsapp">
+                                <div>+56 9 9540 21314</div>
+                            </i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Copyright Section-->
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; rapport-chile.cl 2021</small></div>
+    </div>
+    <!-- Portfolio Modals-->
+
+    <!-- Bootstrap core JS-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <script src="js/as_odoo.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> -->
+</body>
+
+</html>

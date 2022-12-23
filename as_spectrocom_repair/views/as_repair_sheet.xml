@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_repair_sheet_tree" model="ir.ui.view">
+            <field name="name">Informe de Reparaciones</field>
+            <field name="model">as.repair.order.sheet</field>
+            <field name="arch" type="xml">
+                <tree string="Informe de Reparaciones">
+                    <field name="name" />
+                    <field name="as_partner_id" />
+                    <field name="as_cant" />
+                    <field name="as_secuencia_reparaciones" readonly="True"/>
+                    <field name="as_user_id" />
+                    <field name="as_date_recepcion" />
+                    <field name="as_location_id" />
+                    <field name="as_location_dest_id" />
+                    <field name="as_pricelist_id" />
+                    <field name="as_pricelist_service_id" />
+                    <field name="as_currency_id" />
+                </tree>
+            </field>
+        </record>
+        <record id="as_repair_sheet_form" model="ir.ui.view">
+            <field name="name">Informe de Reparaciones</field>
+            <field name="model">as.repair.order.sheet</field>
+            <field name="arch" type="xml">
+                <form string="Informe de Reparaciones">
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,done" />
+                        <button class="btn-primary" type="object" name="as_cotizacion_pieza"
+                            string="Crear Cotización Piezas" attrs="{'invisible':['|',('as_sale_piezas', '=', True),('state', '!=', 'confirmed')]}"/>
+                        <button class="btn-primary" type="object" name="as_cotizacion_servicio" string="Crear Cotización Servicios" attrs="{'invisible':['|',('as_sale_servicio', '=', True),('state', '!=', 'confirmed')]}"/>
+                        <button class="btn-primary" type="object" name="confirmate_sheet" states="draft" string="Confirmar" />
+                        <button class="btn-primary" type="object" name="reparate_sheet" states="confirmed" string="Reparar todo" />
+
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_sale_repair" type="object" class="oe_stat_button"
+                                icon="fa-shopping-basket" attrs="{'invisible':[('as_count_sale', '=', 0)]}">
+                                <field name="as_count_sale" widget="statinfo" string="Cotizaciones" />
+                            </button>
+                             <button name="compute_account_move" type="object" class="oe_stat_button"
+                                icon="fa-money" attrs="{'invisible':[('as_count_invoice', '=', 0)]}">
+                                <field name="as_count_invoice" widget="statinfo" string="Facturas" />
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <label class="oe_edit_only" for="name" string="Nombre de la Informe de Reparaciones" />
+                            <h1>
+                                <field name="name" placeholder="Titulo de la Informe" />
+                            </h1>
+                        </div>
+                        <group col="4">
+                            <field name="as_partner_id" />
+                            <field name="as_cant" />
+                            <field name="as_secuencia_reparaciones" readonly="True"/>
+                            <field name="as_user_id" />
+                            <field name="as_date_recepcion" />
+                            <field name="as_location_id" />
+                            <field name="as_location_dest_id" />
+                            <field name="as_pricelist_id"   attrs="{'invisible': [('state', '!=', 'confirmed')]}"/>
+                            <field name="as_pricelist_service_id"   attrs="{'invisible': [('state', '!=', 'confirmed')]}"/>
+                            <field name="as_currency_id" />
+                            <field name="as_reference" />
+                            <field name="as_sale_piezas" invisible="True"/>
+                            <field name="as_sale_servicio" invisible="True"/>
+                        </group>
+                        <field name="as_repair_line_ids" context="{
+                            'default_partner_id': as_partner_id,
+                            'default_location_id': as_location_id,
+                            'default_location_dest_id': as_location_dest_id,
+                            'default_as_in_report': True,
+                            }">
+                            <tree string="Lineas de Reparaciones">
+                                <field name="fecha_confirmar" />
+                                <field name="fecha_finalizar" />
+                                <field name="name" />
+                                <field name="company_id" invisible="True" />
+                                <field name="as_sheet_id" invisible="True" />
+                                <field name="product_id" />
+                                <field name="as_numero_serie" />
+                                <field name="amount_total" sum="total" />
+                                <field name="state" />
+                            </tree>
+                        </field>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="as_repair_order_submit_action_server" model="ir.actions.server">
+            <field name="name">Crear Reporte</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_repair_order" />
+            <field name="binding_model_id" ref="model_repair_order" />
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                action = records.action_submit_repair()
+            </field>
+        </record>
+
+        <record id="as_repair_sheets_action" model="ir.actions.act_window">
+            <field name="name">Informe de Reparaciones</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">as.repair.order.sheet</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="as_repair_sheet_tree" />
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Haga clic aquí para empezar a crear su primera Informe de Reparacion.
+                </p>
+            </field>
+        </record>
+        <menuitem id="as_menu_repair_sheets" parent="repair.menu_repair_order" action="as_repair_sheets_action"
+            sequence="2" />
+
+
+    </data>
+</odoo>

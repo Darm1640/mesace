@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="as_view_asset_depreciation_confirmation_wizard" model="ir.ui.view">
+        <field name="name">as.asset.depreciation.confirmation.wizard</field>
+        <field name="model">as.asset.depreciation.confirmation.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Compute Asset">
+                <div>
+                    <p>
+                     Gnerador de Asientos de Activos Fijos por Fecha
+                    </p> 
+                </div>
+                <group>
+                    <field name="date"/>
+                </group>
+                <footer>
+                    <button string="Generate Entries" name="asset_compute" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+         </field>
+    </record>
+
+    <record id="as_action_asset_depreciation_confirmation_wizard" model="ir.actions.act_window">
+        <field name="name">Generador de Asientos</field>
+        <field name="res_model">as.asset.depreciation.confirmation.wizard</field>
+        <!-- <field name="view_type">form</field> -->
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="as_view_asset_depreciation_confirmation_wizard"/>
+        <field name="target">new</field>
+        <field name="context">{'asset_type': 'purchase'}</field>
+        <field name="binding_model_id" ref="om_account_asset.model_account_asset_asset" />
+    </record>
+ 
+
+</odoo>

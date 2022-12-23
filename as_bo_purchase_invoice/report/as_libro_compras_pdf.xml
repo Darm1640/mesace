@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="as_pdf_report_libro_compras">
+        <t t-call="web.html_container">
+
+            <div class="header">
+                <style type="text/css">
+                    .header {
+                        margin: 0px;
+                        padding: 0px;
+                    }
+
+                    .cabecera {
+                        font-size: 7px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    .letra {
+                        font-size: 14px !important;
+                        margin: 0px;
+                    }
+
+                    .letra3 {
+                        font-size: 15px !important;
+                        margin: 0px;
+                        padding-left: 3px !important;
+                        padding-right: 3px !important;
+                    }
+
+                    .cabecera2 {
+                        font-size: 9px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    .columnasr {
+                        font-size: 12px;
+                        font-family: 'Arial' !important;
+                        margin-bottom: 10px;
+                    }
+
+                    .columnas2 {
+                        font-size: 9px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    h3 {
+                        font-family: 'Arial' !important;
+                        font-size: 14px;
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    td {
+                        font-family: 'Arial' !important;
+                        font-size: 12px;
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    h4 {
+                        font-family: 'Arial' !important;
+                        font-size: 12px;
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    span {
+                        font-family: 'Arial' !important;
+
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    body {
+                        font-family: 'Arial' !important;
+                        font-size: 10px;
+                    }
+
+                    hr {
+                        border-bottom: solid;
+                        border-width: 1pt border-top:0px !important;
+                        padding: 0px !important;
+                        margin: 0px !important;
+
+                    }
+
+                    tr.border_bottom td {
+                        border-bottom: 0.5pt solid #cccccc;
+                        margin-right: 3px;
+                        padding-right: 3px;
+                        font-size: 13px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    .borde1 {
+                        border-top: 1px solid grey;
+                        border-left: 1px solid grey;
+                        border-right: 1px solid grey;
+                        border-bottom: 1px solid grey;
+                        margin-bottom: 3px;
+
+                    }
+
+                    .borde1 thead tr td {
+                        padding-left: 5px;
+                        padding-right: 5px;
+
+                    }
+
+                    .borde2 {
+                        border-left: 1px solid grey;
+                        border-right: 1px solid grey;
+                        border-top: 1px solid grey;
+                        margin: 3px;
+                    }
+
+                    .titulo {
+                        font-size: 27px;
+                        padding-top: 40px;
+                        text-decoration-line: underline;
+                    }
+
+                    .titulo3 {
+                        font-size: 15px;
+                        padding-top: 40px;
+                        text-align: left;
+                    }
+
+                    .titulo2 {
+                        font-size: 25px;
+                        padding: 1px;
+                    }
+
+                    .letra0 {
+                        font-size: 11px;
+                    }
+
+                    .letra2 {
+                        font-size: 5px;
+                    }
+
+                    .letra5 {
+                        text-align: right;
+                        font-size: 5px;
+                    }
+
+
+                    .cuadro {
+                        border-left: 1px solid #000000 !important;
+                        padding-left: 4px !important;
+                        border-right: 1px solid #000000 !important;
+                        padding-right: 4px !important;
+                    }
+                </style>
+                <div class="col-12" style="text-align:center;" name='as_titulo'>
+
+                    <!-- <t t-foreach="lista_dosificaciones" t-as="suc" width="100%"> -->
+                    <br />
+                    <div class="row">
+                        <div class="col-xs-6">
+                            Nombre o Razon Social:
+                            <t t-esc="nombre_empresa" />
+                            <br />
+                            Sucursal:
+                            <t t-esc="sucursal" />
+                            <br />
+                            NIT:
+                            <t t-esc="vat" />
+                            <br />
+                            Direccion:
+                            <t t-esc="direccion1" />
+                        </div>
+                        <div class="col-xs-6">
+                            <h1>
+                                <center><strong>LIBRO DE COMPRAS</strong></center>
+                            </h1>
+
+                        </div>
+                    </div>
+                    <!-- </t> -->
+
+
+                </div>
+
+                <table width="100%" class="table table-borderless borde1">
+
+                </table>
+            </div>
+            <t t-call="web.internal_layout">
+
+                <div class="page" style="font-family: 'Arial' !important; ">
+                    <style type="text/css">
+                        body {
+                            font-family: 'Arial' !important;
+                            font-size: 10px;
+                        }
+
+                        h1 {
+                            font-size: 14px;
+                            margin: 1px !important;
+                            padding: 1px !important;
+                        }
+
+                        h2 {
+                            font-size: 12px;
+                            margin: 1px !important;
+                            padding: 1px !important;
+                        }
+
+                        .titulos {
+                            margin-right: auto;
+                            border-collapse: collapse;
+                            font-weight: bold;
+                            text-align: center;
+                            font-size: 9pt
+                        }
+
+                        .columnas {
+                            font-size: 8pt !important;
+                            font-weight: bold !important;
+                            border-collapse: collapse !important;
+                            border-bottom: solid !important;
+                            border-top: solid !important;
+                            border-width: 0.5pt !important
+                        }
+
+                        .header {
+                            margin: 0px;
+                            padding: 0px;
+                        }
+
+                        .datos {
+                            font-size: 8px;
+                            border-collapse: separate
+                        }
+
+                        .totales {
+                            font-size: 7pt;
+                            font-weight: bold;
+                            border-collapse: collapse;
+                            border-bottom: solid;
+                            border-top: solid;
+                            border-width: 0.5pt
+                        }
+                    </style>
+                    <table width="100%" class="table" style='line-height : 12px !important;'>
+                        <thead>
+                            <tr>
+                                <!-- <th style="text-align:center;padding-right:3px" width="8%">ESPECIFICACION</th> -->
+                                <th style="text-align:center;padding-right:3px" width="8%">No</th>
+                                <th style="text-align:center;padding-right:3px" width="8%">FECHA DE LA FACTURA O DUI
+                                </th>
+                                <th style="text-align:center;padding-right:3px" width="8%">NIT PROVEEDOR</th>
+                                <th style="text-align:center;padding-right:3px" width="8%">NOMBRE O RAZON SOCIAL</th>
+                                <th style="text-align:center;padding-right:3px" width="8%">No DE LA FACTURA</th>
+                                <th style="text-align:center;padding-right:3px" width="8%">No DE DUI</th>
+                                <th style="text-align:center;padding-right:3px" width="8%">No DE AUTORIZACION</th>
+                                <th style="text-align:center;padding-right:3px" width="8%">IMPORTE TOTAL DE LA COMPRA
+                                </th>
+                                <th style="text-align:center;padding-right:3px" width="8%">IMPORTE NO SUJETO A CREDITO
+                                    FISCAL</th>
+                                <!-- <th style="text-align:center;padding-right:3px" width="8%">VENTAS GRAVADAS A TASA CERO</th> -->
+                                <th style="text-align:center;padding-right:3px" width="8%">SUBTOTAL</th>
+                                <th style="text-align:center;padding-right:3px" width="8%">DESCUENTOS, BONIFICACIONES Y REBAJAS OBTENIDAS</th>
+                                <th style="text-align:center;padding-right:3px" width="8%">IMPORTE BASE PARA CREDITO
+                                    FISCAL</th>
+                                <th style="text-align:center;padding-right:3px" width="8%">CREDITO FISCAL</th>
+                                <th style="text-align:center;padding-right:3px" width="8%">CODIGO DE CONTROL</th>
+                                <!-- <th style="text-align:center;padding-right:3px" width="8%">TIPO DE FACTURA</th> -->
+
+                            </tr>
+                            <tr class="">
+                             <th style="text-align:center;padding-right:3px" colspan='7'></th>
+                             <th style="text-align:center;padding-right:3px" >A</th>
+                             <th style="text-align:center;padding-right:3px" >B</th>
+                             <th style="text-align:center;padding-right:3px" >C = A - B</th>
+                             <th style="text-align:center;padding-right:3px" >D</th>
+                             <th style="text-align:center;padding-right:3px" >E = C - D</th>
+                             <th style="text-align:center;padding-right:3px" >F = E*13%</th>
+                             <th style="text-align:center;padding-right:3px" ></th>
+                             <th style="text-align:center;padding-right:3px" ></th>
+                            </tr>
+                        </thead>
+                        <tbody style='line-height : 12px !important;'>
+                                <t t-foreach="libro_compras_resultado_pdf" t-as="purchase" width="100%">
+                                    <t t-if="purchase[100] == 'line'">
+                                        <tr class="">
+                                            <!-- <td style="text-align:center;padding-right:3px" width="8%">
+                                                <t t-esc="purchase[0]" />
+                                            </td>  -->
+                                            <td style="text-align:center;padding-right:3px" width="8%">
+                                                <t t-esc="purchase[1]" />
+                                            </td>
+                                            <td style="text-align:right;padding-right:3px" width="8%">
+                                                <t t-esc="purchase[2]" />
+                                            </td>
+                                            <td style="text-align:left;padding-right:3px" width="15%">
+                                                <t t-esc="purchase[3]" />
+                                            </td>
+                                            <td style="text-align:center;padding-right:3px" width="5%">
+                                                <t t-esc="purchase[4]" />
+                                            </td>
+                                            <td style="text-align:right;padding-right:3px" width="10%">
+                                                <t t-esc="purchase[5]" />
+                                            </td>
+                                            <td style="text-align:right;padding-right:0pt" width="10%">
+                                                <t t-esc="purchase[6]" />
+                                            </td>
+                                            <td style="text-align:right;padding-right:3px" width="10%">
+                                                <span t-esc="purchase[7]" />
+                                            </td>
+                                            <td style="text-align:right;padding-right:3px" width="5%">
+                                                <span t-esc="'{:,.2f}'.format(purchase[8])" />
+                                            </td>
+                                            <td style="text-align:right;padding-right:3px" width="5%">
+                                                <span t-esc="'{:,.2f}'.format(purchase[9])" />
+                                            </td>
+                                            <td style="text-align:right;padding-right:3px" width="9%">
+                                                <span t-esc="'{:,.2f}'.format(purchase[10])" />
+                                            </td>
+                                            <td style="text-align:right;padding-right:3px" width="10%">
+                                                <span t-esc="'{:,.2f}'.format(purchase[11])" />
+                                            </td>
+                                            <td style="text-align:right;padding-right:3px" width="5%">
+                                                <span t-esc="'{:,.2f}'.format(purchase[12])" />
+                                            </td>  
+                                            <td style="text-align:right;padding-right:3px" width="5%">
+                                                <span t-esc="'{:,.2f}'.format(purchase[13])" />
+                                            </td>  
+                                             <td style="text-align:right;padding-right:3px" width="5%">
+                                                <span t-esc="purchase[14]" />
+                                            </td>  
+                                            <!-- <td style="text-align:right;padding-right:3px" width="5%">
+                                                <span t-esc="'{:,.2f}'.format(purchase[15])" />
+                                            </td> -->
+                                        </tr>
+                                       
+
+                                    </t>
+
+                                    <t t-if="purchase[100] == 'total'">
+                                        <tr>
+                                     
+                                            <td style="text-align:right;padding-right:3px" width="10%" color="blue" colspan='7'>
+                                               <b> SUBTOTAL Bs.</b></td>
+                                            <td style="text-align:right;padding-right:3px" width="10%">
+                                                <b> <span t-esc="'{:,.2f}'.format(purchase[8])" /></b>
+                                            </td>
+                                            <td style="text-align:right;padding-right:3px" width="5%">
+                                                <b> <span t-esc="'{:,.2f}'.format(purchase[9])" /></b>
+                                            </td>
+                                            <td style="text-align:right;padding-right:3px" width="5%">
+                                                <b> <span t-esc="'{:,.2f}'.format(purchase[10])" /></b>
+                                            </td>
+                                            <td style="text-align:right;padding-right:3px" width="9%">
+                                                <b> <span t-esc="'{:,.2f}'.format(purchase[11])" /></b>
+                                            </td>
+                                            <td style="text-align:right;padding-right:3px" width="10%">
+                                                <b> <span t-esc="'{:,.2f}'.format(purchase[12])" /></b>
+                                            </td>
+                                            <td style="text-align:right;padding-right:3px" width="5%">
+                                                <b> <span t-esc="'{:,.2f}'.format(purchase[13])" /></b>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                 
+                                </t>
+
+
+                            </tbody>
+                    </table>
+                </div>
+
+            </t>
+        </t>
+    </template>
+</odoo>

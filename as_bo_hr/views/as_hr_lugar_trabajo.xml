@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_lugar_trabajo_view" model="ir.ui.view">
+            <field name="name">as.hr.lugar.trabajo.view</field>
+            <field name="model">as.hr.lugar.trabajo</field>
+            <field name="arch" type="xml">
+                <form string="Lugar de Trabajo">
+                    <sheet>
+                        <div>
+                            
+                            <group col="2" string="Informacion del lugar de trabajo">
+                                <field name="name" />
+                                <field name="as_nro_patronal" />
+                                <field name="as_ciudad" />
+                                <field name="as_codigo_sucursal" />
+                            </group>
+
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="hr_lugar_trabajo_tree" model="ir.ui.view">
+            <field name="name">as.hr.lugar.trabajo.tree</field>
+            <field name="model">as.hr.lugar.trabajo</field>
+            <field name="arch" type="xml">
+                <!-- <tree string="Bancos" editable="bottom"> -->
+                <tree string="Lugar de Trabajo">
+                    <field name="name" />
+                    <field name="as_nro_patronal" />
+                    <field name="as_ciudad" />
+                    <field name="as_codigo_sucursal" />
+                </tree>
+            </field>
+        </record>
+
+        <act_window id="hr_lugar_trabajo_action" 
+        name="Lugar de Trabajo" 
+        res_model="as.hr.lugar.trabajo" 
+        view_mode="tree,form" />
+     
+    </data>
+</odoo>

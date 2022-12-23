@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="as_pdf_reporte_existencias">
+            <t t-call="web.html_container">
+                <div class="header">
+                    <style type="text/css">
+                        .header {
+                            margin: 0px;
+                            padding: 0px;
+                        }
+                    </style>
+
+                </div>
+            </t>
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <style type="text/css">
+                        .page {
+                            margin: -77px 18px 18px 18px;
+                            padding: 0px;
+                        }
+
+                        .linea_texto {
+                            border: 0.1pt solid silver;
+                            font-size:11px;
+                            padding:3px;
+                            text-align:left;
+                        }
+                        .linea_numerica {
+                            border: 0.1pt solid silver;
+                            font-size:11px;
+                            padding:3px;
+                            text-align:right;
+                        }
+                        .titulo{
+                            text-align:center;
+                            font-size:15px;
+                            color:#4682B4;
+                            border:0.5pt solid black;
+                        }
+                        .titulo_fecha{
+                            text-align:center;
+                            font-size:13px;
+                            border:0.5pt solid black;
+                            
+                        }
+                        .contenido_titulo{
+                            text-align:center;
+                            font-size:12px;
+                            color:#ffffff;
+                            background-color:#4682B4;
+                            border: 0.1pt solid silver;
+                        }
+                        .nombre_almacen{
+                            text-align:left;
+                            font-size:11px;
+                            margin-left:6px;
+                            border:0.1pt solid silver;
+                        }
+                        
+                        
+                    </style>
+
+                    <div class="row mt0 mb0" >
+                        <div style="text-align: left; font-size: 9px; width: 60%; margin-top: 14px;">
+                            <h4 style="text-align: left; font-size:9px; line-height: 2px;">
+                                <div>
+                                    <img t-att-src="image_data_uri(logo)"
+                                        style="height: 80px; width: 250px; text-align: left;" />
+                                    <br />
+                                </div>
+                            </h4>
+                        </div>
+                        
+                        <div style="text-align:left; width: 40%; margin-top:30px;"
+                            name='as_titulo'>
+                            <table width="96%" style="border:#fffff 1px solid;">
+                                <tr>
+                                    <td style="text-align: left; font-size:10px;  color:black;">
+                                        <b style="margin-left:70px;">NIT: </b>
+                                    </td>
+                                    <td style="text-align: right; font-size:10px;  color:black; ">
+                                        <span t-esc="nit" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; font-size:10px;  color:black;">
+                                        <b style="margin-left:70px;">DIRECCION: </b>
+                                    </td>
+                                     <td style="text-align: right; font-size:10px;  color:black; margin-right:-40px; ">
+                                        <span t-esc="direccion1" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; font-size:10px;  color:black;">
+                                        <b style="margin-left:70px;">TELEFONO, CELULAR: </b>
+                                    </td>
+                                     <td style="text-align: right; font-size:10px;  color:black; ">
+                                        <span t-esc="telefono" />
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                    <div style="margin-top:2px;">
+                        <table width="100%">
+                            <tr>
+                                <td class="titulo">
+                                    <b>REPORTE DE EXISTENCIAS DE PRODUCTOS</b></td>
+                            </tr>
+                            <tr>
+                                <td class="titulo_fecha">
+                                    <b>De: </b><span t-esc="fecha_inicial" />- <b>Hasta: </b><span
+                                        t-esc="fecha_final" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div >
+                        <table width="100%">
+                            <tr style="width:100%;">
+                                <td width="67%">
+                                    <b style="text-align:left; font-size: 12px; color:#4682B4;">Usuario: </b>
+                                    <b style="text-align:left; font-size: 11px; color:#black;"> <span
+                                            t-esc="usuario" /></b>
+
+                                </td>
+                                <td width="33%">
+                                    <b style="text-align:left; font-size: 12px; color:#4682B4;">Fecha: </b>
+                                    <b style="text-align:left; font-size: 11px; color:#black;"><span
+                                            t-esc="fecha_actual" /></b>
+                                </td>
+                            </tr>
+                            <tr style="width:100%;">
+                                <td>
+                                    <b style="text-align:left; font-size: 12px; color:#4682B4;">Almacen: </b><b
+                                        style="text-align:left; font-size: 11px;">
+                                        <t t-esc="nombre_almacen" /></b>
+                                </td>
+                                <td>
+                                    <b style="text-align:left; font-size: 12px; color:#4682B4;">Productos: </b><b
+                                        style="text-align:left; font-size: 11px;"> Varios</b>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <table width="100%">
+                        <thead >
+                            <tr class="contenido_titulo" >
+                                <td style="border: 0.2pt solid silver;"><b>CODIGO</b></td>
+                                <td style="border: 0.2pt solid silver;"><b>CATEGORIA/LINEA/MARCA/PRODUCTO</b></td>
+                                <td style="border: 0.2pt solid silver;"><b>UdM</b></td>
+                                <td style="border: 0.2pt solid silver;"><b>PRECIO DE COSTO</b></td>
+                                <td style="border: 0.2pt solid silver;"><b>CANTIDAD</b></td>
+                                <td style="border: 0.2pt solid silver;"><b>VALORADO Bs.</b></td>
+                            </tr>
+                        </thead>
+
+                        <div t-foreach="lista_salidas_inventarios" t-as="movimientos" width="100%" id="body_table">
+                            <tbody >
+                                <tr class="nombre_almacen">
+                                    <td colspan="6">
+                                        <b style="margin-left:5px;">
+                                            <t t-esc="movimientos['nombre_almacen']"  /></b>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody t-foreach="movimientos['contenido']" t-as="d" width="100%">
+                                <tr>
+
+                                    <td class="linea_numerica">
+                                        <t t-esc="d['val1']" />
+                                    </td>
+                                    <td class="linea_texto">
+                                        <t t-esc="d['val2']" />
+                                    </td>
+                                    <td class="linea_texto">
+                                        <t t-esc="d['val3']" />
+                                    </td>
+                                    <td class="linea_numerica">
+                                        <t t-esc="'{:,.2f}'.format(d['precio_costo'])" />
+                                    </td>
+                                    <td class="linea_numerica">
+                                        <t t-esc="'{:,.0f}'.format(d['cantidad'])" />
+                                    </td>
+                                    <td class="linea_numerica">
+                                        <t t-esc="'{:,.2f}'.format(d['valorado'])" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </div>
+                    </table>
+                </div>
+                
+            </t>
+        </template>
+    </data>
+</odoo>

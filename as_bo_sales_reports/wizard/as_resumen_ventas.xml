@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_report_sales_sumary" model="ir.ui.view">
+            <field name="name">Resumen de Ventas</field>
+            <field name="model">as.sales.emit.wiz</field>
+            <field name="arch" type="xml">
+                <form string="Resumen de Ventas">
+                    <group col="2">
+                        <group>
+                            <field name="start_date" />
+                            <field name="as_cliente" widget="many2many_tags"
+                                options="{&quot;always_reload&quot;: True, 'no_open': True,'no_create': 1, 'no_create_edit': 1}" />
+                        </group>
+                        <group>
+                            <field name="end_date" />
+                            <field name="as_almacen" widget="many2many_tags" />
+                            <field name="as_vendedor" context="{'search_default_customer':1, 'show_address': 1}"
+                                widget="many2many_tags"
+                                options="{&quot;always_reload&quot;: True, 'no_open': True,'no_create': 1, 'no_create_edit': 1}" />
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="export_xls" default_focus="1" string="Exportar a Excel" type="object"
+                            class="oe_highlight" context="{'xls_export':1}" icon="fa-download" />
+                        <button name="export_pdf" string="Exportar a PDF" type="object"
+                            class="oe_highlight" icon="fa-download" />
+                        
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_resumen_productos_qweb" model="ir.actions.act_window">
+            <field name="name">Resumen de Ventas</field>
+            <field name="res_model">as.sales.emit.wiz</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="as_report_sales_sumary" />
+            <field name="target">new</field>
+        </record>
+        
+        <report id="sales_sumary_report_xls" model="as.sales.emit.wiz" string="Resumen de Ventas" report_type="xlsx"
+            name="as_bo_sales_reports.sales_sumary_report_xls.xlsx"
+            file="as_bo_sales_reports.sales_sumary_report_xls.xlsx"
+            attachment_use="False" />
+        <menuitem id="as_sales_summary_ventas" name="Resumen de Ventas" action="action_resumen_productos_qweb"
+            parent="sale.menu_sale_report" sequence="10" groups="base.group_user" />
+    </data>
+</odoo>

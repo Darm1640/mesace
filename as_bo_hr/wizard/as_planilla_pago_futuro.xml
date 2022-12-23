@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_pago_futuro" model="ir.ui.view">
+        <field name="name">Planilla de pago Futuro</field>
+        <field name="model">as.planilla.futuro</field>
+        <field name="arch" type="xml">
+            <form string="Planilla de pago Futuro">
+                <group col="2">
+                    <field name="as_payslip_run_id" domain="[('state','!=', 'cancel')]"
+                            options="{&quot;always_reload&quot;: True, 'no_open': True,'no_create': 1, 'no_create_edit': 1}" />
+                </group>                    
+
+                <footer>
+                    <button name="export_xls" 
+                        default_focus="1"
+                        string="Exportar a Excel" 
+                        type="object" 
+                        class="oe_highlight"
+                        context="{'xls_export':1}" 
+                        icon="fa-download"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="as_action_planilla_pago_futuro_txt" model="ir.actions.act_window">
+            <field name="name">Planilla de pago Futuro</field>
+            <field name="res_model">as.planilla.futuro</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_pago_futuro" />
+            <field name="target">new</field>
+        </record>
+
+    <report
+        id="as_pago_futuro"
+        model="hr.payslip.run"
+        string="Pago Futuro"
+        report_type="xlsx"
+        name="as_bo_hr.as_pago_futuro.xlsx"
+        file="as_bo_hr.as_pago_futuro.xlsx"
+        attachment_use="False" />
+    </data>
+</odoo>

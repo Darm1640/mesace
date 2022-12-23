@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Formulario cliente, campos adicionales -->
+        <record id="as_hr_leave_type_form3" model="ir.ui.view">
+            <field name="name">hr.leave.type.form.tree</field>
+            <field name="model">hr.leave.type</field>
+            <field name="inherit_id" ref="hr_holidays.edit_holiday_status_form" />
+            <field name="arch" type="xml">
+    
+                <xpath expr="//field[@name='request_unit']" position="after">
+                    <field name="as_calculo_vaca" />
+                    <field name="as_motivo_permiso" />
+                </xpath>       
+            
+            </field>
+        </record>
+    </data>
+</odoo>

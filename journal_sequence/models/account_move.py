@@ -1,16 +1,34 @@
-# -*- coding: utf-8 -*-
-
-from odoo import api, fields, models, _
-from odoo.exceptions import RedirectWarning, UserError, ValidationError, AccessError
-
+from odoo import models, fields, api
+from odoo.exceptions import UserError
 
 class AccountMove(models.Model):
-    _inherit = "account.move"
+    _inherit = 'account.move'
 
-    name = fields.Char(string='Number', required=True, readonly=False, copy=False, default='/')
+    sequence_generated = fields.Boolean(string="Sequence Generated", copy=False)
+
+    @api.depends('posted_before', 'state', 'journal_id', 'date')
+    def _compute_name(self):
+        for move in self:
+            if not move.journal_id.sequence_id:
+              return super(AccountMove, self)._compute_name()
+            sequence_id = move._get_sequence()
+            if not sequence_id:
+                raise UserError('Please define a sequence on your journal.')
+            if not move.sequence_generated and move.state == 'draft':
+                move.name = '/'
+            elif not move.sequence_generated and move.state != 'draft':
+                if self.move_type == 'entry':
+                    move.name = sequence_id.with_context({'ir_sequence_date': self.date, 'bypass_constrains': True}).next_by_id(sequence_date=self.date)
+                else:
+                    move.name = sequence_id.with_context({'ir_sequence_date': self.invoice_date, 'bypass_constrains': True}).next_by_id(sequence_date=self.invoice_date)
+                move.sequence_generated = True
 
     def _get_sequence(self):
+        ''' Return the sequence to be used during the post of the current move.
+        :return: An ir.sequence record or False.
+        '''
         self.ensure_one()
+
         journal = self.journal_id
         if self.move_type in ('entry', 'out_invoice', 'in_invoice', 'out_receipt', 'in_receipt') or not journal.refund_sequence:
             return journal.sequence_id
@@ -18,19 +36,14 @@ class AccountMove(models.Model):
             return
         return journal.refund_sequence_id
 
-    def _post(self, soft=True):
-        for move in self:
-            if move.name == '/':
-                sequence = move._get_sequence()
-                if not sequence:
-                    raise UserError(_('Please define a sequence on your journal.'))
-                move.name = sequence.with_context(ir_sequence_date=move.date).next_by_id()
-        res = super(AccountMove, self)._post(soft=True)
-        return res
+    # def _get_invoice_computed_reference(self):
+    #     self.ensure_one()
+    #     if self.journal_id.invoice_reference_type == 'none':
+    #         return ''
+    #     else:
+    #         ref_function = getattr(self, '_get_invoice_reference_{}_{}'.format(self.journal_id.invoice_reference_model, self.journal_id.invoice_reference_type))
+    #         if ref_function:
+    #             return ref_function()
+    #         else:
+    #             raise UserError(_('The combination of reference model and reference type on the journal is not implemented'))
 
-    @api.onchange('journal_id')
-    def onchange_journal_id(self):
-        self.name = '/'
-
-    def _constrains_date_sequence(self):
-        return

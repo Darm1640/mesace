@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="as_pdf_report_purchase_order_custom">
+            <t t-call="web.html_container">
+                <div class="header">
+                    <style type="text/css">
+                        .header {
+                            margin: 0px 0px 0px 0px;
+                            padding: 0px;
+                        }
+                    </style>
+                    <div>
+                        <br />
+                        <br />
+                        <table width="100%">
+                            <tr>
+                                <td style="width:20%;text-align:center;border:2px solid #000000;font-size:15px;vertical-align: middle;"
+                                    rowspan="2">
+
+                                    <img t-att-src="image_data_uri(o.env.user.company_id.logo)" style="width:100%" />
+
+                                </td>
+                                <td
+                                    style="width:60%;text-align:center;border:2px solid #000000;font-size:15px;vertical-align: middle;height:40px;">
+                                    <b>REGISTRO</b>
+                                </td>
+                                <td style="width:20%;text-align:center;border:2px solid #000000;font-size:14px;vertical-align: middle; "
+                                    rowspan="2">
+                                    <b>Código:</b> IE-PL-01-01<br />
+                                    <b>Versión:</b> 0<br />
+                                    <b>Edición:</b> 04-11-13 <br />
+                                    <b>Pagina </b>
+                                    <label class="page" />/<label class="topage" />
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td
+                                    style="width:60%;text-align:center;border:2px solid #000000;font-size:15px;vertical-align: middle;">
+                                    <b>ORDEN DE COMPRA</b>
+                                </td>
+
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </t>
+            <t t-call="web.external_layout">
+                <div class="page" style="font-family: 'Arial' !important; ">
+                    <style type="text/css">
+                        .page {
+                            margin: 0px 0px 0px 0px;
+                            padding: 0px;
+                        }
+
+                        .margenizq {
+                            margin-left: 5px;
+                        }
+                    </style>
+                    <div>
+                        <div style="margin-top:-40px;">
+                            <table border="1" style="float: center;" width="100%">
+                                <thead>
+                                    <tr>
+                                        <td style="text-align: center; color: #fff;background-color:#B5A2C8;border:1px solid grey;font-size:12px;vertical-align: middle;height:30px;"
+                                            colspan="2">
+                                            <b style="margin-left:5px;color:black;">Instrucciones: </b> El Gerente de
+                                            Administracion y Finanzas entregará al proveedor seleccionado este registro
+                                            via mail. Debera guardar una copia digital para el respaldo.
+                                        </td>
+                                    </tr>
+                                </thead>
+                            </table>
+
+                        </div>
+                        <br />
+                        <div>
+                            <table width="100%" id="data_cliente" style="font-size:12px;;border:1px solid grey;">
+                                <thead>
+                                    <tr>
+                                        <td style="width:10%;" class='letra3'>
+                                            <b style="color:black;margin-left:7px;">Fecha:</b>
+                                        </td>
+                                        <td style="width:30%;" class='letra3'>
+                                            <t t-esc="o.date_order" />
+                                        </td>
+                                        <td style="width:20%;" class='letra3'>
+                                            <b style="color:black;">Orden de compra N°:</b>
+                                        </td>
+                                        <td style="width:20%;" class='letra3'>
+                                            <t t-esc="o.name" />
+                                        </td>
+                                        <td style="width:10%;" class='letra3'>
+                                        </td>
+                                        <td style="width:10%;" class='letra3'>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <thead>
+                                    <tr>
+                                        <td style="width:10%;" class='letra3'>
+                                            <b style="color:black;margin-left:7px;">Proveedor:</b>
+                                        </td>
+                                        <td style="width:35%;" class='letra3'>
+                                            <t t-esc="o.partner_id.name" />
+                                        </td>
+                                        <td style="width:20%;" class='letra3'>
+                                            <b style="color:black;">Nro Cotizacion:</b>
+                                        </td>
+                                        <td style="width:25%;">
+                                            <!-- <t t-esc="o.name" /> -->
+                                            <t t-esc="o.partner_ref" />
+                                        </td>
+                                        <td style="width:8%;text-align:center;vertical-align: middle;">
+                                            <b style="color:black">TC</b>
+
+                                        </td>
+                                        <td style="width:2%;">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:15%;" class='letra3'>
+                                            <b style="color:black;margin-left:7px;">Codigo Proyecto:</b>
+                                        </td>
+                                        <td style="width:35%;" class='letra3'>
+                                            <t t-esc="o.as_project_id.name" />
+                                        </td>
+                                        <td style="width:20%;" class='letra3'>
+                                            <b style="color:black;">Moneda:</b><t t-esc="o.currency_id.name" />
+                                        </td>
+                                        <td style="width:20%;" class='letra3'>
+                                            <t t-esc="o.currency_id.name" />
+                                        </td>
+                                        <td style="width:8%;text-align:center;vertical-align: middle;">
+                                            <b style="color:black">6.96</b>
+
+                                        </td>
+                                        <td style="width:2%;">
+                                        </td>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <br />
+                        <div>
+                            <table width="100%" style='table-layout: fixed;'>
+                                <thead style='border:1px solid black;' id='header_invoice'>
+                                    <tr>
+                                        <td
+                                            style="width:5%;border:1px solid black;color:#ffffff;
+                            background-color:#00008B;font-size:14px;text-align:center;height:30px;vertical-align: middle;">
+                                            <b>Nº</b>
+                                        </td>
+                                        <td
+                                            style="width:10%;border:1px solid black;color:#ffffff;
+                            background-color:#00008B;font-size:14px;text-align:center;height:30px;vertical-align: middle;">
+                                            <b>Cantidad</b>
+                                        </td>
+                                        <td
+                                            style="width:10%;border:1px solid black;color:#ffffff;
+                            background-color:#00008B;font-size:14px;text-align:center;height:30px;vertical-align: middle;">
+                                            <b>Unidad</b>
+                                        </td>
+                                        <td
+                                            style="width:15%;border:1px solid black;color:#ffffff;
+                            background-color:#00008B;font-size:14px;text-align:center;height:30px;vertical-align: middle;">
+                                            <b>Nro de parte</b>
+                                        </td>
+                                        <td
+                                            style="width:30%;border:1px solid black;color:#ffffff;
+                            background-color:#00008B;font-size:14px;text-align:center;height:30px;vertical-align: middle;">
+                                            <b>Descripcion</b>
+                                        </td>
+                                        <td
+                                            style="width:16%;border:1px solid black;color:#ffffff;
+                            background-color:#00008B;font-size:14px;text-align:center;height:30px;vertical-align: middle;">
+                                            <b>Costo Unitario </b><t t-esc="o.currency_id.name" />
+                                        </td>
+                                        <td
+                                            style="width:14%;border:1px solid black;color:#ffffff;
+                            background-color:#00008B;font-size:14px;text-align:center;height:30px;vertical-align: middle;">
+                                            <b>Costo Total </b><t t-esc="o.currency_id.name" />
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <thead style='border:1px solid black'>
+                                    <div t-foreach="o.extraer_lineas_compra()" t-as="d" width="100%">
+
+                                        <tr>
+                                            <td style="width:5%;border:1px solid black;font-size:12px;text-align:center;vertical-align: middle;"
+                                                class='letra2'>
+                                                <t t-esc="d_index+1" />
+                                            </td>
+                                            <td style="width:10%;border:1px solid black;font-size:12px;text-align:center;vertical-align: middle;"
+                                                class='letra2'>
+                                                <t t-esc="'{:,.2f}'.format(d['cantidad'])" />
+                                            </td>
+                                            <td style="width:10%; text-align:center;max-width:30%;border:1px solid black;font-size:12px;vertical-align: middle;"
+                                                class='letra2'>
+                                                <span t-esc="d['udm']" />
+                                            </td>
+                                            <td style="width:15%; text-align:center;max-width:30%;border:1px solid black;font-size:12px;vertical-align: middle;"
+                                                class='letra2'>
+                                                <span t-esc="d['nro_aprte']" />
+                                            </td>
+                                            <td style="width:30%; text-align:left;border:1px solid black;font-size:12px;vertical-align: middle;"
+                                                class='letra2'>
+                                                <span style="margin-left:4px;" t-esc="d['product']" />
+                                            </td>
+                                            <td style="width:15%; text-align:right;border:1px solid black;font-size:12px;vertical-align: middle;"
+                                                class='letra2'>
+                                                <span style="margin-right:4px;" t-esc="'{:,.2f}'.format(d['precio'])" />
+                                            </td>
+                                            <td style="width:15%; text-align:right;border:1px solid black;font-size:12px;vertical-align: middle;"
+                                                class='letra2'>
+                                                <span style="margin-right:4px;" t-esc="'{:,.2f}'.format(d['total'])" />
+                                            </td>
+                                        </tr>
+                                    </div>
+                                </thead>
+                                <tbody style='border:1px solid #FFFFFF;line-height : 18px;' width="100%">
+                                    <tr>
+                                        <td colspan="6"
+                                            style="width:5%;text-align:right;border:1px solid black;height:25px;vertical-align: middle;"
+                                            class='letra4'>
+                                            <b style="margin-right:5px;"> Subtotal</b>
+                                        </td>
+                                        <td colspan="1"
+                                            style="width:5%;text-align:right;border:1px solid black;height:25px;vertical-align: middle;"
+                                            class='letra4'>
+                                            <b t-if="o.currency_id.id==62" style="margin-right:5px;">
+                                                <t
+                                                    t-esc="'{:,.2f}'.format(o.extraer_subtotal_lineas_compra('totalitos'))" />
+                                            </b>
+                                            <b t-if="o.currency_id.id==2" style="margin-right:5px;">
+                                                <t
+                                                    t-esc="'{:,.2f}'.format(o.extraer_subtotal_lineas_compra('totalitos') * 6.96)" />
+                                            </b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6"
+                                            style="width:5%;text-align:right;border:1px solid black;height:25px;vertical-align: middle;"
+                                            class='letra4'>
+                                            <b style="margin-right:5px;"> Descuento</b>
+                                        </td>
+                                        <td colspan="1"
+                                            style="width:5%;text-align:right;border:1px solid black;height:25px;vertical-align: middle;"
+                                            class='letra4'>
+                                            <b t-if="o.currency_id.id==62" style="margin-right:5px;">
+                                                <t
+                                                    t-esc="'{:,.2f}'.format(o.extraer_subtotal_lineas_compra('descuento'))" />
+                                            </b>
+                                            <b t-if="o.currency_id.id==2" style="margin-right:5px;">
+                                                <t
+                                                    t-esc="'{:,.2f}'.format(o.extraer_subtotal_lineas_compra('descuento') * 6.96)" />
+                                            </b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6"
+                                            style="width:5%;text-align:right;border:1px solid black;height:25px;vertical-align: middle;"
+                                            class='letra4'>
+                                            <b style="margin-right:5px;"> Total Bs</b>
+                                        </td>
+                                        <td colspan="1"
+                                            style="width:5%;text-align:right;border:1px solid black;height:25px;vertical-align: middle;"
+                                            class='letra4'>
+                                            <b t-if="o.currency_id.id==62" style="margin-right:5px;">
+                                                <t
+                                                    t-esc="'{:,.2f}'.format(o.extraer_subtotal_lineas_compra('total_con_descuento'))" />
+                                            </b>
+                                            <b t-if="o.currency_id.id==2" style="margin-right:5px;">
+                                                <t
+                                                    t-esc="'{:,.2f}'.format(o.extraer_subtotal_lineas_compra('total_con_descuento') * 6.96)" />
+                                            </b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6"
+                                            style="width:5%;text-align:right;border:1px solid black;height:25px;vertical-align: middle;"
+                                            class='letra4'>
+                                            <b style="margin-right:5px;">Total $us</b>
+                                        </td>
+                                        <!-- <t-if="o.currency_id.id==2"> -->
+                                        <td colspan="1"
+                                            style="width:5%;text-align:right;border:1px solid black;height:25px;vertical-align: middle;"
+                                            class='letra4'>
+
+                                            <b t-if="o.currency_id.id==2" style="margin-right:5px;">
+                                                <t
+                                                    t-esc="'{:,.2f}'.format(o.extraer_subtotal_lineas_compra('totalitos'))" />
+                                            </b>
+                                            <b t-if="o.currency_id.id==62" style="margin-right:5px;">
+                                                <t
+                                                    t-esc="'{:,.2f}'.format(o.extraer_subtotal_lineas_compra('totalitos') / 6.96)" />
+                                            </b>
+
+                                        </td>
+                                        <!-- </t> -->
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="2"
+                                            style="width:5%;text-align:center;border:1px solid black;;height:25px;vertical-align: middle;"
+                                            class='letra4'>
+                                            <b> SON:</b>
+                                        </td>
+                                        <td colspan="5"
+                                            style="width:5%;text-align:left;border:1px solid black;font-size:13px;;height:25px;vertical-align: middle;"
+                                            class='letra4'>
+                                            <b style="margin-left:15px;">
+                                                <t
+                                                    t-esc="o.convertir_numero_a_literal(o.extraer_subtotal_lineas_compra('totalitos'))" />
+                                            </b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="7"
+                                            style="width:5%;text-align:center;border:1px solid black;color:#ffffff;
+                            background-color:#00008B;font-size:14px;text-align:center;vertical-align: middle;height:25px;">
+                                            <b style="vertical-align: middle;"> OBSERVACIONES</b>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td colspan="7"
+                                            style="width:35%;border:1px solid #000000;font-size:12px;vertical-align: top;height:100px;">
+                                            <span style="margin-left:5px;" t-esc="o.notes" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="7"
+                                            style="width:5%;text-align:center;border:1px solid black;color:#ffffff;
+                            background-color:#00008B;font-size:14px;text-align:center;vertical-align: middle;height:25px;">
+                                            <b style="vertical-align: middle;"> CONDICIONES DE COMPRA</b>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                                <div>
+                                    <table width="100%" id="data_cliente"
+                                        style="font-size:12px;;border:1px solid grey;">
+                                        <thead>
+                                            <tr>
+                                                <td style="width:20%;" class='letra3'>
+                                                    <b style="color:black;margin-left:5px;">Términos de pago:</b>
+                                                </td>
+                                                <td style="width:30%;" class='letra3'>
+                                                    <!-- <span t-esc="o.extraer_referencia_factura('ref')" /> -->
+                                                    <span t-esc="o.as_payment_term_id.name" />
+                                                </td>
+                                                <td style="width:20%;" class='letra3'>
+                                                    <b style="color:black;">Forma de pago:</b>
+                                                </td>
+                                                <td style="width:30%;" class='letra3'>
+
+                                                    <span t-esc="o.as_payment_quirer.name" />
+
+                                                </td>
+                                            </tr>
+                                        </thead>
+                                        <thead>
+                                            <tr>
+                                                <td style="width:20%;" class='letra3'>
+                                                    <b style="color:black;margin-left:5px;">Plazo de entrega:</b>
+                                                </td>
+                                                <td style="width:30%;" class='letra3'>
+                                                    <span t-esc="o.as_fecha_entrega" />
+                                                </td>
+                                                <td style="width:20%;" class='letra3'>
+
+                                                </td>
+                                                <td style="width:30%;" class='letra3'>
+
+                                                </td>
+                                            </tr>
+                                        </thead>
+                                        <thead>
+                                            <tr>
+                                                <td style="width:20%;" class='letra3'>
+                                                    <b style="color:black;margin-left:5px;">Emitir factura a nombre
+                                                        de:</b>
+                                                </td>
+                                                <td style="width:30%;" class='letra3'>
+                                                    <t t-esc="(o.env.user.company_id.name)" />
+                                                </td>
+                                                <td style="width:20%;" class='letra3'>
+                                                    <b style="color:black;">N I T:</b>
+                                                </td>
+                                                <td style="width:30%;" class='letra3'>
+                                                    <t t-esc="(o.env.user.company_id.vat)" />
+                                                </td>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div>
+                                    <table border="1" style="float: right;" width="40%">
+                                        <thead>
+
+                                            <tr>
+                                                <td style="width:50%;text-align:center;">
+                                                    <br />
+                                                    <br />
+                                                    <br />
+                                                    <br />
+                                                    <br />
+                                                    <!-- <br t-if="env['hr.employee'].search([('id', '=', o.as_aprovador_empleado)]).as_firma_archivo"/>
+                                                    <br t-if="env['hr.employee'].search([('id', '=', o.as_aprovador_empleado)]).as_firma_archivo"/> -->
+                                                    <t
+                                                        t-if="env['hr.employee'].search([('id', '=', o.extraer_firma_solicitante())]).as_firma_archivo">
+                                                        <img t-if="env['hr.employee'].search([('id', '=', o.extraer_firma_solicitante())]).as_firma_archivo"
+                                                            t-att-src="image_data_uri(env['hr.employee'].search([('id', '=', o.extraer_firma_solicitante())]).as_firma_archivo)"
+                                                            style="height: 100px; width: 300px; text-align: center;" />
+                                                    </t>
+                                                    <t
+                                                        t-else="env['hr.employee'].search([('id', '=', o.extraer_firma_solicitante())]).as_firma_archivo">
+                                                        <br />
+                                                        <br />
+                                                        <br />
+                                                        <br />
+
+                                                    </t>
+
+
+                                                    <b style="font-size:14px;"> ______________________</b><br />
+
+                                                    <b style="font-size:14px;"> Solicitada por:</b>
+                                                    <t t-esc="(o.as_solicitante.name)" />
+
+                                                </td>
+
+                                            </tr>
+
+
+                                        </thead>
+                                    </table>
+                                    <table border="1" style="float: left;" width="40%">
+                                        <thead>
+
+                                            <tr>
+                                                <td style="width:50%;text-align:center;">
+                                                    <br />
+                                                    <br />
+                                                    <br />
+                                                    <br />
+                                                    <br />
+                                                    <img t-if="env['hr.employee'].search([('id', '=', o.as_aprovador_empleado)]).as_firma_archivo"
+                                                        t-att-src="image_data_uri(env['hr.employee'].search([('id', '=', o.as_aprovador_empleado)]).as_firma_archivo)"
+                                                        style="height: 100px; width: 300px; text-align: center;" />
+                                                    <b style="font-size:14px;"> ______________________</b><br />
+
+                                                    <b style="font-size:14px;"> Autorizada por</b>
+                                                    <!-- <t t-esc="(o.user_id.name)" /> -->
+                                                    <t t-esc="(o.as_aprovador)" />
+                                                </td>
+
+                                            </tr>
+
+
+                                        </thead>
+                                    </table>
+                                </div>
+                            </table>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="as_purchase_order_custom_pdf">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="as_bo_purchase_invoice.as_pdf_report_purchase_order_custom" t-lang="lang" />
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

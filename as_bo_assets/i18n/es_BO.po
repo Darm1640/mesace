@@ -1,0 +1,839 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* as_bo_assets
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e-20210708\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-08 23:58+0000\n"
+"PO-Revision-Date: 2021-11-08 23:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: as_bo_assets
+#: code:addons/as_bo_assets/models/as_assets_views.py:0
+#: code:addons/as_bo_assets/models/as_assets_views.py:0
+#: code:addons/as_bo_assets/models/as_assets_views.py:0
+#, python-format
+msgid " (grouped)"
+msgstr " (agrupado)"
+
+#. module: as_bo_assets
+#: model:ir.actions.report,print_report_name:as_bo_assets.as_assets_account_report
+msgid "'Activos Fijos - %s' % (object.name)"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.assets_pdf
+msgid "- Tipo de Cambio:"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.assets_pdf
+msgid "<b> __________________</b><br/>"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.assets_pdf
+msgid "<b>Actualizacion</b>"
+msgstr "<b>Actualización</b>"
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.assets_pdf
+msgid "<b>Cantidad</b>"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.assets_pdf
+msgid "<b>Codigo</b>"
+msgstr "<b>Código</b>"
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.assets_pdf
+msgid "<b>Cuadro de Actualización de Activos Fijos</b><br/>"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.assets_pdf
+msgid "<b>Dep. Acumulada Actualizada</b>"
+msgstr ""
+
+#. module: as_bo_assets
+
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.assets_pdf
+msgid "<b>Dep. Acumulada Final</b>"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.assets_pdf
+msgid "<b>Dep. Acumulada</b>"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.assets_pdf
+msgid "<b>Depreciacion Periodo</b>"
+msgstr "<b>Depreciación Período</b>"
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.assets_pdf
+msgid "<b>Email:</b>"
+msgstr "<b>mensaje enviado:</b>"
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.assets_pdf
+msgid "<b>Incorporaciones</b>"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.assets_pdf
+msgid "<b>NIT:</b>"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.assets_pdf
+msgid "<b>Nombre</b>"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.assets_pdf
+msgid "<b>Pagina </b>"
+msgstr "<b>Página </b>"
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.assets_pdf
+msgid "<b>Saldo Anterior</b>"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.assets_pdf
+msgid "<b>Valor Actualizado</b>"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.assets_pdf
+msgid "<b>Valor neto</b>"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.assets_pdf
+msgid "<b>Valor</b>"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.assets_pdf
+msgid ""
+"<br/>\n"
+"                                            <b> Propietario(a):</b><br/>"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.assets_pdf
+msgid ""
+"<br/>\n"
+"                            * Las notas que acompañan, forman parte integrante de este estado"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_asset_depreciation_confirmation_wizard__date
+msgid "Account Date"
+msgstr "Fecha de Asiento"
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_ajustar_assets__as_assets
+msgid "Activo Fijo"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_product_product__as_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_product_template__as_assets
+msgid "Activo Relacionado"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_depreciation_line__as_updates
+msgid "Actualización"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_depreciation_line__as_depreciation_update
+msgid "Actualización Dep Acum"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_depreciation_line__as_ajustado
+msgid "Ajustado"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.view_om_account_asset_inherit
+msgid "Ajustar o Vender"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields.selection,name:as_bo_assets.selection__as_ajustar_assets__as_modality__ajuste
+msgid "Ajuste"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.actions.act_window,name:as_bo_assets.as_action_assets_ajuste
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.as_assets_account_ajuste
+msgid "Ajuste o Revaluo de Activos Fijos"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields.selection,name:as_bo_assets.selection__account_asset_category__as_modality__anual
+msgid "Anual"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_asset__as_account_move
+msgid "Asiento de baja"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_asset__as_account_sale_ids
+msgid "Asiento de venta"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model,name:as_bo_assets.model_account_asset_category
+msgid "Asset category"
+msgstr "Categoría de Activo"
+
+#. module: as_bo_assets
+#: model:ir.model,name:as_bo_assets.model_account_asset_asset
+#: model:ir.model,name:as_bo_assets.model_account_asset_depreciation_line
+msgid "Asset/Revenue Recognition inherit"
+msgstr "Heredar reconocimiento de Activos/Ingresos"
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_asset__as_block
+msgid "Bloquar Activo"
+msgstr "Bloquear Activo"
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.as_view_asset_depreciation_confirmation_wizard
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.as_assets_account_ajuste
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.as_assets_account_excel
+msgid "Cancelar"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_depreciation_line__qty
+msgid "Cantidad"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_depreciation_line__category_id
+msgid "Category"
+msgstr "Categoría"
+
+#. module: as_bo_assets
+#: model:ir.model.fields,help:as_bo_assets.field_as_asset_depreciation_confirmation_wizard__date
+msgid ""
+"Choose the period for which you want to automatically post the depreciation "
+"lines of running assets"
+msgstr ""
+"Elija el período para el que desea contabilizar automáticamente la depreciación"
+"líneas de activos en funcionamiento"
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_ajustar_assets__as_coeficiente
+msgid "Coeficiente"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_category__as_coeficiente
+msgid "Coeficiente(%)"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.as_view_asset_depreciation_confirmation_wizard
+msgid "Compute Asset"
+msgstr "Calcular Activo"
+
+#. module: as_bo_assets
+#: code:addons/as_bo_assets/wizard/as_generator_assets.py:0
+#, python-format
+msgid "Created Asset Moves"
+msgstr "Movimientos de Activos Creados"
+
+#. module: as_bo_assets
+#: code:addons/as_bo_assets/wizard/as_generator_assets.py:0
+#, python-format
+msgid "Created Revenue Moves"
+msgstr "Movimientos de Ingresos Creados"
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_ajustar_assets__create_uid
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_asset_depreciation_confirmation_wizard__create_uid
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_assets_custodies__create_uid
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_assets_report_excel__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_ajustar_assets__create_date
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_asset_depreciation_confirmation_wizard__create_date
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_assets_custodies__create_date
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_assets_report_excel__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: as_bo_assets
+#: model:ir.actions.report,name:as_bo_assets.as_assets_account_report
+msgid "Cuadro de Depreciación"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_category__account_asset_generic_id
+msgid "Cuenta Activo Secundaria"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_assets_custodies__as_employee_id
+msgid "Custodio"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_product_product__as_custodies_lines
+#: model:ir.model.fields,field_description:as_bo_assets.field_product_template__as_custodies_lines
+msgid "Custodios"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.view_product_template_inherit
+msgid "Custodios Activos Fijos"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.actions.act_window,name:as_bo_assets.action_proposal_custodies_type
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.view_form_custodies_name
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.view_tree_custodies_name
+msgid "Custodios de Activos"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.view_om_account_asset_inherit
+msgid "Dar de Baja"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields.selection,name:as_bo_assets.selection__account_asset_asset__state__discharged
+msgid "De Baja"
+msgstr ""
+
+#. module: as_bo_assets
+#: code:addons/as_bo_assets/models/as_assets_views.py:0
+#: code:addons/as_bo_assets/wizard/as_ajustar_af_wiz.py:0
+#: code:addons/as_bo_assets/wizard/as_ajustar_af_wiz.py:0
+#, python-format
+msgid "Debe darle valor a la UFV para la fecha de la factura"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_asset__as_depre_anterior
+msgid "Dep. Acum. Final Anterior"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_depreciation_line__as_update_depreciation
+msgid "Dep. Acumulada Actualizada"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_depreciation_line__as_depreciation_end
+msgid "Dep. Acumulada Final"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_assets_custodies__as_department_id
+msgid "Departamento"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_depreciation_line__as_depreciation_store
+msgid "Depreciacion Acumulada"
+msgstr "Depreciación Acumulada"
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_depreciation_line__as_depreciation_periodo
+msgid "Depreciacion Periodo"
+msgstr "Depreciación Período"
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_depreciation_line__move_id2
+msgid "Depreciation Entry 2"
+msgstr "Entrada de Depreciación 2"
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_depreciation_line__move_id3
+msgid "Depreciation Entry 3"
+msgstr "Entrada de Depreciación 3"
+
+#. module: as_bo_assets
+#: model:ir.actions.act_window,name:as_bo_assets.as_detalle_activo_gestion_action
+msgid "Detalle de activos por gestion"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.as_detalle_activo_gestion
+msgid "Detalle de cobros realizados"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.actions.act_window,help:as_bo_assets.as_detalle_activo_gestion_action
+msgid "Detalle de los activos por gestión."
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_category__as_dias_util
+msgid "Dias de vida util"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_asset__display_name
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_category__display_name
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_depreciation_line__display_name
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_ajustar_assets__display_name
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_asset_depreciation_confirmation_wizard__display_name
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_assets_custodies__display_name
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_assets_report_excel__display_name
+#: model:ir.model.fields,field_description:as_bo_assets.field_product_template__display_name
+#: model:ir.model.fields,field_description:as_bo_assets.field_report_as_bo_assets_assets_pdf__display_name
+#: model:ir.model.fields,field_description:as_bo_assets.field_report_as_bo_assets_reporte_siat_xlsx_xlsx__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: as_bo_assets
+#: code:addons/as_bo_assets/models/as_assets_views.py:0
+#, python-format
+msgid "Document closed."
+msgstr "Documento cerrado"
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_category__as_estructura_sale1_id
+msgid "Estructura Asiento 1"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_category__as_estructura_sale2_id
+msgid "Estructura Asiento 2"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_category__as_estructura_sale3_id
+msgid ""
+"Estructura Asiento Caso precio de venta menor a la depreciacion acumulado"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_category__as_estructura_sale4_id
+msgid "Estructura Asiento precio de venta mayor a la depreciacion acumulada"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.as_product_template_account_form_view
+msgid "Estructura de Asientos Ventas"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.as_product_template_account_form_view
+msgid "Estructura de Asientos para Dar de Baja"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_category__as_estructura_id
+msgid "Estructura para dar de baja activo"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.assets_pdf
+msgid "Expresado en Bolivianos<br/>Al"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_ajustar_assets__as_date
+msgid "Fecha"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_assets_custodies__as_date_end
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_assets_report_excel__end_date
+msgid "Fecha Final"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_assets_custodies__as_date_start
+msgid "Fecha Inicial"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_assets_report_excel__start_date
+msgid "Fecha Inicio"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_asset__as_date_depreciacion
+msgid "Fecha para Depreciacion anterior (para extraer monto)"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_asset__as_dias_activo
+msgid "Fecha para el computo continuo de la depreciacion del periodo"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_asset__first_depreciation_manual_date
+msgid "First Depreciation Date"
+msgstr "Primera Fecha de Depreciación"
+
+#. module: as_bo_assets
+#: code:addons/as_bo_assets/report/as_assets_report_pdf.py:0
+#, python-format
+msgid "Form content is missing, this report cannot be printed."
+msgstr "Falta el contenido del formulario este informe no se puede imprimir."
+
+#. module: as_bo_assets
+#: model:ir.actions.act_window,name:as_bo_assets.as_action_asset_depreciation_confirmation_wizard
+msgid "Generador de Asientos"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.as_assets_account_excel
+msgid "Generar excel"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.as_view_asset_depreciation_confirmation_wizard
+msgid "Generate Entries"
+msgstr "Generar Entradas"
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.as_view_asset_depreciation_confirmation_wizard
+msgid "Gnerador de Asientos de Activos Fijos por Fecha"
+msgstr "Generador de Asientos de Activos Fijos por Fecha"
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_asset__id
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_category__id
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_depreciation_line__id
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_move_line__id
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_ajustar_assets__id
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_asset_depreciation_confirmation_wizard__id
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_assets_custodies__id
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_assets_report_excel__id
+#: model:ir.model.fields,field_description:as_bo_assets.field_product_template__id
+#: model:ir.model.fields,field_description:as_bo_assets.field_report_as_bo_assets_assets_pdf__id
+#: model:ir.model.fields,field_description:as_bo_assets.field_report_as_bo_assets_reporte_siat_xlsx_xlsx__id
+msgid "ID"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields.selection,name:as_bo_assets.selection__account_asset_category__as_assets_type__intangible
+msgid "Intangible"
+msgstr ""
+
+#. module: as_bo_assets
+#: code:addons/as_bo_assets/models/as_assets_views.py:0
+#, python-format
+msgid "Journal Entries"
+msgstr "Entradas del Diario"
+
+#. module: as_bo_assets
+#: model:ir.model,name:as_bo_assets.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: as_bo_assets
+#: code:addons/as_bo_assets/wizard/as_ajustar_af_wiz.py:0
+#, python-format
+msgid "La fecha de Reevaluo debe ser mayor a la ultima fecha de depreciación"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_asset____last_update
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_category____last_update
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_depreciation_line____last_update
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_move_line____last_update
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_ajustar_assets____last_update
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_asset_depreciation_confirmation_wizard____last_update
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_assets_custodies____last_update
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_assets_report_excel____last_update
+#: model:ir.model.fields,field_description:as_bo_assets.field_product_template____last_update
+#: model:ir.model.fields,field_description:as_bo_assets.field_report_as_bo_assets_assets_pdf____last_update
+#: model:ir.model.fields,field_description:as_bo_assets.field_report_as_bo_assets_reporte_siat_xlsx_xlsx____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_ajustar_assets__write_uid
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_asset_depreciation_confirmation_wizard__write_uid
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_assets_custodies__write_uid
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_assets_report_excel__write_uid
+msgid "Last Updated by"
+msgstr "Ultima Actualización por"
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_ajustar_assets__write_date
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_asset_depreciation_confirmation_wizard__write_date
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_assets_custodies__write_date
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_assets_report_excel__write_date
+msgid "Last Updated on"
+msgstr "Ultima Actualización en"
+
+#. module: as_bo_assets
+#: model:ir.model.fields.selection,name:as_bo_assets.selection__account_asset_category__as_modality__mensual
+msgid "Mensual"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model,name:as_bo_assets.model_as_ajustar_assets
+msgid "Modelo para gestionar ajuste o Revaluo"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.view_om_account_asset_inherit
+msgid "Montos para asientos"
+msgstr ""
+
+#. module: as_bo_assets
+#: code:addons/as_bo_assets/wizard/as_ajustar_af_wiz.py:0
+#, python-format
+msgid "No se puede vender activo, sin lineas de depreciación"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,help:as_bo_assets.field_account_asset_asset__first_depreciation_manual_date
+msgid ""
+"Note that this date does not alter the computation of the first journal "
+"entry in case of prorata temporis assets. It simply changes its accounting "
+"date"
+msgstr ""
+"Tenga en cuenta que esta fecha no altera el primer cálculo del diario "
+"Entrada en caso de activos prorrateados temporalmente. Simplemente cambia su contabilidad "
+"fecha"
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.as_assets_account_ajuste
+msgid "Procesar"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_asset__product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: as_bo_assets
+#: model:ir.model,name:as_bo_assets.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_assets_custodies__as_product_id
+msgid "Producto"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_assets_custodies__as_job_id
+msgid "Puesto de Trabajo"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.ui.menu,name:as_bo_assets.as_assets_report_menu
+msgid "Reporte Activos Fijos"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.actions.act_window,name:as_bo_assets.as_action_assets_excel
+#: model:ir.actions.report,name:as_bo_assets.reporte_siat_xlsx
+#: model:ir.ui.menu,name:as_bo_assets.as_asstes_reporte_siat
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.as_assets_account_excel
+msgid "Reporte de SIAT"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_depreciation_line__as_revaluo
+msgid "Revaluado"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields.selection,name:as_bo_assets.selection__as_ajustar_assets__as_modality__revaluo
+msgid "Revaluo"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_asset__state
+msgid "Status"
+msgstr "Estado"
+
+#. module: as_bo_assets
+#: model:ir.model.fields.selection,name:as_bo_assets.selection__account_asset_category__as_assets_type__tangible
+msgid "Tangible"
+msgstr ""
+
+#. module: as_bo_assets
+#: code:addons/as_bo_assets/models/as_assets_views.py:0
+#, python-format
+msgid ""
+"This depreciation is already linked to a journal entry. Please post or "
+"delete it."
+msgstr ""
+"Esta depreciación ya está vinculada a un asiento de diario. Porfavor publique o "
+"Borrelo."
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_ajustar_assets__as_modality
+msgid "Tipo"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_category__as_assets_type
+msgid "Tipo de Activo"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_category__as_modality
+msgid "Tipo de Depreciación"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_depreciation_line__as_ufv_final
+msgid "UFV final"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_depreciation_line__as_ufv_inicial
+msgid "UFV inicial"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_assets_custodies__as_location_id
+msgid "Ubicación"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_category__as_date_inicio
+msgid "Ultima fecha del año o mes"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_asset__as_amount_sale_value
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_depreciation_line__as_value
+msgid "Valor"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_asset__as_amount_sale_update
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_depreciation_line__as_value_updates
+msgid "Valor Actualizado"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_asset__as_amount_sale
+msgid "Valor Venta"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_ajustar_assets__as_value
+msgid "Valor asignado"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_depreciation_line__as_valor_neto
+msgid "Valor neto"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_asset__as_amount
+msgid "Valor para asentar"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields.selection,name:as_bo_assets.selection__account_asset_asset__state__sale
+msgid "Vendido"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields.selection,name:as_bo_assets.selection__as_ajustar_assets__as_modality__ventas
+msgid "Ventas"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_account_asset_category__as_useful_life
+msgid "Vida Util"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,field_description:as_bo_assets.field_as_ajustar_assets__as_vida_util
+msgid "Vida util asignado (Años)"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.ui.menu,name:as_bo_assets.menu_asset_gestion_wizard
+msgid "Vista Activos Gestión"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.view_om_account_asset_inherit
+msgid "Volver Borrador"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model.fields,help:as_bo_assets.field_account_asset_asset__state
+msgid ""
+"When an asset is created, the status is 'Draft'.\n"
+"If the asset is confirmed, the status goes in 'Running' and the depreciation lines can be posted in the accounting.\n"
+"You can manually close an asset when the depreciation is over. If the last line of depreciation is posted, the asset automatically goes in that status."
+msgstr ""
+"Cuando se crea un activo, el estado es 'Borrador'.\n"
+"Si el activo es confirmado, el estado va en 'Ejecutando' y las líneas de depreciación se pueden contabilizar en la contabilidad.\n"
+"Puede cerrar manualmente un activo cuando la depreciación ha terminado. Si se registra la última línea de depreciación, el activo pasa automáticamente a ese estado."
+#. module: as_bo_assets
+#: model:ir.model,name:as_bo_assets.model_as_asset_depreciation_confirmation_wizard
+msgid "as.asset.depreciation.confirmation.wizard"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model,name:as_bo_assets.model_as_assets_report_excel
+msgid "as.assets.report.excel"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model,name:as_bo_assets.model_as_assets_custodies
+msgid "modelo heredado para agregar custodios de activos fijos"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.as_assets_account_ajuste
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.as_assets_account_excel
+msgid "or"
+msgstr "O"
+
+#. module: as_bo_assets
+#: model:ir.model,name:as_bo_assets.model_report_as_bo_assets_assets_pdf
+msgid "report.as_bo_assets.assets_pdf"
+msgstr ""
+
+#. module: as_bo_assets
+#: model:ir.model,name:as_bo_assets.model_report_as_bo_assets_reporte_siat_xlsx_xlsx
+msgid "report.as_bo_assets.reporte_siat_xlsx.xlsx"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.as_detalle_activo_gestion
+msgid "total"
+msgstr ""
+
+#. module: as_bo_assets
+#: model_terms:ir.ui.view,arch_db:as_bo_assets.view_om_account_asset_inherit
+msgid "volver a Abrir"
+msgstr ""

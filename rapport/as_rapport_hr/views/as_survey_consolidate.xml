@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="as_survey_consolidate_form" model="ir.ui.view">
+            <field name="name">Consolidado de Encuestas</field>
+            <field name="model">as.survey.consolidate</field>
+            <field name="arch" type="xml">
+                <form string="Consolidado de Encuestas">
+                    <header>
+                        <button name="action_survey_user_input_completed" type="object" string="Extraer"/>
+                        <button name="as_action_cancel" type="object" string="Cancelar" states="done"/>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                      <div class="oe_button_box" name="button_box">
+                        <button name="action_survey_user_input"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-pencil-square-o">
+                            <field string="Answers" name="answer_done_count" widget="statinfo"/>
+                        </button>
+                    </div>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" />
+                            <h1>
+                                <field name="name" />
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="as_survey_ids" widget="many2many_tags" />
+                            <field name="employer_id" />
+                        </group>
+                        <notebook>
+                            <page string="Participaciones">
+                                <field name="lines_ids" />
+                            </page>
+                              <page string="Resumen Por Supervisor">
+                                <field name="lines_summary_ids" />
+                            </page>
+                        </notebook>
+
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="as_survey_consolidate_tree" model="ir.ui.view">
+            <field name="name">Consolidado de Encuestas</field>
+            <field name="model">as.survey.consolidate</field>
+            <field name="arch" type="xml">
+                <tree string="Consolidado de Encuestas">
+                    <field name="name" />
+                    <field name="employer_id" />
+                </tree>
+            </field>
+        </record>
+        <record id="as_personalidade_form" model="ir.ui.view">
+            <field name="name">Personalidad</field>
+            <field name="model">as.personalidad</field>
+            <field name="arch" type="xml">
+                <form string="personalidad">
+                    <field name="name" />
+                </form>
+            </field>
+        </record>
+        <record id="as_cargoe_form" model="ir.ui.view">
+            <field name="name">Cargo</field>
+            <field name="model">as.cargo</field>
+            <field name="arch" type="xml">
+                <form string="cargo">
+                    <field name="name" />
+                </form>
+            </field>
+        </record>
+        <record id="as_survey_consolidate_line_form" model="ir.ui.view">
+            <field name="name">Consolidado de Encuestas Lineas</field>
+            <field name="model">as.survey.consolidate.line</field>
+            <field name="arch" type="xml">
+                <form string="Consolidado de Encuestas">
+                    <header>
+                    </header>
+                    <sheet>
+                      <group col="4">
+                        <field name="name" />
+                    <field name="partner_id" />
+                    <field name="job_title" />
+                    <field name="as_compromiso" />
+                    <field name="as_habilidades" />
+                    <!-- <field name="as_total" /> -->
+                    <!-- <field name="as_total_rango" /> -->
+                    <field name="as_edad" />
+                    <!-- <field name="as_situacion" /> -->
+                    <field name="as_cargo" />
+                    <field name="as_year" />
+                    <field name="as_survey_1"  class="o_class_negrilla" decoration-info="(as_survey_colr_1 == '1')" 
+                    decoration-bf= "(as_survey_colr_1 == '2')"
+                    decoration-it= "(as_survey_colr_1 == '3')"
+                    decoration-danger= "(as_survey_colr_1 == '4')"
+                    decoration-muted= "(as_survey_colr_1 == '5')"
+                    decoration-primary= "(as_survey_colr_1 == '6')"
+                    decoration-success= "(as_survey_colr_1 == '7')"
+                    decoration-warning= "(as_survey_colr_1 == '8')"/>
+                    <field name="as_survey_2" class="o_class_negrilla"  decoration-info="(as_survey_colr_2 == '1')" 
+                    decoration-bf= "(as_survey_colr_2 == '2')"
+                    decoration-it= "(as_survey_colr_2 == '3')"
+                    decoration-danger= "(as_survey_colr_2 == '4')"
+                    decoration-muted= "(as_survey_colr_2 == '5')"
+                    decoration-primary= "(as_survey_colr_2 == '6')"
+                    decoration-success= "(as_survey_colr_2 == '7')"
+                    decoration-warning= "(as_survey_colr_2 == '8')"/>
+                    <field name="as_survey_3" class="o_class_negrilla"  decoration-info="(as_survey_colr_3 == '1')" 
+                    decoration-bf= "(as_survey_colr_3 == '2')"
+                    decoration-it= "(as_survey_colr_3 == '3')"
+                    decoration-danger= "(as_survey_colr_3 == '4')"
+                    decoration-muted= "(as_survey_colr_3 == '5')"
+                    decoration-primary= "(as_survey_colr_3 == '6')"
+                    decoration-success= "(as_survey_colr_3 == '7')"
+                    decoration-warning= "(as_survey_colr_3 == '8')"/>
+                    <field name="as_survey_4" class="o_class_negrilla"  decoration-info="(as_survey_colr_4 == '1')" 
+                    decoration-bf= "(as_survey_colr_4 == '2')"
+                    decoration-it= "(as_survey_colr_4 == '3')"
+                    decoration-danger= "(as_survey_colr_4 == '4')"
+                    decoration-muted= "(as_survey_colr_4 == '5')"
+                    decoration-primary= "(as_survey_colr_4 == '6')"
+                    decoration-success= "(as_survey_colr_4 == '7')"
+                    decoration-warning= "(as_survey_colr_4 == '8')"/>
+                    <field name="as_survey_colr_1" invisible="1"/>
+                    <field name="as_survey_colr_2" invisible="1"/>
+                    <field name="as_survey_colr_3" invisible="1"/>
+                    <field name="as_survey_colr_4" invisible="1"/>
+                    <field name="as_survey_colr_5" invisible="1"/>
+                    <field name="as_total_general" class="o_class_negrilla"  decoration-info="(as_survey_colr_5 == '1')" 
+                    decoration-bf= "(as_survey_colr_5 == '2')"
+                    decoration-it= "(as_survey_colr_5 == '3')"
+                    decoration-danger= "(as_survey_colr_5 == '4')"
+                    decoration-muted= "(as_survey_colr_5 == '5')"
+                    decoration-primary= "(as_survey_colr_5 == '6')"
+                    decoration-success= "(as_survey_colr_5 == '7')"
+                    decoration-warning= "(as_survey_colr_5 == '8')"/>
+                    <field name="superior_id" />
+                    <field name="as_note" />
+                    <field name="as_personalidad" options="{'no_create_edit':0}"/>
+                    <field name="as_cargo_1" options="{'no_create_edit':0}"/>
+                      </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="as_survey_consolidateline_tree" model="ir.ui.view">
+            <field name="name">Consolidado de Encuestas</field>
+            <field name="model">as.survey.consolidate.line</field>
+            <field name="arch" type="xml">
+                <tree string="Consolidado de Encuestas" >
+                    <field name="name" />
+                    <field name="partner_id" />
+                    <field name="job_title" />
+                    <field name="as_compromiso" />
+                    <field name="as_habilidades" />
+                    <!-- <field name="as_total" /> -->
+                    <!-- <field name="as_total_rango" /> -->
+                    <field name="as_edad" />
+                    <!-- <field name="as_situacion" /> -->
+                    <field name="as_cargo" />
+                    <field name="as_year" />
+                    <field name="as_survey_1"  class="o_class_negrilla" decoration-info="(as_survey_colr_1 == '1')" 
+                    decoration-bf= "(as_survey_colr_1 == '2')"
+                    decoration-it= "(as_survey_colr_1 == '3')"
+                    decoration-danger= "(as_survey_colr_1 == '4')"
+                    decoration-muted= "(as_survey_colr_1 == '5')"
+                    decoration-primary= "(as_survey_colr_1 == '6')"
+                    decoration-success= "(as_survey_colr_1 == '7')"
+                    decoration-warning= "(as_survey_colr_1 == '8')"/>
+                    <field name="as_survey_2" class="o_class_negrilla"  decoration-info="(as_survey_colr_2 == '1')" 
+                    decoration-bf= "(as_survey_colr_2 == '2')"
+                    decoration-it= "(as_survey_colr_2 == '3')"
+                    decoration-danger= "(as_survey_colr_2 == '4')"
+                    decoration-muted= "(as_survey_colr_2 == '5')"
+                    decoration-primary= "(as_survey_colr_2 == '6')"
+                    decoration-success= "(as_survey_colr_2 == '7')"
+                    decoration-warning= "(as_survey_colr_2 == '8')"/>
+                    <field name="as_survey_3" class="o_class_negrilla"  decoration-info="(as_survey_colr_3 == '1')" 
+                    decoration-bf= "(as_survey_colr_3 == '2')"
+                    decoration-it= "(as_survey_colr_3 == '3')"
+                    decoration-danger= "(as_survey_colr_3 == '4')"
+                    decoration-muted= "(as_survey_colr_3 == '5')"
+                    decoration-primary= "(as_survey_colr_3 == '6')"
+                    decoration-success= "(as_survey_colr_3 == '7')"
+                    decoration-warning= "(as_survey_colr_3 == '8')"/>
+                    <!-- <field name="as_survey_4" class="o_class_negrilla"  decoration-info="(as_survey_colr_4 == '1')" 
+                    decoration-bf= "(as_survey_colr_4 == '2')"
+                    decoration-it= "(as_survey_colr_4 == '3')"
+                    decoration-danger= "(as_survey_colr_4 == '4')"
+                    decoration-muted= "(as_survey_colr_4 == '5')"
+                    decoration-primary= "(as_survey_colr_4 == '6')"
+                    decoration-success= "(as_survey_colr_4 == '7')"
+                    decoration-warning= "(as_survey_colr_4 == '8')"/> -->
+                    <field name="as_survey_colr_1" invisible="1"/>
+                    <field name="as_survey_colr_2" invisible="1"/>
+                    <field name="as_survey_colr_3" invisible="1"/>
+                    <field name="as_survey_colr_4" invisible="1"/>
+                    <field name="as_survey_colr_5" invisible="1"/>
+                    <field name="as_total_general" class="o_class_negrilla"  decoration-info="(as_survey_colr_5 == '1')" 
+                    decoration-bf= "(as_survey_colr_5 == '2')"
+                    decoration-it= "(as_survey_colr_5 == '3')"
+                    decoration-danger= "(as_survey_colr_5 == '4')"
+                    decoration-muted= "(as_survey_colr_5 == '5')"
+                    decoration-primary= "(as_survey_colr_5 == '6')"
+                    decoration-success= "(as_survey_colr_5 == '7')"
+                    decoration-warning= "(as_survey_colr_5 == '8')"/>
+                    <field name="superior_id" />
+                    <field name="as_note" />
+                    <field name="as_personalidad" />
+                    <field name="as_cargo_1" />
+                </tree>
+            </field>
+        </record>
+        <record id="as_survey_sumary_tree" model="ir.ui.view">
+            <field name="name">Consolidado de Encuestas</field>
+            <field name="model">as.survey.consolidate.summary</field>
+            <field name="arch" type="xml">
+                <tree string="Consolidado de Encuestas" >
+                    <field name="name" />
+                    <field name="superior_id" />
+                    <field name="as_compromiso" />
+                    <field name="as_survey_1"  class="o_class_negrilla" decoration-info="(as_survey_colr_1 == '1')" 
+                    decoration-bf= "(as_survey_colr_1 == '2')"
+                    decoration-it= "(as_survey_colr_1 == '3')"
+                    decoration-danger= "(as_survey_colr_1 == '4')"
+                    decoration-muted= "(as_survey_colr_1 == '5')"
+                    decoration-primary= "(as_survey_colr_1 == '6')"
+                    decoration-success= "(as_survey_colr_1 == '7')"
+                    decoration-warning= "(as_survey_colr_1 == '8')"/>
+                    <field name="as_survey_2" class="o_class_negrilla"  decoration-info="(as_survey_colr_2 == '1')" 
+                    decoration-bf= "(as_survey_colr_2 == '2')"
+                    decoration-it= "(as_survey_colr_2 == '3')"
+                    decoration-danger= "(as_survey_colr_2 == '4')"
+                    decoration-muted= "(as_survey_colr_2 == '5')"
+                    decoration-primary= "(as_survey_colr_2 == '6')"
+                    decoration-success= "(as_survey_colr_2 == '7')"
+                    decoration-warning= "(as_survey_colr_2 == '8')"/>
+                    <field name="as_survey_3" class="o_class_negrilla"  decoration-info="(as_survey_colr_3 == '1')" 
+                    decoration-bf= "(as_survey_colr_3 == '2')"
+                    decoration-it= "(as_survey_colr_3 == '3')"
+                    decoration-danger= "(as_survey_colr_3 == '4')"
+                    decoration-muted= "(as_survey_colr_3 == '5')"
+                    decoration-primary= "(as_survey_colr_3 == '6')"
+                    decoration-success= "(as_survey_colr_3 == '7')"
+                    decoration-warning= "(as_survey_colr_3 == '8')"/>
+                    <field name="as_survey_colr_1" invisible="1"/>
+                    <field name="as_survey_colr_2" invisible="1"/>
+                    <field name="as_survey_colr_3" invisible="1"/>
+                    <field name="as_survey_colr_5" invisible="1"/>
+                    <field name="as_total_general" class="o_class_negrilla"  decoration-info="(as_survey_colr_5 == '1')" 
+                    decoration-bf= "(as_survey_colr_5 == '2')"
+                    decoration-it= "(as_survey_colr_5 == '3')"
+                    decoration-danger= "(as_survey_colr_5 == '4')"
+                    decoration-muted= "(as_survey_colr_5 == '5')"
+                    decoration-primary= "(as_survey_colr_5 == '6')"
+                    decoration-success= "(as_survey_colr_5 == '7')"
+                    decoration-warning= "(as_survey_colr_5 == '8')"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_survey_consolidado_nucleo">
+            <field name="name">Consolidado de Encuestas</field>
+            <field name="res_model">as.survey.consolidate</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="as_survey_consolidate_tree" />
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Haga clic aquí para empezar a crear su Consolidado de Encuestas.
+                </p>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_survey_consolidado_line">
+            <field name="name">Consolidado de Encuestas lineas</field>
+            <field name="res_model">as.survey.consolidate.line</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="as_survey_consolidateline_tree" />
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Haga clic aquí para empezar a crear su Consolidado de Encuestas.
+                </p>
+            </field>
+        </record>
+          <record model="ir.actions.act_window" id="action_survey_smumary_line">
+            <field name="name">Consolidado de Encuestas summary</field>
+            <field name="res_model">as.survey.consolidate.summary</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="as_survey_sumary_tree" />
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Haga clic aquí para empezar a crear su Consolidado de Encuestas.
+                </p>
+            </field>
+        </record>
+        <menuitem id="as_survey_soncolidate_id" name="Consolidado de Encuestas"
+            action="action_survey_consolidado_nucleo" parent="survey.survey_menu_user_inputs" sequence="5" />
+
+    </data>
+</odoo>

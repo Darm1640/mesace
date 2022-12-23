@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_as_survey_cuadrante,Cuadrante,model_as_survey_cuadrante,base.group_user,1,1,1,1
+access_as_survey_features,Cuadrante,model_as_survey_features,base.group_user,1,1,1,1
+access_as_survey_color,Cuadrante,model_as_survey_color,base.group_user,1,1,1,1
+access_as_survey_consolidate_line,Cuadrante,model_as_survey_consolidate_line,base.group_user,1,1,1,1
+access_as_survey_consolidate_summary,Cuadrante,model_as_survey_consolidate_summary,base.group_user,1,1,1,1
+access_as_survey_consolidate,Cuadrante,model_as_survey_consolidate,base.group_user,1,1,1,1
+access_as_cargo,Cuadrante,model_as_cargo,base.group_user,1,1,1,1
+access_as_personalidad,Cuadrante,model_as_personalidad,base.group_user,1,1,1,1
+access_hr_employee_test,Cuadrante,model_hr_employee_test,base.group_user,1,1,1,1
+access_as_survey_employer,Cuadrante,model_as_survey_employer,base.group_user,1,1,1,1
+access_as_survey_range,Cuadrante,model_as_survey_range,base.group_user,1,1,1,1
+access_as_survey_range_line,Cuadrante,model_as_survey_range_line,base.group_user,1,1,1,1
+access_as_importador,as_importador,model_as_importador,base.group_user,1,1,1,1

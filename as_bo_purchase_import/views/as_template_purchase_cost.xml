@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_template_stock_landed" model="ir.ui.view">
+            <field name="name">templte.lines.landed.cost</field>
+            <field name="model">stock.landed.template</field>
+            <field name="arch" type="xml">
+                <tree string="Plantilla de Gastos">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="as_tipo_factura_form_w" model="ir.ui.view">
+            <field name="name">templte.lines.landed.cost</field>
+            <field name="model">stock.landed.template</field>
+            <field name="arch" type="xml">
+                <form string="Platilla de Gastos de importación">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Nombre de Plantilla" />
+                            </h1>
+                        </div>
+                        <group col="4">
+                            <notebook name='notebook'>
+                                <page string="Valoracion">
+                                    <field name="template_cost_lines">
+                                        <form string="Lineas de Gastos de importación">
+                                            <group>
+                                                <group>
+                                                    <field name="product_id" />
+                                                    <field name="price_unit" />
+                                                </group>
+                                                <group>
+                                                    <field name="split_method" />
+                                                    <field name="account_id" />
+                                                </group>
+                                            </group>
+                                        </form>
+                                        <tree string="Lineas de Gastos de importación" editable="bottom" >
+                                            <field name="product_id" context="{'default_type': 'service','default_landed_cost_ok': True}" domain="[('type','=','service'),('landed_cost_ok','=',True)]" />
+                                            <field name="name" />
+                                            <field name="price_unit" sum="Total Amount" />
+                                            <field name="price_unit_est" sum="Total Amount" />
+                                            <field name="split_method" />
+                                            <field name="account_id" />
+                                            <field name="as_facturado" />
+                                        </tree>
+                                    </field>
+                                </page>
+
+                            </notebook>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="as_template_stock_landed_action" model="ir.actions.act_window">
+            <field name="name">Plantilla de Gastos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.landed.template</field>
+            <!-- <field name="view_type">form</field> -->
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="as_template_stock_landed" />
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Haga clic aquí para empezar a crear su primer planilla de importacion.
+                </p>
+            </field>
+        </record>
+        <menuitem id="as_menu_template_cost" parent="purchase.menu_purchase_config"
+            action="as_template_stock_landed_action" sequence="30" groups="group_purchase_import_template"/>
+    </data>
+</odoo>

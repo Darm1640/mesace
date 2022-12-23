@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_account_account" model="ir.ui.view">
+            <field name="name">Account Inherit</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='user_type_id']" position="after">
+                      <field name="as_is_movimiento"/>
+                        <!-- <field name="cash_flow_category"
+                               options="{'no_create_edit': True,'no_create': True, 'no_quick_create': True}"/> -->
+                    </xpath>
+                </data>
+            </field>
+        </record>
+        
+    </data>
+</odoo>

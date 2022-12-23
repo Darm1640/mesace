@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="hr_expense_view_form_inherit" model="ir.ui.view">
+            <field name="name">hr.expense.view.form</field>
+            <field name="model">hr.expense</field>
+            <field name="inherit_id" ref="hr_expense.hr_expense_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='total_amount']" position="after">
+                    <field name="project_id" />
+                    <field name="as_presupuesto_line" readonly="True"/>
+                    <field name="employee_id" groups="hr_expense.group_hr_expense_team_approver" context="{'default_company_id': company_id}" readonly="False" invisible="True"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="as_view_hr_expense_sheet_form" model="ir.ui.view">
+            <field name="name">as.view.hr.expense.sheet.form</field>
+            <field name="model">hr.expense.sheet</field>
+            <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='expense_line_ids']" position="replace">
+                    <field name="expense_line_ids" nolabel="1" widget="many2many" domain="[('state', '=', 'draft'), ('employee_id', '=', employee_id), ('company_id', '=', company_id)]" options="{'reload_on_button': True}" context="{'form_view_ref' : 'hr_expense.hr_expense_view_form_without_header', 'default_company_id': company_id, 'default_employee_id': employee_id}">
+                            <tree decoration-danger="is_refused" editable="bottom">
+                                <button name="action_create_invoice" string="Crear Factura" type="object" class="btn-primary"/>
+                                <field name="date" optional="show"/>
+                                <field name="name"/>
+                                <field name="state" invisible="1"/>
+                                <field name="reference" optional="hide"/>
+                                <field name="analytic_account_id" optional="show" domain="['|', ('company_id', '=', parent.company_id), ('company_id', '=', False)]" groups="analytic.group_analytic_accounting"/>
+                                <field name="employee_id"/>
+                                <field name="analytic_tag_ids" optional="hide" widget="many2many_tags" groups="analytic.group_analytic_tags"/>
+                                <field name="account_id" optional="hide"/>
+                                <field name="message_unread" invisible="1"/>
+                                <field name="attachment_number" string=" "/>
+                                <button name="action_get_attachment_view"  string="View Attachments" type="object" icon="fa-paperclip"/>
+                                <field name="unit_amount" optional="hide" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                <field name="currency_id" optional="hide"/>
+                                <field name="quantity" optional="hide"/>
+                                <field name="company_id" invisible="1"/>
+                                <field name="tax_ids" optional="show" widget="many2many_tags" groups="account.group_account_readonly" context="{'default_company_id': company_id}"/>
+                                <field name="total_amount" optional="show"/>
+                                <field name="company_currency_id" invisible="1"/>
+                                <field name="total_amount_company" optional="show" groups="base.group_multi_currency"/>
+                                <field name="is_refused" invisible="True"/>
+                           </tree>
+                        </field>
+                </xpath>
+                <xpath expr="//field[@name='payment_mode']" position="after">
+                    <field name="as_nro" readonly="True"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="hr_expense_view_form_inherit_reportes_cabecera" model="ir.ui.view">
+            <field name="name">hr.expense.view.form.cabecera</field>
+            <field name="model">hr.expense.sheet</field>
+            <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@name='expenses']/field[@name='expense_line_ids']" position="attributes">
+                    <attribute name="context">{'form_view_ref' : 'hr_expense.hr_expense_view_form_without_header', 'default_company_id': company_id, 'default_employee_id': employee_id , 'default_project_id' : as_proyecto_id, 'default_analytic_account_id': as_cuenta_analitica}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='reset_expense_sheets']" position="after">
+                    <button name="crear_facturas" string="Generar Facturas" type="object" class="btn-primary"
+                         />
+                </xpath>
+
+            </field>
+        </record>
+</odoo>

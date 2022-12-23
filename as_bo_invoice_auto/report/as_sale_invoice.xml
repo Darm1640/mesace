@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <record id="view_sale_invoice_auto_filter" model="ir.ui.view">
+        <field name="name">as.sale.invoice.auto.select</field>
+        <field name="model">as.sale.invoice.auto</field>
+        <field name="arch" type="xml">
+            <search string="Search Reference Document">
+                <field name="name" string="Reference" filter_domain="['|', ('name','ilike',self), ('reference','=like',str(self)+'%')]"/>
+                <field name="amount"/>
+                <separator/>
+                <field name="partner_id" operator="child_of"/>
+                <separator/>
+                <filter name="purchase_orders" string="Purchase Orders" domain="[('sale_order_id', '!=', False)]"/>
+                <filter name="vendor_bills" string="Vendor Bills" domain="[('sale_bill_id', '!=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_sale_invoice_auto_tree" model="ir.ui.view">
+        <field name="name">as.sale.invoice.auto.tree</field>
+        <field name="model">as.sale.invoice.auto</field>
+        <field name="arch" type="xml">
+            <tree string="Reference Document">
+                <field name="name"/>
+                <field name="reference"/>
+                <field name="partner_id"/>
+                <field name="date"/>
+                <field name="amount"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

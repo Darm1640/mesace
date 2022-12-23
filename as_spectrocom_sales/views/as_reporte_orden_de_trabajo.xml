@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+  <report 
+        id="as_reporte_orden_trabajo" 
+        model="project.task" 
+        string="Orden de Trabajo Formato (PDF)"
+        report_type="qweb-pdf"
+        name="as_spectrocom_sales.as_reporte_orden_de_trabajo"
+        file="as_spectrocom_sales.as_reporte_orden_de_trabajo" 
+        attachment_use="False" 
+        menu="True" />
+
+        <record id="as_report_sale_order_paperformat" model="report.paperformat">
+            <field name="name">Formato de factura de venta PDF</field>
+            <field name="default" eval="True" />
+            <field name="format">custom</field>
+            <field name="page_height">278</field>
+            <field name="page_width">216</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">2</field>
+            <field name="margin_right">2</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">0</field>
+            <field name="dpi">90</field>
+            <field name="report_ids" eval="[(4, ref('as_spectrocom_sales.as_reporte_orden_trabajo'))]" />
+        </record>
+         
+  </data>
+</odoo>

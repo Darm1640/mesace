@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_purchase_order_inherit_descuento" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit.descuento</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="as_descuento_global" />
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="after">
+                <field name="as_descuento_linea" />
+                <field name="as_activo" optional="hide"/>
+                <!-- <field name="as_numero_serie" optional="hide"/> -->
+            </xpath>
+             <xpath expr="//field[@name='amount_tax']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='amount_untaxed']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_purchase_order_inherit_type_total" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit.type_total</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/tree/field[@name='price_subtotal']" position="after">
+                <field name="as_type_total" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="as_purchase_order_field_diario_factura" model="ir.ui.view">
+            <field name="name">as.purchase.order.form.campos.add</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form" />
+            <field name="type">form</field>
+            <field name="priority" eval="1" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='as_solicitante']"
+                    position="after">
+                    <field name="as_diario_purchase"  />
+                </xpath>
+            </field>
+        </record>
+    
+    <record id="view_purchase_order_line_inherit_account_analytic" model="ir.ui.view">
+        <field name="name">purchase.order.line.form.inherit.account_analytic</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='account_analytic_id']" position="attributes">
+                <attribute name="required">True</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_sale_field_setting_view" model="ir.ui.view">
+            <field name="name">as.res.sale.user.form</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="account.res_config_settings_view_form" />
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@id='invoicing_settings']" position="inside">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="as_url_api" /><br/>
+                            <field name="as_url_api" />
+                            <div class="text-muted">
+                                URL para comunicacion con API
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="as_number_end_invoice" /><br/>
+                            <field name="as_number_end_invoice" />
+                            <div class="text-muted">
+                                Dias para calcular fecha limite de cancelación de Facturas
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="as_version" /><br/>
+                            <field name="as_version" />
+                            <div class="text-muted">
+                                Versión de Facturación SIAT
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="as_limit_nota" /><br/>
+                            <field name="as_limit_nota" />
+                            <div class="text-muted">
+                                Limite para generar las notas de Debito-Credito
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="as_limit_amount" /><br/>
+                            <field name="as_limit_amount" />
+                            <div class="text-muted">
+                                Limite para reglas de razon social y NIT
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="as_timeout_inv" /><br/>
+                            <field name="as_timeout_inv" />
+                            <div class="text-muted">
+                                Limite para timeout
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="as_out_line" /><br/>
+                            <field name="as_out_line" />
+                            <div class="text-muted">
+                                Sacar sistema de linea para generar facturas offline
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

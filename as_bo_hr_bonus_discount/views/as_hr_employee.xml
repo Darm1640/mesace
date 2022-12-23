@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Formulario cliente, campos adicionales -->
+        <record id="as_payment_view_partner_form2" model="ir.ui.view">
+            <field name="name">hr.contract.form.tree</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='salary_and_advantages']" position="inside">
+                       <field name="as_wage_bisemanal" />
+                </xpath>
+            
+            </field>
+        </record>
+    </data>
+</odoo>

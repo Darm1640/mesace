@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="as_payment_multi_lines" model="ir.ui.view">
+        <field name="name">as.payment.multi.lines</field>
+        <field name="model">as.payment.multi</field>
+        <field name="inherit_id" ref="as_bo_tesoreria.as_payment_multi_form_p" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='as_sale_id']" position="after">
+                <field name="as_numero_documento" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

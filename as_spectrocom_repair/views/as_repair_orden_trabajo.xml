@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <data>
+        <record id="as_boton_reparado" model="ir.ui.view">
+            <field name="name">as.boton.reparado</field>
+            <field name="model">repair.order</field>
+            <field name="inherit_id" ref="repair.view_repair_order_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//form/header" position="inside">
+                    <button name="action_reparado" string="IMPRIMIR ORDEN DE TRABAJO" type="object" class="oe_highlight"
+                        states="done" />
+                </xpath>
+                <xpath expr="//page[@name='operations']" position="after">
+                    <page string="Parametros" name="parametros">
+                        <group>
+                            <field name="as_proposal_id" />
+                            <field name="as_texto" />
+                            <button name="boton_add" string="Agregar" type="object"  class="btn-primary"/>
+                        </group>
+                        <field name="as_conditions_lines" mode="tree">
+                            <form>
+                                <field name="name" />
+                                <field name="as_valor" />
+                                <field name="as_valor_2" />
+                            </form>
+                            <tree string="Condiciones de la Propuesta" editable="bottom">
+                                <field name="name" />
+                                <field name="as_valor" />
+                                <field name="as_valor_2" />
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <report id="as_reporte_orden_trabajo_pdf" string="Reporte de Orden de Trabajo (PDF)" model="repair.order"
+            report_type="qweb-pdf" name="as_spectrocom_repair.as_orden_trabajo_pdf"
+            file="as_spectrocom_repair.as_orden_trabajo_pdf" menu="False" />
+        <record id="as_orden_trabajo" model="report.paperformat">
+            <field name="name">Reporte de existencias PDF</field>
+            <field name="default" eval="True" />
+            <field name="format">custom</field>
+            <field name="page_height">278</field>
+            <field name="page_width">214</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="header_spacing">0</field>
+            <field name="report_ids" eval="[(4, ref('as_spectrocom_repair.as_reporte_orden_trabajo_pdf'))]" />
+        </record>
+    </data>
+</odoo>

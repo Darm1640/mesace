@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_purchase_order_form_import" model="ir.ui.view">
+            <field name="name">as.purchase.order.import.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form" />
+            <field name="type">form</field>
+            <field name="priority" eval="40" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="as_importacion" />
+                    <field name="purchase_template_id" context="{'company_id': company_id}"
+                    options="{'no_create': True, 'no_open': True}"
+                    
+                     attrs="{'invisible': [('as_importacion','=', False)]}"
+                />
+                </xpath>
+                 <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="after">
+                    <field name="as_importacion" invisible="1" />
+                    <field name="as_cost_import"   attrs="{'invisible': [('as_importacion','=', False)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='currency_id']" position="after">
+                    <field name="as_cost_id" options="{'no_create_edit': True}" readonly="True"
+                        attrs="{'invisible': [('as_importacion','=', False)]}" />
+                </xpath>
+                  <!-- <xpath expr="//button[@name='button_done']" position="after">
+                    <button name="compute_cost_product" type="object" string="Re-Costear" icon="fa fa-money"
+                        attrs="{'invisible': ['|',('state', 'not in', ('done')),('as_importacion','=', False)]}" />
+
+                </xpath> -->
+                  <!-- <xpath expr="//field[@name='as_tipo_retencion']" position="attributes">
+                    <attribute name="attrs">{'required':['|',('as_importacion','=',False),('as_tipo_documento','!=','Factura')]}</attribute>
+                </xpath> -->
+            </field>
+        </record>
+    </data>
+</odoo>

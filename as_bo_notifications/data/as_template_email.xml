@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="as_template_pick_email" model="mail.template">
+            <field name="name">DESPACHO: Correo enviado a encargados de almacen</field>
+            <field name="model_id" ref="stock.model_stock_picking" />
+            <field name="subject">Despacho Pendiente: Ref(${object.name})</field>
+            <field name="email_from">${object.company_id.partner_id.email}</field>
+            <field name="email_to">${object.partner_id.email}</field>
+            <field name="body_html" type="html">
+                <div>
+                    Estimado(s) usuario<br />
+Tiene pendiente el despacho de la transacción  <b><a href='${website_url}/web#id=${object.id}&amp;action=265&amp;active_id=1&amp;model=stock.picking&amp;view_type=form&amp;cids=${object.company_id.id}&amp;menu_id=148'>${object.name}</a></b> <br />
+                   programada para la fecha ${object.scheduled_date}.<br />
+
+                    Gracias!!
+                </div>
+            </field>
+            <!-- <field name="report_template" ref="as_spectrocom_crm.as_action_crm_load"/>
+            <field name="report_name">Relevamiento_${(object.name or '').replace('/','_')}</field>
+            <field name="lang">${object.partner_id.lang}</field>
+            <field name="auto_delete" eval="True"/> -->
+        </record>
+              <!-- Account Journal -->
+        <record id="as_jefe_almacen1" model="res.users.role">
+            <field name="name">Asistente de almacen </field>
+        </record>
+          <record id="as_jefe_almacen2" model="res.users.role">
+            <field name="name">Coordinador de almacen </field>
+        </record>
+         <record id="as_jefe_almacen3" model="res.users.role">
+            <field name="name">Jefe de almacen </field>
+        </record>
+
+        <record id="as_template_pick_email_venta_productos" model="mail.template">
+            <field name="name">DESPACHO VENTA DE PRODUCTOS: Correo enviado a encargados de almacen</field>
+            <field name="model_id" ref="stock.model_stock_picking" />
+            <field name="subject">REALIZAR SALIDA VENTA DE EQUIPOS : Ref(${object.name})</field>
+            <field name="email_from">${object.company_id.partner_id.email}</field>
+            <field name="email_to">almacensc@espectrocom.com, asistente.almacen@espectrocom.com</field>
+            <field name="email_cc">oscar.morant@espectrocom.com, carlos.donoso@espectrocom.com, ronald.quiroga@espectrocom.com</field>
+            <field name="body_html" type="html">
+                <div>
+                    Usted, <br />
+                    tiene una Nota de Salida por ejecutar <br />
+                    <b><a href='${website_url}/web#id=${object.id}&amp;action=261&amp;active_id=${object.id}&amp;model=stock.picking&amp;view_type=form&amp;cids=${object.company_id.id}&amp;menu_id=620'>${object.name}</a></b> <br />
+                   para el cliente ${object.partner_id.name}.<br /> con codigo ${object.as_codigo_venta}  Ejecutar a la brevedad posible. Gracias
+                </div>
+            </field>
+        </record>
+
+
+
+        <record id="as_template_pick_email_alquiler_productos" model="mail.template">
+            <field name="name">DESPACHO ALQUILER DE PRODUCTOS: Correo enviado a encargados de almacen</field>
+            <field name="model_id" ref="stock.model_stock_picking" />
+            <field name="subject">REALIZAR SALIDA DE EQUIPOS DE ALQUILER :  Ref(${object.name})</field>
+            <field name="email_from">${object.company_id.partner_id.email}</field>
+            <field name="email_to">almacensc@espectrocom.com, asistente.almacen@espectrocom.com</field>
+            <field name="email_cc">oscar.morant@espectrocom.com, carlos.donoso@espectrocom.com, ronald.quiroga@espectrocom.com</field>
+            <field name="body_html" type="html">
+                <div>
+                    Usted, <br />
+                    tiene una Nota de Salida por ejecutar <b><a href='${website_url}/web#id=${object.id}&amp;action=265&amp;active_id=1&amp;model=stock.picking&amp;view_type=form&amp;cids=${object.company_id.id}&amp;menu_id=148'>${object.name}</a></b> <br />
+                   para el cliente ${object.partner_id.name}.<br /> con codigo ${object.as_codigo_venta}  Ejecutar a la brevedad posible. Gracias
+                </div>
+            </field>
+        </record>
+        
+
+        <record id="as_template_pick_email_alquiler_servicios" model="mail.template">
+            <field name="name">DESPACHO ALQUILER DE SERVICIOS: Correo enviado a encargados de almacen</field>
+            <field name="model_id" ref="project.model_project_task" />
+            <field name="subject">ASIGNAR RESPONSABLE A TAREA: Ref(${object.name})</field>
+            <field name="email_from">${object.company_id.partner_id.email}</field>
+            <field name="email_to">jean.camara@espectrocom.com, victor.abrego@espectrocom.com</field>
+            <field name="email_cc"></field>
+            <field name="body_html" type="html">
+                <div>
+                    Usted, <br />
+                    tiene una Tarea por ejecutar <b><a href='${website_url}/web#id=${object.id}&amp;action=500&amp;active_id=${object.id}&amp;model=project.task&amp;view_type=form&amp;cids=${object.company_id.id}&amp;menu_id=620'>${object.name}</a></b> <br />
+                   para el cliente ${object.partner_id.name}<br /> con codigo ${object.as_codigo}  Ejecutar a la brevedad posible. Gracias
+                </div>
+            </field>
+        </record>
+
+        <record id="as_template_pick_email_salida_almacen" model="mail.template">
+            <field name="name">DESPACHO SALIDA DE ALMACEN: Correo enviado a encargados de almacen</field>
+            <field name="model_id" ref="stock.model_stock_picking" />
+            <field name="subject">REALIZAR FACTURACION DE LA COTIZACION CON CODIGO: Ref(${object.as_codigo_venta})</field>
+            <field name="email_from">${object.company_id.partner_id.email}</field>
+            <field name="email_to">facturacion@espectrocom.com, asistente.facturacion@espectrocom.com</field>
+            <field name="email_cc">oscar.morant@espectrocom.com, ronald.quiroga@espectrocom.com</field>
+            <field name="body_html" type="html">
+                <div>
+                    Usted, <br />
+                    tiene una Cotizacion por facturar<b><a href='${website_url}/web#id=${object.id}&amp;action=261&amp;active_id=${object.id}&amp;model=stock.picking&amp;view_type=form&amp;cids=${object.company_id.id}&amp;menu_id=620'>${object.sale_id.name}</a></b> <br />
+                   para el cliente ${object.partner_id.name}.<br />Ejecutar a la brevedad posible. Gracias
+                </div>
+            </field>
+        </record>
+        
+        <record id="as_template_pick_email_tarea" model="mail.template">
+            <field name="name">DESPACHO TAREA: Correo enviado a encargados de almacen</field>
+            <field name="model_id" ref="project.model_project_task" />
+            <field name="subject">REALIZAR LA REASIGNACION DE RESPONSABLE A TAREA: Ref(${object.name})</field>
+            <field name="email_from">${object.company_id.partner_id.email}</field>
+            <field name="email_to">alex.aviles@espectrocom.com, jean.camara@espectrocom.com, oscar.morant@espectrocom.com, ronald.quiroga@espectrocom.com, erick.gamio@espectrocom.com, victor.abrego@espectrocom.com</field>
+            <field name="email_cc"></field>
+            <field name="body_html" type="html">
+                <div>
+                    Usted, 
+                    tiene una TAREA por REVISAR y Asignar responsable de ejecuccion, para el cliente ${object.partner_id.name} 
+                    <br/><b><a href='${website_url}/web#id=${object.id}&amp;action=510&amp;active_id=${object.id}&amp;model=project.task&amp;view_type=form&amp;cids=${object.company_id.id}&amp;menu_id=620'>${object.name}</a></b><br/>Ejecutar a la brevedad posible. Gracias
+                </div>
+            </field>
+        </record>
+
+    </data>
+</odoo>

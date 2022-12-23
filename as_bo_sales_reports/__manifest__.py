@@ -1,0 +1,38 @@
+# -*- coding: utf-8 -*-
+{
+    'name': 'AhoraSoft REPORTES de ventas',
+    'version': '1.5.1',
+    'category': 'sale',
+    'author': 'Ahorasoft',
+    'summary': 'Customized Warehouse Management for Bolivia',
+    'website': 'http://www.ahorasoft.com',
+    'depends': [
+        'base',
+        'base_setup',
+        'stock',
+        'sale',
+        'product',
+        "purchase_stock",
+        'sale_management',
+        'report_xlsx',
+        'purchase',
+        'hr_payroll',
+        'as_bo_hr'
+    ],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/as_resumen_ventas.xml',
+        'report/as_resumen_ventas_pdf.xml',
+        'wizard/as_detalle_venta_producto.xml',
+        'wizard/as_reporte_por_ventas_por_utilidad.xml',     
+        'wizard/as_resumen_ventas.xml', 
+        'wizard/as_facturas_emitidas.xml',
+        'wizard/as_reporte_cuentas_por_cobrar.xml',
+        'wizard/as_planilla_ministerio.xml',
+        'wizard/as_reporte_ventas_sin_factura.xml',
+        'views/as_hr_menu.xml',        
+    ],
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+}

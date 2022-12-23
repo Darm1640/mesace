@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_report_sales_sumary_facturas_emitidas" model="ir.ui.view">
+            <field name="name">Facturas Emitidas</field>
+            <field name="model">as.sales.facturas.emitidas.wiz</field>
+            <field name="arch" type="xml">
+                <form string="Facturas Emitidas">
+                    <group col="2">
+                        <group>
+                            <field name="fecha_inicial" />
+                            <field name="nombre_cliente" widget="many2many_tags" options="{&quot;always_reload&quot;: True, 'no_open': True,'no_create': 1, 'no_create_edit': 1}" />
+                            
+                        </group>
+                        <group>
+                            <field name="fecha_final" />
+                            
+                            <field name="asesor" 
+                                widget="many2many_tags"
+                                options="{&quot;always_reload&quot;: True, 'no_open': True,'no_create': 1, 'no_create_edit': 1}" />
+                            
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="export_xls" default_focus="1" string="Exportar a Excel" type="object"
+                            class="oe_highlight" context="{'xls_export':1}" icon="fa-download" />
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_facturas_emitidas" model="ir.actions.act_window">
+            <field name="name">Facturas Emitidas</field>
+            <field name="res_model">as.sales.facturas.emitidas.wiz</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="as_report_sales_sumary_facturas_emitidas" />
+            <field name="target">new</field>
+        </record>
+        
+        <report id="sales_facturas_emitidas_xls" model="as.sales.facturas.emitidas.wiz" string="Facturas Emitidas" report_type="xlsx"
+            name="as_bo_sales_reports.sales_facturas_emitidas_xls.xlsx"
+            file="as_bo_sales_reports.sales_facturas_emitidas_xls.xlsx"
+            attachment_use="False" />
+        <menuitem id="as_sales_facturas_emitidas" name="Facturas Emitidas" action="action_facturas_emitidas"
+            parent="sale.menu_sale_report" sequence="100" groups="base.group_user" />
+    </data>
+</odoo>

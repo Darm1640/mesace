@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_total_line,Acceso al modulo totalizar linas,as_bo_purchase_import.model_as_stock_valuation_summary_lines,sales_team.group_sale_manager,1,1,1,1
+access_stock_landed_template_user_all,stock_landed_template,model_stock_landed_template,sales_team.group_sale_manager,1,1,1,1
+access_stock_landed_template_lines_user_all,stock_landed_template_lines,model_stock_landed_template_lines,sales_team.group_sale_manager,1,1,1,1
+
+

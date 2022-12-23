@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="as_survey_range_form" model="ir.ui.view">
+            <field name="name">Rangos de Preguntas</field>
+            <field name="model">as.survey.range</field>
+            <field name="arch" type="xml">
+                <form string="Rangos de Preguntas">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" />
+                            <h1>
+                                <field name="name" />
+                            </h1>
+                        </div>
+                        <group>
+                        <field name="as_factor" />
+                        </group>
+                        <field name="as_range_lines" />
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="as_survey_range_tree" model="ir.ui.view">
+            <field name="name">Rangos de Preguntas</field>
+            <field name="model">as.survey.range</field>
+            <field name="arch" type="xml">
+                <tree string="Rangos de Preguntas">
+                    <field name="name" />
+                    <field name="as_factor" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_survey_range_nucleo">
+            <field name="name">Rangos de Preguntas</field>
+            <field name="res_model">as.survey.range</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="as_survey_range_tree" />
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Haga clic aquí para empezar a crear su Rango fueras.
+                </p>
+            </field>
+        </record>
+        <record id="as_survey_range_tree_line" model="ir.ui.view">
+            <field name="name">Rangos de Preguntas</field>
+            <field name="model">as.survey.range.line</field>
+            <field name="arch" type="xml">
+                <tree string="Rangos de Preguntas">
+                    <field name="as_from" />
+                    <field name="as_to" />
+                    <field name="as_value" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_survey_range_nucleo_line">
+            <field name="name">Rangos de Preguntas</field>
+            <field name="res_model">as.survey.range.line</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="as_survey_range_tree" />
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Haga clic aquí para empezar a crear su Rango fueras.
+                </p>
+            </field>
+        </record>
+        <menuitem id="as_survey_range_id" name="Rangos de Preguntas" action="action_survey_range_nucleo"
+            parent="survey.survey_menu_questions" sequence="5" />
+
+
+    </data>
+</odoo>

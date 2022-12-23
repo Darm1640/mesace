@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Formulario cliente, campos adicionales -->
+        <record id="as_hr_payslip_form2" model="ir.ui.view">
+            <field name="name">hr.payslip.form.tree</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form" />
+            <field name="arch" type="xml">
+    
+                <xpath expr="//field[@name='input_line_ids']/tree/field['name']" position="before">
+                    <field name="as_bonus_discount_id" />
+                </xpath>       
+            
+            </field>
+        </record>
+    </data>
+</odoo>

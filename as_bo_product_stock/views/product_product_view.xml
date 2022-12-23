@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <record id="product_product_form_view" model="ir.ui.view">
+        <field name="name">product.product.form.view</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="stock.product_form_view_procurement_button"/>
+        <field name="arch" type="xml">
+           <xpath expr="//group[@name='group_lots_and_weight']"  position="before">
+                <group string="Stocks balance by locations"
+                       attrs="{'invisible': [('type', '=', 'service')]}"
+                       groups="base.group_user"
+                >
+                    <div colspan="6">
+                        <field name="location_ids"
+                               context="{'product_id': id}"
+                               widget="locationsHierarchyWidget"
+                        />
+                    </div>
+                    <button name="action_prepare_xlsx_balance_product"
+                            type="object"
+                            string="Export to XLSX"
+                            context="{'product_id': id}"
+                            class="btn btn-secondary pull-right"
+                    />
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_product_form_view_easy" model="ir.ui.view">
+        <field name="name">product.product.form.view.easy</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="stock.product_product_view_form_easy_inherit_stock"/>
+        <field name="arch" type="xml">
+           <xpath expr="//group[@name='packaging']"  position="before">
+                <group string="Stocks balance by locations"
+                       attrs="{'invisible': [('type', '=', 'service')]}"
+                       groups="base.group_user"
+                >
+                    <div colspan="6">
+                        <field name="location_ids"
+                               context="{'product_id': id}"
+                               widget="locationsHierarchyWidget"
+                        />
+                    </div>
+                    <button name="action_prepare_xlsx_balance_product"
+                            type="object"
+                            string="Export to XLSX"
+                            context="{'product_id': id}"
+                            class="btn btn-secondary pull-right"
+                    />
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_product_form_only_locations" model="ir.ui.view">
+        <field name="name">product.product.form.view.only.locations</field>
+        <field name="model">product.product</field>
+        <field name="priority" eval="10000"/>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group string="Stocks balance by locations"
+                            groups="base.group_user"
+                    >
+                        <div>
+                            <field name="location_ids"
+                                   context="{'product_id': id}"
+                                   widget="locationsHierarchyWidget"
+                            />
+                        </div>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

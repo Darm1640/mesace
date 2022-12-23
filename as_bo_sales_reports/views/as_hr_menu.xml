@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!-- Menu View -->
+	
+	<menuitem id="as_planilla_ministerio_report" name="Planilla Ministerio" action="as_action_reporte_ministerio_nuevo" parent="hr_payroll.menu_hr_payroll_report" sequence="68" />
+</odoo>

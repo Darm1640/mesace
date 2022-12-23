@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_as_repair_historial,as_repair_historial,model_as_historial_reparaciones,base.group_user,1,1,1,1
+access_as_repair_order_sheet,as_repair_order_sheet,model_as_repair_order_sheet,base.group_user,1,1,1,1
+access_as_proposal_aux,as_proposal_aux,model_as_proposal_aux,base.group_user,1,1,1,1
+access_as_proposal_conditions_aux,as_proposal_conditions_aux,model_as_proposal_conditions_aux,base.group_user,1,1,1,1
+access_as_proposal_conditions_sale_aux,as_proposal_conditions_sale_aux,model_as_proposal_conditions_sale_aux,base.group_user,1,1,1,1

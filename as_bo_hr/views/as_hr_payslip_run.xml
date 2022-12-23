@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_hr_payslip_run_form_form" model="ir.ui.view">
+            <field name="name">hr.payslip.form.form</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form" />
+            <field name="arch" type="xml">
+
+                <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                    <button class="oe_stat_button" name="action_view_asiento" type="object" icon="fa-pencil-square-o">
+                        <field string="Asiento" name="as_asiento_count" widget="statinfo" />
+                    </button>
+                    <button class="oe_stat_button" name="action_view_ff" type="object" icon="fa-pencil-square-o">
+                        <field string="Facturas PP" name="as_ff_count" widget="statinfo" />
+                    </button>
+
+                </xpath>
+
+
+
+                <xpath expr="//field[@name='credit_note']" position="after">
+                    <field name="as_indicadores_id" />
+                </xpath>
+                <xpath expr="//button[@name='action_validate']" position="after">
+                    <button name="action_cancel" type="object" string="Cancelar" states="verify,close"
+                        class="oe_highlight" />
+                    <button class="btn-primary" type="action" name="%(as_action_planilla_pat)d" states="close"
+                        string="Facturar Pago a Terceros" />
+                </xpath>
+                <xpath expr="//sheet" position="inside">
+                    <notebook>
+                        <page string="Nominas" name="nominas">
+                            <field name="slip_ids">
+                                <tree string="Payslips Batches" editable="bottom">
+                                    <button name="get_slip_employee" type="object" default_focus="1" string=""
+                                        context="{'xls_export':1}" icon="fa-address-card" />
+                                    <field name="number" readonly="True" force_save="1" />
+                                    <field name="employee_id" />
+                                    <field name="as_sequence" />
+                                    <field name="name" />
+                                    <field name="date_from" />
+                                    <field name="date_to" />
+                                    <field name="state" />
+                                    <field name="as_days_work" />
+                                    <field name="as_neto_wage" />
+                                    <field name="as_neto_wage" />
+                                    <field name="company_id" groups="base.group_multi_company"
+                                        options="{'no_create': True}" />
+                                    <field name="payslip_run_id" invisible="1" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="as_hr_employee_add_campo_nombre_dos" model="ir.ui.view">
+            <field name="name">as.hr.employee.add.campo.nombre.dos</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='nombre']" position="after">
+                    <field name="nombre_2" />
+                </xpath>
+                <xpath expr="//field[@name='as_novedades']" position="after">
+                    <field name="fecha_novedad" />
+                </xpath>
+                <xpath expr="//field[@name='as_nua']" position="after">
+                    <field name="as_tipo_cotizante" />
+                    <field name="as_tipo_asegurado" />
+                </xpath>
+                <xpath expr="//field[@name='work_location']" position="after">
+                    <field name="as_lugar_de_trabajo" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="as_view_sale_account_wizard" model="ir.ui.view">
+        <field name="name">as.sale.ajust.saldo</field>
+        <field name="model">as.sale.ajust.saldo</field>
+        <field name="arch" type="xml">
+            <form string="Saldo en Ventas">
+                <div>
+                    <p>
+                     Actualizar Saldo en Ventas
+                    </p> 
+                </div>
+                <footer>
+                    <button string="Actualizar" name="as_ajustar_saldos" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+         </field>
+    </record>
+
+    <record id="as_action_sale_account_wizard" model="ir.actions.act_window">
+        <field name="name">Actualizar Saldo Ventas</field>
+        <field name="res_model">as.sale.ajust.saldo</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="as_view_sale_account_wizard"/>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="sale.model_sale_order" />
+    </record>
+ 
+
+</odoo>

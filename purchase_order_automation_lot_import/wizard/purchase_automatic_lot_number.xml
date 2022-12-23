@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="view_purchase_automatic_lot_inv" model="ir.ui.view">
+            <field name="name">purchase.auto.lotserial</field>
+            <field name="model">purchase.auto</field>
+            <field name="arch" type="xml">
+                <form string="Import Lot And Serial">
+                    <group>
+                        <group>
+                            <field name="file"  widget="binary" filename="file_name" required="1"/>
+                            <field name="file_name" invisible="1" />
+                            <field name='select'/>
+                        </group>
+                    </group>
+                <footer>
+                    <button name="action_import_lot" string="Import Lot/Serial Number" type="object" class="oe_highlight"/>
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+                </form>
+
+            </field>
+        </record>
+        <record id="action_view_purchase_automatic_lot_inv" model="ir.actions.act_window">
+            <field name="name">Import Lot &amp; Serial Number </field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.auto</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="purchase.model_purchase_order" />
+        </record>
+ 
+</odoo>

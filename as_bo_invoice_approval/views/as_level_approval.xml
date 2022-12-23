@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="as_approval_purchase_menu3" parent="account.menu_finance_configuration"
+            name="Niveles de Aprobación" sequence="2000" action="as_bo_purchase_approval.as_approval_purchase_action" />
+    </data>
+</odoo>

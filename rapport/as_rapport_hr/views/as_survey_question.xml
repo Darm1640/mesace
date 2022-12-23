@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Formulario cliente, campos adicionales -->
+        <record id="as_survey_form_form_dif" model="ir.ui.view">
+            <field name="name">as.survey.question.form</field>
+            <field name="model">survey.question</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="survey.survey_question_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='question_type']" position="after">
+                    <field name="as_factor" />
+                    <field name="as_secuencia" />
+                </xpath>
+
+            </field>
+        </record>
+        <record id="as_survey_user_input_view_tree" model="ir.ui.view">
+            <field name="name">survey.user_input.view.tree</field>
+            <field name="model">survey.user_input</field>
+            <field name="inherit_id" ref="survey.survey_user_input_view_tree" />
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="create">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='scoring_percentage']" position="replace">
+                    <field name="as_total_survery" sum="total" />
+                </xpath>
+                <xpath expr="//field[@name='survey_id']" position="after">
+                    <field name="employer_id" />
+                </xpath>
+            </field>
+        </record>
+        <record id="as_survey_view_search" model="ir.ui.view">
+            <field name="name">survey.user_input.search.view.inherit</field>
+            <field name="model">survey.user_input</field>
+            <field name="inherit_id" ref="survey.survey_user_input_view_search" />
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='group_by_survey']" position="after">
+                    <filter string="Empleador" name="groupby_employer" context="{'group_by': 'employer_id'}" />
+                </xpath>
+            </field>
+        </record>
+
+
+
+        <!-- Share Button in action menu -->
+        <record model="ir.actions.server" id="model_survey_act_records">
+            <field name="name">Actualizar Totales</field>
+            <field name="model_id" ref="survey.model_survey_user_input" />
+            <field name="binding_model_id" ref="survey.model_survey_user_input" />
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                action = records._compute_amount_total()
+            </field>
+        </record>
+
+        <!-- Formulario cliente, campos adicionales -->
+        <record id="as_survey_input_form_form" model="ir.ui.view">
+            <field name="name">as.survey.user_input.form</field>
+            <field name="model">survey.user_input</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="survey.survey_user_input_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_input_line_ids']/tree/field[@name='answer_score']" position="after">
+                    <field name="as_factor" sum="total" />
+                    <field name="value_numerical_box" sum="total" />
+                    <field name="as_total" sum="total" />
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="as_color_id" />
+                    <field name="as_cuadrante_id" />
+                    <field name="as_extraido" />
+
+                </xpath>
+              
+                <xpath expr="//field[@name='scoring_percentage']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='access_token']" position="after">
+                    <field name="as_observaciones" />
+                    <field name="as_personalidad" />
+                    <field name="as_cargo_1" />
+                    <field name="employer_id" />
+                </xpath>
+                <xpath expr="//field[@name='user_input_line_ids']/tree/field[@name='value_numerical_box']"
+                    position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+
+
+
+                <xpath expr="//field[@name='user_input_line_ids']" position="after">
+
+                <table width="40%" border="1px solid #666666">
+                    <tr style="text-align:center">
+                        <th>Pregunta</th>
+                        <th>Puntos</th>
+                        <th>Total</th>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center"><label for="as_total_age" /></td>
+                        <td style="text-align:right"><field name="as_point_age" /></td>
+                        <td style="text-align:right"><field name="as_total_age" nolabel="1" sum="Total amount"
+                             /></td>
+                    </tr>
+                     <tr>
+                        <td style="text-align:center"><label for="as_total_old" /></td>
+                        <td style="text-align:right"><field name="as_point_old" /></td>
+                        <td style="text-align:right"><field name="as_total_old" nolabel="1" sum="Total amount"
+                             /></td>
+                    </tr>
+                </table>
+                    <group class="oe_subtotal_footer oe_right">
+
+
+
+                        <div class="oe_subtotal_footer_separator oe_inline">
+                            <label for="as_total_survery" />
+                        </div>
+                        <field name="as_total_survery" nolabel="1" sum="Total amount"
+                            class="oe_subtotal_footer_separator" />
+
+                    </group>
+
+                    <group>
+                        <field name="as_note" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="as_planilla_pdf_tributaria">
+        <t t-call="web.html_container">
+
+            <div class="header">
+                <style type="text/css">
+                    .header {
+                        margin: 0px;
+                        padding: 0px;
+                    }
+
+                    .cabecera {
+                        font-size: 7px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    .letra {
+                        font-size: 14px !important;
+                        margin: 0px;
+                    }
+
+                    .letra3 {
+                        font-size: 15px !important;
+                        margin: 0px;
+                        padding-left: 3px !important;
+                        padding-right: 3px !important;
+                    }
+
+                    .cabecera2 {
+                        font-size: 9px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    .columnasr {
+                        font-size: 12px;
+                        font-family: 'Arial' !important;
+                        margin-bottom: 10px;
+                    }
+
+                    .columnas2 {
+                        font-size: 9px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    h3 {
+                        font-family: 'Arial' !important;
+                        font-size: 14px;
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    td {
+                        font-family: 'Arial' !important;
+                        font-size: 12px;
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    h4 {
+                        font-family: 'Arial' !important;
+                        font-size: 12px;
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    span {
+                        font-family: 'Arial' !important;
+
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    body {
+                        font-family: 'Arial' !important;
+                        font-size: 18px;
+                    }
+
+                    hr {
+                        border-bottom: solid;
+                        border-width: 1pt border-top:0px !important;
+                        padding: 0px !important;
+                        margin: 0px !important;
+
+                    }
+
+                    tr.border_bottom td {
+                        border-bottom: 0.5pt solid #cccccc;
+                        margin-right: 3px;
+                        padding-right: 3px;
+                        font-size: 13px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    .borde1 {
+                        border-top: 1px solid grey;
+                        border-left: 1px solid grey;
+                        border-right: 1px solid grey;
+                        border-bottom: 1px solid grey;
+                        margin-bottom: 3px;
+
+                    }
+
+                    .borde1 thead tr td {
+                        padding-left: 5px;
+                        padding-right: 5px;
+
+                    }
+
+                    .borde2 {
+                        border-left: 1px solid grey;
+                        border-right: 1px solid grey;
+                        border-top: 1px solid grey;
+                        margin: 3px;
+                    }
+
+                    .titulo {
+                        font-size: 25px;
+                        padding-top: 40px;
+                    }
+
+                    .titulo2 {
+                        font-size: 25px;
+                        padding: 1px;
+                    }
+
+                    .letra0 {
+                        font-size: 11px;
+                    }
+
+                    .letra2 {
+                        font-size: 5px;
+                    }
+
+                    .letra5 {
+                        text-align: right;
+                        font-size: 5px;
+                    }
+
+
+                    .cuadro {
+                        border-left: 1px solid #000000 !important;
+                        padding-left: 4px !important;
+                        border-right: 1px solid #000000 !important;
+                        padding-right: 4px !important;
+                    }
+                </style>
+                <div class="row mt0 mb0 " id="as_header">
+
+                  
+                    <div class="col-4" style="text-align:left; margin-bottom:10px;font-size:15px;line-height : 15px;">
+
+                        <!-- <img t-att-src="image_data_uri(o.env.user.company_id.logo)"
+                                style="height: 85px; width: 150px;" />
+                            <br /> -->
+
+
+                        <h4>
+                            <div class="letra">
+                                <b>
+                                    <span t-esc="info['nombre_empresa']" />
+                                </b>
+                            </div>
+                        </h4>
+                        <h4>
+                            <div class="letra">
+                                <span t-esc="info['direccion1']" />
+                            </div>
+                        </h4>
+                        <h4>
+                            <div class="letra">
+                                <b>Numero Patronal:</b><span t-esc="info['as_numero_patronal']" />
+                            </div>
+                        </h4>
+                        <h4>
+                            <div class="letra">
+                                <b>NIT:</b><span t-esc="info['nit']" />
+                            </div>
+                        </h4>
+                        <h4>
+                            <div class="letra">
+                                <b>Email:</b>
+                                    <span t-esc="info['email']" />
+                                
+                            </div>
+                        </h4>
+                        <h4>
+                            <div class="letra">
+                             <b>
+                                    
+                               <span t-esc="info['ciudad']" /> "<span t-esc="info['sucursal']" />" <span t-esc="info['pais']" />
+                           </b> </div>
+                        </h4>
+                        <h4>
+                            <div class="letra">
+                                 <b>Padrón Municipal: </b> <span t-esc="info['as_patronal_municipal']" />
+                            </div>
+                        </h4>
+                    </div>
+                    <div class="col-4" style="text-align:center;" name='as_titulo'>
+                        <h2 class='titulo'>
+                            <div>
+
+                                <b>PLANILLA TRIBUTARIA V.2</b><br />
+                            </div>
+                        </h2>
+                    </div>
+                    <div class="col-4" style="text-align:left; float:left;">
+                        <div style="border:1px solid #000000;padding:2px;padding-left:4px;">
+
+
+                            <!-- <div class="letra">
+                                <b>Fecha Imp.:</b>
+                                <span t-esc="datetime.datetime.now().strftime('%d-%m-%Y %H:%M:%S')"></span>
+                            </div> -->
+                            <div class="letra">
+                                <b>Nomina:</b>
+                                <span t-esc="nomina"></span>
+                            </div>
+                            <div class="letra">
+                                <b>Periodo:</b>
+                                <span t-esc="fechas['date_start']"></span> -<span t-esc="fechas['date_end']"></span>
+                            </div>
+                            <div class="letra">
+                                <b>UFV Inicial:</b>
+                                <span t-esc="salarios['fecha_i']"></span>
+                            </div>
+                            <div class="letra">
+                                <b>UFV Final:</b>
+                                <span t-esc="salarios['fecha_f']"></span>
+                            </div>
+                            <div class="letra">
+                                <b>SMN:</b>
+                                <span t-esc="salarios['smn']"></span>
+                            </div>
+
+                        </div>
+
+                        <div style="text-align:right; float:right; width:100px">
+                            <h4>
+                                <div class="letra">
+                                    <b>Pagina </b>
+                                    <label class="page" />/<label class="topage" />
+                                </div>
+                            </h4>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <table width="100%" class="table table-borderless borde1">
+
+                </table>
+            </div>
+            <t t-call="web.internal_layout">
+
+                <div class="page">
+                    <style type="text/css">
+                        .letra2 {
+                            border: 1px solid #000000;
+                            font-size: 8px;
+                        }
+
+                        .letra3 {
+                            border: 1px solid #000000;
+                            font-size: 7px;
+                            text-align: right;
+                        }
+                         .letra5 {
+                            border: 1px solid #000000;
+                            font-size: 8px;
+                            text-align: center;
+                        }
+                    </style>
+                    <table width="100%">
+                        <thead
+                            style='border:1px solid grey;font-size:9px; text-align:center;align-items: center;line-height : 10px;'>
+
+                            <tr>
+                                <td class='letra2' rowspan="2"><b>N</b></td>
+                                <td class='letra2'><b>AÑO</b></td>
+                                <td class='letra2'><b>PERIODO</b></td>
+                                <td class='letra2'><b>CODIGO DEPENDIENTE RC-IVA</b></td>
+                                <td class='letra2'><b>NOMBRES</b></td>
+                                <td class='letra2'><b>PRIMER APELLIDO</b></td>
+                                <td class='letra2'><b>SEGUNDO APELLIDO</b></td>
+                                <td class='letra2'><b>NRO DOCUMENTO IDENTIDAD</b></td>
+                                <td class='letra2'><b>TIPO DE DOCUMENTO</b></td>
+                                <td style="width:5%;" class='letra2'><b>NOVEDADES</b></td>
+                                <!-- <td class='letra2' rowspan="2"><b>AFPs 12.71%</b></td>
+                                <td class='letra2' rowspan="2"><b>ANS 10%-5%-1%</b></td>
+                                <td class='letra2' rowspan="2"><b>OTROS INGRESOS NO COTIZABLES</b>
+                                <td class='letra2' rowspan="2"><b>TOTAL GANADO INGRESOS -->
+                                <td class='letra2'><b>MONTO INGRESO NETO</b></td>
+                                <td class='letra2'><b>2 MINIMOS NACIONALES NO IMPONIBLES</b></td>
+                                <td class='letra2'><b>IMP SUJETO A IMPUESTO (BASE IMPONIBLE)</b></td>
+                                <td class='letra2'><b>IMPUESTO RC-IVA</b></td>
+                                <td class='letra2'><b>13% de 2 SALARIOS MINIMOS NACIONALES</b></td>
+                                <td class='letra2'><b>IMPUESTO NETO RC-IVA</b></td>
+                                <td class='letra2'><b>F-110 13% DE FACTURAS PRESENTADAS</b></td>
+                                <td class='letra2'><b>SALDO A FAVOR DEL FISCO</b></td>
+                                <td class='letra2'><b>SALDO A FAVOR DEL DEPENDIENTE</b></td>
+                                <td class='letra2'><b>SALDO A FAVOR DEL DEPENDIENTE PERIODO
+                                        ANTERIOR</b></td>
+                                <td class='letra2'><b>MNTTO DE VALOR SALDO PERIODO ANTERIOR</b></td>
+                                <td class='letra2'><b>SALDO DEL PERIODO ANTERIOR ACTUALIZADO</b></td>
+                                <td class='letra2'><b>SALDO UTILIZADO</b></td>
+                                <td class='letra2'><b>IMPUESTO RC-IVA RETENIDO </b></td>
+                                <td class='letra2'><b>SALDO PARA EL SIGUIETE MES
+                                COTIZABLES</b></td>
+                              
+                            </tr>
+                            <tr>
+                                <td class='letra2'><b>a</b></td>
+                                <td class='letra2'><b>b</b></td>
+                                <td class='letra2'><b>c</b></td>
+                                <td class='letra2'><b>d</b></td>
+                                <td class='letra2'><b>e</b></td>
+                                <td class='letra2'><b>f</b></td>
+                                <td class='letra2'><b>g</b></td>
+                                <td class='letra2'><b>h</b></td>
+                                <td style="width:5%;" class='letra2'><b>i</b></td>
+                                <td class='letra2'><b>j</b></td>
+                                <td class='letra2'><b>k</b></td>
+                                <td class='letra2'><b>l=j-k (si j>k)</b></td>
+                                <td class='letra2'><b>m=l*13%</b></td>
+                                <td class='letra2'><b>n</b></td>
+                                <td class='letra2'><b>o=m-n (si m>n)</b></td>
+                                <td class='letra2'><b>p</b></td>
+                                <td class='letra2'><b>q=o-p (si o>p)</b></td>
+                                <td class='letra2'><b>r=p-o (si p>o)</b></td>
+                                <td class='letra2'><b>s</b></td>
+                                <td class='letra2'><b>t</b></td>
+                                <td class='letra2'><b>u=s+t</b></td>
+                                <td class='letra2'><b>v=u(siuq)</b></td>
+                                <td class='letra2'><b>w=q-v (SI q0v)</b></td>
+                                <td class='letra2'><b>x=r+u-v</b></td>
+                            </tr>
+                        </thead>
+
+                        <thead>
+                            <div t-foreach="lines" t-as="d" width="100%"
+                                style='text-align:center;align-items: center;line-height : 10px;'>
+                                <t t-if="d['num'] != 0">
+                                    <tr>
+                                        <td class='letra2'><span t-esc="d['num']"></span></td>
+                                        <td class='letra2'><span t-esc="d['ano']"></span></td>
+                                        <td class='letra2'><span t-esc="d['mes']"></span></td>
+                                        <td class='letra2'><span t-esc="d['as_code_iva']"></span>
+                                        </td>
+                                        <td class='letra2'><span t-esc="d['nombre']"></span></td>
+                                        <td class='letra2'><span t-esc="d['apellido_1']"></span></td>
+                                        <td class='letra2'><span t-esc="d['apellido_2']"></span></td>
+                                        <td class='letra2'><span
+                                                t-esc="d['identification_id']"></span></td>
+                                        <td class='letra2'><span t-esc="d['as_documento']"></span>
+                                        </td>
+                                        <td style="width:5%;" class='letra2'><span t-esc="d['as_novedades']"></span>
+                                        </td>
+                                        <!-- <td class='letra3'><span
+                                                t-esc="'{:.2f}'.format(d['afp'])"></span></td>
+                                        <td class='letra3'><span
+                                                t-esc="'{:.2f}'.format(d['asol'])"></span></td>
+                                        <td class='letra3'><span
+                                                t-esc="'{:.2f}'.format(d['oting'])"></span></td>
+                                        <td class='letra3'><span
+                                                t-esc="'{:.2f}'.format(d['subt'])"></span></td> -->
+                                        <td class='letra3'><span
+                                                t-esc="'{:.2f}'.format(d['total_ingreso'])"></span></td>
+                                        <td class='letra3'><span
+                                                t-esc="'{:.2f}'.format(d['total_sueldo'])"></span></td>
+                                        <td class='letra3'><span t-esc="'{:.2f}'.format(d['base_impuesto'])"></span></td>
+                                        <td class='letra3'><span t-esc="'{:.2f}'.format(d['base_impuestorc'])"></span></td>
+                                        <td class='letra3'><span t-esc="'{:.2f}'.format(d['base_sin'])"></span></td>
+                                        <td class='letra3'><span t-esc="'{:.2f}'.format(d['monto_n'])"></span></td>
+                                        <td class='letra3'><span t-esc="'{:.2f}'.format(d['total_fact'])"></span></td>
+                                        <td class='letra3'><span t-esc="'{:.2f}'.format(d['fisco'])"></span></td>
+                                        <td class='letra3'><span t-esc="'{:.2f}'.format(d['dependiente'])"></span></td>
+                                        <td class='letra3'><span t-esc="'{:.2f}'.format(d['total_saldo'])"></span></td>
+                                        <td class='letra3'><span t-esc="'{:.2f}'.format(d['monto_anterior'])"></span></td>
+                                        <td class='letra3'><span t-esc="'{:.2f}'.format(d['anterior_actual'])"></span></td>
+                                        <td class='letra3'><span t-esc="'{:.2f}'.format(d['saldo_utilizado'])"></span></td>
+                                        <td class='letra3'><span t-esc="'{:.2f}'.format(d['impuestorc'])"></span></td>
+                                        <td class='letra3'><span t-esc="'{:.2f}'.format(d['saldo_mes_siguiente'])"></span></td>
+
+                                    </tr>
+                                </t>
+                                <t t-if="d['num'] == 0">
+                                    <tr>
+                                        <td class='letra5' colspan="10">TOTALES</td>
+                                        <!-- <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['afp'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['asol'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['oting'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['subt'])"></span></b></td> -->
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['total_ingreso'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['total_sueldo'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['base_impuesto'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['base_impuestorc'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['base_sin'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['monto_n'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['total_fact'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['fisco'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['dependiente'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['total_saldo'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['monto_anterior'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['anterior_actual'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['saldo_utilizado'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['impuestorc'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['saldo_mes_siguiente'])"></span></b></td>
+                                    </tr>
+                                    <tr>
+                                        <td class='letra5' colspan="10"><b>FORMULARIO 608</b></td>
+                                        <td class='letra5'><b>Cod. 13</b></td>
+                                        <td class='letra5'><b>Cod. 26</b></td>
+                                        <td class='letra5'><b>Cod. 27</b></td>
+                                        <td class='letra5'><b>Cod. 2000</b></td>
+                                        <td class='letra5'><b>Cod. 215</b></td>
+                                        <td class='letra5'><b>Cod. 1215</b></td>
+                                        <td class='letra5'><b>Cod. 202</b></td>
+                                        <td class='letra5'><b>Cod. 2001</b></td>
+                                        <td class='letra5'><b>Cod. 634</b></td>
+                                        <td class='letra5'><b>Cod. 635</b></td>
+                                        <td class='letra5'><b>Cod. 648</b></td>
+                                        <td class='letra5'><b>Cod. 649</b></td>
+                                        <td class='letra5'><b>Cod. 650</b></td>
+                                        <td class='letra5'><b>Cod. 909</b></td>
+                                        <td class='letra5'><b>Cod. 592</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td class='letra3' colspan="10"></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['total_ingreso'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['total_sueldo'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['base_impuesto'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['base_impuestorc'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['base_sin'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['monto_n'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['total_fact'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['fisco'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['dependiente'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['total_saldo'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['monto_anterior'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['anterior_actual'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['saldo_utilizado'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['impuestorc'])"></span></b></td>
+                                        <td class='letra3'><b><span t-esc="'{:.2f}'.format(d['saldo_mes_siguiente'])"></span></b></td>
+                                    </tr>
+                                </t>
+
+                            </div>
+                        </thead>
+
+                    </table>
+                    <br />
+                    <table width="100%">
+                        <thead
+                            style='border:1px solid grey;font-size:9px; text-align:center;align-items: center;line-height : 10px;'>
+
+                            <tr>
+                                <td class='letra2'> <span t-esc="info['nombre_empresa']" /></td>
+                                <td class='letra2'><span t-esc="info['nit']" /></td>
+                                <td class='letra2' rowspan="2">FIRMA</td>
+                                <td class='letra2' rowspan="2"><span t-esc="info['ciudad']" />, <span
+                                        t-esc="datetime.datetime.now().strftime('%d-%m-%Y %H:%M:%S')"></span></td>
+                            </tr>
+                            <tr>
+                                <td class='letra2'>NOMBRE DEL EMPLEADOR O REPRESENTANTE LEGAL</td>
+                                <td class='letra2'>NO. CARNET DE IDENTIDAD</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+            </t>
+        </t>
+    </template>
+</odoo>

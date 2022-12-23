@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="as_res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="purchase.res_config_settings_view_form_purchase"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='purchase_setting_container']" position="inside">
+                <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="group_purchase_import_template"/>
+                        <field name="module_cost_quotation_builder" invisible="1"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="group_purchase_import_template"/>
+                        <div class="text-muted">
+                            Create standardized offers with default products
+                        </div>
+                        <div class="content-group" attrs="{'invisible': [('group_purchase_import_template', '=', False)]}">
+                            <div class="mt16">
+                                <label for="default_purchase_template_id" class="o_light_label"/>
+                                <field name="default_purchase_template_id" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <button name="%(as_bo_purchase_import.as_template_stock_landed)d" icon="fa-arrow-right" type="action" string="Quotation Templates" class="btn-link"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 o_setting_box" attrs="{'invisible': [('group_purchase_import_template','=',False)]}">
+                    <div class="o_setting_left_pane">
+                        <field name="module_cost_quotation_builder"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_cost_quotation_builder"/>
+                        <div class="text-muted">
+                            Design your quotation templates using building blocks<br/>
+                            <em attrs="{'invisible': [('module_cost_quotation_builder','=',False)]}">Warning: this option will install the Website app.</em>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="as_mostrar_fecha" />
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="as_mostrar_fecha" />
+                            <div class="text-muted">
+                                Permite mostrar fecha en reportes
+                            </div>
+                        </div>
+                    </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        
+        <record id="bonus_seq" model="ir.sequence">
+            <field name="name">Secuencia de Bono</field>
+            <field name="code">emp.bonus</field>
+            <field name="prefix">BONO/</field>
+            <field name="padding">6</field>
+        </record>
+         <record id="discount_seq" model="ir.sequence">
+            <field name="name">Secuencia de Descuento</field>
+            <field name="code">emp.discount</field>
+            <field name="prefix">DESCUENTO/</field>
+            <field name="padding">6</field>
+        </record>
+       
+    </data>
+</openerp>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record id="purchaseauto_view_form" model="ir.ui.view">
+
+		   <field name="name">purchaseauto.view.in</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <button name="button_confirm"  states="draft" id="draft_confirm" position="attributes">
+                <attribute name="type">action</attribute>
+                <attribute name="name">%(action_view_purchase_automatic_lot_inv)d</attribute>
+                </button>
+            </field>
+        </record>
+</odoo>

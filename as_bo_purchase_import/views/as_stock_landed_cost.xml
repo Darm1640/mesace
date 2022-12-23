@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="as_view_stock_landed_cost_form" model="ir.ui.view">
+            <field name="name">as.stock.landed.cost.form</field>
+            <field name="model">stock.landed.cost</field>
+            <field name="inherit_id" ref="stock_landed_costs.view_stock_landed_cost_form" />
+            <field name="type">form</field>
+            <field name="priority" eval="5" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date']" position="after">
+                    <field name="as_fecha_Editable" invisible="1" />
+                    <field name="as_document_type" />
+                    <field name="purchase_id" options="{'no_create_edit': True}"
+                        attrs="{'invisible': [('as_document_type','!=', 'compra')]}" />
+                    <field name="picking_id" options="{'no_create_edit': True}" domain="[('state', '!=', 'cancel')]"
+                        attrs="{'invisible': [('as_document_type','!=', 'inventario')]}" />
+                    <field name="as_calculado" invisible="True"/>
+                    <field name="purchase_template_id" 
+                    options="{'no_create': True, 'no_open': True}"
+                    />
+                </xpath>
+                <xpath expr="//field[@name='picking_ids']" position="attributes">
+                    <attribute name="attrs">{'invisible': True}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='compute_landed_cost']" position="replace">
+                    <button colspan="2" name="compute_landed_cost" string="Calcular" type="object"
+                        class="oe_right btn btn-primary" 
+                        attrs="{'invisible': ['|',('as_calculado','=', False),('state','!=', 'draft')]}" />
+                </xpath>
+                <xpath expr="//button[@name='button_validate']" position="after">
+                    <button name="button_draft_simple" string="Volver a Borrador" type="object"
+                        class="oe_right btn btn-primary" 
+                        attrs="{'invisible': [('state','!=', 'done')]}" />
+                </xpath>
+                <xpath expr="//field[@name='amount_total']" position="attributes">
+                    <attribute name="string">Total Gastos</attribute>
+                </xpath>
+                <xpath expr="//field[@name='amount_total']" position="before">
+                    <field name="amount_total_purchase" attrs="{'invisible': [('as_document_type','!=', 'compra')]}" />
+                </xpath>
+                <xpath expr="//field[@name='amount_total']" position="after">
+                    <field name="amount_total_gasto" attrs="{'invisible': [('as_document_type','!=', 'compra')]}" />
+                </xpath>
+
+                <xpath expr="//sheet" position="inside">
+
+                    <notebook name='notebook'>
+                        <page string="Valoracion">
+                            <field name="valuation_adjustment_lines">
+                                <form string="Valuation Adjustments">
+                                    <group>
+                                        <group>
+                                            <field name="product_id" />
+                                            <field name="quantity" />
+                                        </group>
+                                        <group>
+                                            <field name="former_cost" />
+                                            <field name="additional_landed_cost" />
+                                        </group>
+                                    </group>
+                                </form>
+                                <tree string="Valuation Adjustments" editable="bottom" create="0">
+                                    <field name="cost_line_id" readonly="1" />
+                                    <field name="product_id" readonly="1" />
+                                    <field name="weight" readonly="1" sum="Total Amount" />
+                                    <field name="volume" readonly="1" sum="Total Amount" />
+                                    <field name="quantity" readonly="1" sum="Total Amount" />
+                                    <!-- <field name="former_cost_per_unit" readonly="1" widget="monetary" /> -->
+                                    <field name="former_cost" readonly="1" sum="Total Amount" />
+                                    <field name="additional_landed_cost" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Resumen">
+                                <field name="as_valuation_summary_lines">
+                                    <tree string="Valuation Adjustments" editable="bottom" create="0">
+                                        <field name="product_id" readonly="1" />
+                                        <field optional="hide" name="weight" readonly="1" sum="Total Amount" />
+                                        <field optional="hide" name="volume" readonly="1" sum="Total Amount" />
+                                        <field name="quantity" readonly="1" sum="Total Amount" />
+                                        <field name="price_unit" readonly="1" sum="Total Amount" />
+                                        <field name="as_value_fob" readonly="1" sum="Total Amount" />
+                                        <field name="as_cost_fob" readonly="1" sum="Total Amount" />
+                                        <field name="as_cost_total" readonly="1" sum="Total Amount" />
+                                        <field name="as_cost_unit" readonly="1" sum="Total Amount" />
+                                        <field name="as_cost_new" readonly="1" sum="Total Amount" />
+                                    </tree>
+                                </field>
+                        </page>
+                    </notebook>
+
+                </xpath>
+                <!-- <xpath expr="//sheet/field[@name='valuation_adjustment_lines']" position="attributes">
+                    <attribute name="attrs">{'invisible': True}</attribute>
+                </xpath> -->
+                <xpath expr="//field[@name='cost_lines']/tree/field[@name='product_id']" position="before">
+                    <button name="action_edit_form" string='Editar' icon="fa-file-text" type="object" />
+                      <field name="as_facturado" />
+                </xpath>
+            </field>
+        </record>
+        <record id="action_open_window_edit" model="ir.actions.act_window">
+            <field name="name">Costo Importaciones</field>
+            <field name="res_model">stock.landed.cost.lines</field>
+            <!-- <field name="view_type">form</field> -->
+            <field name="view_mode">form</field>
+            <field name="help">Vista emergente detalle costos de importacion</field>
+        </record>
+        <record id="as_stock_landed_cost_lines" model="ir.ui.view">
+            <field name="name">as.stock.landed.cost.lines</field>
+            <field name="model">stock.landed.cost.lines</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Valuation Adjustments">
+                    <separator string="Linea de Costo" colspan="4" />
+                    <group>
+                        <group>
+                            <field name="product_id" readonly="1" />
+                            <field name="split_method" readonly="1" />
+                            <field name="as_facturado" />
+                        </group>
+                        <group>
+                            <field name="price_unit" readonly="1" />
+                            <field name="account_id" readonly="1" />
+                            <field name="as_fecha_factura"/>
+                            <!-- <field name="as_iva" /> -->
+
+                        </group>
+                    </group>
+                    <separator string="Datos Factura" colspan="4"
+                        attrs="{'invisible': [('as_facturado','=',False)]}" />
+                    <group >
+                        <group>
+                            <field name="as_supplier_costo"/>
+                            <field name="as_journal_id"/>
+                            <field name="as_nit" attrs="{'invisible': [('as_facturado','=',False)],'required':[('as_facturado','=','True')]}"/>
+                            <field name="as_razon_social" attrs="{'invisible': [('as_facturado','=',False)],'required':[('as_facturado','=','True')]}"/>
+                            <field name="as_scan_qr" attrs="{'invisible': [('as_facturado','=',False)]}"/>
+                            <field name="as_codigo_control" attrs="{'invisible': [('as_facturado','=',False)],'required':[('as_facturado','=','True')]}"/>
+                            <field name="as_monto_excento" attrs="{'invisible': [('as_facturado','=',False)]}"/>
+                            <!-- <field name="as_costo_cero" attrs="{'invisible': [('as_facturado','=',False)]}"/> -->
+                            <field name="as_invoice_id" readonly="1"/>
+                            <field name="as_codigo_control_compra" invisible="True"/>
+                            <field name="as_numero_dui" invisible="True"/>
+                            <field name="as_numero_autorizacion_compra" invisible="True"/>
+                            <field name="as_impuesto_especifico" />
+                            <field name="as_tipo_compra" />
+                            <field name="as_scan_qr" />
+                            <field name="as_payment_teas_id" />
+                        </group>
+                        <group>
+                            <field name="as_tipo_factura" attrs="{'required':[('as_facturado','=','True')]}"/>
+                            <field name="as_tipo_documento"/>
+                            <field name="as_importe_ic"/>
+                            <field name="as_importe_iehd"/>
+                            <field name="as_importe_ipj"/>
+                            <field name="as_tasas"/>
+                            <field name="as_exentos"/>
+                            <field name="as_compras_gravadas"/>
+                            <field name="as_gift_card"/>
+                            <!-- <field name="as_tipo_retencion" /> -->
+                            <field name="as_numero_factura" attrs="{'invisible': [('as_facturado','=',False)],'required':[('as_facturado','=','True')]}"/>
+                            <field name="as_numero_autorizacion" attrs="{'invisible': [('as_facturado','=',False)],'required':[('as_facturado','=','True')]}"/>
+                            <field name="as_numero_dui" attrs="{'invisible': [('as_facturado','=',False)]}"/>
+                            <field name="as_numero_autorizacion_dui" attrs="{'invisible': [('as_facturado','=',False)]}"/>
+                        </group>
+                    </group>
+                    <button name="action_create_invoice" string='Crear Factura' icon="fa-list-alt" class="oe_highlight"
+                        type="object"
+                        attrs="{'invisible': [('as_invoice_id','!=',False)]}" />
+                </form>
+                
+            </field>
+        </record>
+        <menuitem action="stock_landed_costs.action_stock_landed_cost" name="Gastos de Importacion"
+            parent="purchase.menu_procurement_management" id="stock_landed_costs.menu_stock_landed_cost"
+            sequence="115" />
+              <report
+            id="as_action_report_gastos"
+            model="stock.landed.cost"
+            string="Gasto de Envio"
+            report_type="qweb-pdf"
+            name="as_bo_purchase_import.as_report_gastos_envio"
+            file="as_bo_purchase_import.as_report_gastos_envio"
+            menu="True"
+        />
+    </data>
+</openerp>

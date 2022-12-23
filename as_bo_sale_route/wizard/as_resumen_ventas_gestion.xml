@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_report_resumen_ventas_gestion" model="ir.ui.view">
+            <field name="name">Resumen de ventas por gestion</field>
+            <field name="model">as.report.resumen.ventas.gestion</field>
+            <field name="arch" type="xml">
+                <form string="Resumen de ventas por gestion">
+                    <group col="2">
+                        <group>
+                            <field name="fecha_inicial" />
+                            <field name="nombre_cliente" widget="many2many_tags" options="{&quot;always_reload&quot;: True, 'no_open': True,'no_create': 1, 'no_create_edit': 1}" />  
+                            <!-- <field name="as_divisas" /> -->
+                        </group>
+                        <group>
+                            <!-- <field name="as_tipo_producto" /> -->
+                            <field name="as_almacen" widget="many2many_tags" options="{&quot;always_reload&quot;: True, 'no_open': True,'no_create': 1, 'no_create_edit': 1}"/>
+                            
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="export_xls" default_focus="1" string="Exportar a Excel" type="object"
+                            class="oe_highlight" context="{'xls_export':1}" icon="fa-download" />
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_resumen_ventas_gestion" model="ir.actions.act_window">
+            <field name="name">Resumen de ventas por gestion</field>
+            <field name="res_model">as.report.resumen.ventas.gestion</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="as_report_resumen_ventas_gestion" />
+            <field name="target">new</field>
+        </record>
+        
+        <report id="as_resumen_ventas_gestion_xlsx" model="as.report.resumen.ventas.gestion" string="Resumen de ventas por gestion" report_type="xlsx"
+            name="as_bo_sale_route.as_resumen_ventas_gestion_xlsx.xlsx"
+            file="as_bo_sale_route.as_resumen_ventas_gestion_xlsx.xlsx"
+            attachment_use="False" />
+        <menuitem id="as_resumen_ventas_de_gestion" name="Resumen Ventas por Gestion" action="action_resumen_ventas_gestion"
+            parent="sale.menu_sale_report" sequence="100" groups="base.group_user" />
+    </data>
+</odoo>

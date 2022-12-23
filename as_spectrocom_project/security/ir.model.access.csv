@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_as_request_materials,as_request_materials,model_as_request_materials,base.group_user,1,1,1,1
+access_as_request_lines,as_request_lines,model_as_request_lines,base.group_user,1,1,1,1
+access_as_transfer_product,as_transfer_product,model_as_transfer_product,base.group_user,1,1,1,1
+access_as_transfer_lines,as_transfer_lines,model_as_transfer_lines,base.group_user,1,1,1,1
+access_as_viaticos,as_viaticos,model_as_viaticos,base.group_user,1,1,1,1
+access_as_presupuesto,as_presupuesto,model_as_presupuesto,base.group_user,1,1,1,1
+access_as_transfer_return,as_transfer_return,model_as_transfer_return,base.group_user,1,1,1,1
+access_as_transfer_lines_return,as_transfer_lines_return,model_as_transfer_lines_return,base.group_user,1,1,1,1
+access_as_plantillas_template_user_all,as_plantillas_template,model_as_plantillas_template,sales_team.group_sale_salesman,1,1,1,1
+access_as_plantillas_template_lines_user_all,as_plantillas_template_lines,model_as_plantillas_template_lines,sales_team.group_sale_salesman,1,1,1,1
+access_as_gestion_viaje_user_all,as_gestion_viaje,model_as_gestion_viaje,sales_team.group_sale_salesman,1,1,1,1
+access_as_gestion_viaje_lines_user_all,as_gestion_viaje_lines,model_as_gestion_viaje_lines,sales_team.group_sale_salesman,1,1,1,1
+access_as_generate_tesoreria,as_generate_tesoreria,model_as_generate_tesoreria,,1,1,1,1
+access_as_solicitud_viaticos,as_solicitud_viaticos,model_report_as_spectrocom_project_as_solicitud_viaticos_xlsx,,1,1,1,1

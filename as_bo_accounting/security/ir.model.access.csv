@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_as_tipo_retencion,as_tipo_retencion,model_as_tipo_retencion,,1,1,1,1
+access_as_stock_quantity_history,as_stock_quantity_history,model_as_stock_quantity_history,base.group_user,1,1,1,1
+access_as_printer_account,as_printer_account,model_as_printer_account,,1,1,1,1
+access_as_regenerar_sequencia,as_regenerar_sequencia,model_as_regenerar_sequencia,account.group_account_manager,1,1,1,1
+access_as_resumen_cuentas_detallado,as_resumen_cuentas_detallado,model_as_resumen_cuentas_detallado,account.group_account_manager,1,1,1,1
+access_as_resumen_cuentas,as_resumen_cuentas,model_as_resumen_cuentas,account.group_account_manager,1,1,1,1

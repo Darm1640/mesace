@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="as_viws_employee_carga2" model="ir.ui.view">
+        <field name="name">as.payment.finiquito</field>
+        <field name="model">as.payment.finiquito</field>
+        <field name="arch" type="xml">
+            <form string="Pagar Prestamos Tesoreria">
+                <div>
+                    <p>
+                        Pagar Prestamos Tesoreria
+                    </p>
+                    <group col="4">
+                        <field name="as_type" force_save="1" />
+                        <field name="as_date" />
+                        <field name="as_journal_id" domain="[('as_type_journal','=', as_payment_type)]" />
+                        <field name="as_caja_id" domain="[('as_user_id','=', uid)]" />
+                        <field name="as_payment_acquirer_id" />
+                        <field name="as_numero_documento" attrs="{'invisible' : [('as_metodo_pago_bolean', '=', 0)]}" />
+                        <field name="as_bank_id"
+                            attrs="{'invisible' : ['|',('as_metodo_pago_bolean', '=', 0),('as_metodo_pago_bolean', '=', 4)]}" />
+                        <field name="as_payment_type" />
+                        <field name="as_glosa" />
+                        <field name="as_metodo_pago_bolean" invisible="True" />
+                        <field name="as_generador_id" invisible="1" />
+                    </group>
+                </div>
+                <footer>
+                    <button string="Cargar" name="as_get_cargar_empleados" type="object" class="btn-primary" />
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="as_action_employees_wizard2" model="ir.actions.act_window">
+        <field name="name">Pagar Prestamos Tesoreria</field>
+        <field name="res_model">as.payment.finiquito</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="as_viws_employee_carga2" />
+        <field name="target">new</field>
+        <!-- <field name="binding_model_id" ref="as_bo_hr_bonus_discount.model_as_employee_bonus" /> -->
+    </record>
+
+
+</odoo>

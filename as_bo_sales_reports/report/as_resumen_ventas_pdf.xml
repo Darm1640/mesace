@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+        <template id="as_resumen_ventas_pdf">
+            <t t-call="web.html_container">
+                <div class="header">
+                    <style type="text/css">
+                        .header {
+                            margin:0px;
+                            padding: 0px;
+                        }
+                    </style>
+                </div>   
+            </t>  
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <style type="text/css">
+                        .page {
+                            margin: -75px 0px 5px 0px;
+                            padding: 0px;
+                            
+                        }
+                        
+                    </style> 
+                    <div class="row mt0 mb0" style=" margin-left: 18px; margin-right: 18px;">
+                        <div style="text-align: left; font-size: 9px; width: 50%; margin-top: 12px;">
+                            <h4 style="text-align: left; font-size:9px; line-height: 2px;">
+                                <div>
+                                    <img t-att-src="image_data_uri(logo)" style="height: 90px; width: 250px; text-align: left;" />
+                                    <br />
+                                </div>
+                            </h4>
+                        </div>
+                        <div class="col-2" style="text-align: left; width: 30%; margin-left: 18px; margin-right: 18px;" name="as_titulo"></div>
+                        <div style="text-align: left; width: 30%; margin-top: 28px; margin-left: 18px; margin-right: 18px;" name="as_titulo">
+                            <table width="100%" style="border: #fffff 1px solid;">
+                                <tr>
+                                    <td style="text-align: left; font-size: 9px; width: 100%; color: black;">
+                                        <b>NIT: </b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; font-size: 9px; width: 100%; color: black;">
+                                        <b>DIRECCION: </b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; font-size: 9px; width: 100%; color: black;">
+                                        <b>TELEFONO, CELULAR: </b>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                    </div>
+                    <div style="margin-left: 18px; margin-right: 18px;margin-top:3px;">
+                        <table width="100%">
+                            <tr>
+                                <td style="width: 100%; text-align: center; font-size: 10px; color: #4682b4; border: 0.5pt solid black;"><b>RESUMEN DE VENTAS</b></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 100%; text-align: center; font-size: 9px; border: 0.5pt solid black;"><b>De: </b><span t-esc="fecha_inicial" />--<b>Hasta: </b><span t-esc="fecha_final" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="margin-left: 18px; margin-right: 18px;">
+                        <table width="100%">
+                            <tr style="width: 100%;">
+                                <td width="67%">
+                                    <b style="text-align: left; font-size: 9px; color: #4682b4;">Usuario: </b>
+                                    <b style="text-align: left; font-size: 9px; color: #black;"> <span t-esc="usuario" /></b>
+                                </td>
+                                <td width="33%">
+                                    <b style="text-align: left; font-size: 9px; color: #4682b4;">Fecha: </b>
+                                    <b style="text-align: left; font-size: 9px; color: #black;"><span t-esc="fecha_actual" /></b>
+                                </td>
+                            </tr>
+                            <tr style="width: 100%;">
+                                <td>
+                                    <b style="text-align: left; font-size: 9px; color: #4682b4;">Almacen: </b><b style="text-align: left; font-size: 9px;"> <span t-esc="filtro_almacen" /></b>
+                                </td>
+                                <td><b style="text-align: left; font-size: 9px; color: #4682b4;"></b><b style="text-align: left; font-size: 9px;"> </b></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="margin-left: 18px; margin-right: 18px;">
+                        <table width="100%">
+                            <tr style="width: 7%; text-align: center; font-size:9px; color: #ffffff; background-color: #4682b4; border: 0.5pt solid black;">
+                                <td style="width: 9%; border: 0.5pt solid black;"><b>FECHA PEDIDO</b></td>
+                                <td style="width: 9%; border: 0.5pt solid black;"><b>N° PEDIDO</b></td>
+                                <td style="width: 9%; border: 0.5pt solid black;"><b>CODIGO</b></td>
+                                <td style="width: 9%; border: 0.5pt solid black;"><b>CODIGO CLIENTE</b></td>
+                                <td style="width: 10%; border: 0.5pt solid black;"><b>CLIENTE</b></td>
+                                <td style="width: 9%; border: 0.5pt solid black;"><b>RAZON SOCIAL</b></td>
+                                <td style="width: 9%; border: 0.5pt solid black;"><b>IMPORTE Bs</b></td>
+                                <td style="width: 9%; border: 0.5pt solid black;"><b>FACTURADO</b></td>
+                                <td style="width: 9%; border: 0.5pt solid black;"><b>PAGO Bs</b></td>
+                                <td style="width: 9%; border: 0.5pt solid black;"><b>SALDO</b></td>
+                                <td style="width: 9%; border: 0.5pt solid black;"><b>ESTADO</b></td>
+                            </tr>
+                        </table>
+                    </div> 
+                    <div style="margin-left: 18px; margin-right: 18px;margin-bottom:18px;">
+                        <table t-foreach="lista_salidas_inventarios" t-as="movimientos" width="100%" >
+                            <tr style="color: black; border: 0.1pt solid silver;">
+                                <td colspan="11">
+                                    <b style="text-align: left; margin-left: 3px;"><t t-esc="movimientos['almacen']" /></b>
+                                </td>
+                            </tr>
+                            <theader t-foreach="movimientos['contenido']" t-as="d" width="100%">
+                                <tr style="font-size: 8px; color: black; border: 0.1pt solid silver;">
+                                    <td style="width: 9%; border: 0.1pt solid silver;">
+                                        <p style="text-align: right; margin-right: 3px;"><t t-esc="d['val0']" /></p>
+                                    </td>
+                                    <td style="width: 9%; border: 0.1pt solid silver;">
+                                        <p style="text-align: right; margin-right: 3px;"><t t-esc="d['val1']" /></p>
+                                    </td>
+
+                                    <td style="width: 9%; border: 0.1pt solid silver;">
+                                        <p style="text-align: left; margin-left: 3px;"><t t-esc="d['val2']" /></p>
+                                    </td>
+
+                                    <td style="width: 9%; border: 0.1pt solid silver;">
+                                        <p style="text-align: left; margin-left: 3px;"><t t-esc="d['val3']" /></p>
+                                    </td>
+
+                                    <td style="width: 10%; border: 0.1pt solid silver;">
+                                        <p style="text-align: left; margin-left: 3px;"><t t-esc="d['val4']" /></p>
+                                    </td>
+                                    <td style="width: 9%; border: 0.1pt solid silver;">
+                                        <p style="text-align: left; margin-left: 3px;"><t t-esc="d['val5']" /></p>
+                                    </td>
+                                    <td style="width: 9%; border: 0.1pt solid silver;">
+                                        <p style="text-align: right; margin-right: 3px;"><t t-esc="'{:.1f}'.format(d['val6'])" /></p>
+                                    </td>
+                                    <td style="width: 9%; border: 0.1pt solid silver;">
+                                        <p style="text-align: right; margin-right: 3px;"><t t-esc="d['val7']" /></p>
+                                    </td>
+                                    <td style="width: 9%; border: 0.1pt solid silver;">
+                                        <p style="text-align: right; margin-right: 3px;"><t t-esc="d['val8']" /></p>
+                                    </td>
+                                    <td style="width: 9%; border: 0.1pt solid silver;">
+                                        <p style="text-align: right; margin-right: 3px;"><t t-esc="d['val9']" /></p>
+                                    </td>
+                                    <td style="width: 9%; border: 0.1pt solid silver;">
+                                        <p style="text-align: right; margin-right: 3px;"><t t-esc="d['val10']" /></p>
+                                    </td>
+                                </tr>
+                                
+                            </theader>
+                            
+                            <tbody t-foreach="movimientos['totales']" t-as="d" width="100%">
+                                <tr style="font-size: 8px; color: black; border: 0.1pt solid silver;">
+                                    <td style="width: 9%; border: 0.1pt solid silver;">
+                                        <p style="text-align: left; margin-left: 3px; line-height: 1px;">Total</p>
+                                    </td>
+                                    <td style="width: 9%; border: 0.1pt solid silver;">
+                                        <p style="text-align: right; margin-right: 3px; line-height: 1px;"></p>
+                                    </td>
+                                    <td style="width: 9%; border: 0.1pt solid silver;">
+                                        <p style="text-align: right; margin-right: 3px; line-height: 1px;"></p>
+                                    </td>
+                                    <td style="width: 9%; border: 0.1pt solid silver;">
+                                        <p style="text-align: right; margin-right: 3px; line-height: 1px;"></p>
+                                    </td>
+                                    <td style="width: 10%; border: 0.1pt solid silver;">
+                                        <p style="text-align: right; margin-right: 3px; line-height: 1px;"></p>
+                                    </td>
+                                    <td style="width: 9%; border: 0.1pt solid silver;">
+                                        <p style="text-align: right; margin-right: 3px; line-height: 1px;"></p>
+                                    </td>
+                                    <td style="width: 9%; border: 0.1pt solid silver;">
+                                        <p style="text-align: right; margin-right: 3px; line-height: 1px;"><t t-esc="'{:,.1f}'.format(d['total_importe'])" /></p>
+                                    </td>
+                                    <td style="width: 9%; border: 0.1pt solid silver;">
+                                        <p style="text-align: right; margin-right: 3px; line-height: 1px;"><t t-esc="'{:,.1f}'.format(d['total_facturado_total'])" /></p>
+                                    </td>
+                                    <td style="width: 9%; border: 0.1pt solid silver;">
+                                        <p style="text-align: right; margin-right: 3px; line-height: 1px;"><t t-esc="'{:,.1f}'.format(d['total_pago_bs'])" /></p>
+                                    </td>
+                                    <td style="width: 9%; border: 0.1pt solid silver;">
+                                        <p style="text-align: right; margin-right: 3px; line-height: 1px;"><t t-esc="'{:,.1f}'.format(d['total_saldo'])" /></p>
+                                    </td>
+                                    <td style="width: 9%; border: 0.1pt solid silver;">
+                                        <p style="text-align: right; margin-right: 3px; line-height: 1px;"></p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p style="page-break-after:always;" />
+                        
+                    </div>
+                </div>
+                
+            </t>
+        </template>
+    </data>
+</odoo>

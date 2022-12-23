@@ -24,7 +24,7 @@
     'images': ['static/description/icon.jpg'],
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'account','l10n_co', 'contacts', 'mail', 'l10n_co_cei_fe','l10n_co_postal'],
+    'depends': ['base', 'account','l10n_co', 'contacts', 'mail',],
 
     # always loaded
     'data': [

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="as_whatsapp_gateway_config_w" model="ir.ui.view">
+        <field name="name">Whatsapp Configuration</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='invoicing_settings']" position="inside">
+                <div class="app_settings_block" name='product_setting'>
+                    <h2>Gateway</h2>
+                    <div class="row col-12 o_settings_container">
+                        <div class="col-xs-12 col-md-12 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="as_whatsapp_default_gateway" />
+                                <div class="text-muted">
+                                    Gateway habilitado
+                                </div>
+                                <div class="content-group">
+                                    <div class="col-12">
+                                        <field name="as_whatsapp_default_gateway" class="o_light_label" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>Configuracion Wablas</h2>
+                    <div class="row col-12 o_settings_container">
+                        <div class="col-xs-12 col-md-12 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="as_whatsapp_wablas_url" />
+                                <div class="text-muted">
+                                    Wablas URL
+                                </div>
+                                <div class="content-group">
+                                    <div class="col-12">
+                                        <field name="as_whatsapp_wablas_url" class="o_light_label" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-12 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="as_whatsapp_wablas_token" />
+                                <div class="text-muted">
+                                    Wablas TOKEN
+                                </div>
+                                <div class="content-group">
+                                    <div class="col-12">
+                                        <field name="as_whatsapp_wablas_token" class="o_light_label" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>Configuracion Chatapi</h2>
+                    <div class="row col-12 o_settings_container">
+                        <div class="col-xs-12 col-md-12 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="as_whatsapp_chatapi_url" />
+                                <div class="text-muted">
+                                    Chatapi URL
+                                </div>
+                                <div class="content-group">
+                                    <div class="col-12">
+                                        <field name="as_whatsapp_chatapi_url" class="o_light_label" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-12 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="as_whatsapp_chatapi_token" />
+                                <div class="text-muted">
+                                    Chatapi TOKEN
+                                </div>
+                                <div class="content-group">
+                                    <div class="col-12">
+                                        <field name="as_whatsapp_chatapi_token" class="o_light_label" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+    <!-- 
+    <record id="as_whatsapp_gateway_config_action" model="ir.actions.act_window">
+        <field name="name">Whatsapp Configuracion</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_id" ref="as_whatsapp_gateway_config"/>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' : 'openacademy'}</field>
+    </record> -->
+
+</odoo>

@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="as_pdf_report_hoja_ruta">
+            <t t-call="web.html_container">
+                <div class="header">
+                    <style type="text/css">
+                        .header {
+                            margin: 0px 0px 0px 0px;
+                            padding: 0px;
+                        }
+                    </style>
+                    <div>
+                        <br />
+                        <br />
+                        <table width="100%">
+                            <tr>
+                                <td style="width:20%;text-align:center;border:2px solid #000000;font-size:15px;vertical-align: middle;"
+                                    rowspan="2">
+
+                                    <img t-att-src="image_data_uri(o.env.user.company_id.logo)" style="width:100%" />
+
+                                </td>
+                                <td
+                                    style="width:60%;text-align:center;border:2px solid #000000;font-size:15px;vertical-align: middle;height:40px;">
+                                    <b>REGISTRO</b>
+                                </td>
+                                <td style="width:20%;text-align:center;border:2px solid #000000;font-size:14px;vertical-align: middle; "
+                                    rowspan="2">
+
+                                    <b>Código:</b> CO-PL-01-01<br />
+                                    <b>Versión:</b> 1<br />
+                                    <b>Edición:</b> 15-10-18 <br />
+                                    <b>Pagina </b>
+                                    <label class="page" />/<label class="topage" />
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td
+                                    style="width:60%;text-align:center;border:2px solid #000000;font-size:15px;vertical-align: middle;">
+                                    <b>LEVANTAMIENTO DE INFORMACION EN SITIO</b>
+                                </td>
+
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </t>
+            <t t-call="web.external_layout">
+                <div class="page" style="font-family: 'Arial' !important; ">
+                    <style type="text/css">
+                        .page {
+                            margin: 40px 0px 0px 0px;
+                            padding: 0px;
+                        }
+
+                        .margenizq {
+                            margin-left: 5px;
+                        }
+                    </style>
+                    <div>
+                        <div>
+                            <table border="1" style="float: left;" width="55%">
+                                <thead>
+                                    <tr>
+                                        <td style="text-align: center; color: #fff;background-color: #00008B;border:2px solid #000000;font-size:12px;vertical-align: middle;height:30px;"
+                                            colspan="2">
+                                            <b>DATOS DEL CLIENTE</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width:35%;border:1px solid #000000;font-size:12px;vertical-align: middle;height:25px;">
+                                            <b class="margenizq">Marca y modelo:</b>
+                                            <t t-esc="o.as_vehiculos.name" />
+
+                                        </td>
+                                        <td
+                                            style="width:20%;border:1px solid #000000;font-size:12px;vertical-align: middle;height:25px;">
+                                            <b class="margenizq">Nº Interna:</b>
+                                            <span style="text-align:right;" t-esc="o.nro_interno" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width:35%;border:1px solid #000000;font-size:12px;vertical-align: middle;height:25px;">
+                                            <b class="margenizq">Tipo de Vehiculo:</b>
+                                            <t t-esc="o.tipo_vehiculo" />
+
+
+                                        </td>
+                                        <td
+                                            style="width:20%;border:1px solid #000000;font-size:12px;vertical-align: middle;height:25px;">
+                                            <b class="margenizq">Placa:</b>
+                                            <t t-esc="o.nro_placa" />
+                                        </td>
+                                    </tr>
+                                </thead>
+                            </table>
+
+                            <table border="1" style="float: right;" width="40%">
+                                <thead>
+                                    <tr>
+                                        <td style="text-align: center; color: #fff;background-color: #00008B;border:2px solid #000000;font-size:12px;vertical-align: middle;height:30px;"
+                                            colspan="2">
+                                            <b>DATOS DEL CONDUCTOR</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:55%;border:1px solid #000000;font-size:12px;vertical-align: middle;height:25px;"
+                                            colspan="2">
+                                            <b class="margenizq">Conductor:</b>
+                                            <t t-esc="o.conductor_h.name" />
+
+                                        </td>
+
+
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width:35%;border:1px solid #000000;font-size:12px;vertical-align: middle;height:25px;">
+                                            <b class="margenizq">Nº Licencia:</b>
+                                            <t t-esc="o.nro_licencia" />
+
+
+                                        </td>
+                                        <td
+                                            style="width:20%;border:1px solid #000000;font-size:12px;vertical-align: middle;height:25px;">
+                                            <b class="margenizq">Categoria:</b>
+                                            <t t-esc="o.categoria" />
+                                        </td>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div>
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        <div style="margin-top:40px;">
+                            <table border="1" style="float: left;" width="55%">
+                                <thead>
+                                    <tr>
+                                        <td style="text-align: center; color: #fff;background-color: #00008B;border:2px solid #000000;font-size:12px;vertical-align: middle;height:30px;"
+                                            colspan="2">
+                                            <b>DATOS DE LA RUTA ASIGNADA</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width:35%;border:1px solid #000000;font-size:12px;vertical-align: middle;height:25px;">
+                                            <b class="margenizq">Proyecto / Servicio:</b>
+                                            <t t-esc="o.extraer_proyecto()" />
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width:35%;border:1px solid #000000;font-size:12px;vertical-align: middle;height:25px;">
+                                            <b class="margenizq">Cliente (s):</b>
+                                            <t t-esc="o.extraer_cliente()" />
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width:35%;border:1px solid #000000;font-size:12px;vertical-align: middle;height:25px;">
+                                            <b class="margenizq">Fecha / Hora salida:</b>
+                                            <t t-esc="o.fecha_salida" />
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width:35%;border:1px solid #000000;font-size:12px;vertical-align: top;height:25px; height:50px;">
+                                            <b class="margenizq">Tipo de carga que transporta:</b>
+                                            <t t-esc="o.tipo_cargas" />
+
+                                        </td>
+                                    </tr>
+                                </thead>
+                            </table>
+
+                            <table border="1" style="float: right;" width="40%">
+                                <thead>
+                                    <tr>
+                                        <td style="width:40%;text-align: center; color: #fff;background-color: #00008B;border:2px solid #000000;font-size:12px;vertical-align: middle;height:30px;"
+                                            colspan="2">
+                                            <b>NOMBRE DEL ACOMPAÑANTE (S)</b>
+                                        </td>
+                                    </tr>
+                                    <div t-foreach="o._lineas_viajeros()" t-as="d" width="45%">
+                                        <tr>
+                                            <td
+                                                style="text-align: center; font-size:10px; width:5%;text-wrap: True; border-color: black; border:1px solid black;vertical-align: middle;">
+                                                <t t-esc="d_index+1" />
+                                            </td>
+                                            <td
+                                                style="width:35%;border:1px solid #000000;font-size:12px;vertical-align: middle;height:25px;text-align:left;">
+                                                <b style="margin-left:3px;">
+                                                    <t t-esc="d['empleados']" /></b>
+                                            </td>
+                                        </tr>
+                                    </div>
+
+                                </thead>
+                            </table>
+                        </div>
+                        <div>
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <div style="margin-top:40px;">
+                            <br />
+                            <br />
+                            <table border="1" style="float: left;" width="55%">
+                                <thead>
+                                    <tr>
+                                        <td style="text-align: center; color: #fff;background-color: #00008B;border:2px solid #000000;font-size:12px;vertical-align: middle;height:30px;"
+                                            colspan="2">
+                                            <b>RECOMENDACIONES</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width:35%;border:1px solid #000000;font-size:12px;vertical-align: top;height:25px;">
+                                            <b style="margin-left:10px;">Aplicar Manejo Defensivo en la
+                                                conducción</b><br />
+                                            <b style="margin-left:20px;">1.</b> Conducir a la velocidad adecuada <br />
+                                            <b style="margin-left:20px;">2.</b> Antes de arrancar, asegurense que todos
+                                            los pasajeros llevan puesto el cinturon de seguridad. <br />
+                                            <b style="margin-left:20px;">3.</b> Las señales de tráfico deber ser
+                                            respetadas<br />
+                                            <b style="margin-left:20px;">4.</b> Todo incidente debe ser reportado<br />
+                                            <b style="margin-left:20px;">5.</b> Prohibido fumar o permitir fumar dentro
+                                            del vehiculo
+                                        </td>
+                                    </tr>
+                                </thead>
+                            </table>
+
+                            <table border="1" style="float: right;" width="40%">
+                                <thead>
+                                    <tr>
+                                        <td style="text-align:center">
+                                        <br/>
+                                            <img t-if="o.as_customer_signature_i"
+                                                t-att-src="image_data_uri(o.as_customer_signature_i)"
+                                                style="width:70%;height:120px;" />
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td style="width:50%;text-align:center;">
+                                            <b style="font-size:14px;"> ______________________</b><br />
+                                            <b style="font-size:14px;"> AUTORIZANTE (Firma y aclaración)</b>
+                                        </td>
+
+                                    </tr>
+
+
+                                </thead>
+                            </table>
+                        </div>
+                        <div>
+                        </div>
+                        <br />
+                        <div style="margin-top:40px;">
+                            <br />
+                            <br />
+                            <table border="1" style="float: left;" width="55%">
+                                <thead>
+                                    <tr>
+                                        <td style="text-align: center; color: #fff;background-color: #00008B;border:2px solid #000000;font-size:12px;vertical-align: middle;height:30px;"
+                                            colspan="2">
+                                            <b>COMENTARIOS/OBSERVACIONES</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width:35%;border:1px solid #000000;font-size:12px;vertical-align: top;height:150px;">
+                                            <br/>
+                                        </td>
+                                    </tr>
+                                </thead>
+                            </table>
+
+                            <table border="1" style="float: right;" width="40%">
+                                <thead>
+                                    <tr>
+                                        <td style="text-align:center">
+                                            <img t-if="o.as_worker_signature"
+                                                t-att-src="image_data_uri(o.as_worker_signature)"
+                                                style="width:70%;height:120px;" />
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td style="width:50%;text-align:center;">
+                                            <b style="font-size:14px;"> ______________________</b><br />
+                                            <b style="font-size:14px;"> CONDUCTOR (Firma)</b>
+                                        </td>
+
+                                    </tr>
+
+
+                                </thead>
+                            </table>
+                        </div>
+                        <p style="page-break-after:always;" />
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="as_hoja_ruta_pdf">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="as_spectrocom_project.as_pdf_report_hoja_ruta" t-lang="lang" />
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_as_product_brand,as.products.brand user,model_as_product_brand,stock.group_stock_user,1,1,1,1
+access_as_kardex_productos_wiz,as_kardex_productos_wiz,model_as_kardex_productos_wiz,stock.group_stock_user,1,1,1,1
+access_as_kardex_variantes_wiz,as_kardex_variantes_wiz,model_as_kardex_variantes_wiz,stock.group_stock_user,1,1,1,1
+access_as_salidas_inventario_wiz,as_salidas_inventario_wiz,model_as_salidas_inventario_wiz,stock.group_stock_user,1,1,1,1
+access_as_reporte_existencias,as_reporte_existencias,model_as_reporte_existencias,stock.group_stock_user,1,1,1,1

@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="as_pdf_purchase_pedido">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="header">
+                        <style type="text/css">
+                            .header {
+                                margin: 0px;
+                                padding: 0px;
+                            }
+
+                            .cabecera {
+                                font-size: 7px;
+                                font-family: 'Arial' !important;
+                            }
+
+                            .letra {
+                                font-size: 15px !important;
+                                margin: 0px;
+                            }
+
+                            .letra3 {
+                                font-size: 15px !important;
+                                margin: 0px;
+                                padding-left: 3px !important;
+                                padding-right: 3px !important;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                            }
+
+                            .cabecera2 {
+                                font-size: 9px;
+                                font-family: 'Arial' !important;
+                            }
+
+                            .columnasr {
+                                font-size: 12px;
+                                font-family: 'Arial' !important;
+                                margin-bottom: 10px;
+                            }
+
+                            .columnas2 {
+                                font-size: 9px;
+                                font-family: 'Arial' !important;
+                            }
+
+                            h3 {
+                                font-family: 'Arial' !important;
+                                font-size: 14px;
+                                margin: 0px !important;
+                                padding: 0px !important;
+                            }
+
+                            td {
+                                font-family: 'Arial' !important;
+                                font-size: 12px;
+                                margin: 0px !important;
+                                padding: 0px !important;
+                            }
+
+                            h4 {
+                                font-family: 'Arial' !important;
+                                font-size: 12px;
+                                margin: 0px !important;
+                                padding: 0px !important;
+                            }
+
+                            span {
+                                font-family: 'Arial' !important;
+
+                                margin: 0px !important;
+                                padding: 0px !important;
+                            }
+
+                            body {
+                                font-family: 'Arial' !important;
+                                font-size: 18px;
+                            }
+
+                            hr {
+                                border-bottom: solid;
+                                border-width: 1pt border-top:0px !important;
+                                padding: 0px !important;
+                                margin: 0px !important;
+
+                            }
+
+                            tr.border_bottom td {
+                                border-bottom: 0.5pt solid #cccccc;
+                                margin-right: 3px;
+                                padding-right: 3px;
+                                font-size: 13px;
+                                font-family: 'Arial' !important;
+                            }
+
+                            .borde1 {
+                                border-top: 1px solid grey;
+                                border-left: 1px solid grey;
+                                border-right: 1px solid grey;
+                                border-bottom: 1px solid grey;
+                                margin-bottom: 3px;
+
+                            }
+
+                            .borde1 thead tr td {
+                                padding-left: 5px;
+                                padding-right: 5px;
+
+                            }
+
+                            .borde2 {
+                                border-left: 1px solid grey;
+                                border-right: 1px solid grey;
+                                border-top: 1px solid grey;
+                                margin: 3px;
+                            }
+
+                            .titulo {
+                                font-size: 25px;
+                                padding-top: 40px;
+                            }
+                        </style>
+                        <div class="row mt0 mb0 " id="as_header">
+
+                            <div class="col-3" style="text-align:center; margin-bottom:10px;font-size:15px;">
+                                <t t-if="o.company_id.logo">
+                                    <img t-att-src="image_data_uri(o.company_id.logo)"
+                                        style="height: 85px; width: 150px;" />
+                                    <br />
+                                </t>
+
+                                <h4>
+                                    <div class="letra">
+                                        <b>
+                                            <span t-esc="o.info_sucursal('nombre_empresa')" />
+                                        </b>
+                                    </div>
+                                </h4>
+                                <h4>
+                                    <div class="letra">
+                                        <b>
+                                            NIT: <span t-esc="o.info_sucursal('nit')" />
+                                        </b>
+                                    </div>
+                                </h4>
+                                <h4>
+                                    <div class="letra">
+                                        <span t-esc="o.info_sucursal('direccion1')" /> <span
+                                            t-esc="o.info_sucursal('ciudad')" />-<span
+                                            t-esc="o.info_sucursal('pais')" />
+                                    </div>
+                                </h4>
+                                <h4>
+                                    <div class="letra">
+                                        Telefono: <span t-esc="o.info_sucursal('telefono')" />
+                                    </div>
+                                </h4>
+                            </div>
+                            <div class="col-6" style="text-align:center;" name='as_titulo'>
+                                <t t-if="o.state == 'draft'" width="100%">
+                                    <h2 class='titulo'>
+                                        <div>
+
+                                            <b>PRESUPUESTO</b><br />
+                                            <span t-esc="o.name" />
+
+                                        </div>
+                                    </h2>
+                                </t>
+                                <t t-if="o.state != 'draft'" width="100%">
+                                    <h2 class='titulo'>
+                                        <div style='padding-top:60px'>
+
+                                            <b>PEDIDO DE COMPRA</b><br />
+                                            <span t-esc="o.name" />
+
+                                        </div>
+                                    </h2>
+                                </t>
+                            </div>
+                            <div class="col-3" style="text-align:right; float:right;">
+
+                                <t t-if="o.partner_ref != ''">
+                                    <h4>
+                                        <div class="letra">
+                                            <b>Referencia: </b>
+                                            <t t-esc="o.partner_ref" />
+                                        </div>
+                                    </h4>
+                                </t>
+                                <div style="text-align:right; float:right;">
+                                    <h4>
+                                        <div class="letra">
+                                            <b>Usuario: </b>
+                                            <t t-esc="o.user_id.partner_id.name" />
+                                        </div>
+                                    </h4>
+                                </div>
+                                <div style="text-align:right; float:right;">
+                                    <h4>
+                                        <div class="letra">
+                                            <b>Fecha: </b>
+                                            <span
+                                                t-esc="(datetime.datetime.strptime(str(o.date_order), '%Y-%m-%d %H:%M:%S') - datetime.timedelta(hours=4)).strftime('%d/%m/%Y')" />
+                                        </div>
+                                    </h4>
+                                </div>
+                                <div style="text-align:right; float:right; width:100px">
+                                    <h4>
+                                        <div class="letra">
+                                            <b>Pagina </b>
+                                            <label class="page" />/<label class="topage" />
+                                        </div>
+                                    </h4>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <table width="100%" class="table table-borderless borde1">
+                            <thead>
+                                <tr>
+                                    <td style="width:10%;" class='letra3'>
+                                        <b>Proveedor</b>
+                                    </td>
+                                    <td style="width:30%;" class='letra3'>
+                                        <t t-esc="o.partner_id.name" />
+                                    </td>
+                                    <td style="width:10%;" class='letra3'>
+                                        <b>Teléfono</b>
+                                    </td>
+                                    <td style="width:20%;" class='letra3'>
+                                        <t t-esc="o.partner_id.phone" />
+                                    </td>
+                                    <td style="width:10%;" class='letra3'>
+                                        <b>Celular</b>
+                                    </td>
+                                    <td style="width:20%;" class='letra3'>
+                                        <t t-esc="o.partner_id.mobile" />
+                                    </td>
+                                </tr>
+                            </thead>
+                            <thead>
+                                <tr>
+                                    <td style="width:10%;" class='letra3'>
+                                        <b>Zona</b>
+                                    </td>
+                                    <td style="width:30%;" class='letra3'>
+                                        <t t-esc="o.partner_id.city" />
+                                    </td>
+                                    <td style="width:10%;" class='letra3'>
+                                        <b>Dirección</b>
+                                    </td>
+                                    <td style="width:20%;" class='letra3' colspan="3">
+                                        <t t-esc="o.partner_id.street" />
+                                    </td>
+
+
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                </t>
+            </t>
+            <t t-name="web.external_layout_footer">
+                <t t-foreach="docs" t-as="o">
+                    <div class="footer" style="font-family: 'Arial' !important;">
+                        <div class="oe_structure" style='float:right'/>
+                       
+
+                            <t t-esc="o.user_id.partner_id.name" /> <t t-esc="datetime.datetime.now().strftime('%d-%m-%Y %H:%M:%S')" />
+
+                    </div>
+                </t>
+            </t>
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page" style="font-family: 'Arial' !important; ">
+                        <style type="text/css">
+                            .page {
+                                margin: 0px;
+                                padding: 0px;
+                            }
+
+                            .totales1 {
+                                font-family: 'Arial' !important;
+                                font-size: 25px;
+                                font-weight: bold;
+                                border-collapse: collapse;
+                                border-top: solid;
+                                border-width: 2pt
+                            }
+
+                            .totales2 {
+                                font-family: 'Arial' !important;
+                                font-size: 15px;
+                                font-weight: bold;
+                            }
+
+                            .totales3 {
+                                font-family: 'Arial' !important;
+                                font-size: 25px;
+                                font-weight: bold;
+                                border-collapse: collapse;
+                                border-top: solid;
+                                border-bottom: solid;
+                                border-width: 2pt
+                            }
+
+                            .columnas {
+                                font-family: 'Arial' !important;
+                                font-size: 12px;
+                                font-weight: bold;
+                            }
+
+                            body {
+                                font-family: 'Arial' !important;
+                            }
+
+                            .borde1 {
+                                border: 1px solid grey;
+
+                            }
+
+                            .borde3 {
+                                border-bottom: 1px solid grey;
+
+                            }
+
+                            .borde2 {
+                                border: 1px solid grey;
+                                border-radius: 8px 8px 8px 8px;
+                                max-height: 2.5cm;
+                                max-width: 2cm;
+                            }
+
+                            .borde_inferior {
+                                margin-bottom: 5px;
+                                margin-top: 5px;
+                            }
+
+                            .columnasr tr td {
+                                font-size: 15px !important;
+                                font-family: 'Arial' !important;
+                                margin-bottom: 0px;
+                                border-bottom: 0px;
+                            }
+
+                            .letra2 {
+                                font-size: 14px;
+                                text-align: center;
+                                padding: 2px;
+                                color: #000000;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                            }
+
+
+                            .letra3 {
+                                font-size: 16px;
+                                text-align: center;
+                                padding: 2px;
+                                color: #000000;
+                            }
+
+                            .letra4 {
+                                font-size: 15px;
+                                text-align: center;
+                                padding: 2px;
+                                border-bottom: 1px solid #000000;
+                                color: #000000;
+                            }
+
+                            .table thead tr td {
+                                padding: 1px;
+                                color: #000000;
+                                background-color: #FFFFFF;
+                            }
+
+                            .table thead tr th {
+                                padding: 1px;
+                                color: #000000;
+                                background-color: #FFFFFF;
+                                border: 1px solid #FFFFFF;
+                            }
+
+                            .margen {
+                                margin: 3px;
+                            }
+                        </style>
+                        <br />
+
+                        <div>
+
+                            <table width="95%" class="table table-borderless" name='page_table'>
+                                <thead style='border:1px solid grey;'>
+                                    <tr>
+                                        <td style="width:5%;" class='letra2'>
+                                            <b>Nro</b>
+                                        </td>
+                                        <td style="width:10%;" class='letra2'>
+                                            <b>CODIGO</b>
+                                        </td>
+
+                                        <td style="width:40%;" class='letra2'>
+                                            <b>CONCEPTO</b>
+                                        </td>
+                                        <td style="width:10%;" class='letra2'>
+                                            <b>UD</b>
+                                        </td>
+                                        <td style="width:15%;" class='letra2'>
+                                            <b>CANT.</b>
+                                        </td>
+                                        <td style="width:10%;text-align:left" class='letra2'>
+                                            <b>P.UNIT.</b>
+                                        </td>
+                                        <td style="width:10%;" class='letra2'>
+                                            <b>TOTAL</b>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <thead style='border:1px solid grey'>
+                                    <t t-set="weight" t-value="0.00" />
+                                    <div t-foreach="o._lineas_ordenadas()" t-as="d" width="95%">
+
+                                        <tr>
+                                            <td style="width:5%;" class='letra2'>
+                                                <t t-esc="d_index+1" />
+                                                <t t-set="weight" t-value="weight+d.product_id.weight" />
+                                            </td>
+                                            <td style="width:10%;" class='letra2'>
+                                                <t t-esc="d.product_id.default_code" />
+                                            </td>
+                                            <td style="width:40%; text-align:left" class='letra2'>
+                                                 <span t-esc="o.get_name_line(d.product_id)"/>
+                                            </td>
+                                            <td style="width:10%; text-align:center" class='letra2'>
+                                                <t t-esc="d.product_uom.name" />
+                                            </td>
+                                            <td style="width:10%; text-align:center" class='letra2'>
+                                                <t t-esc="'{:.2f}'.format(d.product_qty)" />
+                                            </td>
+                                            <td style="width:10%; text-align:left" class='letra2'>
+                                                <span t-esc="'{0:,.2f}'.format(d.price_unit)" />
+                                            </td>
+                                            <td style="width:10%; text-align:right" class='letra2'>
+                                                <span t-esc="'{0:,.2f}'.format(d.price_unit * d.product_qty) " />
+                                            </td>
+                                        </tr>
+                                    </div>
+                                </thead>
+                                <thead style='border:1px solid #FFFFFF;line-height : 18px;'>
+                                    <tr>
+                                        <td colspan="4" style="width:5%;text-align:left" class='letra2'>
+                                            <b>
+                                                SON:</b>
+                                            <span t-esc="o.convertir_numero_a_literal(o.amount_total)" />
+
+                                        </td>
+                                        <td colspan="2" style="width:5%;text-align:right" class='letra4'>
+                                            <b> TOTAL</b>
+                                        </td>
+                                        <td colspan="2" style="width:5%;text-align:right" class='letra4'>
+                                            <b>
+                                                <t t-esc="'{0:,.2f}'.format(o.amount_total)" /></b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" style="width:5%;text-align:left" class='letra2'>
+                                            <b>
+
+                                            </b>
+                                        </td>
+                                        <td colspan="2" style="width:5%;text-align:right" class='letra4'>
+
+                                        </td>
+                                        <td colspan="2" style="width:5%;text-align:right" class='letra4'>
+                                            <b></b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" style="width:5%;text-align:left" class='letra2'>
+
+
+                                        </td>
+                                        <td colspan="2" style="width:5%;text-align:right" class='letra4'>
+
+                                        </td>
+                                        <td colspan="2" style="width:5%;text-align:right" class='letra4'>
+
+                                        </td>
+                                    </tr>
+                                </thead>
+                            </table>
+
+                            <!-- <table width="100%" class="table table-borderless" name="footer_table">
+                                <thead style='border:1px solid #FFFFFF;line-height : 18px;'>
+                                    <tr>
+                                        <td style="width:5%;text-align:center" class='letra4'>
+                                            <b> __________________</b><br />
+                                            <b> Recibí Conforme</b><br />
+                                            <b> Firma:</b><br />
+                                            <b> Nombre:</b><br />
+                                            <b> Telf/Cel:</b><br />
+                                        </td>
+                                        <td style="width:5%;text-align:center" class='letra4'>
+                                            <b> __________________</b><br />
+                                            <b> Entregue Conforme</b><br />
+                                            <b> Firma:</b><br />
+                                            <b> Nombre:</b><br />
+                                            <b> Telf/Cel:</b><br />
+
+                                        </td>
+
+                                    </tr>
+
+                                </thead>
+                            </table>
+                            <span style='float:right'>
+                                <t t-esc="o.user_id.partner_id.name" /> <br /><span
+                                    t-esc="datetime.datetime.now().strftime('%d-%m-%Y %H:%M:%S')" /></span> -->
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+        <template id="report_purchase_order">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="lang" t-value="o.partner_id.lang" />
+                    <t t-call="as_bo_purchase_invoice.as_pdf_purchase_pedido" t-lang="lang" />
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

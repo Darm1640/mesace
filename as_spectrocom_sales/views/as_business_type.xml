@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_form_business_name" model="ir.ui.view">
+            <field name="name">as.bussiness.type</field>
+            <field name="model">as.business.unit</field>
+            <field name="arch" type="xml">
+                <form string="Unidad de Negocio">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                            </group>
+                            <group>
+                                <field name="as_type_ids" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_business_name" model="ir.ui.view">
+            <field name="name">as.bussiness.type</field>
+            <field name="model">as.business.unit</field>
+            <field name="arch" type="xml">
+                <tree string="Unidad de Negocio">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_account_bussines_type">
+            <field name="name">Unidad de Negocio</field>
+            <field name="res_model">as.business.unit</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="as_business_type_menu" name="Unidad de Negocio" parent="sale.product_menu_catalog"
+            action="action_account_bussines_type" />
+
+        <record id="view_form_tf_type_service" model="ir.ui.view">
+            <field name="name">type_service</field>
+            <field name="model">as.type.service</field>
+            <field name="arch" type="xml">
+                <form string="Department">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                            </group>
+                            <group>
+                                <field name="as_bussiness_id" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_tf_type_service" model="ir.ui.view">
+            <field name="name">type_service</field>
+            <field name="model">as.type.service</field>
+            <field name="arch" type="xml">
+                <tree string="Department">
+                    <field name="name" />
+                    <field name="as_bussiness_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_account_type_service">
+            <field name="name">Department</field>
+            <field name="res_model">as.type.service</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="type_account_invoicing_menu" name="Tipos de Servicio" parent="sale.product_menu_catalog"
+            action="action_account_type_service" />
+
+    </data>
+</odoo>

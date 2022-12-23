@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_finiquito_view" model="ir.ui.view">
+            <field name="name">as.hr.finiquito.view</field>
+            <field name="model">as.hr.finiquito</field>
+            <field name="arch" type="xml">
+                <form string="Finiquito a Empleados">
+                    <header>
+                        <field name="as_approval" invisible="True" />
+                        <button class="btn-primary" type="object" name="as_get_to_approval" states="draft" string="Para Aprobar" />
+                        <button class="btn-primary" type="object" name="as_get_draft" states="approval" string="Borrador" />
+                        <button class="btn-primary" type="object" name="as_action_confirm"  string="Aprobar"   attrs="{'invisible': ['|',('as_approval', '=', False),('state', '!=', 'to_approval')]}"/>
+                        <button name="as_compute_finiquito" string="Calcular" type="object" states="draft"
+                            class="oe_highlight" />
+                            <button string="Generar Pago" type="object" name="as_get_bonus_payment" states="approval" class="oe_highlight" />
+                        <field name="state" widget="statusbar" states='draft,to_approval,approval,paid' />
+                    </header>
+                    <sheet>
+                        <div>
+                            <group col="4" string="Datos">
+                                <field name="employee_id" />
+                                <field name="contract_id" force_save="1" />
+                                <field name="company_id" />
+                                <field name="as_gerente" />
+                                <field name="as_motivo" />
+                                <field name="as_tipo" />
+                                <field name="as_date_start" />
+                                <field name="as_date_end" />
+                                <field name="as_sueldo_promedio" />
+                            </group>
+                            <group col="6" string="Tiempo">
+                                <field name="as_años" />
+                                <field name="as_meses" />
+                                <field name="as_dias" />
+                            </group>
+
+
+
+                            <notebook name="lineas">
+                                <page string="Remuneraciones">
+                                    <group>
+                                        <field name="as_remuneraciones_ids" />
+                                    </group>
+                                    <group name="note_group" col="6" class="mt-2 mt-md-0">
+                                        <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+                                            <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                                <label for="as_total_promedio" />
+                                            </div>
+                                            <field name="as_total_promedio" nolabel="1"
+                                                class="oe_subtotal_footer_separator" />
+                                        </group>
+                                        <div class="oe_clear" />
+                                    </group>
+                                </page>
+                                <page string="Indemnizaciones">
+                                    <group>
+                                        <field name="as_indemnizaciones_ids" />
+                                    </group>
+                                    <group name="note_group" col="6" class="mt-2 mt-md-0">
+                                        <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+                                            <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                                <label for="as_total_vacaciones" />
+                                            </div>
+                                            <field name="as_total_vacaciones" nolabel="1"
+                                                class="oe_subtotal_footer_separator" />
+                                            <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                                <label for="as_total_indemnizacion" />
+                                            </div>
+                                            <field name="as_total_indemnizacion" nolabel="1"
+                                                class="oe_subtotal_footer_separator" />
+                                        </group>
+                                        <div class="oe_clear" />
+                                    </group>
+                                </page>
+                                <page string="Deducciones">
+                                    <group>
+                                        <field name="as_deducciones_ids" />
+                                    </group>
+                                    <group name="note_group" col="6" class="mt-2 mt-md-0">
+                                        <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+                                            <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                                <label for="as_total_deducciones" />
+                                            </div>
+                                            <field name="as_total_deducciones" nolabel="1"
+                                                class="oe_subtotal_footer_separator" />
+                                        </group>
+                                        <div class="oe_clear" />
+                                    </group>
+                                </page>
+                                <page string="Pago">
+                                    <group>
+                                                                      <field name="as_caja_line_id" />
+
+                                    </group>
+                                </page>
+                            </notebook>
+<group name="note_group" col="6" class="mt-2 mt-md-0">
+                                        <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+                                            <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                                <label for="as_total" />
+                                            </div>
+                                            <field name="as_total" nolabel="1"
+                                                class="oe_subtotal_footer_separator" />
+                                        </group>
+                                        <div class="oe_clear" />
+                                    </group>
+
+                        </div>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" />
+                        <field name="activity_ids" />
+                        <field name="message_ids" />
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="hr_finiquito_tree" model="ir.ui.view">
+            <field name="name">as.hr.finiquito.tree</field>
+            <field name="model">as.hr.finiquito</field>
+            <field name="arch" type="xml">
+                <!-- <tree string="Bancos" editable="bottom"> -->
+                <tree string="Finiquitos">
+                    <field name="employee_id" />
+                    <field name="contract_id" />
+                    <field name="as_dias" />
+                    <field name="as_meses" />
+                    <field name="as_años" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="hr_finiquito_line_tree" model="ir.ui.view">
+            <field name="name">as.hr.finiquito.lines.tree</field>
+            <field name="model">as.hr.finiquito.lines</field>
+            <field name="arch" type="xml">
+                <tree string="Finiquitos">
+                    <field name="as_concepto" />
+                    <field name="as_amount" />
+                </tree>
+            </field>
+        </record>
+        <act_window id="hr_finiquito_line_action" name="Finiquitos line" res_model="as.hr.finiquito.lines"
+            view_mode="tree,form" />
+
+        <record id="hr_remuneraciones_tree" model="ir.ui.view">
+            <field name="name">as.hr.remuneracion.tree</field>
+            <field name="model">as.hr.remuneracion</field>
+            <field name="arch" type="xml">
+                <tree string="Finiquitos">
+                    <field name="as_años" />
+                    <field name="as_meses" />
+                    <field name="as_amount" />
+                </tree>
+            </field>
+        </record>
+        <act_window id="hr_remuneraciones_action" name="Remuneraciones" res_model="as.hr.remuneracion"
+            view_mode="tree,form" />
+
+        <record id="hr_indemnicaciones_tree" model="ir.ui.view">
+            <field name="name">as.hr.indemnizacion.tree</field>
+            <field name="model">as.hr.indemnizacion</field>
+            <field name="arch" type="xml">
+                <tree string="Finiquitos">
+                    <field name="as_concepto" />
+                    <field name="as_años" />
+                    <field name="as_meses" />
+                    <field name="as_dias" />
+                    <field name="as_amount" />
+                    <field name="as_total" />
+                    <field name="as_state" />
+                </tree>
+            </field>
+        </record>
+        <act_window id="hr_indemnicaciones_action" name="Indemnizaciones" res_model="as.hr.indemnizacion"
+            view_mode="tree,form" />
+
+        <act_window id="hr_finiquito_action" name="Finiquitos" res_model="as.hr.finiquito" view_mode="tree,form" />
+
+
+    </data>
+</odoo>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="account_move_mail_templateP" model="mail.template">
+            <field name="name">Notificación Factura Pagada</field>
+            <field name="model_id" ref="account.model_account_move" />
+            <field name="subject">Factura Generada: ${object.origin}/ ref(${object.name})</field>
+            <field name="email_from">${object.company_id.partner_id.email}</field>
+            <field name="email_to">${object.partner_id.email}</field>
+            <field name="body_html" type="html">
+                <div>
+                    Estimado(s)
+                    % if object.partner_id.parent_id:
+                        ${object.partner_id.name} (${object.partner_id.parent_id.name}),
+                    % else:
+                        ${object.partner_id.name},
+                    % endif
+                    <br /><br />
+                   Se envia adjunta la Factura ${object.name} de numero de factura ${object.as_invoice_number} y código de autorización ${object.as_unique_invoice_code}<br />
+                    <br />
+                    Gracias!!
+                </div>
+            </field>
+            <!-- <field name="report_template" ref="as_account_invoice.as_action_report_invoice_corrido"/>
+            <field name="report_name">Factura_${(object.name or '').replace('/','_')}${object.state == 'draft' and '_draft' or ''}</field>
+            <field name="lang">${object.partner_id.lang}</field>
+            <field name="auto_delete" eval="True"/> -->
+        </record>
+        <record id="account_cancel_templateP" model="mail.template">
+            <field name="name">Notificación Factura Anula</field>
+            <field name="model_id" ref="account.model_account_move" />
+            <field name="subject">Factura Anulada: ${object.origin}/ ref(${object.name})</field>
+            <field name="email_from">${object.company_id.partner_id.email}</field>
+            <field name="email_to">${object.partner_id.email}</field>
+            <field name="body_html" type="html">
+                <div>
+                    Estimado(s)
+                    % if object.partner_id.parent_id:
+                        ${object.partner_id.name} (${object.partner_id.parent_id.name}),
+                    % else:
+                        ${object.partner_id.name},
+                    % endif
+                    <br /><br />
+                   Su factura se ha anulada con exito, de referencia ${object.name} de numero de factura ${object.as_invoice_number} y código de autorización ${object.as_unique_invoice_code}<br />
+                    <br />
+                    Gracias!!
+                </div>
+            </field>
+            <!-- <field name="report_template" ref="as_account_invoice.as_action_report_invoice_corrido"/>
+            <field name="report_name">Factura_${(object.name or '').replace('/','_')}${object.state == 'draft' and '_draft' or ''}</field>
+            <field name="lang">${object.partner_id.lang}</field>
+            <field name="auto_delete" eval="True"/> -->
+        </record>
+
+    </data>
+</odoo>

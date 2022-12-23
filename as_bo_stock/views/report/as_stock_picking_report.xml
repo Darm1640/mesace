@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="as_report_warehouse">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="header">
+
+                    </div>
+
+                </t>
+            </t>
+
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="o">
+                    <style type="text/css">
+                        .header {
+                            margin: 0px;
+                            padding: 0px;
+                        }
+
+                        .cabecera {
+                            font-size: 7px;
+                            font-family: 'Arial' !important;
+                        }
+
+                        .letra {
+                            font-size: 15px !important;
+                            margin: 0px;
+                        }
+
+                        letra1 {
+                            font-size: 25px !important;
+                            margin: 0px;
+                            text-align: left;
+                        }
+
+                        .letra3 {
+                            font-size: 15px !important;
+                            margin: 0px;
+                            padding-left: 3px !important;
+                            padding-right: 3px !important;
+                        }
+
+                        .cabecera2 {
+                            font-size: 9px;
+                            font-family: 'Arial' !important;
+                        }
+
+                        .columnasr {
+                            font-size: 12px;
+                            font-family: 'Arial' !important;
+                            margin-bottom: 10px;
+                        }
+
+                        .columnas2 {
+                            font-size: 9px;
+                            font-family: 'Arial' !important;
+                        }
+
+                        h3 {
+                            font-family: 'Arial' !important;
+                            font-size: 14px;
+                            margin: 0px !important;
+                            padding: 0px !important;
+                        }
+
+                        td {
+                            font-family: 'Arial' !important;
+                            font-size: 12px;
+                            margin: 0px !important;
+                            padding: 0px !important;
+                        }
+
+                        h4 {
+                            font-family: 'Arial' !important;
+                            font-size: 12px;
+                            margin: 0px !important;
+                            padding: 0px !important;
+                        }
+
+                        span {
+                            font-family: 'Arial' !important;
+
+                            margin: 0px !important;
+                            padding: 0px !important;
+                        }
+
+                        body {
+                            font-family: 'Arial' !important;
+                            font-size: 18px;
+                        }
+
+                        hr {
+                            border-bottom: solid;
+                            border-width: 1pt border-top:0px !important;
+                            padding: 0px !important;
+                            margin: 0px !important;
+
+                        }
+
+                        tr.border_bottom td {
+                            border-bottom: 0.5pt solid #cccccc;
+                            margin-right: 3px;
+                            padding-right: 3px;
+                            font-size: 13px;
+                            font-family: 'Arial' !important;
+                        }
+
+                        .borde1 {
+                            border-top: 1px solid grey;
+                            border-left: 1px solid grey;
+                            border-right: 1px solid grey;
+                            border-bottom: 1px solid grey;
+                            margin-bottom: 3px;
+
+                        }
+
+
+                        .borde2 {
+                            border-left: 1px solid grey;
+                            border-right: 1px solid grey;
+                            border-top: 1px solid grey;
+                            margin: 3px;
+                        }
+
+                        .titulo {
+                            font-size: 25px;
+                            padding-top: 40px;
+                        }
+                    </style>
+                    <div class="row mt0 mb0 " id="as_header">
+
+                        <div class="col-4"
+                            style="text-align:center; margin-bottom:10px;font-size:15px; width:35%; margin-top:-35px;">
+
+                            <img t-att-src="image_data_uri(o.company_id.logo)"
+                                style="height: 130px; width: 240px; text-align: left; " />
+                            <br />
+                            <h4 style="text-align: center; font-size:14px; margin-left:80px;">
+                                <div>
+                                    <b>NIT: <span t-esc="o.info_sucursal('nit')" /></b>
+                                </div>
+                            </h4>
+                            <h4 style="text-align: center; font-size:14px; margin-left:80px;">
+                                <div>
+                                    <span t-esc="o.info_sucursal('direccion1')" />
+
+                                </div>
+                            </h4>
+                            <h4 style="text-align: center; font-size:14px; margin-left:80px; margin-left:80px;">
+                                <div>
+                                    Telefono: <span t-esc="o.info_sucursal('telefono')" />
+                                </div>
+                            </h4>
+                            <h4>
+                                <div style="text-align: center; font-size:15px;">
+                                    <br />
+                                </div>
+                            </h4>
+
+
+                        </div>
+                        <div class="col-4" style="text-align:center; width: 30%; margin-top:-1px;" name='as_titulo'>
+
+                            <h4>
+                                <div style="text-align: center; font-size: 23px;">
+
+                                    <b>MOVIMIENTO DE ALMACEN</b><br />
+                                    <b style="text-align: center; font-size: 18px;">
+                                        <t t-esc="o.name" /></b>
+                                </div>
+                            </h4>
+                        </div>
+                        <div class="col-4" style="width: 35%;margin-top:-35px;">
+                            <h4>
+                                <div class="letra">
+                                    <br />
+
+                                </div>
+                            </h4>
+                            <h4>
+                                <div class="letra">
+                                    <br />
+                                    <!-- <t t-if="o.sale_id.id != ''" />
+                                    <b>Vendedor</b>
+                                    <span t-esc="o.sale_id.user_id.partner_id.name" />
+                                </t> -->
+                                </div>
+                            </h4>
+
+
+
+                            <h4>
+                                <div style="text-align:left; font-size: 15px;">
+                                    <b>Vendedor:</b>
+                                    <span t-esc="o.sale_id.user_id.partner_id.name" />
+                                </div>
+                            </h4>
+                            <h4>
+                                <div style="text-align: left; font-size: 15px;">
+                                    <b>Fecha:</b>
+                                    <t t-if="o.date_done">
+                                        <span
+                                            t-esc="(datetime.datetime.strptime(str(o.date_done), '%Y-%m-%d %H:%M:%S') - datetime.timedelta(hours=4)).strftime('%d/%m/%Y')" />
+                                    </t>
+                                </div>
+                            </h4>
+
+
+                            <h4>
+                                <div style="text-align: left; font-size: 15px;">
+                                    <b>Almacen Origen :</b>
+                                    <t t-esc="o.location_id.name" />
+                                </div>
+                            </h4>
+
+
+                            <h4>
+                                <div style="text-align: left; font-size: 15px;">
+                                    <b>Almacen Destino:</b>
+                                    <t t-esc="o.location_dest_id.name" />
+                                </div>
+                            </h4>
+                            <h4>
+                                <div style="text-align: left; font-size: 15px;">
+                                    <br />
+                                </div>
+                            </h4>
+
+
+
+                        </div>
+
+                    </div>
+                    <div>
+                        <table width="100%">
+                            <tr>
+                                <td style="text-align: left; font-size:15px; width:50%;">
+                                    <b>Cliente:</b>
+                                    <span t-esc="o.partner_id.name" />
+                                </td>
+
+                                <td style="text-align: left; font-size:15px; width:50%;">
+                                    <b>Dirección:</b>
+                                    <t t-esc="o.partner_id.street" />
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td style="text-align: left; font-size:15px; width:50%;">
+                                    <b>Codigo Cliente: </b>
+                                    <span t-esc="o.partner_id.as_code" />
+                                </td>
+                                <td style="text-align: left; font-size:15px; width:50%;">
+                                    <b>Zona: </b>
+                                    <t t-esc="o.partner_id.city" />
+
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td style="text-align: left; font-size:15px; width:50%;">
+                                    <b>Codigo: </b>
+                                    <span t-esc="o.as_codigo_venta" />
+                                </td>
+                                <td style="text-align: left; font-size:15px; width:50%;">
+                                    <b>Técnico Responsable: </b>
+                                    <t t-esc="o.as_custodio_id.name" />
+
+                                </td>
+
+                            </tr>
+                        </table>
+
+                    </div>
+
+
+                    <div class="page" style="font-family: 'Arial' !important; ">
+                        <style type="text/css">
+                            .page {
+                                margin: 0px;
+                                padding: 0px;
+                            }
+
+                            .totales1 {
+                                font-family: 'Arial' !important;
+                                font-size: 25px;
+                                font-weight: bold;
+                                border-collapse: collapse;
+                                border-top: solid;
+                                border-width: 2pt
+                            }
+
+                            sale .totales2 {
+                                font-family: 'Arial' !important;
+                                font-size: 15px;
+                                font-weight: bold;
+                            }
+
+                            .totales3 {
+                                font-family: 'Arial' !important;
+                                font-size: 25px;
+                                font-weight: bold;
+                                border-collapse: collapse;
+                                border-top: solid;
+                                border-bottom: solid;
+                                border-width: 2pt
+                            }
+
+
+
+                            body {
+                                font-family: 'Arial' !important;
+                            }
+
+                            .borde1 {
+                                border: 1px solid grey;
+
+                            }
+
+                            .borde3 {
+                                border-bottom: 1px solid grey;
+
+                            }
+
+                            .borde2 {
+                                border: 1px solid grey;
+                                border-radius: 8px 8px 8px 8px;
+                                sale max-height: 2.5cm;
+                                max-width: 2cm;
+                            }
+
+                            .borde_inferior {
+                                margin-bottom: 5px;
+                                margin-top: 5px;
+                            }
+
+                            .margen {
+                                margin: 3px;
+                            }
+
+                            .tituloAzul {
+                                font-size: 10;
+                                text-align: center;
+                                bottom: True;
+                                top: True;
+                                right: True;
+                                left: True;
+                                bold: True;
+                                color: #ffffff;
+                                background-color: #4682B4;
+                            }
+                        </style>
+                        <br />
+                        <div>
+                            <table width="100%" id="header_table">
+                                <thead>
+                                    <tr>
+                                        <td
+                                            style="text-align: center; font-size:15px; width:10%;color: #fff;
+                                        background-color: #4682B4; text-wrap: True; margin-right: auto; margin-left: auto; border-color: black; border:1px solid black;vertical-align: middle;">
+                                            <b>Nro</b>
+                                        </td>
+                                        <td
+                                            style="text-align: center; font-size:15px; width:15%;color: #fff;
+                                        background-color: #4682B4; text-wrap: True; margin-right: auto; margin-left: auto; border-color: black; border:1px solid black;vertical-align: middle;">
+                                            <b>CODIGO</b>
+                                        </td>
+                                        <td
+                                            style="text-align: center; font-size:15px; width:40%;color: #fff;
+                                        background-color: #4682B4; text-wrap: True; margin-right: auto; margin-left: auto; border-color: black; border:1px solid black;vertical-align: middle;">
+                                            <b>CONCEPTO</b>
+                                        </td>
+                                        <td style="text-align: center; font-size:15px; width:15%;color: #fff;
+                                        background-color: #4682B4; text-wrap: True; margin-right: auto; margin-left: auto; border-color: black; border:1px solid black;vertical-align: middle;">
+                                            <b>N° de serie</b>
+                                        </td>
+                                        <td
+                                            style="text-align: center; font-size:15px; width:10%;color: #fff;
+                                        background-color: #4682B4; text-wrap: True; margin-right: auto; margin-left: auto; border-color: black; border:1px solid black;vertical-align: middle;">
+                                            <b>UD</b>
+                                        </td>
+                                        <td
+                                            style="text-align: center; font-size:15px; width:10%;color: #fff;
+                                        background-color: #4682B4; text-wrap: True; margin-right: auto; margin-left: auto; border-color: black; border:1px solid black;vertical-align: middle;">
+                                            <b>CANTIDAD</b>
+                                        </td>
+                                        <!-- <td
+                                            style="text-align: center; font-size:15px; width:12%;color: #fff;
+                                        background-color: #4682B4; text-wrap: True; margin-right: auto; margin-left: auto; border-color: black; border:1px solid black;">
+                                            <b>P.UNIT.</b>
+                                        </td>
+                                        <td
+                                            style="text-align: center; font-size:15px; width:6%;color: #fff;
+                                        background-color: #4682B4; text-wrap: True; margin-right: auto; margin-left: auto; border-color: black; border:1px solid black;">
+                                            <b>TOTAL</b>
+                                        </td> -->
+                                    </tr>
+                                </thead>
+                                <thead style='border:1px solid grey' id="body_table">
+                                    <t t-set="weight" t-value="0.00" />
+                                    <div t-foreach="o.move_line_ids_without_package" t-as="d" width="100%">
+                                        <tr>
+                                            <td
+                                                style="text-align: center; font-size:13px; width:10%;text-wrap: True; margin-right: auto; margin-left: auto; border-color: black; border:1px solid black;vertical-align: middle;">
+                                                <t t-esc="d_index+1" />
+                                                <t t-set="weight"
+                                                    t-value="weight+(d.product_id.weight * d.product_uom_qty)" />
+                                            </td>
+                                            <td
+                                                style="text-align: center; font-size:13px; width:15%; text-wrap: True; margin-right: auto; margin-left: auto; border-color: black; border:1px solid black;vertical-align: middle;">
+                                                <tspan t-esc="d.product_id.default_code" />
+                                            </td>
+                                            <td
+                                                style="text-align: left; font-size:13px; width:50%;text-wrap: True; margin-right: auto; margin-left: auto; border-color: black; border:1px solid black;vertical-align: middle;">
+                                                <tspan style="margin-left:4px;" t-esc="d.product_id.name" />
+                                            </td>
+                                            <td
+                                                style="text-align: left; font-size:13px; width:15%;text-wrap: True; margin-right: auto; margin-left: auto; border-color: black; border:1px solid black;vertical-align: middle;">
+                                                <tspan style="margin-left:4px;" t-esc="d.lot_id.name" />
+                                            </td>
+                                            <!-- <td
+                                                style="text-align: left; font-size:13px; width:15%;text-wrap: True; margin-right: auto; margin-left: auto; border-color: black; border:1px solid black;vertical-align: middle;">
+                                                <tspan style="margin-left:4px;" t-esc="env['stock.move.line'].search([('picking_id', '=', o.id)]).lot_id.name" />
+                                            </td> -->
+                                            <!-- (env['stock.move.line'].search([('id', '=', o.id.id)]).name) -->
+
+
+                                            <td
+                                                style="text-align: center; font-size:13px; width:10%; text-wrap: True; margin-right: auto; margin-left: auto; border-color: black; border:1px solid black;vertical-align: middle;">
+                                                <tspan t-esc="d.product_uom_id.name" />
+                                            </td>
+                                            <td
+                                                style="text-align: right; font-size:13px; width:10%; text-wrap: True; margin-right: auto; margin-left: auto; border-color: black; border:1px solid black;vertical-align: middle;">
+                                                <tspan style="margin-right:4px;"
+                                                    t-esc="'{:.2f}'.format(d.qty_done)" />
+                                            </td>
+                                            <!-- <td
+                                                style="text-align: right; font-size:13px; width:12%; text-wrap: True; margin-right: auto; margin-left: auto; border-color: black; border:1px solid black;">
+                                                <tspan style="margin-right:4px;"
+                                                    t-esc="'{0:,.2f}'.format(d.price_unit)" />
+                                            </td>
+                                            <td
+                                                style="text-align: right; font-size:13px; width:14%; text-wrap: True; margin-right: auto; margin-left: auto; border-color: black; border:1px solid black;">
+                                                <tspan style="margin-right:4px;"
+                                                    t-esc="'{:.2f}'.format(d.price_unit*d.product_uom_qty)" />
+                                            </td> -->
+                                        </tr>
+                                    </div>
+                                </thead>
+                                <thead style='border:1px solid #FFFFFF;line-height : 20px;'>
+                                    <tr>
+                                        <td colspan="3" style="text-align: left; font-size:15px; width:50%;">
+
+                                        </td>
+
+                                        <td colspan="1" style="text-align: right; font-size:13px; width:10%;">
+                                            <b> TOTAL:</b>
+                                        </td>
+                                        <td colspan="1"
+                                            style="text-align: right; font-size:13px; width:20%; num_format: #,##0.00;">
+                                            <p>
+                                                <t t-esc="'{:,.2f}'.format(o.amount_cantidad(o.id))" />
+                                            </p>
+                                        </td>
+                                        <!-- <td colspan="1" style="text-align: center; font-size:13px; width:10%;">
+
+                                        </td>
+                                        <td colspan="1" style="text-align: right; font-size:13px; width:10%;">
+                                            <p>
+                                                <t t-esc="'{:,.2f}'.format(o.amount_bruto(o.id))" />
+                                            </p>
+                                        </td> -->
+
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" style="text-align: left; font-size:15px; width:50%;">
+                                            <t t-if="o.state == 'assigned'">
+                                                <t>
+                                                    <b>DOCUMENTO MOVIMIENTO :</b> Listo
+                                                </t>
+                                            </t>
+                                            <t t-if="o.state == 'done'">
+                                                <t>
+                                                    <b>DOCUMENTO MOVIMIENTO :</b> Realizado
+                                                </t>
+                                            </t>
+                                            <t t-if="o.state == 'draft'">
+                                                <t>
+                                                    <b>DOCUMENTO MOVIMIENTO :</b> En Borrador
+                                                </t>
+                                            </t>
+                                            <t t-if="o.state == 'cancel'">
+                                                <t>
+                                                    <b>DOCUMENTO MOVIMIENTO :</b> Cancelado
+                                                </t>
+                                            </t>
+                                            <t t-if="o.state == 'waiting'">
+                                                <t>
+                                                    <b>DOCUMENTO MOVIMIENTO :</b> Esperando
+                                                </t>
+                                            </t>
+                                            <t t-if="o.state == 'confirmed'">
+                                                <t>
+                                                    <b>DOCUMENTO MOVIMIENTO :</b> Esperando Disponibilidad
+                                                </t>
+                                            </t>
+                                            <t t-if="o.state == 'partially_available'">
+                                                <t>
+                                                    <b>DOCUMENTO MOVIMIENTO :</b> Parcialmente disponible
+                                                </t>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" style="text-align: left; font-size:15px; width:50%;">
+                                            <b>
+                                                DOCUMENTO ORIGEN:
+                                                <!-- <span t-esc="o.origin.replace('Retorno de','DEVOLUCION DE')" /> -->
+                                                <span t-esc="o.origin" />
+                                            </b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" style="text-align: left; font-size:15px; width:50%;">
+                                            <p t-if="o.sale_id.payment_term_id">
+                                                <b>
+                                                    COND. PAGO:
+                                                    <span t-esc="o.sale_id.payment_term_id.name" />
+                                                </b>
+                                            </p>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" style="text-align: left; font-size:15px; width:50%;">
+                                            <b>
+                                                PESO TOTAL:
+                                                <span t-esc="'{:,.4f}'.format(weight)" />
+                                            </b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" style="text-align: left; font-size:15px; width:50%;">
+
+                                            <b>
+                                                COMENTARIOS:
+                                            </b>
+                                            <span t-esc="o.note" />
+                                        </td>
+                                    </tr>
+
+                                </thead>
+                            </table>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+
+
+                            <table width="100%" class="table table-borderless">
+                                <thead style='border:1px solid #FFFFFF;line-height : 20px;'>
+                                    <tr>
+                                        <td style="text-align: center;">
+                                            <img t-if="o.as_customer_signature"
+                                                t-att-src="image_data_uri(o.as_customer_signature)"
+                                                style="width:70%;height:120px;" />
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <img t-if="o.as_worker_signature"
+                                                t-att-src="image_data_uri(o.as_worker_signature)"
+                                                style="width:70%;height:120px;" />
+                                            <br />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center; font-size:15px; width:20%;">
+                                            <b> __________________</b><br />
+                                            <b> Recibí Conforme</b><br />
+                                            <b> Firma:</b><br />
+                                            <b> Nombre:</b><br />
+                                            <b> Telf/Cel:</b><br />
+                                        </td>
+                                        <td style="text-align: center; font-size:15px; width:20%;">
+                                            <b> __________________</b><br />
+                                            <b> Entregue Conforme</b><br />
+                                            <b> Firma:</b><br />
+                                            <b> Nombre:</b><br />
+                                            <b> Telf/Cel:</b><br />
+
+                                        </td>
+
+                                    </tr>
+
+                                </thead>
+                            </table>
+                            <!-- <span style='float:right'>
+                                <t t-esc="o.sale_id.user_id.partner_id.name" /> <br /><span
+                                    t-esc="datetime.datetime.now().strftime('%d-%m-%Y %H:%M:%S')" /></span> -->
+                        </div>
+                    </div>
+                </t>
+            </t>
+
+        </template>
+        <template id="as_reporte_movimiento_archivo">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+
+                    <t t-call="as_bo_stock.as_report_warehouse" t-lang="lang" />
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

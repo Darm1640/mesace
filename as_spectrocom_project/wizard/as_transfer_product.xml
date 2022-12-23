@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="as_transfer_view_form" model="ir.ui.view">
+        <field name="name">as_transfer</field>
+        <field name="model">as.transfer.product</field>
+        <field name="arch" type="xml">
+            <form string="Compute Asset" create="0">
+                <div>
+                    <p>
+                     Wizard Generar Transferencias
+                    </p> 
+                    <group col="4">
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="as_picking_type_id"/>
+                    <field name="as_location_id"/>
+                    <field name="as_location_dest_id"/>
+                    <field name="as_solicitud"/>
+                    </group>
+                    <field name="wiz_lineas" />
+                </div>
+                <footer>
+                <button name="as_get_process" type="object" string="Procesar"/>
+                </footer>
+            </form>
+         </field>
+    </record>
+
+    <record id="as_transfer_line_view_form" model="ir.ui.view">
+        <field name="name">as_wizard_lines</field>
+        <field name="model">as.transfer.lines</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+
+                    <field name="product_id" />
+                    <field name="company_id" invisible="True" />
+                    <field name="lot_id" groups="stock.group_production_lot" context="{'default_product_id': product_id, 'default_company_id': company_id}"/>
+                    <field name="as_solicitud_line" invisible="True"/>
+                    <field name="product_uom" />
+                    <field name="as_qty" />
+                    <field name="as_qty_done" />
+                    <field name="as_qty_diff" />
+            </tree>
+         </field>
+    </record>
+    <record model="ir.actions.act_window" id="as_formulas">
+        <field name="name">Wizard lineas</field>
+        <field name="res_model">as.transfer.lines</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="as_transfer_line_view_form" />
+    </record>
+
+    <record id="as_wiz_transfer_line" model="ir.actions.act_window">
+        <field name="name">Realizar Transferencias</field>
+        <field name="res_model">as.transfer.product</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="as_transfer_view_form"/>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="" />
+    </record>
+
+</odoo>

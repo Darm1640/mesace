@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="as_pdf_report_crm">
+            <t t-call="web.html_container">
+                <div class="header">
+                    <style type="text/css">
+                        .header {
+                            margin: 0px 0px 0px 0px;
+                            padding: 0px;
+                        }
+                    </style>
+                    <div>
+                    <table width="100%">
+                            <tr>
+                                <td style="width:30%;text-align:center;border:2px solid #000000;font-size:14px;height:110px;vertical-align:middle;"
+                                    rowspan="2">
+                                    <t t-if="o.company_id.logo">
+                                        <img t-att-src="image_data_uri(o.company_id.logo)"
+                                            style="width:90%;margin-top:2px;height:100px;" />
+                                    </t>
+                                </td>
+                                <td
+                                    style="width:50%;text-align:center;border:2px solid #000000;font-size:14px;vertical-align:middle;height:110px;">
+                                    <b>REGISTRO</b>
+                                    <br />
+                                    <b>LEVANTAMIENTO DE INFORMACION EN SITIO</b>
+                                </td>
+                                <td
+                                    style="width:20%;text-align:center;border:2px solid #000000;font-size:14px;height:110px;vertical-align:middle;">
+
+                                    <b>Código:</b> CO-PL-01-01<br />
+                                    <b>Versión:</b> 1<br />
+                                    <b>Edición:</b> 15-10-18
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+            </t>
+            <t t-call="web.external_layout">
+                <div class="page" style="font-family: 'Arial' !important; ">
+                    <style type="text/css">
+                        .page {
+                            margin: -47px 0px 0px 0px;
+                            padding: 0px;
+                        }
+
+                        .margenizq {
+                            margin-left: 5px;
+                        }
+                    </style>
+                    <div>
+                        
+                        <table width="100%" style="border:1px solid #000000;">
+                            <thead>
+                                <tr>
+                                    <td style="text-align: center; font-size:14px; color: #fff;background-color: #00008B;height:35px;vertical-align:middle;"
+                                        colspan="2">
+                                        <b>DATOS DEL CLIENTE</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:60%;">
+                                        <br />
+                                        <b class="margenizq">Cliente u organización:</b>
+                                        <t t-esc="o.partner_id.name" />
+
+                                    </td>
+                                    <td style="width:60%;">
+                                        <br />
+                                        <b>No.:</b>
+                                        <t t-esc="o.as_nro" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:60%;">
+                                        <b class="margenizq">Contacto:</b>
+                                        <t t-esc="o.contact_name" />
+                                    </td>
+                                    <td style="width:60%;">
+
+                                        <b>Teléfono:</b>
+                                        <t t-esc="o.phone" />
+
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:60%;" colspan="2">
+
+                                        <b class="margenizq">Dirección:</b>
+                                        <t t-esc="o.street" />
+
+
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td style="width:60%;">
+
+                                        <b class="margenizq">Fecha:</b>
+                                        <t t-if="o.as_date_row"
+                                            t-esc="(datetime.datetime.strptime(str(o.as_date_row), '%Y-%m-%d %H:%M:%S') - datetime.timedelta(hours=4)).strftime('%d/%m/%Y')" />
+                                        <br />
+
+                                    </td>
+                                    <td style="width:60%;">
+
+                                        <b>Hora:</b>
+                                        <t t-if="o.as_date_row"
+                                            t-esc="(datetime.datetime.strptime(str(o.as_date_row), '%Y-%m-%d %H:%M:%S') - datetime.timedelta(hours=4)).strftime('%H:%M:%S')" />
+                                        <br />
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:60%;">
+
+                                        <br />
+
+                                    </td>
+                                    <td style="width:60%;">
+
+                                        <br />
+
+                                    </td>
+                                </tr>
+
+                            </thead>
+                        </table>
+                        <table width="100%" style="border:1px solid #000000;">
+
+                            <tr style="margin-top:20px;">
+                                <td style="text-align: center; font-size:14px; color: #fff;background-color: #00008B;height:35px;vertical-align:middle;"
+                                    colspan="2">
+                                    <b>DATOS DEL RESPONSABLE DEL LEVANTAMIENTO</b>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="width:60%;" colspan="2">
+                                    <br />
+                                    <b class="margenizq">Nombre:</b>
+                                    <t t-esc="o.env.user.partner_id.name" />
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:60%;" colspan="2">
+
+                                    <b class="margenizq">Cargo:</b>
+                                    <t t-esc="o.env.user.employee_id.job_id.name" />
+                                    <br />
+                                    <br />
+                                </td>
+                            </tr>
+
+                        </table>
+                        <table width="100%" style="border:1px solid #000000;">
+                            <tr>
+                                <td style="text-align: center; font-size:14px; color: #fff;background-color: #00008B;height:35px;vertical-align:middle;"
+                                    colspan="2">
+                                    <b>INFORMACION O DATOS LEVANTADOS EN SITIO</b>
+                                </td>
+                            </tr>
+                            
+                        </table>
+
+                        <div style="border:1px solid #000000;">
+                            <p class="margenizq">
+                                <t t-raw="str(o.description).replace('\n','&lt;br/&gt;')" />
+                            </p>
+                        </div>
+                        <div>
+                        <table width="100%" style="border:1px solid #000000;">
+                            <tr>
+                                <td colspan="1">
+                                    <img t-if="o.as_customer_signature"
+                                        t-att-src="image_data_uri(o.as_customer_signature)"
+                                        style="width:95%;height:120px;margin-left:-10px;" />
+                                </td>
+                                <td colspan="1">
+                                    <img t-if="o.as_worker_signature" t-att-src="image_data_uri(o.as_worker_signature)"
+                                        style="width:100%;height:120px;margin-bottom:5px;" />
+                                    <br />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="1" style="width:50%;text-align:center;">
+                                    <b style="font-size:12px;"> Firma</b>
+                                </td>
+                                <td colspan="1" style="width:50%;text-align:center;">
+                                    <b style="font-size:12px;"> Firma</b>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="1" style="width:50%;text-align:center;">
+                                    <b style="font-size:12px;"> Nombre:</b>
+                                    <t t-esc="o.partner_id.name" />
+                                </td>
+                                <td colspan="1" style="width:50%;text-align:center;">
+                                    <b style="font-size:12px;"> Nombre:</b>
+                                    <t t-esc="o.env.user.partner_id.name" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="1" style="width:50%;text-align:center;">
+                                    <b style="font-size:12px;"></b>
+                                </td>
+                                <td colspan="1" style="width:50%;text-align:center;">
+                                    <b style="font-size:12px;"> Cargo:</b>
+                                    <t t-esc="o.env.user.employee_id.job_id.name" />
+                                </td>
+                            </tr>
+                            <tr>
+                                
+                                <td colspan="1" style="width:50%;text-align:center;">
+                                    <b style="font-size:12px;">CLIENTE</b>
+                                </td>
+                                <td colspan="1" style="width:50%;text-align:center;">
+                                    <b style="font-size:12px;">RESPONSABLE</b>
+                                </td>
+                            </tr>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="as_pdf_crm_lead">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="as_spectrocom_crm.as_pdf_report_crm" t-lang="lang" />
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Formulario cliente, campos adicionales -->
+        <record id="as_view_contract_form" model="ir.ui.view">
+            <field name="name">as.hr.contract.form</field>
+            <field name="model">hr.contract</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_start']" position="after">
+                    <field name="as_anio" />
+                    <field name="as_mes" />
+                    <field name="as_dias" />
+                </xpath>
+              	<xpath expr="//field[@name='company_id']" position="after">
+				<field name="employer_id"/>
+			</xpath> 
+            </field>
+        </record>
+    </data>
+</odoo>

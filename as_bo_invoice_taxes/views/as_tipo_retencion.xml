@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_tipo_retencion_view2" model="ir.ui.view">
+            <field name="name">as.as.tipo.retencion.form</field>
+            <field name="model">as.tipo.retencion</field>
+            <field name="inherit_id" ref="as_bo_accounting.as_tipo_retencion_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//sheet" position="inside">
+                    <group>
+                        <field name="as_taxes_ids" />
+                        <field name="as_extract_purchase" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        <record id="as_tipo_retencion_view3" model="ir.ui.view">
+            <field name="name">as.as.tipo.factura.form</field>
+            <field name="model">as.tipo.factura</field>
+            <field name="inherit_id" ref="as_bo_purchase_invoice.as_tipo_factura_form" />
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='as_no_participa']" position="after">
+                    <field name="as_taxes_ids" widget="many2many_tags" />
+                    <field name="as_extract_purchase" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

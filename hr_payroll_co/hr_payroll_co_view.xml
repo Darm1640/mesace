@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+##############################################################################
+#
+#    Copyright (C) 2011 Michael Telahun Makonnen <mmakonnen@gmail.com>.
+#    All Rights Reserved.
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+##############################################################################
+-->
+
+<openerp>
+    <data>
+<!-- Contract -->
+
+	<record id="hr_contract_extra_view_form" model="ir.ui.view">
+        <field name="name">hr.contract.risk.view.form.inherit</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+            <field name="job_id" position="after">                 
+                <field name="risk_id"/>
+            </field>    
+            <field name="type_id" position="after">                 
+                <field name="distribuir"/>
+                <field name="parcial"/>
+                <field name="pensionado"/>
+                <field name="factor"/>
+            </field>   
+
+            <field name="wage" position="after">                 
+                <field name="condicion"/>
+                <field name="compensacion"/>
+            </field> 
+ 
+            <page string="Work Permit" position="after" >
+            	<page string="Entidades" name="setting_tab">
+            		  <field name="setting_ids" nolabel="1" widget="one2many_list">
+						<tree string="Entidades" editable="bottom">
+						    <field name="contrib_id"/>
+                            <field name="partner_id"/>
+                            <field name="account_debit_id"/>
+                            <field name="account_credit_id"/>
+						</tree>
+					  </field>
+                </page>
+                <page string="Deducciones o pagos periodicos" name="deduction_tab">
+            		  <field name="deduction_ids" nolabel="1" widget="one2many_list">
+						<tree string="Deducciones o pagos periodicos" editable="bottom">
+						    <field name="input_id"/>
+						    <field name="type"/>
+                            <field name="period"/>
+                            <field name="amount"/>
+                            <field name="total_deduction"/> 
+                            <field name="total_accumulated"/> 
+                            <field name="date"/>
+                            <field name="show_voucher"/> 
+						</tree>
+					  </field>
+                </page>		
+                <page string="Cuentas analiticas" name="analytic_tab">
+            		  <field name="analytic_ids" nolabel="1" widget="one2many_list">
+						<tree string="Cuentas analiticas" editable="bottom">
+                            <field name="account_analytic_id" domain="[('type','in',['normal','contract'])]"/>							
+                            <field name="percent"/> 
+						</tree>
+					  </field>
+                </page>		
+                <page string="Liquidación" name="liquidacion_tab">
+					  <group  col="4">
+						 <field name="date_liquidacion"/> 
+						 <field name="date_prima"/>
+						 <field name="date_cesantias"/>
+						 <field name="date_vacaciones"/>
+						 <field name="dias_vacaciones" readonly="True"/>
+						 <field name="date_intereses"/>
+						 <field name="dias_sancion"/> 
+						 <field name="prestamos"/> 
+					  </group>
+					  <group>
+					    <button name="calcular_liquidacion" type="object" string="Calcular" class="oe_highlight"/>
+					  </group>
+					  <group>
+            		    <field name="liquidacion_ids" nolabel="1" widget="one2many_list" readonly="True">
+						  <tree string="Liquidación">
+						    <field name="type"/>
+						    <field name="name"/>
+                            <field name="dias"/>
+                            <field name="amount" sum="Total"/>
+						  </tree>
+					    </field>
+					  </group>  
+                </page>		
+                <page string="Acumulados" name="acumulados_tab">
+					  <group>
+            		    <field name="acumulado_ids" nolabel="1" widget="one2many_list" readonly="True">
+						  <tree string="Acumulados">
+						    <field name="period_id"/>
+						    <field name="salary_rule_id"/>
+                            <field name="amount"/>
+						  </tree>
+					    </field>
+					  </group>  
+                </page>		
+                
+            </page>
+        </field>    
+    </record>
+    
+<!-- Detalle deducciones -->
+
+    <record id="hr_deduction_extra_view_form" model="ir.ui.view">
+        <field name="name">hr.contract.deduction.view.form.inherit</field>
+        <field name="model">hr.payslip</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+        <field name="arch" type="xml">
+			<field name="credit_note" position="after">
+				<group name="properties" colspan="2">
+                  <field name="liquida"/>
+                </group>  
+            </field>
+            <field name="credit_note" position="after">
+            <group  colspan="4">
+						 <field name="date_liquidacion" attrs="{'invisible':[('liquida','=',False)],'required':[('liquida','&lt;&gt;',False)]}"/> 
+						 <field name="date_prima" attrs="{'invisible':[('liquida','=',False)],'required':[('liquida','&lt;&gt;',False)]}"/>
+						 <field name="date_cesantias" attrs="{'invisible':[('liquida','=',False)],'required':[('liquida','&lt;&gt;',False)]}"/>
+						 <field name="date_vacaciones" attrs="{'invisible':[('liquida','=',False)],'required':[('liquida','&lt;&gt;',False)]}"/>
+						 <field name="dias_vacaciones" readonly="True" attrs="{'invisible':[('liquida','=',False)]}"/>
+						 <field name="date_intereses" attrs="{'invisible':[('liquida','=',False)],'required':[('liquida','&lt;&gt;',False)]}"/>
+		    </group>
+			</field>		  
+            <page string="Details By Salary Rule Category" position="after" >
+			   <page string="Cuentas analiticas">
+                  <field name="analytic_ids">
+                     <tree string="Cuentas analiticas" editable="bottom">
+                        <field name="salary_rule_id"/>
+                        <field name="account_analytic_id" domain="[('type','in',['normal','contract'])]"></field>
+                        <field name="percent"/>
+                     </tree>
+                  </field>
+               </page>	
+               	
+               <page string="Detalle deducciones">
+                  <field name="deduction_line_ids" context="{'group_by':'deduction_id'}" domain="[('appears_on_payslip', '=', True)]">
+                     <tree string="Payslip Lines" colors="blue:total == 0">
+                        <field name="deduction_id"/>
+                        <field name="amount"/>
+                        <field name="total_deduction"/>
+                        <field name="total_accumulated"/>
+                        <field name="date"/>
+                        <field name="show_voucher"/>
+                     </tree>
+                  </field>
+               </page>	
+            </page>
+        </field>    
+    </record>
+
+<!-- payslip run -->
+
+    <record id="hr_payslip_run_form_inherit" model="ir.ui.view">
+        <field name="name">hr.payslip.run.form.inherit</field>
+        <field name="model">hr.payslip.run</field>
+        <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+        <field name="arch" type="xml">
+            <field name="credit_note" position="after">
+				<group name="properties" colspan="2">
+                  <field name="liquida"/>
+                  <field name="struct_id" attrs="{'invisible':[('liquida','=',False)],'required':[('liquida','&lt;&gt;',False)]}"/>
+                </group>  
+            </field>
+            <field name="credit_note" position="after">
+              <group  colspan="4">
+						 <field name="date_liquidacion" attrs="{'invisible':[('liquida','=',False)],'required':[('liquida','&lt;&gt;',False)]}"/> 
+						 <field name="date_prima" attrs="{'invisible':[('liquida','=',False)],'required':[('liquida','&lt;&gt;',False)]}"/>
+						 <field name="date_cesantias" attrs="{'invisible':[('liquida','=',False)],'required':[('liquida','&lt;&gt;',False)]}"/>
+						 <field name="date_vacaciones" attrs="{'invisible':[('liquida','=',False)],'required':[('liquida','&lt;&gt;',False)]}"/>
+						 <field name="dias_vacaciones" readonly="True" attrs="{'invisible':[('liquida','=',False)]}"/>
+						 <field name="date_intereses" attrs="{'invisible':[('liquida','=',False)],'required':[('liquida','&lt;&gt;',False)]}"/>
+		      </group>
+		    </field>  
+        </field>    
+    </record>
+
+
+<!-- salary rule -->
+
+    <record id="hr_salary_extra_view_form" model="ir.ui.view">
+        <field name="name">hr.salary.rule.view.form.inherit</field>
+        <field name="model">hr.salary.rule</field>
+        <field name="inherit_id" ref="hr_payroll.hr_salary_rule_form"/>
+        <field name="arch" type="xml">
+            <field name="appears_on_payslip" position="after">
+               <field name="acumula"/>
+               <field name="type_distri"/>
+            </field>
+            <field name="register_id" position="after">
+               <field name="register_credit_id"/>
+            </field>
+        </field>    
+    </record>
+
+<!-- contribution_register -->
+
+    <record id="hr_contribution_register_inherit_form" model="ir.ui.view">
+        <field name="name">hr.contribution.register.inherit.form</field>
+        <field name="model">hr.contribution.register</field>
+        <field name="inherit_id" ref="hr_payroll.hr_contribution_register_form"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+               <field name="partner_id"/>
+            </field>
+        </field>    
+    </record>
+
+<!-- salary rule category -->
+
+    <record id="hr_salary_category_form_inherit" model="ir.ui.view">
+        <field name="name">hr.salary.category.form.inherit</field>
+        <field name="model">hr.salary.rule.category</field>
+        <field name="inherit_id" ref="hr_payroll.hr_salary_rule_category_form"/>
+        <field name="arch" type="xml">
+            <field name="code" position="after">
+               <field name="type"/>
+            </field>
+        </field>    
+    </record>
+
+            
+<!-- Risk -->
+    
+	<record model="ir.ui.view" id="hr_contract_risk_view">
+		<field name="name">Riesgos</field>
+		<field name="model">hr.contract.risk</field>
+		<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Riesgos profesionales">
+					<field name="name" required="1"></field>
+					<field name="code" required="1"></field>
+					<field name="percent"></field>
+				</form>
+			</field>
+	</record>
+
+	<record model="ir.ui.view" id="hr_contract_risk_tree">
+		<field name="name">Riesgos profesionales</field>
+		<field name="model">hr.contract.risk</field>
+		<field name="type">tree</field>
+		<field name="arch" type="xml">
+			<tree string='Riesgos'>
+				<field name="name" required="1"></field>
+				<field name="code" required="1"></field>
+				<field name="percent"></field>
+			</tree>
+		</field>
+	</record>
+	
+	<record id="hr_contract_risk_list_action" model="ir.actions.act_window">
+			 <field name="name">Riesgos profesionales</field>
+			 <field name="res_model">hr.contract.risk</field>
+			 <field name="view_type">form</field>
+			 <field name="view_mode">tree,form</field>
+	</record>
+	
+<!-- employee -->	
+        <record model="ir.ui.view" id="hr_payroll_analytic_required_view">
+           <field name="name">hr_payroll_analytic_required_view</field>
+           <field name="model">hr.employee</field>
+           <field name="inherit_id" ref="hr.view_employee_form"/>
+           <field name="type">form</field>
+           <field name="arch" type="xml">
+			   <field name="department_id" position = "attributes">
+                  <attribute name="required">1</attribute>
+               </field>			   
+               <field name="address_home_id" position = "attributes">
+                  <attribute name="required">1</attribute>
+               </field>			   
+               <field name="identification_id" position = "attributes">
+                  <attribute name="required">1</attribute>
+               </field>			   
+
+           </field>
+        </record>
+
+<!-- department -->	
+        <record model="ir.ui.view" id="hr_department_account_view">
+           <field name="name">hr_department_account_view</field>
+           <field name="model">hr.department</field>
+           <field name="inherit_id" ref="hr.view_department_form"/>
+           <field name="type">form</field>
+           <field name="arch" type="xml">
+			   <field name="parent_id" position = "after">
+                   <field name="account_analytic_id" domain="[('type','in',['normal','contract'])]"/>
+               </field>
+               			  
+               <field name="company_id" position = "after">
+                 <group name="properties" colspan="4">	
+                   <field name="salary_rule_ids" nolabel="1" widget="one2many_list">					   						   
+                         <tree string="Cuentas reglas salariales" editable="bottom">
+						   <field name="salary_rule_id"/> 
+                           <field name="account_debit_id" domain="[('type','in',['other','payable','receivable'])]"/>
+                           <field name="account_credit_id"/>
+                         </tree>                       
+                   </field>			   
+                 </group>               
+               </field>             
+               
+           </field>
+        </record>
+	
+<!-- Novedades -->
+
+        <record id="hr_novedades_filter" model="ir.ui.view">
+            <field name="name">hr.novedades.search</field>
+            <field name="model">hr.novedades</field>
+            <field name="arch" type="xml">
+                <search string="Search novedades">
+                    <field name="code" string="Novedad"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="identification_id"/>
+                </search>
+            </field>
+        </record>
+    
+	<record model="ir.ui.view" id="hr_novedades_view">
+		<field name="name">Novedades de nomina</field>
+		<field name="model">hr.novedades</field>
+		<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Novedades de nomina">
+					<group col="4">
+				      <!-- field name="input_id"></field -->
+				      <field name="code"></field>
+                      <field name="date_from"></field>
+                      <field name="date_to"></field>
+                      <!-- field name="employee_id" domain="[('active','=','true')]"></field -->
+                      <field name="identification_id"></field>
+                      <field name="value"></field>
+                      <field name="account_analytic_id" domain="[('type','in',['normal','contract'])]"></field>
+                    </group>  
+				</form>
+			</field>
+	</record>
+
+	<record model="ir.ui.view" id="hr_novedades_tree">
+		<field name="name">Novedades de nomina</field>
+		<field name="model">hr.novedades</field>
+		<field name="type">tree</field>
+		<field name="arch" type="xml">
+			<tree string='Novedades de nomina'>
+				  <!-- field name="input_id"></field -->
+				  <field name="code"></field>
+                  <field name="date_from"></field>
+                  <field name="date_to"></field>
+                  <!-- field name="employee_id"></field -->
+                  <field name="identification_id"></field>
+                  <field name="value"></field>
+                  <field name="account_analytic_id"></field>
+			</tree>
+		</field>
+	</record>
+	
+	<record id="hr_novedades_action" model="ir.actions.act_window">
+			 <field name="name">Novedades de nomina</field>
+			 <field name="res_model">hr.novedades</field>
+			 <field name="view_type">form</field>
+			 <field name="view_mode">tree,form</field>
+	</record>
+	<menuitem id="hr_novedades" name="Novedades de nomina"
+	 parent="hr_payroll.menu_hr_root_payroll" action="hr_novedades_action"/>		
+                
+    </data>
+</openerp>
+
+
+
+

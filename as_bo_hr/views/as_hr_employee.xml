@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Formulario cliente, campos adicionales -->
+        <record id="as_payment_view_partner_form" model="ir.ui.view">
+            <field name="name">hr.employee.form.tree</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='work_phone']" position="after">
+                       <field name="as_fecha_ingreso" />
+                       <field name="as_antiguedad" />
+                       <field name="as_novedades" />
+                </xpath>
+                <xpath expr="//field[@name='coach_id']" position="after">
+                       <field name="as_sucursal_empleado" />
+                </xpath>
+                <xpath expr="//field[@name='identification_id']" position="before">
+                       <field name="as_documento" />
+                       <field name="as_complemento_ci" />
+                </xpath>
+                <xpath expr="//field[@name='identification_id']" position="after">
+                       <field name="as_expedito" />
+                </xpath>
+                <xpath expr="//field[@name='pin']" position="after">
+                       <field name="as_name_afp" />
+                       <field name="as_nua" />
+                       <field name="as_code_iva" />
+                       <field name="as_aportador_afp" />
+                     <field name="as_persona_discapacidad" />
+                     <field name="as_tutor_persona_discapacidad" />
+                     <field name="as_caja_salud"/>
+                     <field name="as_clasificacion_laboral"/>
+                </xpath>
+                <xpath expr="//field[@name='mobile_phone']" position="before">
+                       <field name="nombre" />
+                       <field name="apellido_1" />
+                       <field name="apellido_2" />
+                       <field name="apellido_3"  attrs="{'invisible': [('gender','=','male')]}"  />
+                </xpath>
+                <xpath expr="//field[@name='country_of_birth']" position="after">
+                       <field name="as_jubilado" />
+                </xpath>
+            </field>
+        </record>
+        <record id="action_hr_employee" model="ir.actions.server">
+            <field name="name">Convertir Usuario ERP a Portal</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="binding_model_id" ref="hr.model_hr_employee"/>
+            <field name="binding_view_types">form</field>
+            <field name="state">code</field>
+            <field name="code">if records:
+                action = records.as_converter_users()
+            </field>
+        </record>
+    </data>
+</odoo>

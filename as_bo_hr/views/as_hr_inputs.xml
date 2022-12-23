@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_inputs_view" model="ir.ui.view">
+            <field name="name">as.hr.inputs.view</field>
+            <field name="model">as.hr.inputs</field>
+            <field name="arch" type="xml">
+                <form string="Sueldo minimo Nacional">
+                    <sheet>
+                        <div>
+
+                            <group col="2" string="Período">
+                                <field name="name" />
+                                <field name="code" />
+                            </group>
+<p>Esta sección tiene relacion con las Reglas salariales</p>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="hr_inputs_tree" model="ir.ui.view">
+            <field name="name">as.hr.inputs.tree</field>
+            <field name="model">as.hr.inputs</field>
+            <field name="arch" type="xml">
+                <!-- <tree string="Bancos" editable="bottom"> -->
+                <tree string="Codigo de otras Entradas">
+                    <field name="name" />
+                    <field name="code" />
+                </tree>
+            </field>
+        </record>
+
+        <act_window id="hr_inputs_action" name="Codigos Otras Entradas" res_model="as.hr.inputs" 
+            view_mode="tree,form" />
+
+      <record id="as_hr_input_form" model="ir.ui.view">
+            <field name="name">hr.payslip.input.type.form.tree</field>
+            <field name="model">hr.payslip.input.type</field>
+            <field name="inherit_id" ref="hr_payroll.hr_payslip_input_type_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='code']" position="after">
+                    <field name="as_recargo" />
+                </xpath>
+            </field>
+        </record>
+
+     
+    </data>
+</odoo>

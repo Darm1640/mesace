@@ -1,0 +1,23 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_indicadores,hr.indicadores,model_hr_indicadores,hr_payroll.group_hr_payroll_manager,1,1,1,1
+access_as_hr_employee_afp,as.hr.employee.afp,model_as_hr_employee_afp,hr_payroll.group_hr_payroll_manager,1,1,1,1
+access_as_payslip_report,hr.employee.report,model_as_payslip_report,hr_payroll.group_hr_payroll_manager,1,1,1,1
+access_as_hr_smn,as.hr.smn,model_as_hr_smn,hr_payroll.group_hr_payroll_manager,1,1,1,1
+access_as_hr_lugar_trabajo,as.hr.lugar.trabajo,model_as_hr_lugar_trabajo,hr_payroll.group_hr_payroll_manager,1,1,1,1
+access_as_sucursal,as.sucursal,model_as_sucursal,,1,1,1,1
+access_as_hr_worked_days,worked days,model_as_hr_worked_days,hr_payroll.group_hr_payroll_manager,1,1,1,1
+access_as_hr_inputs,inputs other,model_as_hr_inputs,hr_payroll.group_hr_payroll_manager,1,1,1,1
+access_as_hr_finiquito,inputs other,model_as_hr_finiquito,hr_payroll.group_hr_payroll_manager,1,1,1,1
+access_as_hr_finiquito_lines,inputs other,model_as_hr_finiquito_lines,hr_payroll.group_hr_payroll_manager,1,1,1,1
+access_as_hr_antiguedad,as_hr_antiguedad,model_as_hr_antiguedad,,1,1,1,1
+access_as_hr_afp,as_hr_afp,model_as_hr_afp,,1,1,1,1
+access_as_planilla_tributaria,as_planilla_tributaria,model_as_planilla_tributaria,,1,1,1,1
+access_as_payslip_txt,as_payslip_txt,model_as_payslip_txt,,1,1,1,1
+access_as_planilla_prevision,as_planilla_prevision,model_as_planilla_prevision,,1,1,1,1
+access_as_planilla_futuro,as_planilla_futuro,model_as_planilla_futuro,,1,1,1,1
+access_as_payslip_report_vers_dos,as_payslip_report_vers_dos,model_as_payslip_report_vers_dos,hr_payroll.group_hr_payroll_manager,1,1,1,1
+access_as_payslip_report_aguinaldo,as_payslip_report_aguinaldo,model_as_payslip_report_aguinaldo,hr_payroll.group_hr_payroll_manager,1,1,1,1
+access_as_hr_remuneracion,as_hr_remuneracion,model_as_hr_remuneracion,,1,1,1,1
+access_as_hr_indemnizacion,as_hr_indemnizacion,model_as_hr_indemnizacion,,1,1,1,1
+access_as_payment_finiquito,as_payment_finiquito,model_as_payment_finiquito,,1,1,1,1
+access_as_payment_terceros,as_payment_terceros,model_as_payment_terceros,,1,1,1,1

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+    <record id="view_as_historico" model="ir.ui.view">
+        <field name="name">libro de historia</field>
+        <field name="model">as.libro.historico</field>
+        <field name="arch" type="xml">
+            <form string="Kardex de productos por lotes">
+                <group col="1">
+                    <field name="as_productos" widget="many2many_tags" options="{&quot;always_reload&quot;: True, 'no_open': True,'no_create': 1, 'no_create_edit': 1}"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </group>                    
+
+                <footer>
+                    <!-- <button name="imprimir_kardex_productos_pdf" string="Exportar a PDF" type="object" class="btn-primary"/> -->
+                    <button name="imprimir_excel" 
+                        default_focus="1"
+                        string="Exportar a Excel" 
+                        type="object" 
+                        class="oe_highlight"
+                        context="{'xls_export':1}" 
+                        icon="fa-download"/>
+                    <!-- <button name="kardex_productos_txt" string="Formato Facilito" type="object" class="btn-primary"/>     -->
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_as_libro_historico" model="ir.actions.act_window">
+        <field name="name">Historial de Precio de compras </field>
+        <field name="res_model">as.libro.historico</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_as_historico"/>
+        <field name="target">new</field>
+    </record>
+
+    <report
+        id="as_libro_historico"
+        model="as.libro.historico"
+        string="libro de diferencias"
+        report_type="xlsx"
+        name="as_bo_purchase_reports.as_libro_historico.xlsx"
+        file="as_bo_purchase_reports.as_libro_historico.xlsx"
+        attachment_use="False" />
+
+
+    <menuitem
+        id="as_libro_de_historico"
+        name="Comparacion de Precio de Compras"
+        action="action_as_libro_historico"
+        parent="purchase.purchase_report" sequence="10" groups="base.group_user"       
+        />   
+</data>
+</odoo>

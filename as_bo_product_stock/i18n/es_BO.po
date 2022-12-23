@@ -1,0 +1,219 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* as_bo_product_stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e-20201015\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-26 15:53+0000\n"
+"PO-Revision-Date: 2021-05-26 15:53+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: as_bo_product_stock
+#. openerp-web
+#: code:addons/as_bo_product_stock/static/src/xml/locations_hierarchy.xml:0
+#, python-format
+msgid "...locations for this product are not found"
+msgstr "... no se encuentran las ubicaciones para este producto"
+
+#. module: as_bo_product_stock
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_res_users__default_warehouse
+msgid "Default Warehouse"
+msgstr "Almacén predeterminado"
+
+#. module: as_bo_product_stock
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_product_product__display_name
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_product_template__display_name
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_res_users__display_name
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_sale_order__display_name
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_sale_order_line__display_name
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_stock_location__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: as_bo_product_stock
+#. openerp-web
+#: code:addons/as_bo_product_stock/static/src/xml/locations_hierarchy.xml:0
+#, python-format
+msgid "Expand all levels"
+msgstr "Expandir todos los niveles"
+
+#. module: as_bo_product_stock
+#: model_terms:ir.ui.view,arch_db:as_bo_product_stock.product_product_form_view
+#: model_terms:ir.ui.view,arch_db:as_bo_product_stock.product_product_form_view_easy
+#: model_terms:ir.ui.view,arch_db:as_bo_product_stock.product_template_form_view
+msgid "Export to XLSX"
+msgstr "Exportar a XLSX"
+
+#. module: as_bo_product_stock
+#. openerp-web
+#: code:addons/as_bo_product_stock/models/product_template.py:0
+#: code:addons/as_bo_product_stock/static/src/xml/locations_hierarchy.xml:0
+#, python-format
+msgid "Forecast"
+msgstr "Pronóstico"
+
+#. module: as_bo_product_stock
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_stock_location__virtual_available
+msgid "Forecast Quantity"
+msgstr "Cantidad de previsión"
+
+#. module: as_bo_product_stock
+#: model:ir.model.fields,help:as_bo_product_stock.field_stock_location__virtual_available
+msgid "Forecast Quantity for product specified on the context"
+msgstr "Cantidad prevista para el producto especificado en el contexto"
+
+#. module: as_bo_product_stock
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_product_product__id
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_product_template__id
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_res_users__id
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_sale_order__id
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_sale_order_line__id
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_stock_location__id
+msgid "ID"
+msgstr ""
+
+#. module: as_bo_product_stock
+#. openerp-web
+#: code:addons/as_bo_product_stock/models/product_template.py:0
+#: code:addons/as_bo_product_stock/static/src/xml/locations_hierarchy.xml:0
+#, python-format
+msgid "Incom"
+msgstr ""
+
+#. module: as_bo_product_stock
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_stock_location__incoming_qty
+msgid "Incoming"
+msgstr "Entrante"
+
+#. module: as_bo_product_stock
+#: model:ir.model.fields,help:as_bo_product_stock.field_stock_location__incoming_qty
+msgid "Incoming for product specified on the context"
+msgstr "Entrante para el producto especificado en el contexto"
+
+#. module: as_bo_product_stock
+#: model:ir.model,name:as_bo_product_stock.model_stock_location
+msgid "Inventory Locations"
+msgstr "Ubicaciones de inventario"
+
+#. module: as_bo_product_stock
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_product_product____last_update
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_product_template____last_update
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_res_users____last_update
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_sale_order____last_update
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_sale_order_line____last_update
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_stock_location____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: as_bo_product_stock
+#. openerp-web
+#: code:addons/as_bo_product_stock/models/product_template.py:0
+#: code:addons/as_bo_product_stock/static/src/xml/locations_hierarchy.xml:0
+#, python-format
+msgid "Location"
+msgstr "Localización"
+
+#. module: as_bo_product_stock
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_product_product__location_ids
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_product_template__location_ids
+msgid "Locations"
+msgstr "Localización"
+
+#. module: as_bo_product_stock
+#: code:addons/as_bo_product_stock/models/product_template.py:0
+#, python-format
+msgid "On Hand"
+msgstr "En mano"
+
+#. module: as_bo_product_stock
+#. openerp-web
+#: code:addons/as_bo_product_stock/static/src/xml/locations_hierarchy.xml:0
+#, python-format
+msgid "On hand"
+msgstr "En mano"
+
+#. module: as_bo_product_stock
+#. openerp-web
+#: code:addons/as_bo_product_stock/models/product_template.py:0
+#: code:addons/as_bo_product_stock/static/src/xml/locations_hierarchy.xml:0
+#, python-format
+msgid "Out"
+msgstr ""
+
+#. module: as_bo_product_stock
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_stock_location__outgoing_qty
+msgid "Outgoing"
+msgstr "Salida"
+
+#. module: as_bo_product_stock
+#: model:ir.model.fields,help:as_bo_product_stock.field_stock_location__outgoing_qty
+msgid "Outgoing for product specified on the context"
+msgstr "Salida"
+
+#. module: as_bo_product_stock
+#: model:ir.model,name:as_bo_product_stock.model_product_product
+msgid "Product"
+msgstr "Producto"
+
+#. module: as_bo_product_stock
+#: model:ir.model,name:as_bo_product_stock.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: as_bo_product_stock
+#: model:ir.model.fields,field_description:as_bo_product_stock.field_stock_location__qty_available
+msgid "Quantity On Hand"
+msgstr ""
+
+#. module: as_bo_product_stock
+#: model:ir.model.fields,help:as_bo_product_stock.field_stock_location__qty_available
+msgid "Quantity On Hand for product specified on the context"
+msgstr "Cantidad en mano"
+
+#. module: as_bo_product_stock
+#: model:ir.model,name:as_bo_product_stock.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de Venta"
+
+#. module: as_bo_product_stock
+#: model:ir.model,name:as_bo_product_stock.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de pedido de venta"
+
+#. module: as_bo_product_stock
+#: model_terms:ir.ui.view,arch_db:as_bo_product_stock.sale_order_form_view
+msgid "Show stocks by locations"
+msgstr "Mostrar existencias por ubicaciones"
+
+#. module: as_bo_product_stock
+#: model_terms:ir.ui.view,arch_db:as_bo_product_stock.product_template_form_view
+msgid "Stock balance by locations"
+msgstr "Balance de existencias por ubicaciones"
+
+#. module: as_bo_product_stock
+#: model_terms:ir.ui.view,arch_db:as_bo_product_stock.product_product_form_only_locations
+#: model_terms:ir.ui.view,arch_db:as_bo_product_stock.product_product_form_view
+#: model_terms:ir.ui.view,arch_db:as_bo_product_stock.product_product_form_view_easy
+msgid "Stocks balance by locations"
+msgstr "Balance de existencias por ubicaciones"
+
+#. module: as_bo_product_stock
+#: code:addons/as_bo_product_stock/models/product_template.py:0
+#, python-format
+msgid ""
+"The Python library xlsxwriter is installed. Contact your system "
+"administrator"
+msgstr "La biblioteca de Python xlsxwriter está instalada. Póngase en contacto con su sistema "
+"administrador"
+
+#. module: as_bo_product_stock
+#: model:ir.model,name:as_bo_product_stock.model_res_users
+msgid "Users"
+msgstr "Usuarios"

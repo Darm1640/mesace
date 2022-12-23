@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="report_invoice_condiciones" inherit_id="as_bo_invoice_report.as_pdf_report_invoice_debito">
+            <xpath expr="//td[@id='data_extend']" position="replace">
+                <td colspan="5" style="width:5%;text-align:left;" id="data_extend" class='letra2'>
+
+                    <t t-foreach="o.as_conditions_lines" t-as="line">
+                        <t t-if="line.as_valor">
+                            <b style="margin-left:5px;">
+                                <t t-esc="line.name" /></b>:
+                            <t t-esc="line.as_valor" /><br />
+
+                        </t>
+                    </t>
+
+                </td>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

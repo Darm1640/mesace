@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="0">
+		<record id="seq_interna_spectrocom" model="ir.sequence">
+			<field name="name">Secuencia Interna Ventas</field>
+			<field name="code">sale.order.interna</field>
+			<field name="prefix"></field>
+			<field name="padding">6</field>
+			<field name="company_id" eval="False"/>
+		</record>
+	</data>
+</odoo>

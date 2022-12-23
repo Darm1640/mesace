@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_pdf">
+        <t t-call="web.html_container">
+
+            <div class="header">
+                <style type="text/css">
+                    .header {
+                        margin: 0px;
+                        padding: 0px;
+                    }
+
+                    .cabecera {
+                        font-size: 7px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    .letra {
+                        font-size: 14px !important;
+                        margin: 0px;
+                    }
+
+                    .letra3 {
+                        font-size: 15px !important;
+                        margin: 0px;
+                        padding-left: 3px !important;
+                        padding-right: 3px !important;
+                    }
+
+                    .cabecera2 {
+                        font-size: 9px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    .columnasr {
+                        font-size: 12px;
+                        font-family: 'Arial' !important;
+                        margin-bottom: 10px;
+                    }
+
+                    .columnas2 {
+                        font-size: 9px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    h3 {
+                        font-family: 'Arial' !important;
+                        font-size: 14px;
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    td {
+                        font-family: 'Arial' !important;
+                        font-size: 12px;
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    h4 {
+                        font-family: 'Arial' !important;
+                        font-size: 12px;
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    span {
+                        font-family: 'Arial' !important;
+
+                        margin: 0px !important;
+                        padding: 0px !important;
+                    }
+
+                    body {
+                        font-family: 'Arial' !important;
+                        font-size: 18px;
+                    }
+
+                    hr {
+                        border-bottom: solid;
+                        border-width: 1pt border-top:0px !important;
+                        padding: 0px !important;
+                        margin: 0px !important;
+
+                    }
+
+                    tr.border_bottom td {
+                        border-bottom: 0.5pt solid #cccccc;
+                        margin-right: 3px;
+                        padding-right: 3px;
+                        font-size: 13px;
+                        font-family: 'Arial' !important;
+                    }
+
+                    .borde1 {
+                        border-top: 1px solid grey;
+                        border-left: 1px solid grey;
+                        border-right: 1px solid grey;
+                        border-bottom: 1px solid grey;
+                        margin-bottom: 3px;
+
+                    }
+
+                    .borde1 thead tr td {
+                        padding-left: 5px;
+                        padding-right: 5px;
+
+                    }
+
+                    .borde2 {
+                        border-left: 1px solid grey;
+                        border-right: 1px solid grey;
+                        border-top: 1px solid grey;
+                        margin: 3px;
+                    }
+
+                    .titulo {
+                        font-size: 25px;
+                        padding-top: 40px;
+                    }
+
+                    .titulo2 {
+                        font-size: 25px;
+                        padding: 1px;
+                    }
+
+                    .letra0 {
+                        font-size: 11px;
+                    }
+
+                    .letra2 {
+                        font-size: 5px;
+                    }
+
+                    .letra5 {
+                        text-align: right;
+                        font-size: 5px;
+                    }
+
+
+                    .cuadro {
+                        border-left: 1px solid #000000 !important;
+                        padding-left: 4px !important;
+                        border-right: 1px solid #000000 !important;
+                        padding-right: 4px !important;
+                    }
+                </style>
+                <div class="row mt0 mb0 " id="as_header">
+
+
+                    <div class="col-4" style="text-align:left; margin-bottom:10px;font-size:17px;line-height : 15px;">
+
+                        <!-- <img t-att-src="image_data_uri(o.env.user.company_id.logo)"
+                                style="height: 85px; width: 150px;" />
+                            <br /> -->
+
+
+                        <h4>
+                            <div class="letra">
+                                <b>
+                                    <span t-esc="info['nombre_empresa']" />
+                                </b>
+                            </div>
+                        </h4>
+                        <h4>
+                            <div class="letra">
+                                <span t-esc="info['direccion1']" />
+                            </div>
+                        </h4>
+                        <!-- <h4>
+                            <div class="letra">
+                                <b>Numero Patronal:</b><span t-esc="info['as_numero_patronal']" />
+                            </div>
+                        </h4> -->
+                        <h4>
+                            <div class="letra">
+                                <b>NIT:</b><span t-esc="info['nit']" />
+                            </div>
+                        </h4>
+                        <h4>
+                            <div class="letra">
+                                <b>Email:</b>
+                                <span t-esc="info['email']" />
+
+                            </div>
+                        </h4>
+                        <h4>
+                            <div class="letra">
+                                <b>
+
+                                    <span t-esc="info['ciudad']" /> "<span t-esc="info['sucursal']" />" <span
+                                        t-esc="info['pais']" />
+                                </b> </div>
+                        </h4>
+                        <!-- <h4>
+                            <div class="letra">
+                                 <b>Padrón Municipal: </b> <span t-esc="info['as_patronal_municipal']" />
+                            </div>
+                        </h4> -->
+                    </div>
+                    <div class="col-4" style="text-align:center;" name='as_titulo'>
+                        <h2 class='titulo'>
+                            <div>
+
+                                <b>Cuadro de Actualización de Activos Fijos</b><br />
+                            </div>
+                        </h2>
+                        <p style="font-size:17px !important;">Expresado en Bolivianos<br />Al <span
+                                t-esc="fechai"></span> - Tipo de Cambio: <span t-esc="UFV"></span> </p>
+                    </div>
+                    <div class="col-4" style="text-align:left; float:left;">
+                        <div style="padding:2px;padding-left:4px;">
+
+
+                            <!-- <div class="letra">
+                                <b>Fecha Imp.:</b>
+                                <span t-esc="datetime.datetime.now().strftime('%d-%m-%Y %H:%M:%S')"></span>
+                            </div> -->
+                            <!-- <div class="letra">
+                                <b>Nomina:</b>
+                                <span t-esc="nomina"></span>
+                            </div>
+                            <div class="letra">
+                                <b>Periodo:</b>
+                                <span t-esc="fechas['date_start']"></span> -<span t-esc="fechas['date_end']"></span>
+                            </div>
+                            <div class="letra">
+                                <b>UFV Inicial:</b>
+                                <span t-esc="salarios['fecha_i']"></span>
+                            </div>
+                            <div class="letra">
+                                <b>UFV Final:</b>
+                                <span t-esc="salarios['fecha_f']"></span>
+                            </div>
+                            <div class="letra">
+                                <b>SMN:</b>
+                                <span t-esc="salarios['smn']"></span>
+                            </div> -->
+
+                        </div>
+
+                        <div style="text-align:right; float:right; width:100px">
+                            <h4>
+                                <div class="">
+                                    <b>Pagina </b>
+                                    <label class="page" />/<label class="topage" />
+                                </div>
+                            </h4>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <table width="100%" class="table table-borderless borde1">
+
+                </table>
+            </div>
+            <t t-call="web.internal_layout">
+
+                <div class="page">
+                    <style type="text/css">
+                        .letra2 {
+                            border: 1px solid #000000;
+                            font-size: 12px;
+                        }
+
+                        .letra3 {
+                            border: 1px solid #000000;
+                            font-size: 10px;
+                            text-align: right;
+                        }
+
+                        .letra5 {
+                            border: 1px solid #000000;
+                            font-size: 17px;
+                            text-align: center;
+                        }
+
+                        table thead tr td {
+                            border-top: 1px solid #000000 !important;
+                            border-left: 1px solid #FFFFFF !important;
+                            border-bottom: 1px solid #000000 !important;
+                            border-right: 1px solid #FFFFFF !important;
+                        }
+                    </style>
+                    <table width="100%">
+                        <thead style='font-size:17px; text-align:center;align-items: center;line-height : 15px;'>
+
+                            <tr>
+                                <td style="width:10%;" class='letra2'><b>Codigo</b></td>
+                                <td style="width:10%;" class='letra2'><b>Nombre</b></td>
+                                <td style="width:10%;" class='letra2'><b>Cantidad</b></td>
+                                <td style="width:10%;" class='letra2'><b>Saldo Anterior</b></td>
+                                <td style="width:10%;" class='letra2'><b>Incorporaciones</b></td>
+                                <td style="width:10%;" class='letra2'><b>Valor</b></td>
+                                <td style="width:10%;" class='letra2'><b>Actualizacion</b></td>
+                                <td style="width:10%;" class='letra2'><b>Valor Actualizado</b></td>
+                                <td style="width:10%;" class='letra2'><b>Dep. Acumulada</b></td>
+                                <td style="width:10%;" class='letra2'><b>Actualizacion</b></td>
+                                <td style="width:10%;" class='letra2'><b>Dep. Acumulada Actualizada</b></td>
+                                <td style="width:10%;" class='letra2'><b>Depreciacion Periodo</b></td>
+                                <td style="width:10%;" class='letra2'><b>Dep. Acumulada Final</b></td>
+                                <td style="width:10%;" class='letra2'><b>Valor neto</b></td>
+
+
+                            </tr>
+                        </thead>
+                        <thead>
+                            <div t-foreach="lines" t-as="d" width="100%"
+                                style='text-align:center;align-items: center;line-height : 10px;'>
+                                <tr>
+                                 <t t-if="d['categ']">
+                                <td style="width:20%;" colspan="2" class='letra2'><b><span t-esc="d['name']"></span></b></td>   
+                                 <td style="width:10%;" class='letra3'><b><span t-esc="d['cantidad']"></span></b></td>
+                                <td style="width:10%;" class='letra3'><b><span t-esc="'{0:,.2f}'.format(d['saldo_anterior'])"></span></b></td>
+                                <td style="width:10%;" class='letra3'><b><span t-esc="'{0:,.2f}'.format(d['saldo_actual'])"></span></b></td>
+                                <td style="width:10%;" class='letra3'><b><span t-esc="'{0:,.2f}'.format(d['saldo_valor'])"></span></b></td>
+                                <td style="width:10%;" class='letra3'><span t-esc="'{0:,.2f}'.format(d['actualizacion'])"></span></td>
+                                <td style="width:10%;" class='letra3'><b><span t-esc="'{0:,.2f}'.format(d['valor_actualizacion'])"></span></b></td>
+                                <td style="width:10%;" class='letra3'><b><span t-esc="'{0:,.2f}'.format(d['dep_acum'])"></span></b></td>
+                                <td style="width:10%;" class='letra3'><b><span t-esc="'{0:,.2f}'.format(d['actualizacion2'])"></span></b></td>
+                                <td style="width:10%;" class='letra3'><b><span t-esc="'{0:,.2f}'.format(d['dep_actualizado'])"></span></b></td>
+                                <td style="width:10%;" class='letra3'><b><span t-esc="'{0:,.2f}'.format(d['dep_periodo_end'])"></span></b></td>
+                                <td style="width:15%;" class='letra3'><b><span t-esc="'{0:,.2f}'.format(d['dep_periodo_final'])"></span></b></td>
+                                <td style="width:15%;" class='letra3'><b><span t-esc="'{0:,.2f}'.format(d['dep_valor_neto'])"></span></b></td> 
+                                </t>  
+                                <t t-if="not d['categ']">
+                                <td style="width:10%;" class='letra2'><span t-esc="d['default_code']"></span></td>
+                                <td style="width:10%;" class='letra2'><span t-esc="d['name']"></span></td>    
+                                 <td style="width:10%;" class='letra3'><span t-esc="d['cantidad']"></span></td>
+                                <td style="width:10%;" class='letra3'><span t-esc="'{0:,.2f}'.format(d['saldo_anterior'])"></span></td>
+                                <td style="width:10%;" class='letra3'><span t-esc="'{0:,.2f}'.format(d['saldo_actual'])"></span></td>
+                                <td style="width:10%;" class='letra3'><span t-esc="'{0:,.2f}'.format(d['saldo_valor'])"></span></td>
+                                <td style="width:10%;" class='letra3'><span t-esc="'{0:,.2f}'.format(d['actualizacion'])"></span></td>
+                                <td style="width:10%;" class='letra3'><span t-esc="'{0:,.2f}'.format(d['valor_actualizacion'])"></span></td>
+                                <td style="width:10%;" class='letra3'><span t-esc="'{0:,.2f}'.format(d['dep_acum'])"></span></td>
+                                <td style="width:10%;" class='letra3'><span t-esc="'{0:,.2f}'.format(d['actualizacion2'])"></span></td>
+                                <td style="width:10%;" class='letra3'><span t-esc="'{0:,.2f}'.format(d['dep_actualizado'])"></span></td>
+                                <td style="width:10%;" class='letra3'><span t-esc="'{0:,.2f}'.format(d['dep_periodo_end'])"></span></td>
+                                <td style="width:15%;" class='letra3'><span t-esc="'{0:,.2f}'.format(d['dep_periodo_final'])"></span></td>
+                                <td style="width:15%;" class='letra3'><span t-esc="'{0:,.2f}'.format(d['dep_valor_neto'])"></span></td>
+                                </t>
+                               
+                                </tr>
+                            </div>
+                        </thead>
+
+
+
+                    </table>
+                    <br />
+                    <table width="100%" class="table table-borderless" name="footer_table">
+                                <thead style='border:1px solid #FFFFFF;line-height : 18px;'>
+                                    <tr>
+                                        <td style="width:5%;text-align:center" class='letra4'>
+                                            <b> __________________</b><br />
+                                            <!-- <b> Recibí Conforme</b><br />
+                                            <b> Firma:</b><br />
+                                            <b> Nombre:</b><br />
+                                            <b> Telf/Cel:</b><br /> -->
+                                        </td>
+                                        <td style="width:5%;text-align:center" class='letra4'>
+                                            <b> __________________</b><br />
+                                            <b> <span t-esc="info['nombre_empresa']" /></b><br />
+                                            <b>  <span t-esc="info['nit']" /></b><br />
+                                            <b> Propietario(a):</b><br />
+
+                                        </td>
+
+                                    </tr>
+
+                                </thead>
+                            </table> <br/>
+                            * Las notas que acompañan, forman parte integrante de este estado
+
+
+
+                </div>
+
+            </t>
+        </t>
+    </template>
+</odoo>

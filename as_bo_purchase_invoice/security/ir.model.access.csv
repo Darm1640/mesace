@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_as_tipo_factura_user,purchase.requisition user,model_as_tipo_factura,purchase.group_purchase_user,1,1,1,1
+access_as_tipo_factura_user,purchase.requisition user,model_as_tipo_factura,purchase.group_purchase_user,1,1,1,1
+access_as_libro_compras,as_libro_compras,model_as_libro_compras,purchase.group_purchase_user,1,1,1,1
+access_as_tipo_compra,as_tipo_compra,model_as_tipo_compra,purchase.group_purchase_user,1,1,1,1
+access_as_tipo_compra,as_tipo_compra,model_as_tipo_compra,purchase.group_purchase_user,1,1,1,1

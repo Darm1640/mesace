@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="as_view_account_journal_form_esp">
+        <field name="name">account.journal.type.form</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='code']" position="after">
+                <field name="as_is_v_autorizada" />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="as_persona_retirado_pdf">
+            <t t-call="web.html_container">
+                <div class="header">
+                    <style type="text/css">
+                        .header {
+                            margin: 0px;
+                            padding: 0px;
+                        }
+                    </style>
+                </div>
+            </t>
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <style type="text/css">
+                        .page {
+                            margin: -75px 0px 8px 0px;
+                            padding: 0px;
+                        }
+                    </style>
+                    <div class="row mt0 mb0" style=" margin-left: 18px; margin-right: 18px;">
+                        <div style="text-align:left;font-size:10px; width:50%;margin-top:12px;">
+
+                            <h4 style="text-align: left; font-size:10px; line-height: 2px;">
+                                <div>
+                                    <img t-att-src="image_data_uri(logo)"
+                                        style="height: 90px; width: 250px; text-align: left; " />
+                                    <br />
+                                </div>
+                            </h4>
+                        </div>
+                        <div class="col-2" style="text-align:left; width: 30%;margin-left: 18px; margin-right: 18px;"
+                            name='as_titulo'>
+                        </div>
+                        <div style="text-align:left; width: 30%; margin-top:30px;margin-left: 18px; margin-right: 18px;"
+                            name='as_titulo'>
+                            <table width="100%" style="border:#fffff 1px solid;">
+                                <tr>
+                                    <td style="text-align: left; font-size:11px; width:100%; color:black; ">
+                                        <b>NIT: </b>
+                                        <b style="text-align:right; font-size: 12px; color:#black;"> 
+                                        <span t-esc="nit" />
+                                        </b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; font-size:11px; width:100%; color:black;">
+                                        <b>DIRECCION: </b>
+                                        <b style="text-align:right; font-size: 12px; color:#black;">
+                                        <span t-esc="direccion" />
+                                        </b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; font-size:11px; width:100%; color:black;">
+                                        <b>TELEFONO, CELULAR: </b>
+                                        <b style="text-align:right; font-size: 12px; color:#black;"> 
+                                        <span t-esc="telefono" />
+                                        </b>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                    <div style="margin-left: 18px; margin-right: 18px;margin-top:3px;">
+                        <table width="100%">
+                            <tr>
+                                <td
+                                    style="width:100%; text-align:center;font-size:15px;color:#4682B4;border:0.5pt solid black;vertical-align: middle;">
+                                    <b>CUADRO DE PERSONAL RETIRADO</b></td>
+                            </tr>
+                            <!-- <tr>
+                                <td
+                                    style="width:100%; text-align:center; font-size:12px;border:0.5pt solid black;vertical-align: middle;">
+                                    <b>De: </b><span t-esc="fecha_inicial" />- <b>Hasta: </b><span
+                                        t-esc="fecha_final" /></td>
+                            </tr> -->
+                        </table>
+                    </div>
+                    <div style="margin-left: 18px; margin-right: 18px;">
+                        <table width="100%">
+                            <tr style="width:100%;">
+                                <td width="50%">
+                                    <b style="text-align:left; font-size: 12px; color:#4682B4;">Usuario: </b>
+                                    <b style="text-align:left; font-size: 12px; color:#black;"> <span
+                                            t-esc="usuario" /></b>
+                                </td>
+
+                                <td width="50%">
+                                    <b style="text-align:left; font-size: 12px; color:#4682B4;">Fecha de impresion:
+                                    </b><b style="text-align:left; font-size: 12px;"><span t-esc="fecha_actual" /></b>
+                                </td>
+                            </tr>
+                            <tr style="width:100%;">
+
+                                <td>
+                                    <b style="text-align:left; font-size: 12px; color:#4682B4;">Contrato: </b><b
+                                        style="text-align:left; font-size: 12px;"> <span t-esc="nombre_contrato" /></b>
+                                </td>
+
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="margin-left: 18px; margin-right: 18px;">
+                        <table width="100%">
+                            <tr
+                                style="text-align:center;font-size:12px; color:#ffffff ;background-color:#4682B4;border:0.5pt solid black;vertical-align: middle;">
+                                <td style="width:12%; border:0.5pt solid black;vertical-align: middle"><b>DOCUMENTO DE
+                                        IDENTIDAD</b></td>
+                                <td style="width:20%; border:0.5pt solid black;vertical-align: middle"><b>NOMBRE Y
+                                        APELLIDOS</b></td>
+                                <td style="width:26%; border:0.5pt solid black;vertical-align: middle"><b>CARGO</b></td>
+                                <td style="width:14%; border:0.5pt solid black;vertical-align: middle"><b>FECHA DE
+                                        INGRESO</b></td>
+                                <td style="width:14%; border:0.5pt solid black;vertical-align: middle"><b>FECHA DE
+                                        RETIRO</b></td>
+                                <td style="width:14%; border:0.5pt solid black;vertical-align: middle"><b>HABER
+                                        BASICO</b></td>
+
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="margin-left: 18px; margin-right: 18px;margin-bottom:18px;">
+                        <table t-foreach="lista_salidas_inventarios" t-as="movimientos" width="100%">
+
+                            <tr style="font-size:9px; color:black;border:0.1pt solid silver;">
+                                <td
+                                    style="width:12%;border:0.1pt solid silver;vertical-align: middle;text-align:right;">
+                                    <tspan t-esc="movimientos['val0']" style="margin-right:5px;font-size:12px;" />
+                                </td>
+                                <td style="width:20%;border:0.1pt solid silver;vertical-align: middle;text-align:left;">
+                                    <tspan t-esc="movimientos['val1']" style="margin-left:5px;font-size:12px;" />
+                                </td>
+                                <td style="width:26%;border:0.1pt solid silver;vertical-align: middle;text-align:left;">
+                                    <tspan t-esc="movimientos['val2']" style="margin-left:5px;font-size:12px;" />
+                                </td>
+                                <td
+                                    style="width:14%;border:0.1pt solid silver;vertical-align: middle;text-align:right;">
+                                    <tspan t-esc="movimientos['val3']" style="margin-right:5px;font-size:12px;" />
+                                </td>
+                                <td
+                                    style="width:14%;border:0.1pt solid silver;vertical-align: middle;text-align:right;">
+                                    <tspan t-esc="movimientos['val4']" style="margin-right:5px;font-size:12px;" />
+                                </td>
+                                <td
+                                    style="width:14%;border:0.1pt solid silver;vertical-align: middle;text-align:right;">
+                                    <tspan t-esc="movimientos['val5']" style="margin-right:5px;font-size:12px;" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </t>
+            <t t-foreach="docs" t-as="o">
+                <div class="footer" style="font-family: 'Arial' !important;">
+                    <div class="oe_structure" />
+                    <div style="text-align:center;">
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

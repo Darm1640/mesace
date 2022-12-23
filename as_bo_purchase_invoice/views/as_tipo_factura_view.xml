@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_tipo_factura_proveedor" model="ir.ui.view">
+            <field name="name">Tipo de facturas de proveedor</field>
+            <field name="model">as.tipo.factura</field>
+            <field name="arch" type="xml">
+                <tree string="Tipo de factura">
+                    <field name="name"/>
+                    <field name="as_factor"/>
+                    <field name="as_costo_cero"/>
+                    <field name="as_iva"/>
+                    <field name="as_account"/>
+                    <field name="as_calcular"/>
+                    <field name="as_calcular_monto"/>
+                    <field name="as_iva_monto"/>
+                    <field name="as_no_participa"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="as_tipo_factura_form" model="ir.ui.view">
+            <field name="name">Tipo de facturas de proveedor</field>
+            <field name="model">as.tipo.factura</field>
+            <field name="arch" type="xml">
+                <form string="Tipo de factura de proveedor">
+                    <sheet>
+                        <div class="oe_title">
+                            <label class="oe_edit_only" for="name" string="Nombre del método de pago"/>
+                            <h1><field name="name" placeholder="Método de pago de la venta"/></h1>
+                        </div>
+                        <group col="4">
+                            <group co="2">
+                                <field name="as_factor"/>
+                                <field name="as_costo_cero"/>
+                                <field name="as_iva"/>
+                                <field name="as_account"/>
+                                <field name="as_calcular"/>
+                                <field name="as_calcular_monto"/>
+                                <field name="as_iva_monto"/>
+                                 <field name="as_no_participa"/>
+                            </group>
+                            <group co="2">
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="as_tipo_factura_proveedor_action" model="ir.actions.act_window">
+            <field name="name">Tipo de factura proveedor</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">as.tipo.factura</field>
+            <!-- <field name="view_type">form</field> -->
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="as_tipo_factura_proveedor"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Haga clic aquí para empezar a crear su primer Tipo de factuar de proveedor.
+                </p>
+            </field>
+        </record>
+        <menuitem id="as_menu_tipo_factura_prov_nucleo" 
+            parent="purchase.menu_purchase_config" 
+            action="as_tipo_factura_proveedor_action" 
+            sequence="30" />
+    </data>
+</odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Formulario cliente, campos adicionales -->
+        <record id="as_hr_payslip_form" model="ir.ui.view">
+            <field name="name">hr.payslip.form.tree</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payslip_run_id']" position="after">
+                    <field name="as_indicadores_id" />
+                    <field name="as_smn_id" />
+                    <field name="as_saldo_monto" />
+                    <field name="as_saldo_anterior" />
+                </xpath>
+                <xpath expr="//field[@name='worked_days_line_ids']/tree/field['name']" position="before">
+                    <field name="as_type_id" />
+                </xpath>
+                <xpath expr="//field[@name='input_line_ids']/tree/field['name']" position="before">
+                    <field name="as_type_id" />
+                </xpath>       
+                
+                <xpath expr="//button[@name='action_payslip_cancel']" position="after">
+                        <!-- <button name="testeo_formulas" type="object" default_focus="1" string="Testeame"
+                            icon="fa-print" class="oe_highlight" invisible="True"/> -->
+                </xpath>             
+            </field>
+        </record>
+
+    </data>
+</odoo>

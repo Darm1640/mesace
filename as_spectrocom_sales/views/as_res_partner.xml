@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_partner_property_form" model="ir.ui.view">
+            <field name="name">res.partner.pricelist</field>
+            <field name="model">res.partner</field>
+            <!-- <field name="type">form</field> -->
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='sales_purchases']" position="after">
+                     <page name="sale_nits" string="Nits Asociados" >
+                              <field name="as_nit_ids">
+                              <field name="name"/>
+                              <!-- <field name="as_nit"/> -->
+                              </field>
+                        </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="as_action_update_codigo" model="ir.actions.server">
+            <field name="name">Actualizar codigos</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="binding_model_id" ref="base.model_res_partner"/>
+            <field name="state">code</field>
+            <field name="code">
+            for rec in records:
+                rec.as_generar_codigo()
+            </field>
+        </record>
+    </data>
+</openerp>

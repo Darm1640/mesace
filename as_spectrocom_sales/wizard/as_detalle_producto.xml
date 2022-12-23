@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_spectrocom_wizard" model="ir.ui.view">
+        <field name="model">as.product.detail.wiz</field>
+        <field name="name">sale.order.agregar.campo</field>
+        <field name="inherit_id" ref="as_bo_sales_reports.as_report_product_detail" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='producto_categ']" position="after">
+                <field name="as_bussiness_id" />
+            </xpath>  
+        </field>
+    </record>
+</odoo>

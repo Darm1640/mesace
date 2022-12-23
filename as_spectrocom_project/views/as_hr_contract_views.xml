@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="as_project_presupuestos" model="ir.ui.view">
+        <field name="name">as.project.presupuestos</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='structure_type_id']" position="after">
+                <field name="as_tipo_presupuesto" widget="radio"/>
+                <field name="as_frecuencia" attrs="{'invisible': [('as_tipo_presupuesto',  '=', 'Fijo')]}"/>
+                <field name="as_monto" attrs="{'invisible': [('as_tipo_presupuesto',  '=', 'Frecuencia')]}" />
+                <button name="button_presupuesto" string="Generar" type="object" class="oe_highlight"/>
+            </xpath>
+            <xpath expr="//page[@name='information']" position="after">
+                <page name="presupuesto" string="Planificacion presupuesto" groups="base.group_no_one">
+
+                    <field name="as_presupuesto_id">
+                        <tree string="Valuation Adjustments" editable="bottom">
+                            <field name="name" invisible="1"/>
+                            <field name="as_fecha_inicio"/>
+                            <field name="as_fecha_fin"/>
+                            <field name="as_planificado"/>
+                            <field name="as_ejecutado"/>
+                            <field name="as_diferencia"/>
+                            <!-- <field name="as_presupuestado" sum="Total Amount"/>
+                            <field name="as_ejecutado" sum="Total Amount"/>
+                            <field name="as_diferencia" sum="Total Amount"/> -->
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

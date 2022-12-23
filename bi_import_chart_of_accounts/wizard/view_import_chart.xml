@@ -19,17 +19,6 @@
 						<button string="Import" name="imoport_file"
 							type="object" class="oe_highlight" />
 						<button string="Cancel" class="oe_link" special="cancel" />
-						<div style="float: right;">
-                            <strong>Download Sample:</strong>
-                            <a role="button" href="/bi_import_chart_of_accounts/static/sample CSV-XLS/sample CSV/chart_of_account.csv" class="btn-primary" style="margin: 0 10px; font-size: 12px; line-height: 1.5; border-radius: 3px; padding: 8px 10px; color: #ffffff;">
-                            <i class="fa fa-download"/>
-                            CSV file
-                            </a>
-                            <a role="button" href="/bi_import_chart_of_accounts/static/sample CSV-XLS/sample XLS/chart_of_account.xlsx" class="btn-primary" style="font-size: 12px; line-height: 1.5; border-radius: 3px; padding: 8px 10px; color: #ffffff;">
-                            <i class="fa fa-download"/>
-                            Excel file
-                            </a>
-                        </div>
 					</footer>
 				</form>
 			</field>

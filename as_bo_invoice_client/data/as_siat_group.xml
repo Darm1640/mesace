@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="as_group_catalogo_1" model="as.siat.group">
+            <field name="name">ACTIVIDAD_NIT</field>
+            <field name="as_endpoint_name">sincronizarActividades</field>
+            <field name="as_index">RespuestaListaActividades,listaActividades,codigoCaeb</field>
+        </record>
+        <record id="as_group_catalogo_2" model="as.siat.group">
+            <field name="name">ACTIVIDADES_SECTOR</field>
+            <field name="as_endpoint_name">sincronizarListaActividadesDocumentoSector</field>
+            <field name="as_index">RespuestaListaActividadesDocumentoSector,listaActividadesDocumentoSector,codigoActividad</field>
+        </record>
+        <record id="as_group_catalogo_3" model="as.siat.group">
+            <field name="name">LEYENDAS_FACTURA</field>
+            <field name="as_endpoint_name">sincronizarListaLeyendasFactura</field>
+            <field name="as_index">RespuestaListaParametricasLeyendas,listaLeyendas,codigoActividad</field>
+        </record>
+        <record id="as_group_catalogo_4" model="as.siat.group">
+            <field name="name">MENSAJES_SOAP</field>
+            <field name="as_endpoint_name">sincronizarListaMensajesServicios</field>
+            <field name="as_index">RespuestaListaParametricas,listaCodigos,codigoClasificador</field>
+        </record>
+        <record id="as_group_catalogo_5" model="as.siat.group">
+            <field name="name">PRODUCTOS_SERVIVIOS</field>
+            <field name="as_endpoint_name">sincronizarListaProductosServicios,codigoProducto</field>
+            <field name="as_index">RespuestaListaProductos</field>
+        </record>
+        <record id="as_group_catalogo_6" model="as.siat.group">
+            <field name="name">EVENTOS_SIGNIFICATIVOS</field>
+            <field name="as_endpoint_name">sincronizarParametricaEventosSignificativos</field>
+            <field name="as_index">RespuestaListaParametricas,listaCodigos,codigoClasificador</field>
+        </record>
+        <record id="as_group_catalogo_7" model="as.siat.group">
+            <field name="name">MOTIVO_ANULACION</field>
+            <field name="as_endpoint_name">sincronizarParametricaMotivoAnulacion</field>
+            <field name="as_index">RespuestaListaParametricas,listaCodigos,codigoClasificador</field>
+        </record>
+        <record id="as_group_catalogo_8" model="as.siat.group">
+            <field name="name">PAISES</field>
+            <field name="as_endpoint_name">sincronizarParametricaPaisOrigen</field>
+            <field name="as_index">RespuestaListaParametricas,listaCodigos,codigoClasificador</field>
+        </record>
+        <record id="as_group_catalogo_9" model="as.siat.group">
+            <field name="name">DOCUMENTO_IDENTIDAD</field>
+            <field name="as_endpoint_name">sincronizarParametricaTipoDocumentoIdentidad</field>
+            <field name="as_index">RespuestaListaParametricas,listaCodigos,codigoClasificador</field>
+        </record>
+        <record id="as_group_catalogo_10" model="as.siat.group">
+            <field name="name">DOCUMENTO_SECTOR</field>
+            <field name="as_endpoint_name">sincronizarParametricaTipoDocumentoSector</field>
+            <field name="as_index">RespuestaListaParametricas,listaCodigos,codigoClasificador</field>
+        </record>
+        <record id="as_group_catalogo_11" model="as.siat.group">
+            <field name="name">EMISION</field>
+            <field name="as_endpoint_name">sincronizarParametricaTipoEmision</field>
+            <field name="as_index">RespuestaListaParametricas,listaCodigos,codigoClasificador</field>
+        </record>
+        <record id="as_group_catalogo_12" model="as.siat.group">
+            <field name="name">TIPO_HABITACION</field>
+            <field name="as_endpoint_name">sincronizarParametricaTipoHabitacion</field>
+            <field name="as_index">RespuestaListaParametricas,listaCodigos,codigoClasificador</field>
+        </record>
+        <record id="as_group_catalogo_13" model="as.siat.group">
+            <field name="name">METODO_PAGO</field>
+            <field name="as_endpoint_name">sincronizarParametricaTipoMetodoPago</field>
+            <field name="as_index">RespuestaListaParametricas,listaCodigos,codigoClasificador</field>
+        </record>
+        <record id="as_group_catalogo_14" model="as.siat.group">
+            <field name="name">TIPO_MONEDA</field>
+            <field name="as_endpoint_name">sincronizarParametricaTipoMoneda</field>
+            <field name="as_index">RespuestaListaParametricas,listaCodigos,codigoClasificador</field>
+        </record>
+        <record id="as_group_catalogo_15" model="as.siat.group">
+            <field name="name">PUNTO_VENTA</field>
+            <field name="as_endpoint_name">sincronizarParametricaTipoPuntoVenta</field>
+            <field name="as_index">RespuestaListaParametricas,listaCodigos,codigoClasificador</field>
+        </record>
+        <record id="as_group_catalogo_16" model="as.siat.group">
+            <field name="name">TIPO_FACTURA</field>
+            <field name="as_endpoint_name">sincronizarParametricaTiposFactura</field>
+            <field name="as_index">RespuestaListaParametricas,listaCodigos,codigoClasificador</field>
+        </record>
+        <record id="as_group_catalogo_17" model="as.siat.group">
+            <field name="name">UNIDAD_MEDIDA</field>
+            <field name="as_endpoint_name">sincronizarParametricaUnidadMedida</field>
+            <field name="as_index">RespuestaListaParametricas,listaCodigos,codigoClasificador</field>
+        </record>
+
+
+    </data>
+</odoo>

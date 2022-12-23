@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Formulario cliente, campos adicionales -->
+        <record id="as_hr_employee_category_form_inherit" model="ir.ui.view">
+            <field name="name">hr.employee.categoryt.view.form.inherit</field>
+            <field name="model">hr.employee.category</field>
+            <field name="inherit_id" ref="hr.view_employee_category_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="as_tipo"/>
+                </xpath>
+            </field>
+        </record>
+         <record id="as_view_employee_category_list_inherit" model="ir.ui.view">
+            <field name="name">hr.employee.categoryt.view.form.inherit</field>
+            <field name="model">hr.employee.category</field>
+            <field name="inherit_id" ref="hr.view_employee_category_list" />
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="inside">
+                    <field name="as_tipo"/>
+                </xpath>
+                
+            </field>
+        </record>
+
+    </data>
+</odoo>

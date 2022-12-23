@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_as_assets_report_excel,as_assets_report_excel,model_as_assets_report_excel,account.group_account_user,1,1,1,1
+access_as_assets_custodies,as_assets_custodies,model_as_assets_custodies,,1,1,1,1
+access_as_ajustar_assets,as_ajustar_assets,model_as_ajustar_assets,,1,1,1,1
+access_as_account_sale,as_account_sale,model_as_account_sale,,1,1,1,1
+access_lista_activos_fijos,lista_activos_fijos,model_lista_activos_fijos,account.group_account_manager,1,1,1,1

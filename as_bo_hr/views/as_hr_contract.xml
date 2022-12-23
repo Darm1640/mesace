@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Formulario cliente, campos adicionales -->
+        <record id="as_hr_contract_form_inherit" model="ir.ui.view">
+            <field name="name">hr.contract.view.form.inherit</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='salary_and_advantages']" position="after">
+                    <group name="salary_and_advantages_auemnt" string="Ahorasoft">
+                        <label for="as_aumento_type" />
+                        <field name="as_aumento_type" nolabel="1" />
+                        <label for="as_aumento" />
+                        <field name="as_aumento" nolabel="1" />
+                    </group>
+                </xpath>
+                
+                
+                <xpath expr="//field[@name='structure_type_id']" position="after">
+                    <field name="as_motivo_retiro"/>
+                    <field name="as_modalidad_contrato"/>
+                    <field name="as_tipo_contrato"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

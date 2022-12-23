@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="as_account_amove_view" model="ir.ui.view">
+        <field name="name">as.account.view</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_invoice_sent']" position="attributes">
+                <attribute name="string">Enviar Correo</attribute>
+            </xpath>
+            <xpath expr="//field[@name='payment_reference']" position="before">
+                <field name="as_id_code"
+                    attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                <field name="as_complemento_nit"
+                    attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                <field name="as_descuento_adicional"
+                    attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))],'required': [('move_type', 'in', ('out_invoice', 'out_refund'))]}" />
+
+            </xpath>
+            <xpath expr="//group[@id='header_right_group']" position="inside">
+                <field name="as_codigo_sistema"
+                    attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                <field name="as_branch_office"
+                    attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                <field name="as_pdv_id"
+                    attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                <field name="as_invoice_number"
+                    attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                <field name="as_payment_method"
+                    attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                <field name="as_tarjeta_name" invisible="True"/>
+                <field name="as_numero_tarjeta_str" attrs="{'invisible': [('as_tarjeta_name', '!=', 'TARJETA')],'required': [('as_tarjeta_name', '=', 'TARJETA')]}" />
+                <field name="as_numero_tarjeta" invisible="1" />
+            </xpath>
+           
+            <xpath expr="//sheet/notebook/page[2]" position="after">
+                <page string="Facturacion computarizada"
+                    attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}">
+                    <group col="2">
+                        <group col="2" string="Tipo de Documentos">
+                            <field name="as_fiscal_document_code"
+                                attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))],'required': [('move_type', 'in', ('out_invoice', 'out_refund'))]}" />
+                            <field name="as_sector_type"
+                                attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))],'required': [('move_type', 'in', ('out_invoice', 'out_refund'))]}" />
+                            <field name="as_emission_type"
+                                attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))],'required': [('move_type', 'in', ('out_invoice', 'out_refund'))]}" />
+                            <field name="as_numero_tarjeta"
+                                attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                            <field name="as_tipo_cambio"
+                                attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                            <field name="as_monto_gift"
+                                attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                            <field name="as_codigo_excepcion"
+                                attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                            <field name="as_cuf" attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                            <field name="as_cufd" attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                            <field name="as_idtransaccion"
+                                attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                            <field name="as_existe" />
+                            <field name="as_idpedido"
+                                attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                            <field name="as_monto_total_original"
+                                attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                            <field name="as_monto_efectivo_credito_debito" attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+
+                        </group>
+                        <group col="2" string="Contingencia">
+                            <field name="as_evento" attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                            <field name="as_cont_cafc" attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+
+                        </group>
+                        <group col="2" string="Factura">
+                            <field name="as_xml_invoice" />
+                            <field name="as_motivo_anulacion" attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                            <field name="as_leyenda" attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                            <field name="as_fecha_edit" attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                            <field name="as_fecha_factura" attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                            <field name="as_fecha_emision" attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}" />
+                            <field name="as_creada" invisible="True" />
+
+
+                        
+                        </group>
+                    </group>
+
+                </page>
+
+
+            </xpath>
+            <xpath expr="//field[@name='invoice_date']" position="after">
+                <field name="as_state_siat" widget="badge" decoration-danger="as_state_siat == 'not_sent'"
+                    decoration-warning="as_state_siat in ('objected', 'rejected','cancel')"
+                    decoration-success="as_state_siat in ('accepted')" attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}"/>
+                <field name="as_mensaje_siat" attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}"/>
+                <field name="as_code_siat" attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}"/>
+            </xpath>
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='name']" position="before">
+                <field name="sequence_view" readonly="False"/>
+
+            </xpath>
+             <xpath expr="//button[@name='button_cancel']" position="after">
+                <field name="as_ambiente" invisible="1" />
+                </xpath>
+        </field>
+    </record>
+    <record id="as_view_out_invoice_tree" model="ir.ui.view">
+        <field name="name">as.account.out.invoice.tree</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_out_invoice_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='amount_total_signed']" position="after">
+
+                <field name="as_state_siat" widget="badge" decoration-danger="as_state_siat == 'not_sent'"
+                    decoration-warning="as_state_siat in ('objected', 'rejected','cancel')"
+                    decoration-success="as_state_siat in ('accepted')" />
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="as_invoice_number" />
+            </xpath>
+             <xpath expr="//field[@name='name']" position="before">
+                <field name="id" />
+            </xpath>
+        </field>
+    </record>
+        <record id="as_account_recisition_views2" model="ir.ui.view">
+        <field name="name">as.account.move.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="as_invoice_number"/>
+            </xpath>
+            
+        </field>
+    </record>   
+        <record id="action_update_xml_pdf" model="ir.actions.server">
+            <field name="name">Regenrar XML y PDF</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="binding_model_id" ref="account.model_account_move"/>
+            <field name="binding_view_types">form</field>
+            <field name="state">code</field>
+            <field name="code">if records:
+                action = records.as_adjustment_invoice()
+            </field>
+        </record>
+
+</odoo>

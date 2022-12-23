@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_as_report_resumen_ventas_gestion,as_report_resumen_ventas_gestion,model_as_report_resumen_ventas_gestion,base.group_user,1,1,1,1
+access_as_report_cuadro_personal_retirado,as_report_cuadro_personal_retirado,model_as_report_cuadro_personal_retirado,base.group_user,1,1,1,1
+access_as_report_cuadro_beneficios_sociales,as_report_cuadro_beneficios_sociales,model_as_report_cuadro_beneficios_sociales,base.group_user,1,1,1,1

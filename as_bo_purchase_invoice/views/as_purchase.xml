@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="as_purchase_order_foas_nucl" model="ir.ui.view">
+            <field name="name">as.purchase.order.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form" />
+            <field name="type">form</field>
+            <field name="priority" eval="5" />
+            <field name="arch" type="xml">
+             <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="before">
+                    <field name="route_id" />
+                </xpath>
+                <!-- <xpath expr="//button[@name='action_view_invoice']" position="before">
+                    <attribute name="string">Crear Factura</attribute>
+                </xpath> -->
+
+                <!-- <xpath expr="//field[@name='date_order']" position="after">
+                <field name="picking_type_id" domain="[('code','=','incoming')]" options="{'no_create': True}" groups="stock.group_stock_multi_locations"/>
+                    <field name="payment_term_id" options="{'no_open': True, 'no_create': True}"
+                        attrs="{'readonly': ['|', ('invoice_status','=', 'invoiced'), ('state', '=', 'done')]}" />
+                </xpath>
+                <xpath expr="//page[@name='purchase_delivery_invoice']/group/group[2]/field[@name='payment_term_id']"
+                    position="attributes">
+                    <attribute name="attrs">{'invisible': True}</attribute>
+                </xpath> -->
+                <xpath expr="//page[@name='purchase_delivery_invoice']/group/group" position="inside">
+                    <field name="as_tipo_documento" attrs="{'readonly':[('invoice_status','=','invoiced')]}" />
+                    <!-- <field name="as_tipo_retencion" attrs="{'invisible':[('as_tipo_documento','!=','Factura')]}" /> -->
+                    <field name="as_tipo_retencion" />
+                    <field name="as_tipo_factura" options="{'no_open': True, 'no_create': True}"
+                        attrs="{'readonly':[('invoice_status','=','invoiced')],'invisible':[('as_tipo_documento','!=','Factura')]}" />
+                    <field name="as_tipo_de_compra"
+                        attrs="{'invisible':[('as_tipo_documento','!=','Factura')], 'required':[('as_tipo_retencion','!=','4')]}" />
+                    <field name="as_razon_social_compra"
+                        attrs="{'readonly':[('invoice_status','=','invoiced')], 'invisible':[('as_tipo_documento','!=','Factura')]}" />
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="as_scan_qr" attrs="{'readonly':[('invoice_status','=','invoiced')]}"
+                         />
+                </xpath>
+
+                <xpath expr="//field[@name='invoice_status']" position="before">
+                    <field name="as_fecha_factura"
+                        attrs="{'readonly':[('invoice_status','=','invoiced')], 'invisible':[('as_tipo_documento','!=','Factura')]}" />
+                    <field name="as_nit_compra"
+                        attrs="{'readonly':[('invoice_status','=','invoiced')], 'invisible':[('as_tipo_documento','!=','Factura')]}" />
+                    <field name="as_numero_factura_compra"
+                        attrs="{'readonly':[('invoice_status','=','invoiced')], 'invisible':[('as_tipo_documento','!=','Factura')]}" />
+                    <field name="as_codigo_control_compra"
+                        attrs="{'readonly':[('invoice_status','=','invoiced')], 'invisible':[('as_tipo_documento','!=','Factura')]}" />
+                    <field name="as_numero_autorizacion_compra"
+                        attrs="{'readonly':[('invoice_status','=','invoiced')], 'invisible':[('as_tipo_documento','!=','Factura')]}" />
+                    <field name="as_monto_exento" />
+                    <field name="as_numero_dui" />
+                </xpath>
+            </field>
+        </record>
+        <record id="as_purchase_order_field_fechita" model="ir.ui.view">
+            <field name="name">as.purchase.order.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form" />
+            <field name="type">form</field>
+            <field name="priority" eval="1" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_order']" position="after">
+                    <field name="as_fecha_entrega" />
+                </xpath>
+            </field>
+        </record>
+        <record id="as_purchase_order_field_pagos_plazo" model="ir.ui.view">
+            <field name="name">as.purchase.order.form.payment</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form" />
+            <field name="type">form</field>
+            <field name="priority" eval="1" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='as_fecha_entrega']"
+                    position="after">
+                    <field name="as_payment_term_id"/>
+                    <field name="as_payment_quirer"/>
+                    <field name="as_solicitante"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

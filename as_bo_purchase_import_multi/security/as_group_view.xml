@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="group_cantidad_actual_product" model="res.groups">
+			<field name="name">Mostrar cantidad actual del producto en detalle de compras</field>
+			<field name="category_id" ref="base.module_category_hidden"/>
+    		<field name="users" eval="[(4, ref('base.user_root'))]"/>
+		</record>
+		<record id="group_purchase_line_selected" model="res.groups">
+			<field name="name">Seleccionar en lineas de pedido que productos se va a comprar</field>
+			<field name="category_id" ref="base.module_category_hidden"/>
+    		<field name="users" eval="[(4, ref('base.user_root'))]"/>
+		</record>
+	</data>
+</odoo>

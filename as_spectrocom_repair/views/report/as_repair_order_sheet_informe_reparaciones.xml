@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="as_imprimir_informe_de_reparaciones_pdf">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="header">
+                        
+                    </div>
+
+                </t>
+            </t>
+
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="o">
+                    <style type="text/css">
+                        .header {
+                            margin: 0px;
+                            padding: 0px;
+                        }
+
+
+                        h3 {
+                            font-family: 'Arial' !important;
+                            font-size: 10px;
+                            margin: 0px !important;
+                            padding: 0px !important;
+                        }
+                        td {
+                            font-family: 'Arial' !important;
+                            font-size: 12px;
+                            margin: 0px !important;
+                            padding: 0px !important;
+                        }
+                    </style>
+                    <div class="row mt0 mb0 " id="as_header" style="margin-top:-30px">
+                        <div class="col-4" style="text-align:right; margin-bottom:10px;font-size:12px; width:30%;">
+                            <img t-att-src="image_data_uri(o.env.user.company_id.logo)"
+                                style="height: 130px; width: 260px; text-align: left; line-height: 8px;margin-right:-20px; " />
+                            
+                        </div>
+                        <div class="col-5" style="text-align:center; width: 50%; margin-top:30px;" name='as_titulo'>
+                                <div style="text-align: center; font-size: 26px;">
+                                <table width="100%" class="table table-light" style="border-color: #F5FFFA; margin-left:0px;">
+                                        <tr>
+                                            <td style="font-size: 26px;">
+                                                <b>REGISTRO</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-size: 26px;">
+                                                <b>RECEPCION DE EQUIPOS</b>
+                                            </td>
+                                        </tr>
+                                </table>
+                                </div>
+                        </div>
+                        <div class="" style="width: 20%;text-align:left;">
+                            <h4>
+                                    <div class="letra">
+                                        <br />
+                                    </div>
+                            </h4>
+                            
+                            <h4 style="">
+                                <div style="text-align:left; font-size: 12px; line-height: 4px;margin-left:-10px;">
+                                    <p><b>CODIGO:</b>
+                                        <!-- <span t-esc="o.sale_id.user_id.partner_id.name" /> -->
+                                    </p>
+                                </div>
+                            </h4>
+                                <h4>
+                                    <div style="text-align:left; font-size: 12px; line-height: 4px;margin-left:-10px;">
+                                        <p><b>VERSION:</b>
+                                        <!-- <t t-if="o.date_done">
+                                        <span
+                                            t-esc="(datetime.datetime.strptime(str(o.date_done), '%Y-%m-%d %H:%M:%S') - datetime.timedelta(hours=4)).strftime('%d/%m/%Y')" />
+                                        </t> -->
+                                    </p>
+                                    </div>
+                                </h4>
+                                <h4>
+                                    <div style="text-align:left; font-size: 12px; line-height: 4px;margin-left:-10px;">
+                                        <p><b>EDICION :</b>
+                                        <!-- <t t-esc="o.location_id.name" /> -->
+                                        </p>
+                                    </div>
+                                </h4>
+                                
+                        </div>
+                    </div> 
+                    <div style="margin-top:-5px;margin-left:18px;margin-right:18px;">
+                        <table width="100%" class="table table-light" >
+                            <tr>
+                                <td style="text-align: left; font-size:12px; width:50%;">
+                                    <b >CLIENTE: </b>
+                                    <span t-esc="o.as_partner_id.name" />
+                                </td>
+                                    
+                                <td style="text-align: left; font-size:12px; width:50%;">
+                                    <b >REFE. REPARACION: </b>
+                                    <!-- <span t-esc="o.sale_line_id.order_id.as_template_id.name"/> -->
+                                <span t-esc="o.name" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: left; font-size:12px; width:60%;">
+                                    <b >CONTACTO: </b>
+                                    <!-- <span t-esc="o.sale_line_id.order_id.as_template_id.name"/> -->
+                                <span t-esc="o.as_partner_id.child_ids.name" />
+                                </td>
+                                <td style="text-align: left; font-size:12px; width:50%;">
+                                    <b >TELEFONO: </b>
+                                    <!-- <span t-esc="o.sale_line_id.order_id.as_template_id.name"/> -->
+                                    <span t-esc="o.as_partner_id.mobile" />
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td style="text-align: left; font-size:12px; width:50%;">
+                                    <b >REFERENCIA: </b>
+                                    <!-- <span t-esc="o.sale_line_id.order_id.as_template_id.name"/> -->
+                                <span t-esc="o.name" />
+                                </td>
+                                <td style="text-align: left; font-size:12px; width:50%;"> 
+                                <b >FECHA:</b>
+                                    <span t-esc="o.as_date_recepcion"/> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: left; font-size:12px; width:50%;">
+                                    <b >EQUIPOS ENTREGADOS: </b>
+                                    <!-- <span t-esc="o.sale_line_id.order_id.as_template_id.name"/> -->
+                                
+                                </td>
+                                <td style="text-align: left; font-size:12px; width:50%;">
+                                    <b >Reparación: </b>
+                                    <span t-esc="o.as_secuencia_reparaciones"/>
+                                    <!-- <t t-esc="o.sale_line_id.order_id.as_template_id.as_alias_lugar" /> -->
+                                </td>
+                            </tr>
+                        </table>
+                    </div>       
+                    <div class="page" style="font-family: 'Arial' !important; ">
+                        <style type="text/css">
+                            .page {
+                                margin: 0px;
+                                padding: 0px;
+                            }
+                            .totales1 {
+                                font-family: 'Arial' !important;
+                                font-size: 25px;
+                                font-weight: bold;
+                                border-collapse: collapse;
+                                border-top: solid;
+                                border-width: 2pt
+                            }
+                            sale .totales2 {
+                                font-family: 'Arial' !important;
+                                font-size: 12px;
+                                font-weight: bold;
+                            }
+                            .totales3 {
+                                font-family: 'Arial' !important;
+                                font-size: 25px;
+                                font-weight: bold;
+                                border-collapse: collapse;
+                                border-top: solid;
+                                border-bottom: solid;
+                                border-width: 2pt
+                            }
+                            body {
+                                font-family: 'Arial' !important;
+                            }
+                            .borde1 {
+                                border: 1px solid grey;
+                            }
+                            .borde3 {
+                                border-bottom: 1px solid grey;
+
+                            }
+
+                            .borde2 {
+                                border: 1px solid grey;
+                                border-radius: 8px 8px 8px 8px;
+                                sale max-height: 2.5cm;
+                                max-width: 2cm;
+                            }
+
+                            .borde_inferior {
+                                margin-bottom: 5px;
+                                margin-top: 5px;
+                            }
+                            .margen {
+                                margin: 3px;
+                            }
+                            .tituloAzul {
+                                font-size: 10;
+                                text-align: center;
+                                bottom: True; 
+                                top: True;
+                                right: True;
+                                left: True;
+                                bold:True;
+                                color:#ffffff;
+                                background-color: #4682B4;
+                            }
+                        </style>
+                        <div style="margin-left:18px;margin-right:18px;margin-top:-10px"> 
+                            <table width="100%"  id="header_table">
+                                <thead >
+                                    <tr >
+                                        <td style="text-align: center; font-size:12px; width:40%;color: #fff;
+                                        background-color: #4682B4; text-wrap: True; margin-right: auto; margin-left: auto; border-color: black; border:1px solid black;line-height: 20px;">
+                                            <b>PRODUCTO</b>
+                                        </td>
+                                        <td style="text-align: center; font-size:12px; width:25%;color: #fff;
+                                        background-color: #4682B4; text-wrap: True; margin-right: auto; margin-left: auto; border-color: black; border:1px solid black;line-height: 20px;" >
+                                            <b>OBSERVACIONES</b>
+                                        </td>
+                                        <td style="text-align: center; font-size:12px; width:5%;color: #fff;
+                                        background-color: #4682B4; text-wrap: True; margin-right: auto; margin-left: auto; border-color: black; border:1px solid black;line-height: 20px;" >
+                                            <b>CANT.</b>
+                                        </td>
+                                        <td style="text-align: center; font-size:12px; width:10%;color: #fff;
+                                        background-color: #4682B4; text-wrap: True; margin-right: auto; margin-left: auto; border-color: black; border:1px solid black;line-height: 20px;">
+                                            <b>MARCA</b>
+                                        </td>
+                                        <td style="text-align: center; font-size:12px; width:10%;color: #fff;
+                                        background-color: #4682B4; text-wrap: True; margin-right: auto; margin-left: auto; border-color: black; border:1px solid black;line-height: 20px;">
+                                            <b>MODELO</b>
+                                        </td>
+                                        <td style="text-align: center; font-size:12px; width:10%;color: #fff;
+                                        background-color: #4682B4; text-wrap: True; margin-right: auto; margin-left: auto; border-color: black; border:1px solid black;line-height: 20px;">
+                                            <b>N° SERIE</b>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <thead style='border:1px solid grey' id="body_table">
+                                    <t t-set="weight" t-value="0.00" />
+                                    <div t-foreach="o._lineas_ordenadas()" t-as="d" width="100%">
+                                        <tr>
+                                            <td style="text-align: left; font-size:12px; width:40%;text-wrap: True; margin-left: 5px; border-color: black; border:1px solid black;">
+                                                <tspan t-esc="d.product_id.name" style="margin-left:6px;"/>
+                                            </td>
+                                            <td style="text-align: left; font-size:12px; width:25%; text-wrap: True; margin-right: auto; margin-left: 5px; border-color: black; border:1px solid black;">
+                                                <tspan style="margin-left:10px;" t-esc="o.get_pobs(d.as_internal_notes)"/>
+                                            </td>
+                                            <td style="text-align: right; font-size:12px; width:5%; text-wrap: True; margin-right: auto; margin-left: 6px; border-color: black; border:1px solid black;">
+                                                <tspan t-esc="'{:,.0f}'.format(d.product_qty)" style="margin-right:6px;"/>
+                                            </td>
+                                            <td style="text-align: left; font-size:12px; width:10%; text-wrap: True; margin-right: auto; margin-left: 6px; border-color: black; border:1px solid black;">
+                                                <tspan t-esc="d.product_id.product_brand_id.name" style="margin-left:6px;"/>
+                                            </td>
+                                            <td style="text-align: left; font-size:12px; width:10%; text-wrap: True; margin-right: auto; margin-left: 6px; border-color: black; border:1px solid black;">
+                                                <tspan t-esc="d.product_id.product_model_id.name" style="margin-left:6px;" />
+                                            </td>
+                                            <td style="text-align: right; font-size:12px; width:10%; text-wrap: True; margin-right: 6px; margin-left: auto; border-color: black; border:1px solid black;">
+                                                <tspan t-esc="d.lot_id.name" style="margin-right:6px;" />
+                                            </td>
+
+                                        </tr>
+                                        
+                                    </div>
+                                    
+                                </thead>
+                                
+                                
+                            </table>
+                            <br/>
+                            
+                            
+                        </div>
+                        <div style="margin-top:10px;margin-left:15px;margin-right:15px;">
+                            
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <table width="100%" class="table table-borderless">
+                                <thead style='border:1px solid #FFFFFF;line-height : 20px;'>
+                                    <tr>
+                                        <td style="text-align: center; font-size:12px; width:30%;">
+                                            <b> __________________</b><br />
+                                            <b> Cliente</b><br/>
+                                            <b> Firma</b><br/>
+                                            <b> Nombre</b><br/>
+                                            <b> CI</b><br/>
+                                            <b></b><br />
+                                        </td>
+                                        <td style="text-align: center; font-size:12px; width:30%;">
+                                            <b> __________________</b><br/>
+                                            <b> Responsable laboratorio</b><br/>
+                                            <b> Firma</b><br />
+                                        </td>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+        <template id="as_imprimir_recepcion_equipos_pdf">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="as_spectrocom_repair.as_imprimir_informe_de_reparaciones_pdf" t-lang="lang" />
+                </t>
+                <p style="page-break-after:always;" />
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <record id="as_assets_account_ajuste" model="ir.ui.view">
+        <field name="name">Ajuste o Revaluo de Activos Fijos</field>
+        <field name="model">as.ajustar.assets</field>
+        <field name="arch" type="xml">
+            <form string="Ajuste o Revaluo de Activos Fijos">
+                <group col="4">
+                    <field name="as_assets" />
+                    <field name="as_modality" widget="radio" />
+                    <field name="as_date" />
+                    <field name="as_vida_util" attrs="{'invisible': [('as_modality', 'in', ('Ajuste','Ventas','mantenimiento'))]}"/>
+                    <field name="as_value" attrs="{'invisible': [('as_modality', 'in', ('Ajuste'))]}"/>
+                    <field name="as_coeficiente" attrs="{'invisible': [('as_modality', 'in', ('Ajuste','Ventas','mantenimiento'))]}"/>
+                    <field name="as_partner_id" attrs="{'invisible': [('as_modality', 'in', ('Ajuste','Revaluo'))],'required': [('as_modality', 'in', ('Ventas'))]}"/>
+                    <field name="as_ruta" attrs="{'invisible': [('as_modality', 'in', ('Ajuste','Revaluo','mantenimiento'))],'required': [('as_modality', 'in', ('Ventas'))]}"/>
+                    <field name="as_amount_purchase" attrs="{'invisible': [('as_modality', 'not in', ('mantenimiento'))],'required': [('as_modality', 'not in', ('mantenimiento'))]}"/>
+                    <field name="as_porcentaje" attrs="{'invisible': [('as_modality', 'not in', ('mantenimiento'))],'required': [('as_modality', 'not in', ('mantenimiento'))]}"/>
+
+                </group>
+                <footer>
+                    <button name="as_process_assets" type="object" default_focus="1" string="Procesar" class="oe_highlight" />
+                    or
+                    <button string="Cancelar" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="as_action_assets_ajuste" model="ir.actions.act_window">
+        <field name="name">Ajuste o Revaluo de Activos Fijos</field>
+        <field name="res_model">as.ajustar.assets</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="as_assets_account_ajuste" />
+        <field name="target">new</field>
+    </record>
+    
+    </data>
+
+</odoo>
