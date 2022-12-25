@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_inherit_product_template_hide_cost_form">
+            <field name="name">view.inherit.product.template.hide.cost.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <field name="type" position="after">
+                    <field name="can_not_see_cost" invisible="1"/>
+                </field>
+                <field name="standard_price" position="attributes">
+                    <attribute name="attrs">{}</attribute>
+                    <attribute name="attrs">{'invisible': [('can_not_see_cost', '=', True)]}</attribute>
+                </field>
+                <xpath expr="//label[@for='standard_price']" position="attributes">
+                    <attribute name="attrs">{}</attribute>
+                    <attribute name="attrs">{'invisible': [('can_not_see_cost', '=', True)]}</attribute>
+                </xpath>
+                <xpath expr="//div[@name='standard_price_uom']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('can_not_see_cost', '=', True)]}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_inherit_product_product_hide_cost_form" model="ir.ui.view">
+            <field name="name">view.inherit.product.product.hide.cost.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <field name="type" position="after">
+                    <field name="can_not_see_cost" invisible="1"/>
+                </field>
+                <field name="standard_price" position="attributes">
+                    <attribute name="attrs">{}</attribute>
+                    <attribute name="attrs">{'invisible': [('can_not_see_cost', '=', True)]}</attribute>
+                </field>
+                <xpath expr="//label[@for='standard_price']" position="attributes">
+                    <attribute name="attrs">{}</attribute>
+                    <attribute name="attrs">{'invisible': [('can_not_see_cost', '=', True)]}</attribute>
+                </xpath>
+                <xpath expr="//div[@name='standard_price_uom']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('can_not_see_cost', '=', True)]}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="termination_evaluation">
+        <t t-call="web.html_container">
+            <t t-foreach="contracts" t-as="crt">
+                <t t-call="web.external_layout">
+
+                    <div class="page" style="font-size: 15px !important;">
+                        <div class="row">
+                            <div class="col-6">
+                                Bogotá, <t t-esc="crt.date_now"></t>
+                                <br/><br/><br/>
+                                <t t-esc="crt.employee_id.name"/><br/>
+                                <strong><t t-esc="crt.employee_id.ident_type.name"/></strong> <t
+                                    t-esc="crt.employee_id.identification_id"/><br/>
+                                <t t-esc="crt.job_id.name"/><br/>
+                                <t t-esc="crt.company_id.name"/>
+                            </div>
+                            <div class="col-6"/>
+                        </div>
+                        <br/><br/><br/>
+                        <div class="text-justify">
+                            Dando oportuno cumplimiento a lo exigido por el Artículo 3º de la Ley 50 de 1990 que
+                            modificó el artículo 46 del Código Sustantivo del Trabajo, por la presente le notificamos
+                            que la Compañía ha decidido no prorrogar su contrato de trabajo por lo que éste terminará el
+                            día <strong><span t-esc="crt.set_date(crt.date_end)"/></strong>, por el vencimiento del
+                            plazo inicialmente pactado.<br/><br/>
+
+                            En señal de conformidad y aceptación con lo expuesto, sírvase firmar la copia de la presente
+                            comunicación.<br/><br/>
+
+                            <div class="text-justify">
+                                La presente se expide a solicitud del interesado, <t t-esc="crt.date_now"/>
+                            </div>
+
+                            Atentamente,
+                            <br/><br/>
+
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -1,8 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_as_ventas_utilidad,_as_ventas_utilidad,model_as_ventas_utilidad,base.group_user,1,1,1,1
-access_as_product_detail_wiz,_as_product_detail_wiz,model_as_product_detail_wiz,base.group_user,1,1,1,1
-access_as_sales_emit_wiz,as_sales_emit_wiz,model_as_sales_emit_wiz,base.group_user,1,1,1,1
-access_as_sales_facturas_emitidas_wiz,as_sales_facturas_emitidas_wiz,model_as_sales_facturas_emitidas_wiz,base.group_user,1,1,1,1
-access_as_report_resumen_cuentas_cobrar,as_report_resumen_cuentas_cobrar,model_as_report_resumen_cuentas_cobrar,base.group_user,1,1,1,1
-access_as_report_ministerio,as_report_ministerio,model_as_report_ministerio,hr_payroll.group_hr_payroll_manager,1,1,1,1
-access_as_report_resumen_ventas_sn_factura,as_report_resumen_ventas_sn_factura,model_as_report_resumen_ventas_sn_factura,base.group_user,1,1,1,1

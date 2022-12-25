@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="inherit_hr_employee_view_form" model="ir.ui.view">
+            <field name="name">inherit.hr.employee.view.form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+
+                <!-- Smart Button-->
+                <div name="button_box" position="inside">
+                    <button class="oe_stat_button" type="object" name="get_labor_relations"
+                            icon="fa-legal">
+                        <field string="Disciplinary Proceedings" name="labor_relation_count" widget="statinfo"/>
+                    </button>
+
+                    <button class="oe_stat_button" type="object" name="get_request_news"
+                            icon="fa-list-alt">
+                        <field string="News" name="request_new_count" widget="statinfo"/>
+                    </button>
+                </div>
+
+                <xpath expr="//page[@name='personal_information']" position="after">
+                    <page name="beneficiaries" string="Beneficiaries">
+                        <field name="beneficiary_line_id">
+                            <tree editable="top">
+                                <field name="first_name"/>
+                                <field name="second_name"/>
+                                <field name="first_surname"/>
+                                <field name="second_surname"/>
+                                <field name="type_document"/>
+                                <field name="document"/>
+                                <field name="date_birth"/>
+                                <field name="age" readonly="1" force_save="1"/>
+                                <field name="relationship_id"/>
+                                <field name="additional_upc"/>
+                                <field name="subsystem" force_save="1"/>
+                                <field name="destination_entity" force_save="1"/>
+                            </tree>
+                        </field>
+                    </page>
+
+                    <page name="History_promotion" string="History Promotion">
+                        <field name="history_promotion_ids">
+                            <tree editable="none" create="false">
+                                <field name="position_id" width="20%"/>
+                                <field name="salary" width="20%"/>
+                                <field name="start_date" width="20%"/>
+                                <field name="end_date" width="20%"/>
+                            </tree>
+                        </field>
+                    </page>
+
+                    <page name="History_extend" string="History Extend">
+                        <field name="history_extend_ids">
+                            <tree editable="none" create="false">
+                                <field name="contract_id" width="20%"/>
+                                <field name="start_date" width="10%"/>
+                                <field name="end_date" width="10%"/>
+                                <field name="number_extend" width="10%"/>
+                                <field name="duration_year" width="10%"/>
+                                <field name="duration_month" width="10%"/>
+                                <field name="duration_day" width="10%"/>
+                            </tree>
+                        </field>
+                    </page>
+
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

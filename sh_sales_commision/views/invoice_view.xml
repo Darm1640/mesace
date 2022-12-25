@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>	
+
+	
+	<!--Added fields in SALE FORM VIEW -->
+	<record id="sh_invoice_orderline_form_view_inh" model="ir.ui.view">
+			<field name="name">sh.invoice.form.view.inh</field>
+			<field name="model">account.move</field>
+			<field name="inherit_id" ref="account.view_move_form"/>
+			<field name="arch" type="xml">
+			<field name="partner_id" position="after">
+					<field name="show_commission" invisible="1"/>
+				</field>
+				<xpath expr="//sheet/notebook/page" position="after">
+					<page string="Sales Commission" groups="sh_sales_commision.group_sale_commission" attrs="{'invisible':[('show_commission','=',False)]}">
+						<field name="sales_commission_ids">
+							<tree string="" create="0" edit="0" delete="0">
+								<field name="date"/>
+								<field name="name"/>
+								<field name="sales_person_id"/>
+								<field name="amount"/>
+							</tree>
+						</field>
+					</page>
+				</xpath>
+				
+			</field>
+		</record>
+	</data>	
+</odoo>

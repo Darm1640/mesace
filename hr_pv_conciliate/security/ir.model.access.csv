@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_event_range,access_hr_event_range,model_hr_event_range,base.group_user,1,1,1,1
+access_hr_event_range_lines,access_hr_event_range_lines,model_hr_event_range_lines,base.group_user,1,1,1,1
+access_hr_pv_conciliation,access_hr_pv_conciliation,model_hr_pv_conciliation,base.group_user,1,1,1,1
+access_hr_pv_conciliation_lines,access_hr_pv_conciliation_lines,model_hr_pv_conciliation_lines,base.group_user,1,1,1,1

@@ -1,2 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-acc_purchase_auto,acc_purchase_auto,model_purchase_auto,,1,1,1,1

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!-- Copyright 2020-TODAY Miguel Pardo <ing.miguel.pardo@gmail.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="email_template_edi_sale" model="mail.template">
+        <field name="name">Cambio a etapa Productiva Afiliación a ARL</field>
+        <field name="model_id" ref="hr_contract_extended.model_hr_contract_alert"/>
+        <field name="subject">Cambio a etapa Productiva Afiliación a ARL</field>
+        <field name="email_from">${(user.email_formatted) | safe}</field>
+        <field name="body_html" type="html">
+            <div style="margin: 0px; padding: 0px;">
+                <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                    Los siguientes empleados tienen contrato de aprendiz y están a menos de un mes de terminar la etapa
+                    lectiva” -
+                    <br/>
+                    Assigned data employee the next
+                    <ul>
+                        % for row in object.alert_ids:
+                        <li> ${row.employee_id.name}, ${row.identification_id}</li>
+                    </ul>
+                    %endfor
+                </p>
+            </div>
+        </field>
+        <field name="user_signature" eval="False"/>
+        <field name="auto_delete" eval="True"/>
+    </record>
+
+</odoo>

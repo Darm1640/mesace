@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="sale_remove_margin_sale_order">
+            <field name="name">sale.order.remove.margin.view.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_margin.sale_margin_sale_order"/>
+            <field name="arch" type="xml">
+                <field name="margin" position="before">
+                    <field name="can_not_see_cost" invisible="1"/>
+                </field>
+                <field name="margin" position="attributes">
+                    <attribute name="attrs">{'invisible': [('can_not_see_cost', '=', True)]}</attribute>
+                </field>
+                
+                <field name="margin_percent" position="attributes">
+                    <attribute name="attrs">{'invisible': [('can_not_see_cost', '=', True)]}</attribute>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

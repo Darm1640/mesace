@@ -24,7 +24,7 @@
     'images': ['static/description/icon.jpg'],
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'contacts', 'mail'],
+    'depends': ['base', 'contacts', 'mail','l10n_co_facturacion_adicional'],
 
     # always loaded
     'data': [

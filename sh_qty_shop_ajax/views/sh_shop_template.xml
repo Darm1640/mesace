@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--  Select Quantity on Product List Page -->
+    <template id="sh_products_item_inherit_qty" inherit_id="website_sale.products_item" active="False" customize_show="True" name="Select Quantity">
+        <xpath expr="//div[hasclass('product_price')]" position="after">
+            <span class="css_quantity input-group" contenteditable="false" style="margin-left: 10px; margin-right: 10px; justify-content: center;">
+                <div class="input-group-prepend">
+                    <a t-attf-href="#" class="btn btn-secondary js_add_cart_json" aria-label="Remove one" title="Remove one" style="padding: 1px 5px; height: 23px;">
+                        <i class="fa fa-minus"></i>
+                    </a>
+                </div>
+                <input type="text" class="form-control quantity" id="input_qty_list" data-min="1" name="add_qty" value="1" />
+                <div class="input-group-append">
+                    <a t-attf-href="#" class="btn btn-secondary float_left js_add_cart_json" aria-label="Add one" title="Add one" style="padding: 1px 5px; height: 23px;">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </span>
+        </xpath>
+    </template>
+
+    <!--  Ajax for Add To cart Product List Page -->
+
+    <template id="sh_products_add_to_cart_inherit" inherit_id="website_sale.products_add_to_cart" name="Add to Cart">
+        <xpath expr="//a[hasclass('a-submit')]" position="replace">
+            <input name="product_available" id="product_available" t-att-value="sum(product.product_variant_ids.mapped('free_qty'))" type="hidden"/>
+            <t t-if="len(product.product_variant_ids) == 1 and sum(product.product_variant_ids.mapped('free_qty')) &gt; 0">
+                <button type="button" role="button" class="btn btn-secondary sh_add_cart" title="Shopping cart" t-att-data-product-product-id="product.product_variant_ids[0].id if product.product_variant_ids else '0'">
+                    <span class="fa fa-shopping-cart" role="img" aria-label="Shopping cart"></span>
+                </button>
+            </t>
+            <t t-if="len(product.product_variant_ids) &gt; 1 and sum(product.product_variant_ids.mapped('free_qty')) &gt; 0">
+                <a href="#" role="button" class="btn btn-secondary a-submit" aria-label="Shopping cart" title="Shopping cart">
+                    <span class="fa fa-shopping-cart" />
+                </a>
+            </t>
+        </xpath>
+    </template>
+
+    <!--  Ajax for Add To cart Product Detail Page -->
+    <template id="sh_website_sale_product_inherit" inherit_id="website_sale.product" name="Product">
+        <xpath expr="//a[@id='add_to_cart']" position="replace">
+            <input name="product_available" id="product_available" t-att-value="sum(product.product_variant_ids.mapped('free_qty'))" type="hidden"/>
+            <t t-if="sum(product.product_variant_ids.mapped('free_qty')) &gt; 0">
+                <button type="button" role="button" class="btn btn-primary btn-lg mt8 js_check_product sh_add_cart" title="Add to Cart">Add to Cart</button>
+                <a role="button" id="add_to_cart" class="d-none btn btn-primary btn-lg mt8 js_check_product a-submit" href="#">Add to Cart</a>
+            </t>
+        </xpath>
+    </template>
+
+    <!--  Added Animate class in Cart -->
+    <template id="sh_website_sale_header_inherit" inherit_id="website_sale.header_cart_link" name="Header Shop My Cart Link">
+        <xpath expr="//li[contains(@t-attf-class, 'o_wsale_my_cart')]" position="replace">
+            <li t-attf-class="nav-item o_wsale_my_cart #{'' if website_sale_order and website_sale_order.cart_quantity else 'd-none'}">
+                <a href="/shop/cart" class="nav-link">
+                    <i class="fa fa-shopping-cart"></i>
+                    My Cart <sup t-attf-class="my_cart_quantity o_animate_blink badge badge-primary" t-esc="website_sale_order and website_sale_order.cart_quantity or ''" />
+                </a>
+            </li>
+        </xpath>
+    </template>
+
+    <!-- Cantidad Disponible-->
+    <template id="sh_qty_shop_ajax.display_stock_qty_message" name="Mostrar Mensaje de Stock">
+        <t t-if="sum(product.product_variant_ids.mapped('free_qty')) &gt; 0">
+             <div id="in-stock-message" class="in-stock">
+                 <span class=""> Disponible </span>
+                 <span class=""><t t-esc="'{0:,.0f}'.format(sum(product.product_variant_ids.mapped('free_qty')))"/></span>
+            </div>
+        </t>
+        <t t-if="not product.qty_available &gt; 0">
+             <div id="out-of-stock-message" class="out-of-stock">
+                 <span class=""> Sin existencia </span>
+            </div>
+        </t>
+    </template>
+
+    <template id="product_qty_in_products_item_page" inherit_id="website_sale.products_item" active="True" customize_show="True" name="Mostrar Cantidad de Stock">
+        <xpath expr="//form" position="inside">
+            <div class="stock-qty-message pull-right">
+                <t t-if="product.product_variant_ids">
+                <t t-set="product_obj" t-value="product.product_variant_ids[0]"/>
+                    <t t-call="sh_qty_shop_ajax.display_stock_qty_message"/>
+                </t>
+            </div>
+        </xpath>
+        <xpath expr="//div[@itemscope='itemscope']" position="attributes">
+            <attribute name="t-att-data-publish">'off' if product.product_variant_ids and not sum(product.product_variant_ids.mapped('free_qty')) &gt; 0 else 'on'</attribute>
+        </xpath>
+    </template>
+</odoo>

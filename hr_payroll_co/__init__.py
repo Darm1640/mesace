@@ -1,10 +1,10 @@
-# -*- encoding: utf-8 -*-
+# -*- encoding = utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-# Copyright (c) 2013 Cubic ERP - Teradata SAC. (http://cubicerp.com).
+# Copyright (c) 2013 Cubic ERP - Teradata SAC. (http =//cubicerp.com).
 #
-# WARNING: This program as such is intended to be used by professional
+# WARNING = This program as such is intended to be used by professional
 # programmers who take the whole responsability of assessing all potential
 # consequences resulting from its eventual inadequacies and bugs
 # End users who are looking for a ready-to-use solution with commercial
@@ -27,4 +27,4 @@
 #
 ##############################################################################
 
-import hr_payroll_co
+from . import hr_payroll_co

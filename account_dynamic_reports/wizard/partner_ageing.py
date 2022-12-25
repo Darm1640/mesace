@@ -7,7 +7,8 @@ from odoo.tools import DEFAULT_SERVER_DATE_FORMAT
 import json
 import io
 from odoo.tools import date_utils
-import base64
+import logging
+_logger = logging.getLogger(__name__)
 
 try:
     from odoo.tools.misc import xlsxwriter
@@ -66,7 +67,9 @@ class InsPartnerAgeing(models.TransientModel):
         for record in self:
             res.append((record.id, 'Ageing'))
         return res
-
+    @api.model
+    def _get_currency_domain(self):
+        return [('id','!=', self.env.company.currency_id.id)]
     as_on_date = fields.Date(string='As on date', required=True, default=fields.Date.today())
     bucket_1 = fields.Integer(string='Bucket 1', required=True, default=lambda self:self.env.company.bucket_1)
     bucket_2 = fields.Integer(string='Bucket 2', required=True, default=lambda self:self.env.company.bucket_2)
@@ -78,7 +81,12 @@ class InsPartnerAgeing(models.TransientModel):
                               ('payable','Payable Accounts Only')], string='Type')
     partner_type = fields.Selection([('customer', 'Customer Only'),
                              ('supplier', 'Supplier Only')], string='Partner Type')
-
+    account_ids = fields.Many2many(
+        'account.account', string='Accounts'
+    )
+    journal_ids = fields.Many2many(
+        'account.journal', string='Journals',
+    )
     partner_ids = fields.Many2many(
         'res.partner', required=False
     )
@@ -89,13 +97,20 @@ class InsPartnerAgeing(models.TransientModel):
         'res.company', string='Company',
         default=lambda self: self.env.company
     )
-
+    currency_id = fields.Many2one(
+        'res.currency', string='Currency', domain=_get_currency_domain
+    )
+    sales_man_id = fields.Many2one("res.users", string="Salesman")
+    
     def write(self, vals):
         if not vals.get('partner_ids'):
             vals.update({
                 'partner_ids': [(5, 0, 0)]
             })
-
+        if not vals.get('journal_ids'):
+            vals.update({'journal_ids': [(5,0,0)]})
+        if not  vals.get('account_ids'):
+            vals.update({'account_ids': [(5,0,0)]})
         if vals.get('partner_category_ids'):
             vals.update({'partner_category_ids': vals.get('partner_category_ids')})
         if vals.get('partner_category_ids') == []:
@@ -111,19 +126,22 @@ class InsPartnerAgeing(models.TransientModel):
         return True
 
     def get_filters(self, default_filters={}):
-
+        company_domain = ['|',('company_id', '=', self.env.company.id),('company_id', '=', False)]
         partner_company_domain = [('parent_id','=', False),
-                                  '|',
-                                  ('customer_rank', '>', 0),
-                                  ('supplier_rank', '>', 0),
-                                  '|',
-                                  ('company_id', '=', self.env.company.id),
-                                  ('company_id', '=', False)]
-
+                                    '|',
+                                    ('customer_rank', '>', 0),
+                                    ('supplier_rank', '>', 0),
+                                    '|',
+                                    ('company_id', '=', self.env.company.id),
+                                    ('company_id', '=', False)]
+        journals = self.journal_ids if self.journal_ids else self.env['account.journal'].search(company_domain)
+        accounts = self.account_ids if self.account_ids else self.env['account.account'].search(company_domain)
         partners = self.partner_ids if self.partner_ids else self.env['res.partner'].search(partner_company_domain)
         categories = self.partner_category_ids if self.partner_category_ids else self.env['res.partner.category'].search([])
 
         filter_dict = {
+            'journal_ids': self.journal_ids.ids,
+            'account_ids': self.account_ids.ids,
             'partner_ids': self.partner_ids.ids,
             'partner_category_ids': self.partner_category_ids.ids,
             'company_id': self.company_id and self.company_id.id or False,
@@ -136,7 +154,10 @@ class InsPartnerAgeing(models.TransientModel):
             'bucket_4': self.bucket_4,
             'bucket_5': self.bucket_5,
             'include_details': self.include_details,
-
+            'sales_man_id': self.sales_man_id and self.sales_man_id.id or False,
+            'currency_id': self.currency_id and self.currency_id.id,
+            'journals_list': [(j.id, j.name) for j in journals],
+            'accounts_list': [(a.id, a.name) for a in accounts],
             'partners_list': [(p.id, p.name) for p in partners],
             'category_list': [(c.id, c.name) for c in categories],
             'company_name': self.company_id and self.company_id.name,
@@ -148,7 +169,7 @@ class InsPartnerAgeing(models.TransientModel):
         ''' To show on report headers'''
 
         data = self.get_filters(default_filters={})
-
+        _logger.info('\n\n %r \n\n', data)
         filters = {}
 
         filters['bucket_1'] = data.get('bucket_1')
@@ -161,6 +182,13 @@ class InsPartnerAgeing(models.TransientModel):
             filters['partners'] = self.env['res.partner'].browse(data.get('partner_ids', [])).mapped('name')
         else:
             filters['partners'] = ['All']
+            
+        if data.get('sales_man_id', False):
+            filters['sales_man'] = self.env['res.users'].browse(data.get('sales_man_id')).name
+        else:
+            filters['sales_man'] = 'All'
+
+
 
         if data.get('as_on_date', False):
             filters['as_on_date'] = data.get('as_on_date')
@@ -169,7 +197,16 @@ class InsPartnerAgeing(models.TransientModel):
             filters['company_id'] = data.get('company_id')
         else:
             filters['company_id'] = ''
-
+        
+        if data.get('journal_ids', []):
+            filters['journals'] = self.env['account.journal'].browse(data.get('journal_ids', [])).mapped('code')
+        else:
+            filters['journals'] = ['All']
+        if data.get('account_ids', []):
+            filters['accounts'] = self.env['account.account'].browse(data.get('account_ids', [])).mapped('code')
+        else:
+            filters['accounts'] = ['All']
+            
         if data.get('type'):
             filters['type'] = data.get('type')
 
@@ -215,9 +252,8 @@ class InsPartnerAgeing(models.TransientModel):
         stop = date_from
         final_date = False
         for i in range(5):
-            ref_date = date_from - relativedelta(days=1)
             start = stop - relativedelta(days=1)
-            stop = ref_date - relativedelta(days=bucket_list[i])
+            stop = start - relativedelta(days=bucket_list[i])
             name = '0 - ' + str(bucket_list[0]) if i==0 else  str(str(bucket_list[i-1] + 1)) + ' - ' + str(bucket_list[i])
             final_date = stop
             periods[i+1] = {
@@ -239,7 +275,7 @@ class InsPartnerAgeing(models.TransientModel):
         }
         return periods
 
-    def process_detailed_data(self, offset=0, partner=0, fetch_range=FETCH_RANGE):
+    def process_detailed_data(self, offset=0, partner=0, account=0, journal=0,fetch_range=FETCH_RANGE):
         '''
 
         It is used for showing detailed move lines as sub lines. It is defered loading compatable
@@ -248,6 +284,7 @@ class InsPartnerAgeing(models.TransientModel):
         :param fetch_range: Global Variable. Can be altered from calling model
         :return: count(int-Total rows without offset), offset(integer), move_lines(list of dict)
         '''
+        domain2 = [('company_id','=',self.env.company.id)]
         as_on_date = self.as_on_date
         period_dict = self.prepare_bucket_list()
         period_list = [period_dict[a]['name'] for a in period_dict]
@@ -259,6 +296,11 @@ class InsPartnerAgeing(models.TransientModel):
 
         offset = offset * fetch_range
         count = 0
+        where = " AND 1=1 "
+        if self.account_ids:
+            where += " AND a.id in " + str(tuple(self.account_ids.ids)).replace(',)',')')
+        if self.journal_ids:
+            where += " AND m.journal_id in " + str(tuple(self.journal_ids.ids)).replace(',)',')')
 
         if partner:
 
@@ -282,17 +324,23 @@ class InsPartnerAgeing(models.TransientModel):
                         AND l.partner_id = %s
                         AND l.date <= '%s'
                         AND l.company_id = %s
-                """ % (type, partner, as_on_date, company_id.id)
-            self.env.cr.execute(sql)
+                """ % (type, partner,  as_on_date, company_id.id)
+            self.env.cr.execute(sql + where)
             count = self.env.cr.fetchone()[0]
 
-            SELECT = """SELECT m.name AS move_name,
+            SELECT = """SELECT  m.name AS move_name,
                                 m.id AS move_id,
                                 l.date AS date,
                                 l.date_maturity AS date_maturity, 
+                                l.name AS line_name,
+                                m.ref AS ref,
                                 j.name AS journal_name,
                                 cc.id AS company_currency_id,
-                                a.name AS account_name, """
+                                a.name AS account_name,
+                                a.code AS account_code,
+                                COALESCE(l.balance,0) AS balance,
+                                COALESCE(l.amount_residual,0)  AS residual,
+                                """
 
             for period in period_dict:
                 if period_dict[period].get('start') and period_dict[period].get('stop'):
@@ -401,18 +449,20 @@ class InsPartnerAgeing(models.TransientModel):
                         AND l.partner_id = %s
                         AND l.date <= '%s'
                         AND l.company_id = %s
+                        %s
                     GROUP BY
-                        l.date, l.date_maturity, m.id, m.name, j.name, a.name, cc.id
+                        l.date, l.date_maturity,l.name,l.balance,l.amount_residual, m.id, m.name, j.name, a.name, a.code,cc.id
                     OFFSET %s ROWS
                     FETCH FIRST %s ROWS ONLY
-                """%(type, partner, as_on_date, company_id.id, offset, fetch_range)
+                """%(type, partner, as_on_date, company_id.id, where, offset, fetch_range)
             self.env.cr.execute(SELECT + sql)
             final_list = self.env.cr.dictfetchall() or 0.0
             move_lines = []
             for m in final_list:
                 if (m['range_0'] or m['range_1'] or m['range_2'] or m['range_3'] or m['range_4'] or m['range_5']):
                     move_lines.append(m)
-
+            
+            
             if move_lines:
                 return count, offset, move_lines, period_list
             else:
@@ -432,7 +482,8 @@ class InsPartnerAgeing(models.TransientModel):
         2. Fetch partner_ids and loop through bucket range for values
         '''
         period_dict = self.prepare_bucket_list()
-
+        domain2 = ['|',('company_id','=',self.env.company.id),('company_id', '=', False)]
+        
         domain = ['|',('company_id','=',self.env.company.id),('company_id','=',False)]
         if self.partner_type == 'customer':
             domain.append(('customer_rank','>',0))
@@ -441,8 +492,11 @@ class InsPartnerAgeing(models.TransientModel):
 
         if self.partner_category_ids:
             domain.append(('category_id','in',self.partner_category_ids.ids))
-
+        if self.sales_man_id:
+                domain.append(('user_id','=', self.sales_man_id.id))
         partner_ids = self.partner_ids or self.env['res.partner'].search(domain)
+        # account_ids = self.account_ids or self.env['account.account'].search(domain2)
+        # journal_ids = self.journal_ids or self.env['account.journal'].search(domain2)
         as_on_date = self.as_on_date
         company_currency_id = self.env.company.currency_id.id
         company_id = self.env.company
@@ -460,11 +514,16 @@ class InsPartnerAgeing(models.TransientModel):
             partner_dict['Total'].update({period_dict[period]['name']: 0.0})
         partner_dict['Total'].update({'total': 0.0, 'partner_name': 'ZZZZZZZZZ'})
         partner_dict['Total'].update({'company_currency_id': company_currency_id})
-
+        
         for partner in partner_ids:
             partner_dict[partner.id].update({'partner_name':partner.name})
             total_balance = 0.0
-
+            where = ""
+            if self.account_ids:
+                where += " AND a.id in " + str(tuple(self.account_ids.ids)).replace(',)',')')
+            if self.journal_ids:
+                where += " AND m.journal_id in " + str(tuple(self.journal_ids.ids)).replace(',)',')')
+                
             sql = """
                 SELECT
                     COUNT(*) AS count
@@ -475,7 +534,7 @@ class InsPartnerAgeing(models.TransientModel):
                 LEFT JOIN
                     account_account AS a ON a.id = l.account_id
                 LEFT JOIN
-                    account_account_type AS ty ON a.user_type_id = ty.id
+                    account_account_type AS ty ON a.user_type_id = ty.id    
                 WHERE
                     l.balance <> 0
                     AND m.state = 'posted'
@@ -483,8 +542,9 @@ class InsPartnerAgeing(models.TransientModel):
                     AND l.partner_id = %s
                     AND l.date <= '%s'
                     AND l.company_id = %s
-            """%(type, partner.id, as_on_date, company_id.id)
-            self.env.cr.execute(sql)
+            """ %(type, partner.id,  as_on_date, company_id.id)
+            
+            self.env.cr.execute(sql + where)
             fetch_dict = self.env.cr.dictfetchone() or 0.0
             count = fetch_dict.get('count') or 0.0
 
@@ -495,9 +555,14 @@ class InsPartnerAgeing(models.TransientModel):
                     if period_dict[period].get('start') and period_dict[period].get('stop'):
                         where += " BETWEEN '%s' AND '%s'" % (period_dict[period].get('stop'), period_dict[period].get('start'))
                     elif not period_dict[period].get('start'): # ie just
-                        where += " >= '%s'" % (period_dict[period].get('stop'))
+                        where += " >= '%s' " % (period_dict[period].get('stop'))
                     else:
-                        where += " <= '%s'" % (period_dict[period].get('start'))
+                        where += " <= '%s' " % (period_dict[period].get('start'))
+                    if self.account_ids:
+                            where += " AND a.id in " + str(tuple(self.account_ids.ids)).replace(',)',')')
+                    if self.journal_ids:
+                        where += " AND m.journal_id in " + str(tuple(self.journal_ids.ids)).replace(',)',')')
+                    
 
                     sql = """
                         SELECT
@@ -591,9 +656,25 @@ class InsPartnerAgeing(models.TransientModel):
                         'Period_List': period_list
                         })
 
-
     def action_xlsx(self):
-        data = self.read()[0]
+        ''' Button function for Xlsx '''
+
+        data = self.read()
+        as_on_date = fields.Date.from_string(self.as_on_date).strftime(
+            self.env['res.lang'].search([('code', '=', self.env.user.lang)])[0].date_format)
+
+        return {
+            'type': 'ir.actions.report',
+            'data': {'model': 'ins.partner.ageing',
+                     'options': json.dumps(data[0], default=date_utils.json_default),
+                     'output_format': 'xlsx',
+                     'report_name': 'Ageing as On - %s' % (as_on_date),
+                     },
+            'report_type': 'xlsx'
+        }
+
+    def get_xlsx_report(self, data, response):
+
         # Initialize
         #############################################################
         output = io.BytesIO()
@@ -721,7 +802,7 @@ class InsPartnerAgeing(models.TransientModel):
 
         lang = self.env.user.lang
         lang_id = self.env['res.lang'].search([('code', '=', lang)])[0]
-        currency_id = self.env.user.company_id.currency_id
+        currency_id = self.env.company.currency_id
         line_header.num_format = currency_id.excel_format
         line_header_light.num_format = currency_id.excel_format
         line_header_light_period.num_format = currency_id.excel_format
@@ -821,16 +902,7 @@ class InsPartnerAgeing(models.TransientModel):
         #################################################################
         workbook.close()
         output.seek(0)
-        result = base64.b64encode(output.read())
-
-        report_id = self.env['common.xlsx.out'].sudo().create({'filedata': result, 'filename': 'Ageing.xls'})
-        return {
-            'type': 'ir.actions.act_url',
-            'url': '/web/binary/download_document?model=common.xlsx.out&field=filedata&id=%s&filename=%s.xls' % (
-                report_id.id, 'Partner Ageing.xls'),
-            'target': 'new',
-        }
-
+        response.stream.write(output.read())
         output.close()
 
     def action_view(self):

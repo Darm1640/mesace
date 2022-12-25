@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="wizard_hr_pv_form" model="ir.ui.view">
+        <field name="name">wizard.hr.pv.form</field>
+        <field name="model">wizard.hr.pv</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="event_id"/>
+                        <!--field name="event_conciliate_id"/-->
+                        <field name="start_date"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="confirm" type="object" string="Ok"
+                            class="oe_right oe_highlight"/>
+                    <button string="Cancel" class="oe_right"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="wizard_hr_pv_action"
+            model="ir.actions.act_window">
+        <field name="name">Hr Pv</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wizard.hr.pv</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

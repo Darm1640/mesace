@@ -1,0 +1,6 @@
+id,name,type_id/id
+pv_subtype_AUS,Ausencia,pv_type_TIE
+pv_subtype_FIJ,Fija,pv_type_ECO
+pv_subtype_OCA,Ocasional,pv_type_ECO
+pv_subtype_PRO,Procedimiento,pv_type_PRO
+pv_subtype_TERM_CONTR,Terminación de Contrato,pv_type_PRO

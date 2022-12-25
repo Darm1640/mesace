@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-       <menuitem id="as_assets_report_cuentas_por_pagar_main" name="Reporte Cuentas por Pagar" parent="account.menu_finance_reports" sequence="50" />
-</odoo>

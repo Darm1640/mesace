@@ -1,57 +1,87 @@
 #loader {
-  animation: loader 5s cubic-bezier(.8,0,.2,1) infinite;
-  height: 40px;
-  width: 41px;
-  position: absolute;
-  top:calc(50% - 20px);
-  left:calc(50% - 20px);
-  visibility: hidden;
-  background-color: #c5a6c7;
+    animation: loader 5s cubic-bezier(.8, 0, .2, 1) infinite;
+    height: 40px;
+    width: 41px;
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+    visibility: hidden;
+    background-color: #c5a6c7;
 }
+
 @keyframes loader {
-  90% { transform: rotate(0deg); }
-  100% { transform: rotate(180deg); }
+    90% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(180deg);
+    }
 }
+
 #top {
-  animation: top 5s linear infinite;
-  border-top: 20px solid #fff;
-  border-right: 20px solid transparent;
-  border-left: 20px solid transparent;
-  height: 0px;
-  width: 1px;
-  transform-origin: 50% 100%;
+    animation: top 5s linear infinite;
+    border-top: 20px solid #fff;
+    border-right: 20px solid transparent;
+    border-left: 20px solid transparent;
+    height: 0px;
+    width: 1px;
+    transform-origin: 50% 100%;
 }
+
 @keyframes top {
-  90% { transform: scale(0); }
-  100% { transform: scale(0);}
+    90% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(0);
+    }
 }
+
 #bottom {
-  animation: bottom 5s linear infinite;
-  border-right: 20px solid transparent;
-  border-bottom: 20px solid #fff;
-  border-left: 20px solid transparent;
-  height: 0px;
-  width: 1px;
-  transform: scale(0);
-  transform-origin: 50% 100%;
+    animation: bottom 5s linear infinite;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #fff;
+    border-left: 20px solid transparent;
+    height: 0px;
+    width: 1px;
+    transform: scale(0);
+    transform-origin: 50% 100%;
 }
+
 @keyframes bottom {
-  10% { transform: scale(0); }
-  90% { transform: scale(1); }
-  100% { transform: scale(1); }
+    10% {
+        transform: scale(0);
+    }
+
+    90% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
+
 #line {
-  animation: line 5s linear infinite;
-  border-left: 1px dotted #fff;
-  height: 0px;
-  width: 0px;
-  position: absolute;
-  top: 20px;
-  left: 20px;
+    animation: line 5s linear infinite;
+    border-left: 1px dotted #fff;
+    height: 0px;
+    width: 0px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }
+
 @keyframes line {
-  10% { height: 20px; }
-  100% { height: 20px; }
+    10% {
+        height: 20px;
+    }
+
+    100% {
+        height: 20px;
+    }
 }
 
 /* --------- Loader ends ----------------*/
@@ -71,9 +101,11 @@
     background-color: #f1e4e4;
 
 }
-.py-filter-container {
 
+.py-filter-container {
+    
 }
+
 .py-control-panel {
     border-bottom: 1px solid #cccccc;
     padding-top: 10px;
@@ -82,6 +114,7 @@
     padding-left: 16px;
     background-color: white;
 }
+
 .py-data-container {
     flex: 1 1 100%;
     position: relative;
@@ -96,7 +129,7 @@
     font-family: inherit
 }
 
-.py-data-summary  table{
+.py-data-summary table {
     width: 100%;
     font-size: 13px;
     font-family: inherit;
@@ -144,21 +177,21 @@
     display: block;
 }
 
-.py-btn-primary{
+.py-btn-primary {
     color: #FFFFFF;
     background-color: #00A09D;
     border-color: #00A09D;
     border-radius: 0px;
 }
 
-.py-btn-secondary{
+.py-btn-secondary {
     color: #FFFFFF;
     background-color: #00A0AD;
     border-color: #00A09D;
     border-radius: 3px;
 }
 
-.py-search-buttons{
+.py-search-buttons {
     display: block;
     margin: auto 0px;
 }
@@ -175,7 +208,7 @@
 .py-search-accounts-tag,
 .py-search-analytics,
 .py-search-analytic-tag,
-.py-search-extra{
+.py-search-extra {
     white-space: nowrap;
     display: inline-block;
     cursor: pointer;
@@ -183,7 +216,7 @@
     position: relative;
 }
 
-.py-filters-menu{
+.py-filters-menu {
     overflow: auto;
     z-index: 1;
     display: none;
@@ -191,7 +224,7 @@
     padding: 5px;
 }
 
-.dropdown-item{
+.dropdown-item {
     display: block;
     width: 100%;
     clear: both;
@@ -208,81 +241,94 @@
     position: relative;
 }
 
-.py-data-container{
+.py-data-container {
     background-color: white;
-    padding:5px;
+    padding: 5px;
 }
 
 /* ============= Table for data =============== */
 
-.system-data-table{
+.system-data-table {
     background-color: white;
     padding: 0px 10px 0px 10px;
     margin-top: 50px;
     font-size: 12px;
     color: #666666;
 
-    a{
+    a {
         color: inherit;
     }
 
-    thead > tr{
-        th{
+    thead>tr {
+        th {
             padding-left: 15px;
         }
-        .amt-head{
+
+        .amt-head {
             text-align: right;
         }
-        th:last-child{
+
+        th:last-child {
             padding-right: 20px;
             padding-left: 0px;
         }
-        th:first-child{
+
+        th:first-child {
             padding-left: 5%;
         }
     }
 
-    .py-total-line{
+    .py-total-line {
         background-color: #e6e6e6;
         border-bottom: 2px solid #a9a9a9;
         border-top: 2px solid #a9a9a9;
         font-weight: bold;
         color: #666666;
-        td:first-child{
+
+        td:first-child {
             text-align: right;
-            padding-right:15px
+            padding-right: 15px
         }
-        td > span{
+
+        td>span {
             margin-left: 15px;
         }
-        .amt{
+
+        .amt {
             text-align: right;
         }
     }
 
-    .py-mline{
+    .py-mline {
         border-bottom: 1px solid #bbb;
         border-top: 1px solid #bbb;
         background-color: #e6e6e6;
         font-weight: bold;
         color: #666666;
-        td:first-child{
-            padding-left:10px;
+
+        td:first-child {
+            padding-left: 10px;
         }
-        td > span{
+
+        td>span {
             margin-left: 15px;
         }
-        .amt{
+
+        .amt {
             text-align: right;
         }
-        :hover{
-            cursor:pointer;
-        }
-    };
 
-    ul{
-        li{
+        :hover {
+            cursor: pointer;
+        }
+    }
+
+    ;
+
+    ul {
+        li {
             display: inline;
+
             a {
                 border: 1px solid #a2a2bb;
                 border-radius: 3px;
@@ -291,145 +337,181 @@
                 cursor: pointer;
             }
         }
-    };
+    }
 
-    .py-mline-data-table{
-        width:97%;
+    ;
+
+    .py-mline-data-table {
+        width: 97%;
         margin: 0px 15px 0px 15px;
-        thead > tr{
-            th{
+
+        thead>tr {
+            th {
                 padding-left: 15px;
             }
-            th:last-child{
+
+            th:last-child {
                 padding-right: 0px;
                 padding-left: 0px;
             }
         }
 
-        tbody > tr{
-            a{
+        tbody>tr {
+            a {
                 white-space: nowrap;
             }
-            td{
+
+            td {
                 vertical-align: top;
             }
-            td:first-child{
-                width:8%;
+
+            td:first-child {
+                width: 8%;
             }
-            td:nth-last-child(2){ // balance
-                width:8%;
+
+            td:nth-last-child(2) {
+                // balance
+                width: 8%;
             }
-            td:nth-last-child(3){ // cerdit
-                width:8%;
+
+            td:nth-last-child(3) {
+                // cerdit
+                width: 8%;
             }
-            td:nth-last-child(4){ // debit
-                width:8%;
+
+            td:nth-last-child(4) {
+                // debit
+                width: 8%;
             }
-            td:nth-child(2){ // Jrnl
-                width:8%;
+
+            td:nth-child(2) {
+                // Jrnl
+                width: 8%;
             }
-            td:nth-child(3){ // Partner
-                width:20%;
+
+            td:nth-child(3) {
+                // Partner
+                width: 20%;
             }
-            td:last-child{
-                width:8%;
+
+            td:last-child {
+                width: 8%;
             }
         }
 
 
-        .amt-head{
-            text-align: right;
-        };
-        .amt{
+        .amt-head {
             text-align: right;
         }
-        tr:hover{
+
+        ;
+
+        .amt {
+            text-align: right;
+        }
+
+        tr:hover {
             //background-color:#00ede8;
             font-weight: bold;
         }
     }
 
-    .view-source{
+    .view-source {
         white-space: nowrap;
     }
 
-    .py-mline-sub{
-        .view-source:hover{
-            cursor:pointer;
+    .py-mline-sub {
+        .view-source:hover {
+            cursor: pointer;
         }
-    };
+    }
+
+    ;
 }
 
 // --------------------------- Ageing Report ------------------------ //
 
-.system-data-table-age{
+.system-data-table-age {
     background-color: white;
     padding: 0px 10px 0px 10px;
     margin-top: 50px;
     font-size: 12px;
     color: #666666;
 
-    a{
+    a {
         color: inherit;
     }
 
-    thead > tr{
-        th{
+    thead>tr {
+        th {
             padding-left: 15px;
         }
-        .amt-head{
+
+        .amt-head {
             text-align: right;
         }
-        th:last-child{
+
+        th:last-child {
             padding-right: 20px;
             padding-left: 0px;
         }
-        th:first-child{
+
+        th:first-child {
             padding-left: 5%;
         }
     }
 
-    .py-total-line{
+    .py-total-line {
         background-color: #e6e6e6;
         border-bottom: 2px solid #a9a9a9;
         border-top: 2px solid #a9a9a9;
         font-weight: bold;
         color: #666666;
-        td:first-child{
+
+        td:first-child {
             text-align: right;
-            padding-right:15px
+            padding-right: 15px
         }
-        td > span{
+
+        td>span {
             margin-left: 15px;
         }
-        .amt{
+
+        .amt {
             text-align: right;
         }
     }
 
-    .py-mline{
-        border-bottom: 1px solid #bbb;
-        border-top: 1px solid #bbb;
-        background-color: #e6e6e6;
+    .py-mline {
+        border-bottom: 1px solid rgb(228, 253, 255);
+        border-top: 1px solid rgb(220, 233, 255);
+        background-color: #d3f8ff;
         font-weight: bold;
-        color: #666666;
-        td:first-child{
-            padding-left:10px;
+        color: #000000;
+
+        td:first-child {
+            padding-left: 10px;
         }
-        td > span{
+
+        td>span {
             margin-left: 15px;
         }
-        .amt{
+
+        .amt {
             text-align: right;
         }
-        :hover{
-            cursor:pointer;
-        }
-    };
 
-    ul{
-        li{
+        :hover {
+            cursor: pointer;
+        }
+    }
+
+    ;
+
+    ul {
+        li {
             display: inline;
+
             a {
                 border: 1px solid #a2a2bb;
                 border-radius: 3px;
@@ -438,245 +520,303 @@
                 cursor: pointer;
             }
         }
-    };
+    }
 
-    .py-mline-data-table{
-        width:97%;
+    ;
+
+    .py-mline-data-table {
+        width: 97%;
         margin: 0px 15px 0px 15px;
-        thead > tr{
-            th{
+
+        thead>tr {
+            th {
                 padding-left: 15px;
             }
-            th:last-child{
+
+            th:last-child {
                 padding-right: 0px;
                 padding-left: 0px;
             }
         }
 
-        tbody > tr{
-            a{
+        tbody>tr {
+            a {
                 white-space: nowrap;
             }
-            td{
+
+            td {
                 vertical-align: top;
             }
-            td:first-child{ // Entry label
-                width:8%;
+
+            td:first-child {
+                // Entry label
+                width: 8%;
             }
-            td:nth-child(2){ // Due Date
+
+            td:nth-child(2) {
+                // Due Date
                 text-align: center;
             }
-            td:nth-child(3){ // Journal
-                width:15%;
+
+            td:nth-child(3) {
+                // Journal
+                width: 15%;
             }
-            td:nth-child(3){ // Account
-                width:15%;
+
+            td:nth-child(3) {
+                // Account
+                width: 15%;
             }
-            td:last-child{
-                width:8%;
+
+            td:last-child {
+                width: 8%;
             }
         }
 
 
-        .amt-head{
-            text-align: right;
-        };
-        .amt{
+        .amt-head {
             text-align: right;
         }
-        tr:hover{
+
+        ;
+
+        .amt {
+            text-align: right;
+        }
+
+        tr:hover {
             //background-color:#00ede8;
             font-weight: bold;
         }
     }
 
-    .view-source{
+    .view-source {
         white-space: nowrap;
     }
 
-    .py-mline-sub{
-        .view-source:hover{
-            cursor:pointer;
+    .py-mline-sub {
+        .view-source:hover {
+            cursor: pointer;
         }
-    };
+    }
+
+    ;
 }
 
 // --------------------------- Trial Balance ------------------------ //
 
-.system-data-table-tb{
+.system-data-table-tb {
     background-color: white;
     padding: 0px 10px 0px 10px;
     margin-top: 50px;
     color: #666666;
 
-    a{
+    a {
         color: inherit;
     }
 
-    thead > tr:first-child{
-        th{
+    thead>tr:first-child {
+        th {
             padding-left: 15px;
             text-align: center;
         }
     }
 
-    thead > tr:nth-child(2){
-        th{
+    thead>tr:nth-child(2) {
+        th {
             padding-left: 15px;
         }
-        .amt-head{
+
+        .amt-head {
             text-align: right;
         }
-        th:last-child{
+
+        th:last-child {
             padding-right: 20px;
             padding-left: 0px;
         }
     }
 
-    tbody > tr:last-child{
+    tbody>tr:last-child {
         background-color: #dcdcdc;
     }
 
-    .py-mline{
+    .py-mline {
         border-bottom: 1px solid #bbb;
         background-color: white;
         //border-top: 2px solid #bbb;
         color: #666666;
-        td:first-child{
-            padding-left:20px;
+
+        td:first-child {
+            padding-left: 20px;
         }
-        td > span{
+
+        td>span {
             margin-left: 15px;
         }
-        .bld{
+
+        .bld {
             font-weight: bold;
         }
-        .amt{
+
+        .amt {
             text-align: right;
         }
-        :hover{
-            cursor:pointer;
-        }
-    };
 
-    .py-mline-data-table{
-        width:97%;
+        :hover {
+            cursor: pointer;
+        }
+    }
+
+    ;
+
+    .py-mline-data-table {
+        width: 97%;
         margin: 0px 15px 0px 15px;
-        thead > tr{
-            th{
+
+        thead>tr {
+            th {
                 padding-left: 15px;
             }
-            th:last-child{
+
+            th:last-child {
                 padding-right: 0px;
                 padding-left: 0px;
             }
         }
-        .amt-head{
-            text-align: right;
-        };
-        .amt{
+
+        .amt-head {
             text-align: right;
         }
-        tr:hover{
-            background-color:#00ede8;
+
+        ;
+
+        .amt {
+            text-align: right;
+        }
+
+        tr:hover {
+            background-color: #00ede8;
         }
     }
 
-    .view-source{
+    .view-source {
         white-space: nowrap;
     }
 
-    .py-mline-sub{
+    .py-mline-sub {
 
-        .view-source:hover{
-            cursor:pointer;
+        .view-source:hover {
+            cursor: pointer;
         }
-    };
+    }
+
+    ;
 }
 
 // --------------------------- Financial Reports ------------------------ //
-.system-data-table-fr{
+.system-data-table-fr {
     background-color: white;
     padding: 0px 10px 0px 10px;
     margin-top: 50px;
     color: #666666;
 
-    a{
+    a {
         color: inherit;
     }
 
-    thead > tr{
-        th{
+    thead>tr {
+        th {
             padding-left: 15px;
         }
-        .amt-head{
+
+        .amt-head {
             text-align: right;
         }
-        th:last-child{
+
+        th:last-child {
             padding-right: 20px;
             padding-left: 0px;
         }
     }
-    tr:hover{
-        background-color:#00fffa;
+
+    tr:hover {
+        background-color: #00fffa;
     }
 
-    .py-mline{
+    .py-mline {
         border-bottom: 1px solid #bbb;
         background-color: white;
         //border-top: 2px solid #bbb;
         color: #666666;
-        td:first-child{
-            padding-left:20px;
+
+        td:first-child {
+            padding-left: 20px;
         }
-        td > span{
+
+        td>span {
             margin-left: 15px;
         }
-        .bld{
+
+        .bld {
             font-weight: bold;
         }
-        .amt{
+
+        .amt {
             text-align: right;
         }
-        :hover{
-            cursor:pointer;
+
+        :hover {
+            cursor: pointer;
         }
-        td:last-child{
+
+        td:last-child {
             padding-right: 20px;
             padding-left: 0px;
         }
-    };
+    }
 
-    .py-mline-data-table{
-        width:97%;
+    ;
+
+    .py-mline-data-table {
+        width: 97%;
         margin: 0px 15px 0px 15px;
-        thead > tr{
-            th{
+
+        thead>tr {
+            th {
                 padding-left: 15px;
             }
-            th:last-child{
+
+            th:last-child {
                 padding-right: 0px;
                 padding-left: 0px;
             }
         }
-        .amt-head{
-            text-align: right;
-        };
-        .amt{
+
+        .amt-head {
             text-align: right;
         }
-        tr:hover{
-            background-color:#00ede8;
+
+        ;
+
+        .amt {
+            text-align: right;
+        }
+
+        tr:hover {
+            background-color: #00ede8;
         }
     }
 
-    .view-source{
+    .view-source {
         white-space: nowrap;
     }
 
-    .py-mline-sub{
-        .view-source:hover{
-            cursor:pointer;
+    .py-mline-sub {
+        .view-source:hover {
+            cursor: pointer;
         }
-    };
+    }
+
+    ;
 }

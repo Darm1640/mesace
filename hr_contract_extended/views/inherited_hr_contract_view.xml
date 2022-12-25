@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<!-- Copyright 2020-TODAY Miguel Pardo <ing.miguel.pardo@gmail.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="extended_hr_contract_view_form_inherit" model="ir.ui.view">
+        <field name="name">Extended HR Contract Form View</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/div[@name='button_box']" position="inside">
+                <button name="%(action_reason_change_wizard)d"
+                        class="oe_stat_button"
+                        icon="fa-book"
+                        type="action"
+                        string="Create Subcontract">
+                </button>
+            </xpath>
+            <xpath expr="//field[@name='employee_id']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='department_id']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='job_id']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='company_id']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='department_id']" position="after">
+                <field name="subcontract"/>
+                <field name="father_contract_id" attrs="{'invisible':[('subcontract', '=', False)]}"/>
+                <field name="contract_type_id"/>
+                <field name="contract_client_work"/>
+                <field name="tipo_de_salario_contrato"/>
+            </xpath>
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="reason_change_id"/>
+                <field name="center_formation_id"/>
+                <field name="contribution_pay"/>
+                <field name="check_integral_salary"/>
+            </xpath>
+            <xpath expr="//div[@name='wage']" position="after">
+                <field name="currency_id" readonly='0'/>
+            </xpath>
+            <field name="job_id" position="after">
+                <field name="arl_percentage"/>
+            </field>
+            <field name="date_start" position="before">
+                <field name="exclude_from_seniority"/>
+            </field>
+            <group name="salary_and_advantages" position="attributes">
+                <attribute name="string">Wage</attribute>
+            </group>
+            <div name="wage" position="replace">
+                <div class="o_row" name="wage">
+                    <field name="wage" nolabel="1"/>
+                    <span>/ month</span>
+                </div>
+                <label for="fix_wage_amount"/>
+                <div class="o_row" name="fix_wage_amount">
+                    <field name="fix_wage_amount" nolabel="1"/>
+                </div>
+                <label for="flex_wage_amount"/>
+                <div class="o_row" name="flex_wage_amount">
+                    <field name="flex_wage_amount" nolabel="1"/>
+                </div>
+            </div>
+            <group name="salary_and_advantages" position="after">
+                <group name="monthly_advantages_cash" string="Monthly Advantages in Cash">
+                    <label for="fix_wage_perc"/>
+                    <div class="o_row" name="fix_wage_perc">
+                        <field name="fix_wage_perc" nolabel="1"/>
+                        <span>%</span>
+                    </div>
+                    <label for="flex_wage_perc"/>
+                    <div class="o_row" name="flex_wage_perc">
+                        <field name="flex_wage_perc" nolabel="1"/>
+                        <span>%</span>
+                    </div>
+                    <label for="total_perc"/>
+                    <div class="o_row" name="total_perc">
+                        <field name="total_perc" nolabel="1"/>
+                        <span>%</span>
+                    </div>
+                </group>
+                <group name="increase_salary" string="Increase Salary">
+                    <field name="compare_amount" readonly="1"/>
+                </group>
+                <group name="flex_wage" string="Flex Wage Detailed">
+                    <field name="flex_wage_ids" nolabel="1">
+                        <tree string="Flex Wage Tree" editable="bottom">
+                            <field name="salary_rule_id"/>
+                            <field name="fixed"/>
+                            <field name="amount" sum="Total Amount"/>
+                            <field name="percentage" sum="Total Percentage"/>
+                        </tree>
+                    </field>
+                </group>
+            </group>
+            <field name="date_end" position="after">
+                <field name="date_end_required" invisible="1"/>
+            </field>
+
+            <field name="date_end" position="attributes">
+                <attribute name="attrs">{'required': [('date_end_required', '=', True)]}</attribute>
+            </field>
+            <field name="trial_date_end" position="before">
+                <field name="trial_period_duration"/>
+                <field name="trial_period_end_date"/>
+                <field name="entry_date"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="extended_hr_contract_view_tree_inherit" model="ir.ui.view">
+        <field name="name">Extended HR Contract Tree View</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date_end']" position="after">
+                <field name="subcontract"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="extended_hr_contract_view_search_inherit" model="ir.ui.view">
+        <field name="name">Extended HR Contract Search View</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='to_renew']" position="before">
+                <separator/>
+                <filter string="SubContract" name="subcontract" domain="[('subcontract', '=', True)]"/>
+                <filter string="Not SubContract" name="notsubcontract" domain="[('subcontract', '=', False)]"/>
+                <separator/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="action_massive_close" model="ir.actions.server">
+        <field name="name">Massive Expired</field>
+        <field name="model_id" ref="hr_contract.model_hr_contract"/>
+        <field name="binding_model_id" ref="hr_contract.model_hr_contract"/>
+        <field name="state">code</field>
+        <field name="code">
+            for rec in records:
+                if rec.state == 'open':
+                    rec.write({'state': 'close'})
+        </field>
+    </record>
+
+    <record id="action_massive_draft_open" model="ir.actions.server">
+        <field name="name">Massive New to Running</field>
+        <field name="model_id" ref="hr_contract.model_hr_contract"/>
+        <field name="binding_model_id" ref="hr_contract.model_hr_contract"/>
+        <field name="state">code</field>
+        <field name="code">
+            for rec in records:
+                if rec.state == 'draft':
+                    rec.write({'state': 'open'})
+        </field>
+    </record>
+
+
+    <!--record id="hr_contract_type_view_form_inherit" model="ir.ui.view">
+        <field name="name">hr.contract.type.form inherit</field>
+        <field name="model">hr.contract.type</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_type_view_form"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="date_end_required"/>
+            </field>
+        </field>
+    </record-->
+
+    <record id="hr_contract_flex_wage_form" model="ir.ui.view">
+        <field name="name">HR Contract Flex Wage form</field>
+        <field name="model">hr.contract.flex_wage</field>
+        <field name="arch" type="xml">
+            <form string="Flex Wage Form">
+                <group>
+                    <field name="contract_id"/>
+                    <field name="salary_rule_id"/>
+                    <field name="fixed"/>
+                    <field name="amount"/>
+                    <field name="percentage"/>
+                </group>
+                <div class="oe_chatter">
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+
+        </field>
+    </record>
+
+    <record id="hr_contract_flex_wage_tree" model="ir.ui.view">
+        <field name="name">HR Contract Flex Wage Tree</field>
+        <field name="model">hr.contract.flex_wage</field>
+        <field name="arch" type="xml">
+            <tree string="Flex Wage Tree">
+                <field name="contract_id"/>
+                <field name="salary_rule_id"/>
+                <field name="fixed"/>
+                <field name="amount"/>
+                <field name="percentage"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_hr_contract_flex_wage" model="ir.actions.act_window">
+        <field name="name">Flex Wage Detailed List</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.contract.flex_wage</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_flex_wage" name="Flex Wage Details"
+              parent="hr.menu_human_resources_configuration"
+              action="action_hr_contract_flex_wage" sequence="5"/>
+
+</odoo>

@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<!-- Copyright 2020-TODAY Miguel Pardo <ing.miguel.pardo@gmail.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+
+<odoo>
+
+    <record id="view_hr_payroll_variations_event_form_inherit" model="ir.ui.view">
+        <field name="name">hr.pv.event.form.inherit</field>
+        <field name="model">hr.pv.event</field>
+        <field name="inherit_id" ref="hr_payroll_variations.view_hr_payroll_variations_event_form"/>
+        <field name="arch" type="xml">
+            <field name="is_payment_type" position="after">
+                <field name="is_leave_calculate"/>
+                <field name="range_id"
+                       attrs="{'invisible': [('is_leave_calculate','=',False)]}"/>
+            </field>
+            <page name="entities" position="after">
+                <page name="conciliate" string="Conciliate">
+                    <group>
+                        <group>
+                            <field name="event_conciliate_id"
+                                   options="{'no_create': True, 'no_create_edit': True}"/>
+                        </group>
+                        <group string="Assigned">
+                            <field name="spending"/>
+                            <field name="exploitation"/>
+                            <field name="employee_balance"/>
+                        </group>
+                    </group>
+                </page>
+            </page>
+        </field>
+    </record>
+
+    <record id="view_hr_payroll_variations_event_tree_inherit" model="ir.ui.view">
+        <field name="name">hr.pv.event.tree.inherit</field>
+        <field name="model">hr.pv.event</field>
+        <field name="inherit_id" ref="hr_payroll_variations.view_hr_payroll_variations_event_tree"/>
+        <field name="arch" type="xml">
+            <field name="description" position="after">
+                <field name="is_leave_calculate"/>
+                <field name="range_id"/>
+            </field>
+        </field>
+    </record>
+
+    <!--<record id="view_hr_pv_form_inherit" model="ir.ui.view">
+        <field name="name">hr.pv.form.inherit</field>
+        <field name="model">hr.pv</field>
+        <field name="inherit_id" ref="hr_payroll_variations.view_hr_pv_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='discounts']" position="after">
+                <field name="is_leave_calculate" invisible="1"/>
+                <group string="Conciliation"
+                       attrs="{'invisible': [('is_leave_calculate','=', False)]}">
+                    <field name="value_leave"/>
+                    <field name="conciliate_id" readonly="1" force_save="1"/>
+                    <field name="partner_con_id"/>
+                </group>
+            </xpath>
+        </field>
+    </record>-->
+
+    <record id="view_hr_payroll_variations_tree_inherit" model="ir.ui.view">
+        <field name="name">hr.pv.tree.inherit</field>
+        <field name="model">hr.pv</field>
+        <field name="inherit_id" ref="hr_payroll_variations.view_hr_payroll_variations_tree"/>
+        <field name="arch" type="xml">
+            <field name="company_id" position="after">
+                <field name="value_leave"/>
+                <field name="conciliate_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_hr_pv_is_leave_calculate_tree">
+        <field name="name">hr.pv.tree</field>
+        <field name="model">hr.pv</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree create="false" edit="false" delete="false" duplicate="false">
+                <field name="event_id" readonly="1"/>
+                <field name="code" readonly="1"/>
+                <field name="employee_id" readonly="1"/>
+                <field name="identification_id" readonly="1"/>
+                <field name="start_date" readonly="1"/>
+                <field name="value_leave" readonly="1"/>
+                <field name="summatory_amount"/>
+                <field name="different_amount"/>
+                <field name="state_conciliate"/>
+                <field name="balance_to_conciliate"/>
+                <field name="conciliate_id"/>
+                <button name="action_conciliate" type="object" string="Conciliate"
+                        attrs="{'invisible': [('conciliate_id', '!=', False)]}"
+                        class="oe_highlight"/>
+                <button name="see_conciliate" type="object" string="Open Conciliation"
+                        attrs="{'invisible': [('conciliate_id', '=', False)]}"
+                        class="oe_highlight"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hr_payroll_variations_search_one" model="ir.ui.view">
+        <field name="name">hr.pv.search.one</field>
+        <field name="model">hr.pv</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="identification_id"/>
+                <field name="name"/>
+                <field name="type_id"/>
+                <field name="subtype_id"/>
+                <field name="event_id"/>
+                <field name="code"/>
+                <field name="employee_id"/>
+                <field name="state"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <group string="Group By">
+                    <filter string="Event" name="grp_event_id" context="{'group_by':'event_id'}"/>
+                    <filter string="Employee" name="grp_employee_id" context="{'group_by':'employee_id'}"/>
+                    <filter string="Status" name="grp_state" context="{'group_by':'state'}"/>
+                    <filter string="Identification No" name="identification_id"
+                            context="{'group_by':'identification_id'}"/>
+                    <filter string="Conciliate" name="state_conciliate"
+                            domain="[('state_conciliate', '=', 'conciliate')]"/>
+                    <filter string="Status conciliate" name="group_state_conciliate"
+                            context="{'group_by': 'state_conciliate'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_hr_payroll_variations_is_leave_calculate">
+        <field name="name">PV To Conciliate</field>
+        <field name="res_model">hr.pv</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('is_leave_calculate', '=', True)]</field>
+        <field name="search_view_id" ref="view_hr_payroll_variations_search_one"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="action_view_hr_payroll_variations_is_leave_calculate_tree">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_hr_pv_is_leave_calculate_tree"/>
+        <field name="act_window_id" ref="action_hr_payroll_variations_is_leave_calculate"/>
+    </record>
+
+    <menuitem name="Conciliate Payroll Variations"
+              id="menu_hr_payroll_variations_is_leave_calculate"
+              action="action_hr_payroll_variations_is_leave_calculate"
+              parent="hr.menu_hr_root"
+              sequence="10"/>
+
+</odoo>

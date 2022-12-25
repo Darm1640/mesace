@@ -215,10 +215,8 @@ class InsPartnerLedgerXlsx(models.AbstractModel):
                 self.sheet.write_number(self.row_pos, 7, float(acc_lines[line].get('balance')), self.line_header)
 
                 if filter.get('include_details', False):
-
                     count, offset, sub_lines = self.record.build_detailed_move_lines(offset=0, partner=line,
                                                                                      fetch_range=1000000)
-
                     for sub_line in sub_lines:
                         if sub_line.get('move_name') == 'Initial Balance':
                             self.row_pos += 1

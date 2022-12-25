@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+	<data>
+		<record id="sh_sales_commission_res_config_settings_inherit" model="ir.ui.view">
+			<field name="name">sh.commission.res.config.settings.inherit</field>
+			<field name="model">res.config.settings</field>
+			<field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//div[@data-key='general_settings']" position="inside">
+  				<h2>Sales Commission</h2>  				
+			        <div class="row mt16 o_settings_container">			        
+	                    <div class="col-xs-6 col-md-6 o_setting_box" >
+	                        <div class="o_setting_left_pane">
+	                        	<field name="commission_based_on_so"/>                            
+	                        </div>
+	                        <div class="o_setting_right_pane">
+	                            <label for="commission_based_on_so"/>
+	                            <div class="text-muted">
+	                              Commission based on sales order
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="col-xs-6 col-md-6 o_setting_box" >
+	                        <div class="o_setting_left_pane">
+	                        	<field name="commission_based_on_invoice"/>                            
+	                        </div>
+	                        <div class="o_setting_right_pane">
+	                            <label for="commission_based_on_invoice"/>
+	                            <div class="text-muted">
+	                               Commission based on invoice
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="col-xs-6 col-md-6 o_setting_box">
+	                        <div class="o_setting_left_pane">
+	                        	<field name="commission_based_on_payment"/>                            
+	                        </div>
+	                        <div class="o_setting_right_pane">
+	                            <label for="commission_based_on_payment"/>
+	                            <div class="text-muted">
+	                               Commission based on payment
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>        
+				</xpath>				
+			</field> 
+		</record>
+	</data>
+</odoo>
+                    

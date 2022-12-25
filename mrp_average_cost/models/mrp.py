@@ -255,7 +255,7 @@ class MrpProduction(models.Model):
         mo_standard_price += subcontract_cost_per_unit
         return mo_standard_price
 
-    def _post_inventory(self):
+    def _post_inventory(self,cancel_backorder=False):
         '''This is the method where _action_done() is called on finished move
         So we write on 'price_unit' of the finished move and THEN we call
         super() which will call _action_done() which itself calls

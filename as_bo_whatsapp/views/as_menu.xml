@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <!-- <menuitem id="main_as_whatsapp_gateway_menu" name="Whatsapp Configuracion"/> -->
-    <!-- <menuitem id="as_whatsapp_gateway_settings_menu" name="Configuracion Whatsapp" parent="as_configurations.as_ahorasoft_menu" action="as_whatsapp_gateway_config_action"/> -->
-    <menuitem action='as_whatsapp_form_action' id='as_whatsapp_form_menu' parent='as_configurations.as_ahorasoft_menu' sequence='20' />
-</odoo>

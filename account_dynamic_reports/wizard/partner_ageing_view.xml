@@ -14,12 +14,19 @@
                         <field name="include_details"/>
                     </group>
                     <group col="2">
+                        <field name="account_ids" widget="many2many_tags"
+                            domain="[('company_id','=',company_id)]"
+                                options="{'no_create_edit': True,'no_create': True, 'no_quick_create': True}"/>
+                        <field name="journal_ids" widget="many2many_tags"
+                            domain="[('company_id','=',company_id)]"
+                                options="{'no_create_edit': True,'no_create': True, 'no_quick_create': True}"/>
                         <field name="partner_ids" widget="many2many_tags"
-                               domain="[('parent_id','=', False),
+                            domain="[('parent_id','=', False),
                                     '|',('company_id','=',company_id), ('company_id','=',False)]"
                                 options="{'no_create_edit': True,'no_create': True, 'no_quick_create': True}"/>
                         <field name="partner_category_ids" widget="many2many_tags"
                                 options="{'no_create_edit': True,'no_create': True, 'no_quick_create': True}"/>
+                        <field name="sales_man_id"/>
                     </group>
                     <group col="5">
                         <field name="bucket_1" class="oe_inline" nolabel="1"/>

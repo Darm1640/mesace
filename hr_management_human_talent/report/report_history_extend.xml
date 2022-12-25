@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="history_extend">
+        <t t-call="web.html_container">
+            <t t-foreach="contracts" t-as="ctra">
+                <t t-call="web.external_layout">
+                    <div class="page" style="font-size: 15px !important;">
+                        <br/><br/><br/>
+                        <h5 align="center"><b>PRORROGA No. <span t-esc="ctra.number_extend"/> AL CONTRATO DE TERMINO
+                            FIJO CELEBRADO ENTRE <span t-esc="ctra.company_id.name"/> Y <span
+                                    t-esc="ctra.employee_id.name"/></b></h5>
+                        <br/>
+                        <div class="text-justify">
+                            El empleador <strong><span
+                                t-esc="ctra.company_id.legal_representative_id.name"/></strong> identificado(a)
+                            con <span t-esc="ctra.company_id.legal_representative_id.ident_type.name"/>
+                            No. <strong><span
+                                t-esc="ctra.company_id.legal_representative_id.identification_id"/></strong>, en calidad
+                            de Gerente de Gestión Humana de la sociedad <strong><span
+                                t-esc="ctra.company_id.name"/></strong>, y el trabajador <strong><span
+                                t-esc="ctra.employee_id.name"/></strong>
+                            identificado con la cedula No. <strong><span
+                                t-esc="ctra.employee_id.identification_id"/></strong>, han decidido prorrogar el
+                            contrato laboral suscrito el <strong><span
+                                t-esc="ctra.get_date_contract_principal()"/></strong>, por lo tanto, el contrato se
+                            entiende prorrogado por el
+                            termino. desde el <strong><span t-esc="ctra.date_start"/></strong> hasta el <strong><span
+                                t-esc="ctra.date_end"/></strong> teniendo en cuenta que ha tenido las siguientes
+                            prorrogas
+                            <br/><br/>
+                        </div>
+
+
+                        <t t-if="ctra.employee_id.history_extend_ids">
+
+                            <table class="table table-sm o_main_table">
+                                <thead>
+                                    <tr>
+                                        <th>Contrato</th>
+                                        <th class="text-center">Desde</th>
+                                        <th class="text-center">Hasta</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="ctra.employee_id.history_extend_ids" t-as="pos">
+                                        <td>
+                                            <span t-field="pos.contract_id.name"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="pos.start_date"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="pos.end_date"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </t>
+
+                        <br/><br/>
+                        <div class="text-justify">
+                            La presente se expide a solicitud del interesado, <t t-esc="ctra.date_now"/>
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

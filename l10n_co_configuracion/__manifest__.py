@@ -24,15 +24,15 @@
     'images': ['static/description/icon.jpg'],
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'account','l10n_co', 'contacts', 'mail',],
+    'depends': ['base', 'account','l10n_co', 'contacts', 'mail','l10n_co_facturacion'],
 
     # always loaded
     'data': [
         # security
         'security/ir.model.access.csv',
         'views/responsabilidad_fiscal_view.xml',
-        'data/responsabilidad_fiscal.xml',
-        'views/res_partner.xml',
-        'views/fiscal_responsibility_config.xml',
+        #'data/responsabilidad_fiscal.xml',
+        #'views/res_partner.xml',
+        #'views/fiscal_responsibility_config.xml',
     ],
 }

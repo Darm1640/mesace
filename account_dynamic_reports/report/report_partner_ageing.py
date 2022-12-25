@@ -16,6 +16,7 @@ class InsReportPartnerAgeing(models.AbstractModel):
                 data.update({'Ageing_data': data.get('js_data')[1],
                              'Filters': data.get('js_data')[0],
                              'Period_Dict': data.get('js_data')[2],
-                             'Period_List': data.get('js_data')[3]
+                             'Period_List': data.get('js_data')[3],
+                             'currency_id': self.env['res.currency'].browse(data.get('js_data')[0]['currency_id'])
                              })
         return data

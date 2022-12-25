@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- To hide the product price in shop page -->
+    <template id="product_item_price_template" inherit_id="website_sale.products_item">
+        <xpath expr="//div[hasclass('product_price')]" position="replace">
+            <t t-if="not website.hide_price or not request.env.user._is_public()">
+                <div class="product_price" itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer">
+                    <del t-attf-class="text-danger mr-2 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;" t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                    <span t-if="combination_info['price']" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                    <span itemprop="price" style="display:none;" t-esc="combination_info['price']" />
+                    <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />
+                </div>
+            </t>    
+            <t t-else="">
+                <a style="height: 30px;line-height: 1rem;" class="btn btn-primary" t-attf-href="https://catalogo.iconopet.com/web/login">
+                    Inicie sesión
+                </a>
+            </t>
+        </xpath>
+    </template>
+    <!-- To hide the product price in add to cart page -->
+    <template id="product_price_template" inherit_id="website_sale.product_price">
+        <xpath expr="//div[hasclass('product_price')]" position="replace">
+            <t t-if="not website.hide_price or not request.env.user._is_public()">
+                <div itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer" class="product_price mt16">
+                  <h4 class="oe_price_h4 css_editable_mode_hidden">
+                      <span t-attf-class="text-danger oe_default_price {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="text-decoration: line-through; white-space: nowrap;"
+                          t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"
+                      />
+                      <b class="oe_price" style="white-space: nowrap;" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                      <span itemprop="price" style="display:none;" t-esc="combination_info['price']"/>
+                      <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name"/>
+                  </h4>
+                  <h4 class="css_non_editable_mode_hidden decimal_precision" t-att-data-precision="str(website.currency_id.decimal_places)">
+                    <span t-field="product.list_price"
+                        t-options='{
+                           "widget": "monetary",
+                           "display_currency": product.currency_id,
+                       }'/>
+                  </h4>
+              </div>
+            </t>    
+            <t t-else="">
+                <a style="margin-bottom: 5px;width: 125px;" class="btn btn-primary css_quantity" t-attf-href="https://catalogo.iconopet.com/web/login">
+                    Inicie sesión
+                </a>
+            </t>
+        </xpath>
+    </template>
+    <!-- To hide the product price in wishlist table -->
+    <template id="product_wishlist_in" inherit_id="website_sale_wishlist.product_wishlist">
+        <xpath expr="//tr/td[3]/t[2]" position="replace">
+            <t t-if="not website.hide_price or not request.env.user._is_public()">
+                <t t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.pricelist_id.currency_id}"/>
+            </t>
+            <t t-else="">
+                <a class="btn btn-primary ml-4" t-attf-href="https://catalogo.iconopet.com/web/login">
+                    Inicie sesión
+                </a>
+            </t>
+        </xpath>
+    </template>
+    <!-- To hide the add to cart in wishlist page -->
+    <template id="product_wishlist_addtocart_in" inherit_id="website_sale_wishlist.product_wishlist">
+        <xpath expr="//button[hasclass('o_wish_add')]" position="replace">
+            <t t-if="not website.hide_price or not request.env.user._is_public()">
+                <button type="button" role="button" class="btn btn-secondary btn-block o_wish_add mb4" >Add <span class='d-none d-md-inline'>to Cart</span></button>
+            </t>
+        </xpath>
+    </template>
+    <!-- To hide the price in compare table in compare page -->
+    <template id="product_compare_in" inherit_id="website_sale_comparison.product_compare">
+        <xpath expr="//div[hasclass('product_summary')]/span" position="replace">
+            <t t-if="not website.hide_price or not request.env.user._is_public()">
+               <span>
+                    <strong>Precio:</strong>
+                    <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;" t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                    <span t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"></span>
+                </span>
+            </t>
+            <t t-else="">
+               <a class="btn btn-primary" t-attf-href="https://catalogo.iconopet.com/web/login">
+                    Inicie sesión
+                </a> 
+            </t>
+        </xpath>
+    </template>
+    <!-- To hide the add to cart button in compare page -->
+    <template id="product_compare_addtocart_in" inherit_id="website_sale_comparison.product_compare">
+        <xpath expr="//form/a" position="replace">
+            <t t-if="not website.hide_price or not request.env.user._is_public()">
+                <a role="button" class="btn btn-primary btn-block a-submit" href="#"><i class="fa fa-shopping-cart"></i>&amp;nbsp;Add to Cart</a>
+            </t>
+        </xpath>
+    </template>
+    <!-- To hide the product price in compare popup section -->
+    <template id="product_product_in" inherit_id="website_sale_comparison.product_product">
+        <xpath expr="//h6/span" position="replace">
+            <t t-if="not website.hide_price or not request.env.user._is_public()">
+                <span t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"></span>
+            </t>
+            <t t-else="">
+                <a style="font-size: 12px;width: 90px;height: 30px;" class="btn btn-primary ml-4" t-attf-href="https://catalogo.iconopet.com/web/login">
+                    Inicie sesión
+                </a> 
+            </t>
+        </xpath>
+    </template>
+    <!-- To hide the product price in product cart line page  -->
+    <template id="cart_lines_in" inherit_id="website_sale.cart_lines">
+        <xpath expr="//td[hasclass('td-price')]" position="replace">
+            <t t-if="not website.hide_price or not request.env.user._is_public()">
+                <td class="text-center td-price" name="price">
+                    <t t-set="combination" t-value="line.product_id.product_template_attribute_value_ids + line.product_no_variant_attribute_value_ids"/>
+                    <t t-set="combination_info" t-value="line.product_id.product_tmpl_id._get_combination_info(combination)"/>
+
+                    <t t-set="list_price_converted" t-value="website.currency_id._convert(combination_info['list_price'], website_sale_order.currency_id, website_sale_order.company_id, date)"/>
+                    <t groups="account.group_show_line_subtotals_tax_excluded" t-if="(website_sale_order.pricelist_id.discount_policy == 'without_discount' and website_sale_order.currency_id.compare_amounts(list_price_converted, line.price_reduce_taxexcl) == 1) or website_sale_order.currency_id.compare_amounts(line.price_unit, line.price_reduce) == 1" name="order_line_discount">
+                        <del t-attf-class="#{'text-danger mr8'}" style="white-space: nowrap;" t-esc="list_price_converted" t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}" />
+                    </t>
+                    <span t-field="line.price_reduce_taxexcl" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}" groups="account.group_show_line_subtotals_tax_excluded" />
+                    <t groups="account.group_show_line_subtotals_tax_included" t-if="(website_sale_order.pricelist_id.discount_policy == 'without_discount' and website_sale_order.currency_id.compare_amounts(list_price_converted, line.price_reduce_taxinc) == 1) or website_sale_order.currency_id.compare_amounts(line.price_unit, line.price_reduce) == 1" name="order_line_discount">
+                        <del t-attf-class="#{'text-danger mr8'}" style="white-space: nowrap;" t-esc="list_price_converted" t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}" />
+                    </t>
+                    <span t-field="line.price_reduce_taxinc" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}" groups="account.group_show_line_subtotals_tax_included" />
+                </td>
+            </t>
+            <t t-else="">
+                <a class="btn btn-primary ml-4" t-attf-href="https://catalogo.iconopet.com/web/login">
+                    Inicie sesión
+                </a> 
+            </t>
+        </xpath>
+    </template>
+    <!-- To hide the add to cart button in product total page -->
+    <template id="total_in" inherit_id="website_sale.total">
+        <xpath expr="//tr[@id='order_total_untaxed']/td[2]" position="replace">
+            <t t-if="not website.hide_price or not request.env.user._is_public()">
+                <td class="text-xl-right border-0" >
+                  <span t-field="website_sale_order.amount_untaxed" class="monetary_field" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}"/>
+              </td>
+            </t>
+            <t t-else="">
+                <a class="btn btn-primary ml-4" t-attf-href="https://catalogo.iconopet.com/web/login">
+                    Inicie sesión
+                </a> 
+            </t>
+        </xpath>
+        <xpath expr="//tr[@id='order_total_taxes']/td[2]" position="replace">
+            <t t-if="not website.hide_price or not request.env.user._is_public()">
+                <td class="text-xl-right border-0">
+                   <span t-field="website_sale_order.amount_tax" class="monetary_field" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}" />
+              </td>
+            </t>
+            <t t-else="">
+                <a class="btn btn-primary ml-4" t-attf-href="https://catalogo.iconopet.com/web/login">
+                    Inicie sesión
+                </a> 
+            </t>
+        </xpath>
+        <xpath expr="//tr[@id='order_total']/td[2]" position="replace">
+            <t t-if="not website.hide_price or not request.env.user._is_public()">
+                <td class="text-xl-right">
+                  <strong t-field="website_sale_order.amount_total" class="monetary_field"
+                      t-options='{"widget": "monetary", "display_currency": website_sale_order.pricelist_id.currency_id}'/>
+                </td>
+            </t>
+            <t t-else="">
+                <a class="btn btn-primary ml-4" t-attf-href="https://catalogo.iconopet.com/web/login">
+                    Inicie sesión
+                </a> 
+            </t>
+        </xpath>
+    </template>
+    <!-- To hide the add to cart button in header -->
+    <template id="header_cart_link_in" inherit_id="website_sale.header_cart_link">
+        <xpath expr="//li[2]" position="replace">
+           <li t-if="not website.hide_price or not request.env.user._is_public()" t-attf-class="o_wsale_my_cart #{not show_cart and 'd-none'} #{_item_class}">
+            <a href="/shop/cart" t-attf-class="#{_link_class}">
+                <i t-if="_icon" class="fa fa-shopping-cart"/>
+                <span t-if="_text">Mi carrito</span>
+                <sup class="my_cart_quantity badge badge-primary" t-esc="website_sale_order and website_sale_order.cart_quantity or '0'" t-att-data-order-id="website_sale_order and website_sale_order.id or ''"/>
+            </a>
+        </li>
+        </xpath>
+    </template>
+    <!-- To hide the add to cart button in add to cart page -->
+    <template id="product_in" inherit_id="website_sale.product">
+        <xpath expr="//a[hasclass('js_check_product')]" position="replace">
+            <a t-if="not website.hide_price or not request.env.user._is_public()" role="button" id="add_to_cart" class="btn btn-primary btn-lg mt16 js_check_product a-submit d-block d-sm-inline-block" href="#"><i class="fa fa-shopping-cart"/> Add to Cart</a>
+        </xpath>
+    </template>
+    <!-- To hide the add to cart icon in shop page -->
+    <template id="products_add_to_cart_in" inherit_id="website_sale.products_add_to_cart">
+        <xpath expr="//t[@t-if='product_variant_id']" position="replace">
+            <t t-if="product_variant_id">
+                <a t-if="not website.hide_price or not request.env.user._is_public()" href="#" role="button" class="btn btn-secondary a-submit" aria-label="Shopping cart" title="Shopping cart">
+                    <span class="fa fa-shopping-cart"/>
+                </a>
+            </t>
+        </xpath>
+    </template>
+    <!-- To hide the buy now button in add to cart page -->
+    <template id="product_buy_now_in" inherit_id="website_sale.product_buy_now">
+        <xpath expr="//a[@id='buy_now']" position="attributes">
+            <attribute name="t-if">(not website.hide_price) or (website.hide_price and not user_id._is_public())
+            </attribute> 
+        </xpath>
+    </template>
+    <!-- To hide the product variant extra price in add to cart  -->
+    <template id="variants_in" inherit_id="sale.variants">
+        <xpath expr="//ul" position="replace">
+            <ul t-attf-class="list-unstyled js_add_cart_variants #{ul_class}" t-att-data-attribute_exclusions="json.dumps(attribute_exclusions)">
+            <t t-foreach="product.valid_product_template_attribute_line_ids" t-as="ptal">
+                <!-- Attributes selection is hidden if there is only one value available and it's not a custom value -->
+                <li t-att-data-attribute_id="ptal.attribute_id.id"
+                    t-att-data-attribute_name="ptal.attribute_id.name"
+                    t-attf-class="variant_attribute #{'d-none' if len(ptal.product_template_value_ids._only_active()) == 1 and not ptal.product_template_value_ids._only_active()[0].is_custom else ''}">
+
+                    <!-- Used to customize layout if the only available attribute value is custom -->
+                    <t t-set="single_and_custom" t-value="len(ptal.product_template_value_ids._only_active()) == 1 and ptal.product_template_value_ids._only_active()[0].is_custom" />
+                    <strong t-field="ptal.attribute_id.name" class="attribute_name"/>
+
+                    <t t-if="ptal.attribute_id.display_type == 'select'">
+                        <select
+                            t-att-data-attribute_id="ptal.attribute_id.id"
+                            t-attf-class="form-control js_variant_change #{ptal.attribute_id.create_variant} #{'d-none' if single_and_custom else ''}"
+                            t-att-name="'ptal-%s' % ptal.id">
+                            <t t-foreach="ptal.product_template_value_ids._only_active()" t-as="ptav">
+                                <option t-att-value="ptav.id"
+                                    t-att-data-value_id="ptav.id"
+                                    t-att-data-value_name="ptav.name"
+                                    t-att-data-attribute_name="ptav.attribute_id.name"
+                                    t-att-data-is_custom="ptav.is_custom"
+                                    t-att-selected="ptav in combination"
+                                    t-att-data-is_single_and_custom="single_and_custom">
+                                    <span t-field="ptav.name"/>
+                                    <t t-if="not website.hide_price or not request.env.user._is_public()">
+                                        <span t-if="ptav.price_extra" class="badge badge-pill badge-secondary">
+                                            <!--
+                                                price_extra is displayed as catalog price instead of
+                                                price after pricelist because it is impossible to
+                                                compute. Indeed, the pricelist rule might depend on the
+                                                selected variant, so the price_extra will be different
+                                                depending on the selected combination. The price of an
+                                                attribute is therefore variable and it's not very
+                                                accurate to display it.
+                                                -->
+                                            <t t-esc="ptav.price_extra > 0 and '+' or '-'"/>
+                                            <span t-esc="abs(ptav.price_extra)" class="variant_price_extra" style="white-space: nowrap;"
+                                                t-options='{
+                                                    "widget": "monetary",
+                                                    "from_currency": product.currency_id,
+                                                    "display_currency": (pricelist or product).currency_id
+                                                }'/>
+                                        </span>
+                                    </t>
+                                </option>
+                            </t>
+                        </select>
+                    </t>
+
+                    <t t-if="ptal.attribute_id.display_type == 'radio'">
+                        <ul t-att-data-attribute_id="ptal.attribute_id.id" t-attf-class="list-unstyled #{'d-none' if single_and_custom else ''}">
+                            <t t-foreach="ptal.product_template_value_ids._only_active()" t-as="ptav">
+                                <li class="form-group js_attribute_value" style="margin: 0;">
+                                    <label class="col-form-label">
+                                        <div>
+                                            <input type="radio"
+                                                t-attf-class="js_variant_change radio_input #{ptal.attribute_id.create_variant}"
+                                                t-att-checked="ptav in combination"
+                                                t-att-name="'ptal-%s' % ptal.id"
+                                                t-att-value="ptav.id"
+                                                t-att-data-value_id="ptav.id"
+                                                t-att-data-value_name="ptav.name"
+                                                t-att-data-attribute_name="ptav.attribute_id.name"
+                                                t-att-data-is_custom="ptav.is_custom"
+                                                t-att-data-is_single_and_custom="single_and_custom" />
+                                            <div class="radio_input_value">
+                                                <span t-field="ptav.name"/>
+                                                <t t-if="not website.hide_price or not request.env.user._is_public()">
+                                                    <span class="badge badge-pill badge-secondary" t-if="ptav.price_extra">
+                                                        <!-- see note above about price_extra -->
+                                                        <t t-esc="ptav.price_extra > 0 and '+' or '-'"/>
+                                                        <span t-esc="abs(ptav.price_extra)" class="variant_price_extra" style="white-space: nowrap;"
+                                                            t-options='{
+                                                                "widget": "monetary",
+                                                                "from_currency": product.currency_id,
+                                                                "display_currency": (pricelist or product).currency_id
+                                                            }'/>
+                                                    </span>
+                                                </t>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </li>
+                            </t>
+                        </ul>
+                    </t>
+
+                    <t t-if="ptal.attribute_id.display_type == 'color'">
+                        <ul t-att-data-attribute_id="ptal.attribute_id.id" t-attf-class="list-inline  #{'d-none' if single_and_custom else ''}">
+                            <li t-foreach="ptal.product_template_value_ids._only_active()" t-as="ptav" class="list-inline-item">
+                                <label t-attf-style="background-color:#{ptav.html_color or ptav.product_attribute_value_id.name if not ptav.is_custom else ''}"
+                                    t-attf-class="css_attribute_color #{'active' if ptav in combination else ''} #{'custom_value' if ptav.is_custom else ''}">
+                                    <input type="radio"
+                                        t-attf-class="js_variant_change  #{ptal.attribute_id.create_variant}"
+                                        t-att-checked="ptav in combination"
+                                        t-att-name="'ptal-%s' % ptal.id"
+                                        t-att-value="ptav.id"
+                                        t-att-title="ptav.name"
+                                        t-att-data-value_id="ptav.id"
+                                        t-att-data-value_name="ptav.name"
+                                        t-att-data-attribute_name="ptav.attribute_id.name"
+                                        t-att-data-is_custom="ptav.is_custom"
+                                        t-att-data-is_single_and_custom="single_and_custom"/>
+                                </label>
+                            </li>
+                        </ul>
+                    </t>
+                </li>
+            </t>
+        </ul>
+        </xpath>
+    </template>
+</odoo>

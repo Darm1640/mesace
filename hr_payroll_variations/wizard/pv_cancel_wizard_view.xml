@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!-- Copyright 2020-TODAY Miguel Pardo <ing.miguel.pardo@gmail.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="cancel_wizard_form" model="ir.ui.view">
+        <field name="name">hr.pv.cancel.wizard.form</field>
+        <field name="model">hr.pv.cancel.wizard</field>
+        <field name="arch" type="xml">
+            <form string="hr.pv.cancel.wizard.form">
+                <group>
+                    <field name="date"/>
+                </group>
+                <footer>
+                    <button name="confirm" type="object" string="Confirm" class="oe_right oe_highlight"/>
+                    <button string="Cancel" class="oe_right" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!--record id="action_cancel_wizard" model="ir.actions.act_window">
+        <field name="name">Rejection Wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.pv.cancel.wizard</field>
+        <field name="view_mode">form</field>
+    </record-->
+
+	<record id="check_date_wizard" model="ir.ui.view">
+		<field name="name">hr.pv.check.date.wizard</field>
+		<field name="model">hr.pv.check.date.wizard</field>
+		<field name="arch" type="xml">
+			<form>
+				<field name="message"/>
+				<footer>
+					<button string="OK" class="btn-primary" special="cancel" />
+				</footer>
+			</form>
+		</field>
+	</record>
+
+</odoo>

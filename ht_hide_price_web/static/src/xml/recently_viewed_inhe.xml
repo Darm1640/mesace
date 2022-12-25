@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="website_sale.productsRecentlyViewed">
+        <t t-jquery=".js_add_cart" t-operation='replace'>
+        	
+        </t>
+    </t>
+</templates>

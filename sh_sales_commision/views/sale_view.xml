@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>	
+	
+	<!--Added fields in PARTNER FORM VIEW -->
+		<record id="sh_partner_fields_form_view_inh" model="ir.ui.view">
+			<field name="name">sh.partner.form.fields.inh</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//sheet/notebook/page[@name='sales_purchases']/group/group[1]" position="inside">
+					<field name="affiliated" groups="sh_sales_commision.group_sale_commission"/>
+				</xpath>
+			</field>
+		</record>
+	
+	
+	<!--Added fields in SALE FORM VIEW -->
+	<record id="sh_so_orderline_form_view_inh" model="ir.ui.view">
+			<field name="name">sh.so.form.view.inh</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_form"/>
+			<field name="arch" type="xml">
+				<field name="partner_id" position="after">
+					<field name="show_commission" invisible="1"/>
+				</field>
+				<xpath expr="//sheet/notebook/page[@name='order_lines']" position="after">
+					<page string="Sales Commission" groups="sh_sales_commision.group_sale_commission" attrs="{'invisible':[('show_commission','=',False)]}">
+						<field name="sales_commission_ids">
+							<tree string="" create="0" edit="0" delete="0">
+								<field name="date"/>
+								<field name="name"/>
+								<field name="sales_person_id"/>
+								<field name="amount" sum="Amount"/>
+							</tree>
+						</field>
+					</page>
+				</xpath>
+				
+			</field>
+		</record>
+	</data>	
+</odoo>

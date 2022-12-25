@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="assets_frontend" inherit_id="website.assets_frontend">
+	    <xpath expr="." position="inside">
+	    	<script type="text/javascript" src="/ht_hide_price_web/static/src/js/recently_viewed.js"></script>
+	    </xpath>
+	</template>
+</odoo>

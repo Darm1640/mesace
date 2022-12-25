@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="create_pv_wizard_view_form" model="ir.ui.view">
+            <field name="name">create_pv_wizard_view_form</field>
+            <field name="model">hr.create.pv.wizard</field>
+            <field name="arch" type="xml">
+                <form string="create_pv_wizard_form">
+                    <sheet>
+                        <group string="Create PV">
+                            <group>
+                                <field name="employee_id" domain="['|',('active','=',False),('active','=',True)]"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="confirm" type="object" string="Confirm" class="oe_right oe_highlight"/>
+                        <button string="Cancel" class="oe_right" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

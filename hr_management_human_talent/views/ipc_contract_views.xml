@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="ipc_contract_action" model="ir.actions.act_window">
+            <field name="name">CPI Salary Increase</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.contract</field>
+            <field name="domain">[('check_min_wage', '=', True)]</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- IPC menu Item -->
+        <menuitem id="ipc_menu_item"
+                  name="CPI salary increase"
+                  parent="request_for_news_menu_item"
+                  action="ipc_contract_action"/>
+
+    </data>
+</odoo>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <data>
-
-        <menuitem id="as_invoice_bolivia_menu" name="Facturacion Boliviana" parent="account.menu_finance_entries" groups="account.group_account_manager" sequence="1"/>
-      
-
-    </data>
-</odoo>

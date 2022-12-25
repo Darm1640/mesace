@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_as_hr_leave_motive,as_hr_leave_motive,model_as_hr_leave_motive,,1,1,1,1
-access_as_hr_periodo,as_hr_periodo,model_as_hr_periodo,,1,1,1,1
-access_as_report_vacaciones,as_report_vacaciones,model_as_report_vacaciones,,1,1,1,1

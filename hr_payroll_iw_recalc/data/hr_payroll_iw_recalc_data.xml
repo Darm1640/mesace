@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY Miguel Pardo <ing.miguel.pardo@gmail.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <data noupdate="1">
+
+        <record id="hr_payslip_iw_recalc_sequence" model="ir.sequence">
+            <field name="name">Hr Payslip Iw Recalc</field>
+            <field name="code">hr.payslip.iw.recalc.sequence</field>
+            <field name="prefix">REC-</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field name="padding">3</field>
+        </record>
+
+        <record id="hr_recalc_lines_sequence" model="ir.sequence">
+            <field name="name">Hr Recalc Lines</field>
+            <field name="code">hr.recalc.lines.sequence</field>
+            <field name="prefix">RECEMP-</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field name="padding">3</field>
+        </record>
+
+    </data>
+</odoo>

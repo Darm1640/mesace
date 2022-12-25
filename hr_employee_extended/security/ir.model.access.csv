@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_tipo_cotizante_user,tipo_cotizante_user,model_tipo_cotizante,hr_payroll.group_hr_payroll_user,1,1,1,0
+access_tipo_cotizante_all,tipo_cotizante_manager,model_tipo_cotizante,hr_payroll.group_hr_payroll_manager,1,1,1,1
+access_subtipo_cotizante_user,subtipo_cotizante_user,model_subtipo_cotizante,hr_payroll.group_hr_payroll_user,1,1,1,0
+access_subtipo_cotizante_all,subtipo_cotizante_manager,model_subtipo_cotizante,hr_payroll.group_hr_payroll_manager,1,1,1,1

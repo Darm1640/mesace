@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record model="report.paperformat" id="paperformat_hr_contract_notice_letter">
+            <field name="name">paperformat.hr.contract.notice.letter</field>
+            <field name="default" eval="True"/>
+            <field name="format">Letter</field>
+            <field name="page_width">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">60</field>
+            <field name="margin_right">20</field>
+            <field name="margin_bottom">30</field>
+            <field name="margin_left">20</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">40</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+                id="report_hr_contract_notice_letter"
+                model="hr.contract"
+                string="Notice Letter"
+                name="hr_contract_completion.report_hr_contract_notice_letter_view"
+                file="hr_contract_completion.report_hr_contract_notice_letter_view"
+                report_type="qweb-pdf"
+                paperformat="paperformat_hr_contract_notice_letter"/>
+
+        <template id="report_hr_contract_notice_letter_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <h3 class="text-center">Notificación de terminación de contrato</h3>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <p class="text-justify" style="font-size: 12pt;">
+                                Estimado <span class="text-uppercase font-weight-bold" t-field="doc.employee_id.name"/>,
+                                es para mi un placer
+                                saludarte y a la vez agradecerte por tu intachable labor como <span
+                                    class="text-uppercase font-weight-bold"
+                                    t-field="doc.job_id.name"/> en el departamento de <span
+                                    class="text-uppercase font-weight-bold"
+                                    t-field="doc.department_id.name"/>. No obstante, me veo en la penosa necesidad de
+                                comunicarte que el <span class="text-uppercase font-weight-bold" t-field="doc.date_end"
+                                                         t-field-options='{"format": "dd/MM/yyyy"}'/> culminará tu
+                                contrato con esta organización, y por razones que se escapan de nuestras manos no te
+                                podremos retener más con nosotros.<br/><br/>
+                                Cualquier duda que tengas al respecto no dudes en contactarme. El equipo de
+                                <span class="text-uppercase font-weight-bold" t-field="doc.company_id.name"/> te desea
+                                éxito en todo lo que decidas emprender de
+                                ahora en adelante.<br/><br/><br/>
+                                En <span class="text-uppercase font-weight-bold" t-field="doc.company_id.city"/>, a
+                                los <span class="text-uppercase font-weight-bold"
+                                          t-esc="datetime.datetime.now().day"/>
+                                días del mes de <span class="text-uppercase font-weight-bold"
+                                                      t-esc="datetime.datetime.now().month"/> del año <span
+                                    class="text-uppercase font-weight-bold"
+                                    t-esc="datetime.datetime.now().year"/>.
+                            </p>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

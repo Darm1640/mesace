@@ -1,0 +1,37 @@
+#input_qty_list{
+	padding: 1px 5px;
+    height: 23px;
+    width: 40px;
+}
+.in-stock {
+    font: bold 10px Sans-Serif;
+    color: white;
+    text-align: center;
+    background-color: #337ab7;
+    position: relative;
+    padding: 7px 0;
+    top: 2px;
+    width: 100px;
+    cursor: default;
+    z-index: 99;
+    border-radius: 5px;
+}
+
+.out-of-stock {
+    color: #fff;
+    background-color: #c9302c;
+    font: bold 10px Sans-Serif;
+    text-align: center;
+    position: relative;
+    padding: 7px 0;
+    top: 2px;
+    width: 100px;
+    cursor: default;
+    z-index: 99;
+    border-radius: 5px;
+}
+
+.qty-text {
+    font-style: italic;
+    text-decoration: underline;
+}

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
 	'name': 'Import Chart of Accounts from CSV or Excel File',	
-	'version': '14.0.0.1',
+	'version': '15.0.0.1',
 	'category': 'Accounting',
 	'summary': 'This apps helps to import chart of accounts using CSV or Excel file',
 	'description': '''Using this module Charts os accounts is imported using excel sheets
@@ -17,7 +17,8 @@
 	''',
 	'author': 'BrowseInfo',	
 	'website': 'https://www.browseinfo.in',
-	'depends': ['base','account'],	
+	'depends': ['base','account'],
+	'license': 'OPL-1',
 	'data': [
 		'security/ir.model.access.csv',
 		'wizard/view_import_chart.xml',

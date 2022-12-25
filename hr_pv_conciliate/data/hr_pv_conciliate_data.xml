@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+        <record id="hr_pv_conciliation_sequence" model="ir.sequence">
+            <field name="name">hr_pv_conciliation_sequence</field>
+            <field name="code">hr.pv.conciliation</field>
+            <field name="prefix">CONPV-</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+
+</odoo>

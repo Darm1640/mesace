@@ -7,37 +7,36 @@
                     <div class="oe_structure"/>
                     <style>
                         .pims_report_content{
-                        font-size: 10px;
-                        font-family" 'Arial';
+                            font-size: 14px;
+                            font-family" 'Arial';
                         }
 
                         .pims_report_line_table {
-                        width:100%;
+                            width:100%;
                         }
 
                         .pims_report_line_main_tr {
-                        font-weight:bold;
-                        font-size: 14px;
-                        font-family" 'Arial';
-                        border-bottom:1px solid grey;
+                            font-weight:bold;
+                            font-size: 14px;
+                            font-family" 'Arial';
+                            border-bottom:1px solid grey;
                         }
 
                         .pims_report_line_initial_tr {
-                        font-style:italic;
+                            font-style:italic;
                         }
 
                         .pims_report_line_data_tr {
-                        font-style:inherit;
+                            font-style:inherit;
                         }
 
                         .pims_report_line_subtotal {
-                        font-weight:bold;
-                        background-color: white;
-                        border:1px solid grey;
+                            font-weight:bold;
+                            background-color: white;
+                            border:1px solid grey;
                         }
                     </style>
-                    <h3><span t-esc="res_company.name"/>: General ledger
-                    </h3>
+                    <h3><span t-esc="res_company.name"/>: General ledger</h3>
                     <div>
 
                         <div class="row mt32 pims_report_content">
@@ -79,10 +78,8 @@
                                 <p t-esc="', '.join([ lt or '' for lt in Filters['analytics'] ])"/>
                             </div>
                         </div>
-                        <br></br>
-                        <br></br>
-                        <!--<table class="pims_report_line_table pims_report_content">-->
-                        <table style="table-layout: fixed; width:100%" class="pims_report_content">
+                        <br></br><br></br>
+                        <table class="pims_report_line_table pims_report_content">
                             <thead>
                                 <t t-if="not Filters['include_details']">
                                     <tr class="text-center">
@@ -94,14 +91,14 @@
                                 </t>
                                 <t t-if="Filters['include_details']">
                                     <tr class="text-center">
-                                        <th style="text-align:left; width:5%">Date</th>
-                                        <th style="text-align:left; width:5%">Journal</th>
-                                        <th style="text-align:left; width:10%">Partner</th>
-                                        <th style="text-align:left; width:10%">Move</th>
-                                        <th style="text-align:left; width:34%">Reference</th>
-                                        <th style="text-align:right; width:12%">Debit</th>
-                                        <th style="text-align:right; width:12%">Credit</th>
-                                        <th style="text-align:right; width:12%">Balance</th>
+                                        <th style="text-align:left;">Date</th>
+                                        <th style="text-align:left;">Journal</th>
+                                        <th style="text-align:left;">Partner</th>
+                                        <th style="text-align:left;">Move</th>
+                                        <th style="text-align:left;">Reference</th>
+                                        <th style="text-align:right;padding-bottom:10px;">Debit</th>
+                                        <th style="text-align:right">Credit</th>
+                                        <th style="text-align:right">Balance</th>
                                     </tr>
                                 </t>
                             </thead>
@@ -113,31 +110,19 @@
                                     </td>
                                     <t t-if="Ledger_data[line]['debit']">
                                         <td class="text-right">
-                                            <span t-esc="Ledger_data[line]['debit']"
-                                                  t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                            <span t-esc="Ledger_data[line]['debit']" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
                                         </td>
-                                    </t>
-                                    <t t-else="">
-                                        <td class="text-center">-</td>
-                                    </t>
+                                    </t><t t-else=""><td class="text-center">-</td></t>
                                     <t t-if="Ledger_data[line]['credit']">
                                         <td class="text-right">
-                                            <span t-esc="Ledger_data[line]['credit']"
-                                                  t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                            <span t-esc="Ledger_data[line]['credit']" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
                                         </td>
-                                    </t>
-                                    <t t-else="">
-                                        <td class="text-center">-</td>
-                                    </t>
+                                    </t><t t-else=""><td class="text-center">-</td></t>
                                     <t t-if="Ledger_data[line]['balance']">
                                         <td class="text-right">
-                                            <span t-esc="Ledger_data[line]['balance']"
-                                                  t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                            <span t-esc="Ledger_data[line]['balance']" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
                                         </td>
-                                    </t>
-                                    <t t-else="">
-                                        <td class="text-center">-</td>
-                                    </t>
+                                    </t><t t-else=""><td class="text-center">-</td></t>
                                 </tr>
 
                                 <t t-foreach="Ledger_data[line]['lines']" t-as="sub_line">
@@ -148,82 +133,38 @@
                                             </td>
                                             <t t-if="sub_line['debit']">
                                                 <td class="text-right">
-                                                    <span t-esc="sub_line['debit']"
-                                                          t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                                    <span t-esc="sub_line['debit']" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
                                                 </td>
-                                            </t>
-                                            <t t-else="">
-                                                <td class="text-center">-</td>
-                                            </t>
+                                            </t><t t-else=""><td class="text-center">-</td></t>
                                             <t t-if="sub_line['credit']">
                                                 <td class="text-right">
-                                                    <span t-esc="sub_line['credit']"
-                                                          t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                                    <span t-esc="sub_line['credit']" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
                                                 </td>
-                                            </t>
-                                            <t t-else="">
-                                                <td class="text-center">-</td>
-                                            </t>
+                                            </t><t t-else=""><td class="text-center">-</td></t>
                                             <t t-if="sub_line['balance']">
                                                 <td class="text-right">
-                                                    <span t-esc="sub_line['balance']"
-                                                          t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                                    <span t-esc="sub_line['balance']" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
                                                 </td>
-                                            </t>
-                                            <t t-else="">
-                                                <td class="text-center">-</td>
-                                            </t>
+                                            </t><t t-else=""><td class="text-center">-</td></t>
                                         </tr>
                                     </t>
                                     <t t-if="Filters['include_details']">
                                         <t t-if="not sub_line['initial_bal'] and not sub_line['ending_bal']">
-                                            <!--<tr class="pims_report_line_data_tr">-->
-                                            <tr>
-                                                <td>
-                                                    <t t-esc="sub_line.get('ldate')" t-options='{"widget": "date"}'/>
-                                                </td>
-                                                <td>
-                                                    <t t-esc="sub_line.get('lcode')"/>
-                                                </td>
-                                                <td>
-                                                    <t t-esc="sub_line.get('partner_name')"/>
-                                                </td>
-
-                                                <!--<td><t t-esc="sub_line.get('move_name')"/></td>
-                                                <td style="width:30%;"><t t-esc="sub_line.get('lname')"/></td>-->
-                                                <td style="word-wrap:break-word">
-                                                    <t t-esc="sub_line.get('move_name')"/>
-                                                </td>
-                                                <td style="word-wrap:break-word">
-                                                    <t t-esc="sub_line.get('lname')"/>
-                                                </td>
+                                            <tr class="pims_report_line_data_tr">
+                                                <td><t t-esc="sub_line.get('ldate')" t-options='{"widget": "date"}'/></td>
+                                                <td><t t-esc="sub_line.get('lcode')"/></td>
+                                                <td><t t-esc="sub_line.get('partner_name')"/></td>
+                                                <td><t t-esc="sub_line.get('move_name')"/></td>
+                                                <td style="width:30%;"><t t-esc="sub_line.get('lname')"/></td>
                                                 <t t-if="sub_line.get('debit')">
-                                                    <td class="text-right">
-                                                        <t t-esc="sub_line.get('debit')"
-                                                           t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
-                                                    </td>
-                                                </t>
-                                                <t t-else="">
-                                                    <td class="text-center">-</td>
-                                                </t>
+                                                    <td class="text-right"><t t-esc="sub_line.get('debit')" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></td>
+                                                </t><t t-else=""><td class="text-center">-</td></t>
                                                 <t t-if="sub_line.get('credit')">
-                                                    <td class="text-right">
-                                                        <t t-esc="sub_line.get('credit')"
-                                                           t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
-                                                    </td>
-                                                </t>
-                                                <t t-else="">
-                                                    <td class="text-center">-</td>
-                                                </t>
+                                                    <td class="text-right"><t t-esc="sub_line.get('credit')" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></td>
+                                                </t><t t-else=""><td class="text-center">-</td></t>
                                                 <t t-if="sub_line.get('balance')">
-                                                    <td class="text-right">
-                                                        <t t-esc="sub_line.get('balance')"
-                                                           t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
-                                                    </td>
-                                                </t>
-                                                <t t-else="">
-                                                    <td class="text-center">-</td>
-                                                </t>
+                                                    <td class="text-right"><t t-esc="sub_line.get('balance')" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></td>
+                                                </t><t t-else=""><td class="text-center">-</td></t>
                                             </tr>
                                         </t>
                                     </t>
@@ -234,31 +175,19 @@
                                             </td>
                                             <t t-if="sub_line['debit']">
                                                 <td class="text-right">
-                                                    <span t-esc="sub_line['debit']"
-                                                          t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                                    <span t-esc="sub_line['debit']" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
                                                 </td>
-                                            </t>
-                                            <t t-else="">
-                                                <td class="text-center">-</td>
-                                            </t>
+                                            </t><t t-else=""><td class="text-center">-</td></t>
                                             <t t-if="sub_line['credit']">
                                                 <td class="text-right">
-                                                    <span t-esc="sub_line['credit']"
-                                                          t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                                    <span t-esc="sub_line['credit']" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
                                                 </td>
-                                            </t>
-                                            <t t-else="">
-                                                <td class="text-center">-</td>
-                                            </t>
+                                            </t><t t-else=""><td class="text-center">-</td></t>
                                             <t t-if="sub_line['balance']">
                                                 <td class="text-right">
-                                                    <span t-esc="sub_line['balance']"
-                                                          t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                                    <span t-esc="sub_line['balance']" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
                                                 </td>
-                                            </t>
-                                            <t t-else="">
-                                                <td class="text-center">-</td>
-                                            </t>
+                                            </t><t t-else=""><td class="text-center">-</td></t>
                                         </tr>
                                     </t>
                                 </t>
@@ -266,35 +195,18 @@
                         </table>
                     </div>
                     <br></br>
-                    <p style="text-align:center">*** END OF DOCUMENT ***</p>
+                    <p style="text-align:center"> *** END OF DOCUMENT ***</p>
                 </div>
-            </t>
+           </t>
         </t>
     </template>
 
-    <record id="paperformat_general" model="report.paperformat">
-        <field name="name">Formato A4 Libro Mayor</field>
-        <field name="default" eval="True"/>
-        <field name="format">A4</field>
-        <field name="page_height">0</field>
-        <field name="page_width">0</field>
-        <field name="orientation">Portrait</field>
-        <field name="margin_top">15</field>
-        <field name="margin_bottom">10</field>
-        <field name="margin_left">7</field>
-        <field name="margin_right">7</field>
-        <field name="header_line" eval="False"/>
-        <field name="header_spacing">12</field>
-        <field name="dpi">90</field>
-    </record>
-
     <report id="action_print_general_ledger"
-            model="ins.general.ledger"
-            report_type="qweb-pdf"
-            menu="False"
-            string="General Ledger"
-            name="account_dynamic_reports.general_ledger"
-            file="account_dynamic_reports.general_ledger"
-            paperformat="account_dynamic_reports.paperformat_general"
+        model="ins.general.ledger"
+        report_type="qweb-pdf"
+        menu="False"
+        string="General Ledger"
+        name="account_dynamic_reports.general_ledger"
+        file="account_dynamic_reports.general_ledger"
     />
 </odoo>

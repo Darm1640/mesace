@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="labor_relation_sequence" model="ir.sequence">
+            <field name="name">Labor Relations</field>
+            <field name="code">labor.relation.seq</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">DSCP</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+    </data>
+</odoo>

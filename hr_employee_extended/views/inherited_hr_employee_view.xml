@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record id="inherit_hr_employee_view_form" model="ir.ui.view">
+            <field name="name">inherit.hr.employee.view.form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+
+                <field name="name" position="replace">
+                    <h1>
+                        <field name="label_name" class="oe_read_only"/>
+                    </h1>
+                    <h1>
+                        <field name="name" class="oe_edit_only" placeholder="Name" readonly="1" force_save="1"/>
+                    </h1>
+                    <h1>
+                        <div class="o_row">
+                            <field name="first_name" placeholder="First Name" default_focus="1" class="oe_edit_only"
+                                   required="1"/>
+                            <field name="second_name" placeholder="Second Name" string="" class="oe_edit_only"/>
+                        </div>
+                        <div class="o_row">
+                            <field name="third_name" placeholder="Surname" class="oe_edit_only" required="1"/>
+                            <field name="fourth_name" placeholder="Second Surname" class="oe_edit_only"/>
+                        </div>
+                    </h1>
+                </field>
+
+                <xpath expr="//field[@name='parent_id']" position="after">
+                    <field name="is_employer_substitution"/>
+                    <field name="tipo_cotizante_emp"/>
+                    <field name="subtipo_cotizante_emp"/>
+                </xpath>
+
+                <xpath expr="//field[@name='identification_id']" position="after">
+                    <field name="firm"/>
+                </xpath>
+                <xpath expr="//group[@name='active_group']" position="after">
+                    <group string="Multicompany" name="multicompany">
+                        <field name="is_multi_company"/>
+                        <field name="multi_company_ids" widget="many2many_tags"
+                               attrs="{'invisible': [('is_multi_company', '=', False)]}"/>
+                    </group>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

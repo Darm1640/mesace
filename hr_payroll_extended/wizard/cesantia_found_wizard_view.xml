@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY Miguel Pardo <ing.miguel.pardo@gmail.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <record id="cesantia_found_report_wizard_view_form" model="ir.ui.view">
+        <field name="name">cesantia_found_report_wizard_view_form</field>
+        <field name="model">hr.payroll.cesantia.found.wizard</field>
+        <field name="arch" type="xml">
+            <form string='Generate Cesantia Found Report'>
+                <group>
+                    <group>
+                        <field name="salary_rule_id"/>
+                    </group>
+                    <group>
+                        <field name="salary_rule_two_id"/>
+                    </group>
+                </group>
+
+                <footer>
+                    <button name="print_xlsx" type="object" string="Print Xlsx" class="oe_right oe_highlight"/>
+                    <button string="Close" class="oe_right oe_highlight" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="action_generate_cesantia_found_report"
+                name="Cesantia Found Report"
+                res_model="hr.payroll.cesantia.found.wizard"
+                binding_model="hr.payslip"
+                binding_views="form,list"
+                view_mode="form"
+                target="new"
+    />
+
+    <data>
+        <template id="assets_backend" name="xls_assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/hr_payroll_extended/static/src/js/cesantia_found.js"/>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

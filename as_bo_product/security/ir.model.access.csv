@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_product_template,product.template,product.model_product_template,group_plantillas_productos,1,1,1,1
-access_product_product,product.product,product.model_product_product,group_producto_productos,1,1,1,1
-access_base_res_partner,base.res.partner,base.model_res_partner,group_creation_contacts,1,1,1,1

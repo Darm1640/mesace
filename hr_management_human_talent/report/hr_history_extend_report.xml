@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- History Extend Report-->
+    <record id="paperformat_history_extend" model="report.paperformat">
+        <field name="name">Formato Prorrogas</field>
+        <field name="default" eval="True"/>
+        <field name="format">Letter</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">50</field>
+        <field name="margin_bottom">30</field>
+        <field name="margin_left">20</field>
+        <field name="margin_right">20</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <report
+            id="action_report_history_extend_certification"
+            string="Formato Prorrogas"
+            model="hr.contract"
+            report_type="qweb-pdf"
+            file="hr_management_human_talent.history_extend"
+            name="hr_management_human_talent.history_extend"
+    />
+
+    <record id="action_report_history_extend_certification" model="ir.actions.report">
+        <field name="paperformat_id" ref="paperformat_history_extend"/>
+    </record>
+
+    <!-- Contract Termination  -->
+    <record id="paperformat_termintation_contract" model="report.paperformat">
+        <field name="name">Terminación de Contrato</field>
+        <field name="default" eval="True"/>
+        <field name="format">Letter</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">50</field>
+        <field name="margin_bottom">30</field>
+        <field name="margin_left">20</field>
+        <field name="margin_right">20</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <report
+            id="action_report_termination_contract_certification"
+            string="Terminación de Contrato"
+            model="hr.contract"
+            report_type="qweb-pdf"
+            file="hr_management_human_talent.termination_contract"
+            name="hr_management_human_talent.termination_contract"
+    />
+
+    <record id="action_report_termination_contract_certification" model="ir.actions.report">
+        <field name="paperformat_id" ref="paperformat_history_extend"/>
+    </record>
+
+    <!--Termination Evaluation Period -->
+    <record id="paperformat_termintation_contract" model="report.paperformat">
+        <field name="name">Terminacion Periodo de Evaluación</field>
+        <field name="default" eval="True"/>
+        <field name="format">Letter</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">50</field>
+        <field name="margin_bottom">30</field>
+        <field name="margin_left">20</field>
+        <field name="margin_right">20</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <report
+            id="action_report_termination_evaluation_contract"
+            string="Terminacion Periodo de Evaluación"
+            model="hr.contract"
+            report_type="qweb-pdf"
+            file="hr_management_human_talent.termination_evaluation"
+            name="hr_management_human_talent.termination_evaluation"/>
+
+    <record id="action_report_termination_evaluation_contract" model="ir.actions.report">
+        <field name="paperformat_id" ref="paperformat_termintation_contract"/>
+    </record>
+
+</odoo>

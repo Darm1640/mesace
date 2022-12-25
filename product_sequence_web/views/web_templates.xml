@@ -1,0 +1,36 @@
+<odoo>
+  <data>
+	
+	<record id="view_product_template_form_custom" model="ir.ui.view">
+		<field name="name">product.template.product.website.form.custom</field>
+		<field name="model">product.template</field>
+		<field name="inherit_id" ref="website_sale.product_template_form_view"/>
+		<field name="arch" type="xml"> 
+		<xpath expr="//page[@name='shop']/group[@name='shop']/group/field[@name='website_sequence']" position="replace">
+			<field name="website_sequence" invisible='1'/>
+		</xpath>
+		<xpath expr="//page[@name='shop']/group[@name='shop']/group/field[@name='accessory_product_ids']" position="after">
+			<field name="website_sequence"/>
+		</xpath>
+		</field>
+	</record>
+	
+	 <template id="inherit_sort" inherit_id="website_sale.sort" active="True" customize_show="True" name="Show Sort by">
+        <xpath expr="//t[@t-set='name_desc_label']" position="after">
+             <t t-set="web_seq_asc_label">Website Sequence: Low to High</t>
+    	</xpath>
+    
+     	<xpath expr="//t[@t-set='website_sale_sortable']" position="replace">
+                       <t t-set="website_sale_sortable" t-value="[
+                (list_price_desc_label, 'list_price desc'),
+                (list_price_asc_label, 'list_price asc'),
+                (name_asc_label, 'name asc'),
+                (name_desc_label, 'name desc'),
+               (web_seq_asc_label,'website_sequence asc')
+            ]"/>
+
+   	    </xpath>
+    </template>
+    
+  </data>
+</odoo>

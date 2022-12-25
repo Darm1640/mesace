@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="salary_increase_wizard_view_form" model="ir.ui.view">
+            <field name="name">salary_increase_wizard_view_form</field>
+            <field name="model">salary.increase.wizard</field>
+            <field name="arch" type="xml">
+                <form string="salary_increase_wizard_form">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="type_novelty" domain="[('is_type_salary','=',True)]" required="1"/>
+                                <field name="start_date" required="1"/>
+                                <field name="end_date"/>
+                            </group>
+                        </group>
+                        <footer>
+                            <button name="create_news" string="Salary Increase"
+                                    type="object" class="btn-primary"/>
+                            <button string="Cancel" class="oe_link" special="cancel"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="salary_increase_wizard_action" model="ir.actions.act_window">
+            <field name="name">Salary Increase</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">salary.increase.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

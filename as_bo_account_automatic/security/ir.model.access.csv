@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_as_account_structure,as_account_structure,model_as_account_structure,base.group_user,1,1,1,1
-access_as_account_structure_line,as_account_structure_line,model_as_account_structure_line,base.group_user,1,1,1,1

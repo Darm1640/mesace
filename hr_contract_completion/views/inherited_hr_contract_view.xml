@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY Miguel Pardo <ing.miguel.pardo@gmail.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="hr_contract_view_form_inherit" model="ir.ui.view">
+        <field name="name">hr.contract.form.inherit</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+            <page name="information" position="after">
+                <page name="reason contract completion" string="Reason Contract Completion">
+                    <group col="4" colspan="2" string="Contract Completion Reason">
+                        <field name="reason_payroll_id" readonly="1"/>
+                        <field name="reason_talent_id" readonly="1"/>
+                    </group>
+                </page>
+            </page>
+
+            <xpath expr="//header" position="inside">
+                <button name="action_send_email" string="Send by Email" type="object" states="draft"
+                        class="btn-primary"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_contract_view_search_inherit" model="ir.ui.view">
+        <field name="name">hr.contract.search.inherit</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="/search/filter[1]" position="after">
+                <filter string="Contracts Nearing Completion"
+                        domain="[('date_end', '>', (context_today().strftime('%Y-%m-%d'))),('date_end', '&lt;', ((context_today()+datetime.timedelta(days=45)).strftime('%Y-%m-%d')))]"
+                        name="date_end"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

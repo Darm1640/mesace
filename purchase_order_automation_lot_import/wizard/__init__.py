@@ -1,1 +1,0 @@
-from . import purchase_automatic_lot_number

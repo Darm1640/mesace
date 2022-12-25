@@ -5,7 +5,7 @@
 #    Copyright (C) 2011 Michael Telahun Makonnen <mmakonnen@gmail.com>.
 #    All Rights Reserved.
 #
-#    This program is free software: you can redistribute it and/or modify
+#    This program is free software = you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
 #    (at your option) any later version.
@@ -16,7 +16,7 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#    along with this program.  If not, see <http =//www.gnu.org/licenses/>.
 #
 ##############################################################################
 -->
@@ -133,12 +133,12 @@
             </field>
             <field name="credit_note" position="after">
             <group  colspan="4">
-						 <field name="date_liquidacion" attrs="{'invisible':[('liquida','=',False)],'required':[('liquida','&lt;&gt;',False)]}"/> 
-						 <field name="date_prima" attrs="{'invisible':[('liquida','=',False)],'required':[('liquida','&lt;&gt;',False)]}"/>
-						 <field name="date_cesantias" attrs="{'invisible':[('liquida','=',False)],'required':[('liquida','&lt;&gt;',False)]}"/>
-						 <field name="date_vacaciones" attrs="{'invisible':[('liquida','=',False)],'required':[('liquida','&lt;&gt;',False)]}"/>
-						 <field name="dias_vacaciones" readonly="True" attrs="{'invisible':[('liquida','=',False)]}"/>
-						 <field name="date_intereses" attrs="{'invisible':[('liquida','=',False)],'required':[('liquida','&lt;&gt;',False)]}"/>
+						 <field name="date_liquidacion" attrs="{'invisible' =[('liquida','=',False)],'required' =[('liquida','&lt;&gt;',False)]}"/> 
+						 <field name="date_prima" attrs="{'invisible' =[('liquida','=',False)],'required' =[('liquida','&lt;&gt;',False)]}"/>
+						 <field name="date_cesantias" attrs="{'invisible' =[('liquida','=',False)],'required' =[('liquida','&lt;&gt;',False)]}"/>
+						 <field name="date_vacaciones" attrs="{'invisible' =[('liquida','=',False)],'required' =[('liquida','&lt;&gt;',False)]}"/>
+						 <field name="dias_vacaciones" readonly="True" attrs="{'invisible' =[('liquida','=',False)]}"/>
+						 <field name="date_intereses" attrs="{'invisible' =[('liquida','=',False)],'required' =[('liquida','&lt;&gt;',False)]}"/>
 		    </group>
 			</field>		  
             <page string="Details By Salary Rule Category" position="after" >
@@ -153,8 +153,8 @@
                </page>	
                	
                <page string="Detalle deducciones">
-                  <field name="deduction_line_ids" context="{'group_by':'deduction_id'}" domain="[('appears_on_payslip', '=', True)]">
-                     <tree string="Payslip Lines" colors="blue:total == 0">
+                  <field name="deduction_line_ids" context="{'group_by' ='deduction_id'}" domain="[('appears_on_payslip', '=', True)]">
+                     <tree string="Payslip Lines" colors="blue =total == 0">
                         <field name="deduction_id"/>
                         <field name="amount"/>
                         <field name="total_deduction"/>
@@ -178,17 +178,17 @@
             <field name="credit_note" position="after">
 				<group name="properties" colspan="2">
                   <field name="liquida"/>
-                  <field name="struct_id" attrs="{'invisible':[('liquida','=',False)],'required':[('liquida','&lt;&gt;',False)]}"/>
+                  <field name="struct_id" attrs="{'invisible' =[('liquida','=',False)],'required' =[('liquida','&lt;&gt;',False)]}"/>
                 </group>  
             </field>
             <field name="credit_note" position="after">
               <group  colspan="4">
-						 <field name="date_liquidacion" attrs="{'invisible':[('liquida','=',False)],'required':[('liquida','&lt;&gt;',False)]}"/> 
-						 <field name="date_prima" attrs="{'invisible':[('liquida','=',False)],'required':[('liquida','&lt;&gt;',False)]}"/>
-						 <field name="date_cesantias" attrs="{'invisible':[('liquida','=',False)],'required':[('liquida','&lt;&gt;',False)]}"/>
-						 <field name="date_vacaciones" attrs="{'invisible':[('liquida','=',False)],'required':[('liquida','&lt;&gt;',False)]}"/>
-						 <field name="dias_vacaciones" readonly="True" attrs="{'invisible':[('liquida','=',False)]}"/>
-						 <field name="date_intereses" attrs="{'invisible':[('liquida','=',False)],'required':[('liquida','&lt;&gt;',False)]}"/>
+						 <field name="date_liquidacion" attrs="{'invisible' =[('liquida','=',False)],'required' =[('liquida','&lt;&gt;',False)]}"/> 
+						 <field name="date_prima" attrs="{'invisible' =[('liquida','=',False)],'required' =[('liquida','&lt;&gt;',False)]}"/>
+						 <field name="date_cesantias" attrs="{'invisible' =[('liquida','=',False)],'required' =[('liquida','&lt;&gt;',False)]}"/>
+						 <field name="date_vacaciones" attrs="{'invisible' =[('liquida','=',False)],'required' =[('liquida','&lt;&gt;',False)]}"/>
+						 <field name="dias_vacaciones" readonly="True" attrs="{'invisible' =[('liquida','=',False)]}"/>
+						 <field name="date_intereses" attrs="{'invisible' =[('liquida','=',False)],'required' =[('liquida','&lt;&gt;',False)]}"/>
 		      </group>
 		    </field>  
         </field>    
@@ -384,7 +384,3 @@
                 
     </data>
 </openerp>
-
-
-
-

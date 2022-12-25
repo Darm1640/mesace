@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY Miguel Pardo <ing.miguel.pardo@gmail.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <record id="generate_send_wizard_form" model="ir.ui.view">
+        <field name="name">hr.payroll.generate.send.wizard.form</field>
+        <field name="model">hr.payroll.generate.send.wizard</field>
+        <field name="arch" type="xml">
+            <form string='Generate Reports Wizard'>
+                <div class="oe_title" attrs="{'invisible': [('download', '=', False)]}">
+                    <h1>Download Reports</h1>
+                </div>
+                <group>
+                    <field name="download" invisible="1"/>
+                    <field name="report_id" attrs="{'invisible': [('download', '=', True)]}"/>
+                    <field name="send_by_mail" attrs="{'invisible': [('download', '=', True)]}"/>
+                    <field name="template_id" attrs="{'invisible': [('send_by_mail', '=', False)]}"/>
+                    <field name="file" filename="file_name" readonly="1"
+                           attrs="{'invisible': [('download', '=', False)]}"/>
+                    <field name="file_name" invisible="1"/>
+                </group>
+                <footer>
+                    <button name="confirm" type="object" string="Confirm" class="oe_right oe_highlight"
+                            attrs="{'invisible': ['|', ('send_by_mail', '=', True), ('download', '=', True)]}"/>
+                    <button name="action_send_email_mass" type="object" string="Generate and Send"
+                            class="oe_right oe_highlight"
+                            attrs="{'invisible': [('send_by_mail', '=', False)]}"/>
+                    <button string="Cancel" class="oe_right" special="cancel"
+                            attrs="{'invisible': [('download', '=', True)]}"/>
+                    <button string="Close" class="oe_right oe_highlight" special="cancel"
+                            attrs="{'invisible': [('download', '=', False)]}"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="action_hr_generate_send_wizard"
+                name="Generate and Send"
+                res_model="hr.payroll.generate.send.wizard"
+                binding_model="hr.payslip"
+                binding_views="form,list"
+                view_mode="form"
+                target="new"
+    />
+</odoo>

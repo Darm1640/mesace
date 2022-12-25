@@ -1,0 +1,3514 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_payroll_variations
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0-20201024\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-18 04:29+0000\n"
+"PO-Revision-Date: 2021-03-17 23:30-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_CO\n"
+"X-Generator: Poedit 2.3\n"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__10
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__10
+msgid "10"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__11
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__11
+msgid "11"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__12
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__12
+msgid "12"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__13
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__13
+msgid "13"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__14
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__14
+msgid "14"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__15
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__15
+msgid "15"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__16
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__16
+msgid "16"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__17
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__17
+msgid "17"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__18
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__18
+msgid "18"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__19
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__19
+msgid "19"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__20
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__20
+msgid "20"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__21
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__21
+msgid "21"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__22
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__22
+msgid "22"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__23
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__23
+msgid "23"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__24
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__24
+msgid "24"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__25
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__25
+msgid "25"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__26
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__26
+msgid "26"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__27
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__27
+msgid "27"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__28
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__28
+msgid "28"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__29
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__29
+msgid "29"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__30
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__30
+msgid "30"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__31
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__31
+msgid "31"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__32
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__32
+msgid "32"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__33
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__33
+msgid "33"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__34
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__34
+msgid "34"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__35
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__35
+msgid "35"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__36
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__36
+msgid "36"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__37
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__37
+msgid "37"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__38
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__38
+msgid "38"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__39
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__39
+msgid "39"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__40
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__40
+msgid "40"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__41
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__41
+msgid "41"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__42
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__42
+msgid "42"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__43
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__43
+msgid "43"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__44
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__44
+msgid "44"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__45
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__45
+msgid "45"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__46
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__46
+msgid "46"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__47
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__47
+msgid "47"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__48
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__48
+msgid "48"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__49
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__49
+msgid "49"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__50
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__50
+msgid "50"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__51
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__51
+msgid "51"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__52
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__52
+msgid "52"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__53
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__53
+msgid "53"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__54
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__54
+msgid "54"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__55
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__55
+msgid "55"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__56
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__56
+msgid "56"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__57
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__57
+msgid "57"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__58
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__58
+msgid "58"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__59
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__59
+msgid "59"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__60
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__60
+msgid "60"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__61
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__61
+msgid "61"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__62
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__62
+msgid "62"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__63
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__63
+msgid "63"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__64
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__64
+msgid "64"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__65
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__65
+msgid "65"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__66
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__66
+msgid "66"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__67
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__67
+msgid "67"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__68
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__68
+msgid "68"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__69
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__69
+msgid "69"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__70
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__70
+msgid "70"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__71
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__71
+msgid "71"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__72
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__72
+msgid "72"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__73
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__73
+msgid "73"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__74
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__74
+msgid "74"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__75
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__75
+msgid "75"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__76
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__76
+msgid "76"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__77
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__77
+msgid "77"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__78
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__78
+msgid "78"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__79
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__79
+msgid "79"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__80
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__80
+msgid "80"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__81
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__81
+msgid "81"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__82
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__82
+msgid "82"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__83
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__83
+msgid "83"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__84
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__84
+msgid "84"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__85
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__85
+msgid "85"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__86
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__86
+msgid "86"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__87
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__87
+msgid "87"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__88
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__88
+msgid "88"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__89
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__89
+msgid "89"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__h_e_procedure__90
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__total_fix_hour__90
+msgid "90"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_form_notifications
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid ""
+"<span class=\"oe_inline\" attrs=\"{'invisible': ['|',"
+"('is_apply_date_finish','!=',True),('unit_half', '=', True)]}\">\n"
+"                                    Hasta </span>"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "A new pv has been Created"
+msgstr "Una nueva variante ha sido creada"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_leave__is_arl
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__is_arl
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__is_arl
+msgid "ARL"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__message_needaction
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__message_needaction
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__message_needaction
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__message_needaction
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__message_needaction
+msgid "Action Needed"
+msgstr "Acción necesitada"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_configuration__is_active
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__activity_ids
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__activity_exception_decoration
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__activity_state
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv_event__approver__sst
+msgid "Admin healt in work"
+msgstr "Administrador de seguridad y salud en el trabajo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__advance_holidays
+msgid "Advance Holidays"
+msgstr "Adelantar ausencia"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__affectation
+msgid "Affectation"
+msgstr "Afectación"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__affiliation_date
+msgid "Affiliation Date"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__affiliation_number
+msgid "Affiliation Number"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__affiliation_partner_id
+msgid "Affiliation Partner"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__start_date_period__pm
+msgid "Afternoon"
+msgstr "Tarde"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_leave__allow_collision
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__allow_collision
+msgid "Allow Collision"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv_event__affectation__allowance
+msgid "Allowance"
+msgstr "Asignación"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__amount
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__amount
+msgid "Amount"
+msgstr "Monto"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__is_apply_amount_absence
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__amount_absence
+msgid "Amount Absence"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__amount_absence
+msgid "Amount Absence Convention Aid"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__is_apply_date_finish
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__is_apply_date_finish
+msgid "Apply date Finish"
+msgstr "Aplica fecha final"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.hr_assigment_employee_view_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_form_notifications
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_tree_notifications_to_approve
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Approve"
+msgstr "Aprobar"
+
+#. module: hr_payroll_variations
+#: model:ir.actions.act_window,name:hr_payroll_variations.action_hr_payroll_variations_notifications_approved
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_assignment_employee__state__approved
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__state__approved
+#: model:ir.ui.menu,name:hr_payroll_variations.menu_hr_payroll_variations_notifications_approved
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_search
+msgid "Approved"
+msgstr "Aprobado"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__approved_by
+msgid "Approved By"
+msgstr "Aprobado por"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__approved_date
+msgid "Approved Date"
+msgstr "Fecha de aprobación"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__approved_ip_date
+msgid "Approved IP Date"
+msgstr "Fecha aprobado IP"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__approved_ip_from
+msgid "Approved IP From"
+msgstr "Origen de aprobado IP"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__approved_location
+msgid "Approved Location"
+msgstr "Lugar de aprobado IP"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__approver
+msgid "Approver"
+msgstr "Aprobador"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_form
+msgid "Approver One Step"
+msgstr "Aprobación en un paso"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_form
+msgid "Approver Two Step"
+msgstr "Aprobación en dos pasos"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.hr_assigment_employee_view_form
+msgid "Assigment"
+msgstr "Encargos"
+
+#. module: hr_payroll_variations
+#: model:ir.ui.menu,name:hr_payroll_variations.assignment_configuration_menu_item
+msgid "Assigment Configuration"
+msgstr "Configuración de Encargos"
+
+#. module: hr_payroll_variations
+#: model:ir.actions.act_window,name:hr_payroll_variations.hr_assigment_employee_action
+#: model:ir.ui.menu,name:hr_payroll_variations.assigment_employee_menu_item
+msgid "Assigment Employee"
+msgstr "Encargo de Empleados"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__check_type_event_assignment
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__employee_assignment_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__is_type_assignment
+#: model:ir.ui.menu,name:hr_payroll_variations.menu_assignment_configuration
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_form
+msgid "Assignment"
+msgstr "Encargo"
+
+#. module: hr_payroll_variations
+#: model:ir.actions.act_window,name:hr_payroll_variations.hr_assignment_configuration_employee_action
+msgid "Assignment Configuration"
+msgstr "Configuración de Encargos"
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_assignment_lines_configuration
+msgid "Assignment Configuration Lines"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__payment_type
+msgid "Assignment Type"
+msgstr "Tipo de encargo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__message_attachment_count
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__message_attachment_count
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__message_attachment_count
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__message_attachment_count
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__message_attachment_count
+msgid "Attachment Count"
+msgstr "Adjunto"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_form
+msgid "Attachments"
+msgstr "Adjuntos"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__is_required_attach
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__is_required_attach
+msgid "Attahment required"
+msgstr "Adjunto requerido"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__automatically_remove
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__check_remove_pv
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__is_automatically_remove
+msgid "Automatically Remove PV"
+msgstr "Eliminar automáticamente la PV"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__is_attach_available
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__is_attach_available
+msgid "Availabe attach"
+msgstr "Habilitar adjunto"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__is_end_business_day
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__is_end_business_day
+msgid "Available Business Day"
+msgstr "Habilitar fecha del negoció"
+
+#. module: hr_payroll_variations
+#: model:res.groups,name:hr_payroll_variations.group_bp
+msgid "BP"
+msgstr "Asesor de negocio"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_bonus__bank_id
+msgid "Bank"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__bank_account_id
+msgid "Bank Account"
+msgstr "Cuenta Bancaria"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__beneficiary_id
+msgid "Beneficiary"
+msgstr "Beneficiario"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__birth_certificate
+msgid "Birth Certificate"
+msgstr "Fecha de cumpleaños"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__bonus_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__is_bonus
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_employee_form_pv_inherit
+msgid "Bonus"
+msgstr "Bonos"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.employee_bonus_view_form
+msgid "Bonus Information"
+msgstr "Informacion de Bonos"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_bonus__bonus_type
+#: model:ir.ui.menu,name:hr_payroll_variations.employee_bonus_type_menu
+msgid "Bonus Type"
+msgstr "Tipo de Bono"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv_event__approver__jd
+msgid "Boss"
+msgstr "Jefe directo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__payment_type__both
+msgid "Both"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv_event__approver__bp
+msgid "Business partner"
+msgstr "Asesor de negocio"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__check_calculate_amount
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__calculate_amount
+msgid "Calculate Amount"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__calendar_id
+msgid "Calendar"
+msgstr "Calendario"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__calendar_type
+msgid "Calendar Type"
+msgstr "Tipo de calendario"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__state__cancel
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.assignment_cancel_wizard_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.create_pv_wizard_view_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.hr_assigment_employee_view_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.pv_create_contact_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.pv_create_contract_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.pv_create_employee_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.reject_wizard_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_search
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Cancel"
+msgstr "Cancelado"
+
+#. module: hr_payroll_variations
+#: model:ir.actions.act_window,name:hr_payroll_variations.assignment_cancel_wizard_action
+msgid "Cancel Assignment"
+msgstr "Cancelar Encargo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__cancel_date
+msgid "Cancel Date"
+msgstr "Cancelar Fecha"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_assignment_employee__state__canceled
+msgid "Canceled"
+msgstr "Cancelado"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "Cannot load news of absence type by restriction in the contract."
+msgstr ""
+"No puede cargar novedades de tipo de ausencia por restricción en el "
+"contrato."
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__capital_amount
+msgid "Capital Amount"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__pv_create_contact__l10n_co_document_type__diplomatic_card
+msgid "Carné Diplomatico"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__certificate_born_alive
+msgid "Certificate Born Alive"
+msgstr "Certificado Nacido Vivo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__certificate_week_of_gestation
+msgid "Certificate Week Of Gestation"
+msgstr "Certificado semanas de gestación"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contact__city_id
+msgid "City"
+msgstr "Ciudad"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_sena__code
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_leave_code__code
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__code
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__code
+msgid "Code"
+msgstr "Código"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_configuration__company_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__company_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__company_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__company_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__company_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__company_id
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.hr_assigment_employee_view_form
+msgid "Company"
+msgstr "Empresa"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__company_only
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__company_only
+msgid "Company Only"
+msgstr "Unicamente compañia"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__confidential
+msgid "Confidential"
+msgstr "Confidencial"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_form
+msgid "Config Parameters"
+msgstr "Parámetros de configuración"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_assignment_lines_configuration__configuration_id
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_configuration__configuration_line_ids
+msgid "Configuration Line"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.assignment_cancel_wizard_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.create_pv_wizard_view_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.pv_create_contact_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.pv_create_contract_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.pv_create_employee_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.reject_wizard_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__contact_id
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__contract_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__contract_id
+msgid "Contract"
+msgstr "Contrato"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_form
+msgid "Contract Completion"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_form_notifications
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Contribution"
+msgstr "Contribución"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__contribution_company
+msgid "Contribution Company"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__contribution_deduction
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__contribution_deduction
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Contribution Deduction"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_form
+msgid "Convention Aid"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__convention_aid_event_id
+msgid "Convention Aid Event"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee__copy_identification_id
+msgid "Copy Card Identification"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__count_days_extension
+msgid "Count days extension"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contact__country_id
+msgid "Country"
+msgstr "País"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_contract__create_absence
+msgid "Create Absence"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.actions.act_window,name:hr_payroll_variations.action_pv_create_contact
+msgid "Create Contact"
+msgstr "Crear Contacto"
+
+#. module: hr_payroll_variations
+#: model:ir.actions.act_window,name:hr_payroll_variations.action_pv_create_contract
+msgid "Create Contract"
+msgstr "Crear Contrato"
+
+#. module: hr_payroll_variations
+#: model:ir.actions.act_window,name:hr_payroll_variations.action_pv_create_employee
+msgid "Create Employee"
+msgstr "Crear Empleado"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_employee.py:0
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.create_pv_wizard_view_form
+#, python-format
+msgid "Create PV"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_hr_create_pv_wizard
+msgid "Create PV Wizard"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/wizard/create_pv_employee_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_employee_form_pv_inherit
+#, python-format
+msgid "Create Pv"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_form_notifications
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Create Recruitment"
+msgstr "Crear Reclutamiento"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__create_third_pv
+msgid "Create third pv"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_assignment_lines_configuration__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_cancel_wizard__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_configuration__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_create_pv_wizard__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_bonus__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_bonus_type__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_sena__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_leave_code__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_cancel_wizard__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_check_date_wizard__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_reject_wizard__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_stage_followers__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contact__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contract__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_employee__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_assignment_lines_configuration__create_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_cancel_wizard__create_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_configuration__create_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__create_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_create_pv_wizard__create_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_bonus__create_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_bonus_type__create_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_sena__create_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_leave_code__create_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__create_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_cancel_wizard__create_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_check_date_wizard__create_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__create_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_reject_wizard__create_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_stage_followers__create_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__create_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__create_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contact__create_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contract__create_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_employee__create_date
+msgid "Created on"
+msgstr "Creado en "
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__currency_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__current_wage_employee
+msgid "Current Wage Employee"
+msgstr "Salario actual del empleado"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__employee_id_current_salary
+msgid "Current employee salary"
+msgstr "Salario actual del empleado"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__current_salary
+msgid "Current salary"
+msgstr "Salario actual"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__pv_create_contact__l10n_co_document_type__id_document
+msgid "Cédula"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__pv_create_contact__l10n_co_document_type__foreign_id_card
+msgid "Cédula Extranjera"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__pv_create_contact__l10n_co_document_type__national_citizen_id
+msgid "Cédula de ciudadanía"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:res.groups,name:hr_payroll_variations.group_daf
+msgid "DAF"
+msgstr "Director administrativo y financiero"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__date
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_form_notifications
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Date"
+msgstr "Fecha"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_cancel_wizard__date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_cancel_wizard__date
+msgid "Date Cancel"
+msgstr "Fecha de Cancelación"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__date_end
+msgid "Date End"
+msgstr "Fecha Final"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_configuration__date_from
+msgid "Date From"
+msgstr "Desde"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__date_start
+msgid "Date Start"
+msgstr "Fecha de Incio"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_configuration__date_to
+msgid "Date To"
+msgstr "Hasta"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee__date_childbirth
+msgid "Date childbirth"
+msgstr "Fecha probable de parto"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_employee__birthday
+msgid "Date of Birth"
+msgstr "Fecha de cumpleaños"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_form
+msgid "Dates and hours Fields"
+msgstr "Campos de Días y horas"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_assignment_lines_configuration__day_from
+msgid "Day From"
+msgstr "Día Desde"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_assignment_lines_configuration__day_to
+msgid "Day To"
+msgstr "Día Hasta"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv_event__affectation__deduction
+msgid "Deduction"
+msgstr "Deducciones"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__default_schedule_pay
+msgid "Default Scheduled Pay"
+msgstr "Pago programado"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_assignment_employee__default_schedule_pay
+msgid "Defines the frequency of the wage payment."
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_employee__department_id
+msgid "Department"
+msgstr "Departamento"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__description
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__description
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__description
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__description
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__description
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.hr_assigment_employee_view_form
+msgid "Description"
+msgstr "Descripción"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.hr_assigment_employee_view_form
+msgid "Description..."
+msgstr "Descripción..."
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__diagnosis_is_required
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__diagnosis_is_required
+msgid "Diagnosis is required"
+msgstr "Diagnostico es requerido"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__hiring_type__direct
+msgid "Direct"
+msgstr "Directo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__check_discount_sunday
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__discount_sunday
+msgid "Discount Sunday"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__dis_aid_id
+msgid "Discount/Aid"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Discounts"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_assignment_lines_configuration__display_name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_cancel_wizard__display_name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_configuration__display_name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__display_name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_create_pv_wizard__display_name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_bonus__display_name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_bonus_type__display_name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_sena__display_name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_leave_code__display_name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__display_name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_cancel_wizard__display_name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_check_date_wizard__display_name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__display_name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_reject_wizard__display_name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_stage_followers__display_name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__display_name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__display_name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contact__display_name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contract__display_name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_employee__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__distribution_by_days
+msgid "Distribution by Days"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contact__vat
+msgid "Document Number"
+msgstr "Número de documento"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contact__l10n_co_document_type
+msgid "Document Type"
+msgstr "Tipo de documento"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_form_notifications
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Documents Section"
+msgstr "Sección de documentos"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_assignment_employee__state__draft
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__state__draft
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_form_notifications
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_search
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_leave__is_eps
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__is_eps
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__is_eps
+msgid "EPS"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_form
+msgid "Economic Configuration"
+msgstr "Configuración económica"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "El número de identificación no corresponde al empleado"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contact__email
+msgid "Email"
+msgstr "Correo"
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_hr_employee
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__employee_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_create_pv_wizard__employee_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_bonus__employee_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__employee_id
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_assignment_employee__type_assignment__employee
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__type_assignment__employee
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv_event__calendar_type__employee
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_search
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: hr_payroll_variations
+#: model:ir.actions.act_window,name:hr_payroll_variations.employee_bonus_action
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee__employee_bonus_ids
+#: model:ir.ui.menu,name:hr_payroll_variations.employee_bonus_menu
+msgid "Employee Bonus"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_hr_contract
+msgid "Employee Contract"
+msgstr "Contrato del empleado"
+
+#. module: hr_payroll_variations
+#: model:ir.actions.act_window,name:hr_payroll_variations.employee_sena_action
+#: model:ir.ui.menu,name:hr_payroll_variations.employee_sena_menu
+msgid "Employee Sena"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__employee_to_replace_id
+msgid "Employee To Replace"
+msgstr "Empleado a reemplazar"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__replace_employee_id
+msgid "Employee to replace"
+msgstr "Empleado a reemplazar"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "Employee with non-active contract"
+msgstr "Empleado con contrato no activo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__end_business_day
+msgid "End Business Day"
+msgstr "Día final negocio"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__end_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__end_date_extend
+msgid "End Date"
+msgstr "Fecha fin"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_form
+msgid "Entities"
+msgstr "Entidades"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_form
+msgid "Especial"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_configuration__event_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__event_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__retroactive_event
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__event_id
+#: model:ir.ui.menu,name:hr_payroll_variations.menu_hr_config_pv_event
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_search
+msgid "Event"
+msgstr "Evento"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_assignment_configuration__event_id
+msgid "Event with which the pv of the orders will be created"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__exclude_restriction_leave
+msgid "Exclude Restriction Leave"
+msgstr "Excluir la restricción"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__extend_pv_id
+msgid "Extend Pv"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Extended PV"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "Extension days exceed 180 days, create an extension for the 180 days"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__relationship_id
+msgid "Family Relationship"
+msgstr "Relación familiar"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__pv_create_contact__gender__female
+msgid "Female"
+msgstr "Femenino"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__pv_create_contact__l10n_co_document_type__trust
+msgid "Fideicomiso"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__file_name
+msgid "File Name"
+msgstr "Nombre del archivo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee__file_name_copy_identification_id
+msgid "File Name Copy Identification"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv_event__approver__daf
+msgid "Financial and administrative Director"
+msgstr "Director administrativo y financiero"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__payment_type__first
+msgid "First"
+msgstr "Primero"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contact__first_name
+msgid "First Name"
+msgstr "Primer Nombre"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_form
+msgid "First approval option"
+msgstr "Primer aprobador opcional"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__is_hour_fix
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__is_hour_fix
+msgid "Fix Hours"
+msgstr "Horas Fijas"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__fix_wage_amount
+msgid "Fix Wage Amount"
+msgstr "Monto de salario fijo"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/wizard/pv_create_contract.py:0
+#, python-format
+msgid "Fix Wage Assign should be positive."
+msgstr "Monto de salario fijo debe ser positivo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__Fix_wage_assing
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contract__Fix_wage_assing
+msgid "Fix Wage Assing"
+msgstr "Asignación de salario fijo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_assignment_employee__type_assignment__fixed
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__type_assignment__fixed
+msgid "Fixed"
+msgstr "Fijo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__fixed_value
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__fixed_value
+msgid "Fixed value"
+msgstr "Valor fijo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__flex_wage_ids
+msgid "Flex Wage"
+msgstr "Salario Flexible"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__flex_wage_amount
+msgid "Flex Wage Amount"
+msgstr "Asignación de salario flexible"
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_hr_contract_flex_wage
+msgid "Flex Wage Detailed List"
+msgstr "Lista  sueldo flexible"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Flexible salary to be replaced"
+msgstr "Sueldo flexible a reemplazar"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__message_follower_ids
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__message_follower_ids
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__message_follower_ids
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__message_follower_ids
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__message_channel_ids
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__message_channel_ids
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__message_channel_ids
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__message_channel_ids
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores Canal"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__message_partner_ids
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__message_partner_ids
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__message_partner_ids
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__message_partner_ids
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores Terceros"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_form
+msgid "Followers Group"
+msgstr "Grupo de seguidores"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__is_fuero_salud
+msgid "Fuero de Salud"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_resource_calendar__full_calendar
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv_event__calendar_type__full
+msgid "Full Calendar"
+msgstr "Calendario completo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contact__gender
+msgid "Gender"
+msgstr "Genero"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_form
+msgid "General Configuration"
+msgstr "Configuración general"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__generate_retroactive
+msgid "Generate Retroactive"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__group_ids
+msgid "Group"
+msgstr "Grupo"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_search
+msgid "Group By"
+msgstr "Agrupado por"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__followers_group_ids
+msgid "Group Followers"
+msgstr "Grupo de seguidores"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_form
+msgid "Groups Allowed for Creation"
+msgstr "Grupos de creación permitidos"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__is_h_e_procedure
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__is_h_e_procedure
+msgid "H.E Procedimiento"
+msgstr "Horas Extra procedimiento"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__h_e_procedure
+msgid "H.E Procedure"
+msgstr "Horas Extra procedimiento"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__hr_job_id
+msgid "HR Job"
+msgstr "Puesto de trabajo"
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_hr_pv_event
+msgid "HR PV Event"
+msgstr "Evento"
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_hr_pv_stage_followers
+msgid "HR Payroll Variations Stage Followers"
+msgstr "Seguidores"
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_hr_pv_type_subtype
+msgid "HR Payroll Variations Subtype"
+msgstr "Subtipo"
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_hr_pv_type
+msgid "HR Payroll Variations Type"
+msgstr "Tipo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__unit_half
+msgid "Half Day"
+msgstr "Medio día"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__hiring_type
+msgid "Hiring Type"
+msgstr "Tipo de contratación"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__holiday_event_id
+msgid "Holiday related"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_hr_assignment_employee
+msgid "Hr Assignment Employee"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_hr_assignment_configuration
+msgid "Hr Configuration Assignment"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.actions.act_window,name:hr_payroll_variations.hr_leave_code_action
+#: model:ir.model,name:hr_payroll_variations.model_hr_leave_code
+#: model:ir.ui.menu,name:hr_payroll_variations.hr_leave_code_menu_action
+msgid "Hr Leave Code"
+msgstr "Código de la ausencia"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_search
+msgid "Hr pv"
+msgstr "Variaciones de nómina"
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_hr_pv
+msgid "Human Resources Payroll Variants"
+msgstr "Recursos Humanos Variaciones de nómina"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_assignment_lines_configuration__id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_cancel_wizard__id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_configuration__id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_create_pv_wizard__id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_bonus__id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_bonus_type__id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_sena__id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_leave_code__id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_cancel_wizard__id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_check_date_wizard__id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_reject_wizard__id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_stage_followers__id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contact__id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contract__id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_employee__id
+msgid "ID"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__pv_create_contact__l10n_co_document_type__external_id
+msgid "ID del Exterior"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__ip_from
+msgid "IP From"
+msgstr "IP origen"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__activity_exception_icon
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_assignment_employee__activity_exception_icon
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de excepción."
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__identification_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__identification_id
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_search
+msgid "Identification No"
+msgstr "No Identificación"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_assignment_employee__message_needaction
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_assignment_employee__message_unread
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv__message_needaction
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv__message_unread
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_event__message_needaction
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_event__message_unread
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_type__message_needaction
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_type__message_unread
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_type_subtype__message_needaction
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_type_subtype__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado hay nuevos mensajes que requieren su atención."
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_assignment_employee__message_has_error
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_assignment_employee__message_has_sms_error
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv__message_has_error
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv__message_has_sms_error
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_event__message_has_error
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_event__message_has_sms_error
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_type__message_has_error
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_type__message_has_sms_error
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_type_subtype__message_has_error
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_type_subtype__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_form_notifications
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "In"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "Inability"
+msgstr "Incapacidad"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__increase_salary
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__increase_salary
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_form_notifications
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Increase Salary"
+msgstr "Incremento de Salario"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__interest_amount
+msgid "Interest Amount"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__is_bonus
+msgid "Is Bonus"
+msgstr "Es un Bono"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__is_contract_completion
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__is_contract_completion
+msgid "Is Contract Completion"
+msgstr "Es una terminación de contrato"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__message_is_follower
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__message_is_follower
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__message_is_follower
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__message_is_follower
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__is_generated_retroactive
+msgid "Is Generated Retroactive"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__is_extension
+msgid "Is extension"
+msgstr "Es una Prorroga"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__is_optional_calendar
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__is_optional_calendar
+msgid "Is optional calendar"
+msgstr "Es un calendario opcional"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__is_dis_aid
+msgid "Is_dis_aid"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_hr_job
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__hr_payroll_variations_job_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_employee__job_id
+msgid "Job Position"
+msgstr "Puesto de trabajo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_employee__job_title
+msgid "Job Title"
+msgstr "Título de puesto de trabajo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_assignment_lines_configuration____last_update
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_cancel_wizard____last_update
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_configuration____last_update
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee____last_update
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_create_pv_wizard____last_update
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_bonus____last_update
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_bonus_type____last_update
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_sena____last_update
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_leave_code____last_update
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv____last_update
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_cancel_wizard____last_update
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_check_date_wizard____last_update
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event____last_update
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_reject_wizard____last_update
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_stage_followers____last_update
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type____last_update
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype____last_update
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contact____last_update
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contract____last_update
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_employee____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_assignment_lines_configuration__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_cancel_wizard__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_configuration__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_create_pv_wizard__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_bonus__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_bonus_type__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_sena__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_leave_code__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_cancel_wizard__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_check_date_wizard__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_reject_wizard__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_stage_followers__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contact__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contract__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_employee__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_assignment_lines_configuration__write_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_cancel_wizard__write_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_configuration__write_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__write_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_create_pv_wizard__write_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_bonus__write_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_bonus_type__write_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_sena__write_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_leave_code__write_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__write_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_cancel_wizard__write_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_check_date_wizard__write_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__write_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_reject_wizard__write_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_stage_followers__write_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__write_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__write_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contact__write_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contract__write_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_employee__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__leave_id
+msgid "Leave"
+msgstr "Ausencia"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__leave_code_id
+msgid "Leave Code"
+msgstr "Código de la ausencia"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__leave_message
+msgid "Leave Message"
+msgstr "Mensaje de la ausencia"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__leave_type_id
+msgid "Leave Type"
+msgstr "Tipo de Ausencia"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_form_notifications
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "License attach"
+msgstr "Adjunto Licencia"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__limit_advance
+msgid "Limit Advance"
+msgstr "Limite de adelanto"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_event__restriction_day
+msgid "Limit day of the month to create a \"novedad\" of this type"
+msgstr "Limite de días del mes para crear novedad de este tipo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__location
+msgid "Location"
+msgstr "Localización"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__is_user_appr
+msgid "Logged user is the approver"
+msgstr "El usuario registrado es el aprobador"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__is_sec_appr_user
+msgid "Logged user is the second approver"
+msgstr "El usuario registrado es el segundo aprobador"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid ""
+"Los días aplicados como extensión y los días calendario no pueden ser "
+"diferentes"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjuntos principales"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__pv_create_contact__gender__male
+msgid "Male"
+msgstr "Masculino"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_employee__parent_id
+msgid "Manager"
+msgstr "Administrador"
+
+#. module: hr_payroll_variations
+#: model:ir.actions.server,name:hr_payroll_variations.action_massive_approval
+msgid "Massive Approval"
+msgstr "Aprobación masiva"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__max_days
+msgid "Max Days"
+msgstr "Máximo de días"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_event__max_days
+msgid "Maximun limit for the days in the \"Novedad\""
+msgstr "Máximo de días para esta variación"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_check_date_wizard__message
+msgid "Message"
+msgstr "Mensaje"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__message_has_error
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__message_has_error
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__message_has_error
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__message_has_error
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__message_has_error
+msgid "Message Delivery error"
+msgstr "Mensaje de error"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__message_ids
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__message_ids
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__message_ids
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__message_ids
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__min_days
+msgid "Min Days"
+msgstr "Mínimo de días"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_event__min_days
+msgid "Minimun limit for the days in the \"Novedad\""
+msgstr "Mínimo de días límite para esta variación."
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "Mismatch Date"
+msgstr "Fecha de desajuste"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contact__mobile
+msgid "Mobile"
+msgstr "Celular"
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_hr_employee_bonus
+msgid "Model for storing bonus cards"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_hr_employee_sena
+msgid "Model for storing monetization code sena"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_hr_employee_bonus_type
+msgid "Model for storing type bonus cards"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_job__monetization_sena_id
+msgid "Monetization Sena"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__start_date_period__am
+msgid "Morning"
+msgstr "Mañana"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__pv_create_contact__l10n_co_document_type__nit
+msgid "N.I.T."
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__pv_create_contact__l10n_co_document_type__rut
+msgid "NIT"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_assignment_lines_configuration__name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_configuration__name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_bonus__name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_bonus_type__name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_sena__name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_leave_code__name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__name
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__name
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.hr_assignment_employee_configuration_view_form
+msgid "Name"
+msgstr "Nombre"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_sena__name_occupation
+msgid "Name Occupation"
+msgstr "Nombre de Ocupación"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_assigment_employee.py:0
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "New"
+msgstr "Nuevo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__new_recruitment
+msgid "New Recruitment"
+msgstr "Nuevo reclutamiento"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__activity_date_deadline
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Siguiente plazo de actividad"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__activity_summary
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__activity_type_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__pv_create_contact__l10n_co_document_type__external_nit
+msgid "Nit Extranjería"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__pv_create_contact__l10n_co_document_type__natural_person_nit
+msgid "Nit persona natural"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_assigment_employee.py:0
+#, python-format
+msgid "No configuration of days and percentages"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.actions.act_window,name:hr_payroll_variations.action_hr_payroll_variations_notifications_all
+#: model:ir.ui.menu,name:hr_payroll_variations.menu_hr_payroll_variations_notifications_all
+msgid "Notifications"
+msgstr "Notificaciones"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_assignment_employee__message_needaction_counter
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv__message_needaction_counter
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_event__message_needaction_counter
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_type__message_needaction_counter
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_type_subtype__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_assignment_employee__message_has_error_counter
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv__message_has_error_counter
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_event__message_has_error_counter
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_type__message_has_error_counter
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_type_subtype__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_assignment_employee__message_unread_counter
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv__message_unread_counter
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_event__message_unread_counter
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_type__message_unread_counter
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_type_subtype__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes sin leer"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.check_date_wizard
+msgid "OK"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__observation_increase
+msgid "Observation Increase"
+msgstr "Observaciones del incremento"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__observation_recruitment
+msgid "Observation Recruitment"
+msgstr "Observaciones del reclutamiento"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_event__leave_type_id
+msgid "Only if event is a leave"
+msgstr "Unicamente si el evento es una novedad"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__only_work_days
+msgid "Only work Days"
+msgstr "Sólo los días laborables"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__only_work_hours
+msgid "Only work hours"
+msgstr "Solo horas de trabajo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__is_optional_approver
+msgid "Optional Approver"
+msgstr "Aprobador opcional"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__is_optional_approver_2
+msgid "Optional Approver 2"
+msgstr "Aprobador opcional 2"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__optional_approver_group_id
+msgid "Optional Approver Group"
+msgstr "Grupo Aprobador opcional"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__optional_approver2_group_id
+msgid "Optional Approver2 Group"
+msgstr "Grupo Aprobador opcional 2"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__original_maternity_leave
+msgid "Original Maternity Leave"
+msgstr "Original licencia de maternidad"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__pv_create_contact__gender__other
+msgid "Other"
+msgstr "Otros"
+
+#. module: hr_payroll_variations
+#: model:ir.actions.act_window,name:hr_payroll_variations.action_hr_payroll_variations
+msgid "PV"
+msgstr "Variaciones de nómina"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__pv_amount_absence_aid_id
+msgid "PV Amount Absence Aid"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.actions.act_window,name:hr_payroll_variations.action_hr_payroll_variations_event
+msgid "PV Event"
+msgstr "Eventos"
+
+#. module: hr_payroll_variations
+#: model:ir.ui.menu,name:hr_payroll_variations.menu_hr_payroll_variations_notifications
+msgid "PV Notifications"
+msgstr "Notificaciones"
+
+#. module: hr_payroll_variations
+#: model:ir.actions.act_window,name:hr_payroll_variations.action_hr_payroll_variations_subtype
+msgid "PV Subtype"
+msgstr "Subtipos"
+
+#. module: hr_payroll_variations
+#: model:ir.actions.act_window,name:hr_payroll_variations.action_hr_payroll_variations_type
+msgid "PV Type"
+msgstr "Tipos"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_payslip_line__pv_ids
+msgid "PVs"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.hr_assignment_employee_configuration_view_form
+msgid "Parametrization"
+msgstr "Parametrización"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__partner_id
+msgid "Partner"
+msgstr "Contacto"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__pv_create_contact__l10n_co_document_type__passport
+msgid "Pasaporte"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_hr_payslip
+msgid "Pay Slip"
+msgstr "Nómina"
+
+#. module: hr_payroll_variations
+#: model:ir.ui.menu,name:hr_payroll_variations.menu_hr_payroll_variations
+#: model:ir.ui.menu,name:hr_payroll_variations.menu_item_hr_payroll_variations
+msgid "Payroll Variations"
+msgstr "Variaciones de nómina"
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_hr_payslip_line
+msgid "Payslip Line"
+msgstr "Línea de nómina"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_assignment_lines_configuration__percentage
+msgid "Percentage (%)"
+msgstr "Porcentaje (%)"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__percentage_company
+msgid "Percentage Company"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__percentage_employee
+msgid "Percentage Employee"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_form
+msgid "Permissions"
+msgstr "Permisos"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contact__phone
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "Please fill end date."
+msgstr "Por favor diligencie el campo fecha final"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "Please select the employee first"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_job__position_wage
+msgid "Position wage"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__prepaid_medicine_id
+msgid "Prepaid Medicine"
+msgstr "Medicina prepagada"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_form
+msgid "Procedure"
+msgstr "Procedimiento"
+
+#. module: hr_payroll_variations
+#: model:ir.actions.server,name:hr_payroll_variations.action_process
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_form_notifications
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Process"
+msgstr "Procesar"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__state__processed
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_search
+msgid "Processed"
+msgstr "Procesado"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__pv_id
+msgid "Processed PV"
+msgstr "Pv Procesada"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__project_type
+msgid "Project Type"
+msgstr "Tipo de proyecto"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__projection_vacation
+msgid "Projection Vacation"
+msgstr "Proyectar vacaciones"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__pv_ids
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_contract_flex_wage__pv_id
+msgid "Pv"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__pv_count
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.hr_assigment_employee_view_form
+msgid "Pvs"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__quotes
+msgid "Quotes"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__manage_real_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__manage_date_real
+msgid "Real Date"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Real Date Start"
+msgstr "Fecha real de inicio"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__real_end_date
+msgid "Real End Date"
+msgstr "Fecha de finalización real"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__real_start_date
+msgid "Real Start Date"
+msgstr "Fecha de inicio real"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__is_recruitment
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__is_recruitment
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_form
+msgid "Recruitment"
+msgstr "Reclutamiento"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_contract__recruitment_reason_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__recruitment_reason_id
+msgid "Recruitment Reasons"
+msgstr "Razón de reclutamiento"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Recruitment Section"
+msgstr "Sección de reclutamiento"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__pv_create_contact__l10n_co_document_type__civil_registration
+msgid "Registro Civil"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_form_notifications
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_tree_notifications_to_approve
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Reject"
+msgstr "Rechazar"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__reject_reason
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_reject_wizard__reject_reason
+msgid "Reject Reason"
+msgstr "Razón de rechazo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__state__rejected
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_search
+msgid "Rejected"
+msgstr "Rechazado"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__report_employee_tag
+msgid "Report Employee Tag"
+msgstr "Informe Etiqueta del empleado"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__requered_account
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__requered_account
+msgid "Requered Account"
+msgstr "Cuenta requerida"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__requered_attach_lic
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__requered_attach_lic
+msgid "Requered Attach Lic"
+msgstr "Adjuntos de licencia requerido"
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_resource_calendar
+msgid "Resource Working Time"
+msgstr "Tiempo de Trabajo de Recursos"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__responsible_id
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__responsible_required
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__responsible_required
+msgid "Responsible Required"
+msgstr "Responsable requerido"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__activity_user_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__restriction_day
+msgid "Restriction Day"
+msgstr "Día de restricción"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Retroactive"
+msgstr "Retroactivo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__retroactive_initial_date
+msgid "Retroactive From Date"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__message_has_sms_error
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__message_has_sms_error
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__message_has_sms_error
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__message_has_sms_error
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error de entrega del SMS"
+
+#. module: hr_payroll_variations
+#: model:res.groups,name:hr_payroll_variations.group_sst
+msgid "SST"
+msgstr "Seguridad y Salud en el trabajo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_assignment_employee__type_assignment__salary
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__type_assignment__salary
+msgid "Salary"
+msgstr "Salario"
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_hr_salary_rule
+msgid "Salary Rule"
+msgstr "Regla de Salario"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contract__struct_id
+msgid "Salary Structures"
+msgstr "Estructura salarial"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__salary_value
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__salary_value
+msgid "Salary value"
+msgstr "Valor del salario"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__pv_create_contact__l10n_co_document_type__residence_document
+msgid "Salvoconducto de Permanencia"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_form_notifications
+msgid "Sección de reclutamiento"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__payment_type__second
+msgid "Second"
+msgstr "Segundo"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_form_notifications
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Second Approve"
+msgstr "Segundo Aprobador"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__second_approver_group_id
+msgid "Second Approver Group"
+msgstr "Grupo de segundo aprobador"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__second_approver_required
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_form
+msgid "Second Approver Required"
+msgstr "Grupo de segundo aprobador requerido"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contact__second_name
+msgid "Second Name"
+msgstr "Segundo nombre"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contact__second_surname
+msgid "Second Surname"
+msgstr "Segundo apellido"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_form
+msgid "Second approval option"
+msgstr "Opción segundo aprobador"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__send_to_employee
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__send_to_employee
+msgid "Send To Employee"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.actions.server,name:hr_payroll_variations.send_to_employee_action
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Send to Employee"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__sequence_id
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv__name
+msgid "Sequence Name"
+msgstr "Secuencia"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_form_notifications
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Set to Approve"
+msgstr "Aprobar"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Set to Draft"
+msgstr "Cambio a borrador"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__pv_create_contact__l10n_co_document_type__external_society_without_nit
+msgid "Sociedad extranjera sin N.I.T. En Colombia"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid ""
+"Some pvs are not in the Wait/Wait for Comments or may be Logged user is the "
+"approver is False.\n"
+" pvs:- "
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_stage_followers__stage
+msgid "Stage"
+msgstr "Estado"
+
+#. module: hr_payroll_variations
+#: model:ir.ui.menu,name:hr_payroll_variations.menu_hr_config_pv_stage_followers
+msgid "Stage Followers"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__start_date
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__start_date_extend
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__start_date_period
+msgid "Start Date Period"
+msgstr "Fecha de inicio de periodo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__state
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__state
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contact__state_id
+msgid "State"
+msgstr "Estado"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_search
+msgid "Status"
+msgstr "Estado"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_assignment_employee__activity_state
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Vencida: la fecha tope ya ha pasado\n"
+"Hoy: La fecha tope es hoy\n"
+"Planificada: futuras actividades."
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__structure_type_id
+msgid "Structure Type"
+msgstr "Tipo de estructura"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__subcontract_id
+msgid "Sub Contract"
+msgstr "Sub Contrato"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__subtype_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__subtype_id
+#: model:ir.ui.menu,name:hr_payroll_variations.menu_hr_config_pv_subtype
+msgid "Sub-Type"
+msgstr "Subtipo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__subcontract
+msgid "Subcontract?"
+msgstr "SubContrato?"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_search
+msgid "Subtype"
+msgstr "Subtipo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__support
+msgid "Support"
+msgstr "Soporte"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__support_name
+msgid "Support Name"
+msgstr "Nombre del soporte"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__support_size
+msgid "Support Size"
+msgstr "Tamaño del soporte"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__support_attach_url
+msgid "Support URL"
+msgstr "URL del soporte"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contact__surname
+msgid "Surname"
+msgstr "Apellidos "
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_bonus__tn
+msgid "T.N"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_bonus__card
+msgid "Target product"
+msgstr "Etapa Producto objetivo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__pv_create_contact__l10n_co_document_type__id_card
+msgid "Tarjeta de Identidad"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__hiring_type__temporary
+msgid "Temporary"
+msgstr "Temporal"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "The PV is not on working hours"
+msgstr "La variación no está en su horario laboral"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_employee.py:0
+#, python-format
+msgid "The code is in two events you must only one event with this code."
+msgstr ""
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid ""
+"The contract termination date is not the same as the current contract date."
+msgstr ""
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "The employee cannot be equal to the employee to be replaced"
+msgstr "El empleado no puede ser igual al empleado que va a ser reemplazado"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid ""
+"The employee don't have created the PV with event %s between these dates"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "The employee don't have days availabel for this request"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "The employee is absent"
+msgstr "El empleado está ausente"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_employee.py:0
+#, python-format
+msgid "The name is in two events you must only one event with this name."
+msgstr ""
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "The selected assignment is of lower salary allocation"
+msgstr "La asignación seleccionada es de una asignación salarial más baja"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "The start date cannot occur after end date"
+msgstr "La fecha de inicio no puedes estar después de la fecha fin"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_assigment_employee.py:0
+#, python-format
+msgid "The start date must be less than the end date"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "The starting date cannot be greater than the retroactive starting date"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid ""
+"The total_days must not be greater than the holidays taken on business days "
+"in the PV %s"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "The variation no can create in state approved."
+msgstr "La variación no puede ser creada como aprobado"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid ""
+"The working hours do not match the assigned schedule please check the dates "
+"entered"
+msgstr ""
+"Su horario laboral no concuerda con el horario asignado por favor revise "
+"las fechas ingresadas"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_form
+msgid "Third approval option"
+msgstr "Tercera opción de aprobación"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "This event cannot be create in days  work employee calendar out "
+msgstr ""
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "This event requires an attach"
+msgstr "Este evento requiere un adjunto"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_event__calendar_type
+msgid ""
+"This is the way the total days are calculated:Based on Employee's Calendar "
+"or Full Calendar"
+msgstr ""
+"Este proceso calcula el total de los días basado en calendario del empleado "
+"o calendario completo"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "This user can't approve. He/She is not in the group %s"
+msgstr ""
+"Usuario no tiene derechos para aprobar, el no se encuentra en el grupo %s"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "This user has no access right to create pv."
+msgstr "Usuario no tiene derechos para crear variantes"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "This user has no access right to write pv."
+msgstr "Usuario no tiene derechos para escribir variantes"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "Time"
+msgstr "Tiempo"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_form
+msgid "Time Configuration"
+msgstr "Configuración tiempo"
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_hr_leave
+msgid "Time Off"
+msgstr "Ausencias"
+
+#. module: hr_payroll_variations
+#: model:ir.actions.act_window,name:hr_payroll_variations.action_hr_payroll_variations_notifications_to_approve
+#: model:ir.ui.menu,name:hr_payroll_variations.menu_hr_payroll_variations_notifications_to_approve
+msgid "To Approve"
+msgstr "Por aprobar"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Total Amount"
+msgstr "Monto total"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__total_company
+msgid "Total Company"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__total_days
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__total_days
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Total Days"
+msgstr "Días totales"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__total_employee
+msgid "Total Employee"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__total_fix_hours
+msgid "Total Fix Hours"
+msgstr "Total horas fijas"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__total_fix_hour
+msgid "Total Fix Hours Procedure"
+msgstr "Horas fijas por procedimiento"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__total_hours
+msgid "Total Hours"
+msgstr "Horas totales"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__total_minutes
+msgid "Total Minutes"
+msgstr "Minutos totales"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Total Percentage"
+msgstr "Porcentaje Total"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee__total_remaining_approve_pv
+msgid "Total Remaining Approve pv"
+msgstr "Total restando por aprobar"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__total_value
+msgid "Total Value"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__total_days_calendar
+msgid "Total days Calendar"
+msgstr "Total Días Calendario"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__total_day_extend
+msgid "Total days extend"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "Total hours per week is different from full time"
+msgstr "El total de horas por semana es diferente al de tiempo completo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__type_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__type_id
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__type_id
+#: model:ir.ui.menu,name:hr_payroll_variations.menu_hr_config_pv_type
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_search
+msgid "Type"
+msgstr "Tipo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__type_assignment
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__type_assignment
+msgid "Type Assignment"
+msgstr "Tipo de encargo"
+
+#. module: hr_payroll_variations
+#: model:ir.actions.act_window,name:hr_payroll_variations.employee_bonus_type_action
+msgid "Type Bonus"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__is_type_leave
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__is_type_leave
+msgid "Type Leave"
+msgstr "Tipo de ausencia"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__is_payment_type
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__is_payment_type
+msgid "Type Payment"
+msgstr "Tipo de pago"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_assignment_employee__activity_exception_decoration
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de actividad de excepción registrada."
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__is_upc_add
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__is_upc_add
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "UPC Add"
+msgstr "UPC Agregar"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__unjustified
+msgid "Unjustified"
+msgstr "Sin Justa Causa"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__message_unread
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__message_unread
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__message_unread
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__message_unread
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes sin leer"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__message_unread_counter
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__message_unread_counter
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__message_unread_counter
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__message_unread_counter
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes sin leer"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__use_extension
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__use_extension
+msgid "Use Extension"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_stage_followers__partner_id
+msgid "User"
+msgstr "Usuario"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__vals_visible
+msgid "Vals Visible"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee_bonus__number
+msgid "Visa code"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__wage
+msgid "Wage"
+msgstr "Sueldo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__wage_assign
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_contract__wage_assign
+msgid "Wage Assign"
+msgstr "Sueldo asignado"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/wizard/pv_create_contract.py:0
+#, python-format
+msgid "Wage Assign should be positive."
+msgstr "El sueldo asignado debe ser positivo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__wage_employee_to_replace
+msgid "Wage Employee To Replace"
+msgstr "Salario de empleado a reemplazar"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__wage_difference
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__wage_difference
+msgid "Wage difference"
+msgstr "Diferencia de salario"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__state__wait
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_form_notifications
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_search
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Wait"
+msgstr "En espera"
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_form_notifications
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "Wait for Comments"
+msgstr "Esperando comentarios"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__state__wait_comments
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_search
+msgid "Wait for comments"
+msgstr "Esperando comentarios"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields.selection,name:hr_payroll_variations.selection__hr_pv__state__wait_second_approval
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_search
+msgid "Waiting Second Approval"
+msgstr "Esperando segunda aprobación"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "Warning!"
+msgstr "¡Alerta!"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_assignment_employee__website_message_ids
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__website_message_ids
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_event__website_message_ids
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type__website_message_ids
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv_type_subtype__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_assignment_employee__website_message_ids
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv__website_message_ids
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_event__website_message_ids
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_type__website_message_ids
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv_type_subtype__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicaciones del sitio web"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_employee__address_id
+msgid "Work Address"
+msgstr "Dirección de trabajo"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_employee__work_email
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_pv_create_employee__work_email
+#: model:res.groups,name:hr_payroll_variations.group_work_email
+msgid "Work Email"
+msgstr "Correo-e del trabajo"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/inherited_hr_salary_rule.py:0
+#, python-format
+msgid ""
+"Wrong python code defined for salary rule %s (%s).\n"
+"Error: %s"
+msgstr ""
+"Código Python incorrecto definido para la regla salarial %s (%s).\n"
+"Error: %s"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "You are not allowed for this process!"
+msgstr "No tienes permiso para procesar"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_leave.py:0
+#, python-format
+msgid ""
+"You can not set 2 times off that overlaps on the same day for the same "
+"employee."
+msgstr ""
+"No puede establecer 2 ausencias que se superponga el mismo día para el "
+"mismo empleado."
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid ""
+"You cannot create two pv with the same Employee and Start Date and End Date "
+"mix. The other record is  in dates  - "
+msgstr ""
+"No se pueden crear dos pv con la misma mezcla de empleado y fecha de inicio "
+"y fin. El otro registro está en fechas - "
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid ""
+"You cannot enter a disability of more than 180 days or exceed the days with "
+"extensions, please select another event"
+msgstr ""
+"No se puede introducir una discapacidad de más de 180 días o exceder los "
+"días con prórrogas, por favor, seleccione otro evento"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid ""
+"You cannot generate process contract termination why the employee have a "
+"leave registered with sequence "
+msgstr ""
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "You cannot replace an employee with a lower salary"
+msgstr "No puedes reemplazar a una empleada con un salario más bajo"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "You have another PV with the sequence %s with the same data"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "You have delivery evidence phisical of the leave"
+msgstr "Tienes pruebas de entrega física de la licencia"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "You have to delivery leave phisical evidence"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.employee_sena_view_form
+msgid "_form"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.create_pv_wizard_view_form
+msgid "create_pv_wizard_form"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.employee_sena_view_tree
+msgid "employee.sena_tree"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.employee_bonus_view_form
+msgid "employee_bonus_form"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.employee_bonus_view_tree
+msgid "employee_bonus_tree"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.employee_bonus_type_view_form
+msgid "employee_bonus_type_form"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.employee_bonus_type_view_tree
+msgid "employee_bonus_type_tree"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_pv__extension
+msgid "extension"
+msgstr ""
+"No puedes crear dos novedades para el mismo empleado en las mismas fechas."
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.assignment_cancel_wizard_form
+msgid "hr.assignment.cancel.wizard.form"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_form_notifications
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_tree
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_tree_notifications_all
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_tree_notifications_approved
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_tree_notifications_to_approve
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_pv_form
+msgid "hr.pv"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_event_tree
+msgid "hr.pv.event"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.reject_wizard_form
+msgid "hr.pv.reject.wizard.form"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_subtype_form
+msgid "hr.pv.subtype"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_type_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_type_tree
+msgid "hr.pv.type"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_payroll_variations_subtype_tree
+msgid "hr.pv.type.subtype"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.hr_assigment_employee_view_tree
+msgid "hr_assigment_employee_tree"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_employee.py:0
+#: model:ir.ui.menu,name:hr_payroll_variations.menu_hr_config_pv
+#, python-format
+msgid "pv"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_hr_assignment_cancel_wizard
+msgid "pv Cancel Assignment Wizard"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_hr_pv_cancel_wizard
+msgid "pv Cancel Wizard"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_hr_pv_check_date_wizard
+msgid "pv Check Date"
+msgstr "Verifique las fechas"
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_pv_create_contact
+msgid "pv Create Contact"
+msgstr "Crear Contacto"
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_pv_create_contract
+msgid "pv Create Contract"
+msgstr "Crear Contrato"
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_pv_create_employee
+msgid "pv Create Employee"
+msgstr "Crear Empleado"
+
+#. module: hr_payroll_variations
+#: model:res.groups,name:hr_payroll_variations.group_pv_event
+msgid "pv Event"
+msgstr "Evento"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid ""
+"pv Event doesn't have enough Limit Advance Days : %d assigned. Please "
+"review the process before continue."
+msgstr ""
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid ""
+"pv Event doesn't have enough Projection Vacation leaves. Please review the "
+"process before continue."
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model:res.groups,name:hr_payroll_variations.group_pv_process
+msgid "pv Process"
+msgstr "Procesar"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,field_description:hr_payroll_variations.field_hr_leave__pv_ref
+msgid "pv Reference"
+msgstr "Referencia"
+
+#. module: hr_payroll_variations
+#: model:ir.model,name:hr_payroll_variations.model_hr_pv_reject_wizard
+msgid "pv Reject Wizard"
+msgstr "Asistente de rechazo"
+
+#. module: hr_payroll_variations
+#: model:res.groups,name:hr_payroll_variations.group_pv_reject_to_draft
+msgid "pv Reject to Draft"
+msgstr "Rechazo a Borrador"
+
+#. module: hr_payroll_variations
+#: model:ir.actions.act_window,name:hr_payroll_variations.action_view_stage_followers
+msgid "pv Stage Followers"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: model_terms:ir.ui.view,arch_db:hr_payroll_variations.view_hr_employee_form_pv_inherit
+msgid "pv(s)"
+msgstr ""
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "pv:-  has a problem for approval"
+msgstr "Variación tiene un problema al aprobar"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "the amount of days exceeds (default or excess) the event limit"
+msgstr "El total de días excede por mínimo o máximo el límite del evento"
+
+#. module: hr_payroll_variations
+#: code:addons/hr_payroll_variations/models/hr_pv.py:0
+#, python-format
+msgid "the amount or percentage must be better 0"
+msgstr "la cantidad o porcentaje debe ser mayor 0"
+
+#. module: hr_payroll_variations
+#: model:ir.model.fields,help:hr_payroll_variations.field_hr_pv__partner_id
+msgid "third party who owns the debt"
+msgstr "el tercero que posee la deuda"

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--<data>
+        <record id="view_partner_lavish_account_fe_form" model="ir.ui.view">
+            <field name="name">res.partner.lavish.account.fe.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="priority">50</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='banks']" position="after">
+                    <group string="Facturación Electrónica" name="lavish_fe">
+                        <field name="x_tax_responsibilities" widget="many2many_tags"/>
+                        <field name="lavish_electronic_invoice_fiscal_regimen"/>
+                        <field name="lavish_electronic_invoice_responsable_iva"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_company_lavish_account_form" model="ir.ui.view">
+            <field name="name">res.company.lavish.account.form.inherit</field>
+            <field name="model">res.company</field>
+            <field name="priority">50</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='social_media']" position="after">
+                    <group string="Notas Facturación Electrónica">
+                        <field name="note_id" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="note"/>
+            					<field name="company_id" invisible="1"/>
+                            </tree>
+                        </field>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>-->
+</odoo>

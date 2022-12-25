@@ -5,4 +5,5 @@ access_ins_financial_report,ins.financial.report,model_ins_financial_report,acco
 access_ins_partner_ageing,ins.partner.ageing,model_ins_partner_ageing,account.group_account_user,1,1,1,1
 access_ins_partner_ledger,ins.partner.ledger,model_ins_partner_ledger,account.group_account_user,1,1,1,1
 access_ins_trial_balance,ins.trial.balance,model_ins_trial_balance,account.group_account_user,1,1,1,1
-access_common_xlsx_out,Common.xlsx.out,model_common_xlsx_out,base.group_user,1,0,0,0
+access_ins_partner_invoice,ins.partner.invoice,model_ins_partner_invoice,account.group_account_user,1,1,1,1
+access_ins_partner_payment,ins.partner.payment,model_ins_partner_payment,account.group_account_user,1,1,1,1

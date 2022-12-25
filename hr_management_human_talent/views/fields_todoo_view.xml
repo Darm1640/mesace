@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Hr Employee -->
+        <record id="inherit_fields_todoo_hr_employee" model="ir.ui.view">
+            <field name="name">inherit_fields_todoo_hr_employee</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//page[@name='public']" position="after">
+                    <page string="Todoo Fields Request News">
+                        <group>
+                            <group>
+                                <field name="ciudad_requi"/>
+                                <field name="unidad_organizativa_requi"/>
+                            </group>
+                            <group string="Apprentice Sena">
+                                <field name="nivel_riesgo"/>
+                                <field name="arl_emp"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="inherit_fields_todoo_hr_contract" model="ir.ui.view">
+            <field name="name">inherit_fields_todoo_hr_employee</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//page[@name='other']" position="after">
+                    <page string="Todoo Fields">
+                        <group>
+                            <group>
+                                <field name="ciudad_requi"/>
+                            </group>
+                            <group string="Apprentice Sena">
+                                <field name="tipo_aprendiz"/>
+                                <field name="fecha_fin_etapa_lectiva"/>
+                                <field name="fecha_inicio_etapa_productiva"/>
+                                <field name="fecha_fin_etapa_productiva"/>
+                            </group>
+
+                        </group>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

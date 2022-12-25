@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+   <record id="custom_sale_order_customer_comment_on_website" model="ir.ui.view">
+        <field name="name">sale.order.customer.comment.website.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook//page[last()]" position="after">
+              <page name="customer_comment" string="Mensaje Cliente Website">
+                <field name="custom_customer_comment"/>
+              </page>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

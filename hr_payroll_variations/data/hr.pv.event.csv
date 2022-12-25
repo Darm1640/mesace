@@ -1,0 +1,28 @@
+id,name,subtype_id/id,type_id/id
+pv_event_1,Ingresos,pv_subtype_PRO,pv_type_PRO
+pv_event_2,Temporales,pv_subtype_PRO,pv_type_PRO
+pv_event_3,Asignación salarial ingreso,pv_subtype_PRO,pv_type_PRO
+pv_event_4,Aumento IPC,pv_subtype_OCA,pv_type_ECO
+pv_event_5,aumentos escala nivelacion promoción,pv_subtype_PRO,pv_type_PRO
+pv_event_6,Cambios de cargo,pv_subtype_PRO,pv_type_PRO
+pv_event_7,Dotaciones,pv_subtype_OCA,pv_type_ECO
+pv_event_8,Celulares,pv_subtype_OCA,pv_type_ECO
+pv_event_9,Descuentos por capacitación,pv_subtype_OCA,pv_type_ECO
+pv_event_10,Vacaciones,pv_subtype_AUS,pv_type_TIE
+pv_event_11,Don Arturo,pv_subtype_OCA,pv_type_ECO
+pv_event_12,Incapacidad,pv_subtype_AUS,pv_type_TIE
+pv_event_13,Licencias,pv_subtype_AUS,pv_type_TIE
+pv_event_14,Cesion de contrato,pv_subtype_PRO,pv_type_PRO
+pv_event_15,Suspensión de contrato,pv_subtype_PRO,pv_type_PRO
+pv_event_16,Sanciones Disciplinarias,pv_subtype_PRO,pv_type_PRO
+pv_event_17,Retiros Voluntarios,pv_subtype_TERM_CONTR,pv_type_PRO
+pv_event_18,Despido sin Justa Causa/mutuo,pv_subtype_TERM_CONTR,pv_type_PRO
+pv_event_19,Despido con Justa causa,pv_subtype_TERM_CONTR,pv_type_PRO
+pv_event_20,Horas extra,pv_subtype_OCA,pv_type_ECO
+pv_event_21,Retiro de cesantias,pv_subtype_OCA,pv_type_ECO
+pv_event_22,Cartas de incrementos laborales,pv_subtype_PRO,pv_type_PRO
+pv_event_23,Certificaciones laborales,pv_subtype_PRO,pv_type_PRO
+pv_event_24,Reportes para declaración de renta,pv_subtype_PRO,pv_type_PRO
+pv_event_25,Beneficiarios,pv_subtype_PRO,pv_type_PRO
+pv_event_26,Prestamos,pv_subtype_FIJ,pv_type_ECO
+pv_event_27,Embargos,pv_subtype_FIJ,pv_type_ECO

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="sh_cart_ajax_assets_frontend" inherit_id="website.assets_frontend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/sh_qty_shop_ajax/static/src/js/shop.js"></script>
+            <link rel="stylesheet" type="text/scss" href="/sh_qty_shop_ajax/static/src/scss/shop.scss" />
+        </xpath>
+    </template>
+</odoo>

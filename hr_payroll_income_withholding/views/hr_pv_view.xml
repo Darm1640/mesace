@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_pv_event_form_inherite_automatically_wi" model="ir.ui.view">
+        <field name="name">hr.pv.event.form.inherite.automatically.wi</field>
+        <field name="model">hr.pv.event</field>
+        <field name="inherit_id" ref="hr_payroll_variations.view_hr_payroll_variations_event_form"/>
+        <field name="arch" type="xml">
+            <page name="entities" position="after">
+                <page name="income withholding" string="Income Withholding">
+                    <group col="4">
+                        <field name="income_withholding"/>
+                        <field name="deduction_id" attrs="{'invisible':[('income_withholding','=',False)]}"/>
+                    </group>
+                </page>
+            </page>
+        </field>
+    </record>
+
+    <!--<record id="hr_pv_form_inherite_automatically_wi" model="ir.ui.view">
+        <field name="name">hr.pv.form.inherite.automatically.wi</field>
+        <field name="model">hr.pv</field>
+        <field name="inherit_id" ref="hr_payroll_variations.view_hr_pv_form"/>
+        <field name="arch" type="xml">
+            <field name="amount" position="before">
+                <field name="percentage" attrs="{'invisible':[('vals_visible','!=', True)]}"/>
+            </field>
+            <field name="bank_account_id" position="before">
+                <field name="deduction_employee_id" class="oe_read_only"/>
+            </field>
+        </field>
+    </record>-->
+
+</odoo>

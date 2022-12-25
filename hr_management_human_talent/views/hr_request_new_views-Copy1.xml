@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Request For news Views -->
+        <record id="request_for_news_view_form" model="ir.ui.view">
+            <field name="name">request_for_news_view_form</field>
+            <field name="model">hr.request.for.news</field>
+            <field name="arch" type="xml">
+                <form string="request_for_news_form">
+                    <header>
+                        <button name="validate_document" type="object" string="Validate Document" icon="fa-bolt"
+                                attrs="{'invisible':[('state','!=','finalized')]}"/>
+                        <button name="create_sub_contract" type="object" string="Create Sub-Contract"
+                                icon="fa-user-plus"
+                                attrs="{'invisible':['|',('check_subcontract','=',False),('state','!=','in_process')]}"/>
+                        <field name="state" widget="statusbar" clickable="1"/>
+                    </header>
+                    <sheet>
+
+                        <field name="company_id" invisible="1"/>
+                        <field name="check_subcontract" invisible="1"/>
+                        <field name="check_salary" invisible="1"/>
+                        <field name="check_promotion" invisible="1"/>
+                        <field name="check_contract_term" invisible="1"/>
+                        <field name="check_extend" invisible="1"/>
+                        <field name="check_extend_number" invisible="1"/>
+                        <field name="check_change_contract" invisible="1"/>
+                        <field name="check_date_end_type_contract" invisible="1"/>
+                        <field name="check_is_center_cost" invisible="1"/>
+                        <field name="contract_type_end_date" invisible="1"/>
+
+                        <div>
+                            <h1>
+                                <field name="name" readonly="1" force_save="1"/>
+                            </h1>
+                        </div>
+
+                        <separator string="Novelties"/>
+                        <group colspan="2">
+                            <group col="1">
+                                <field name="model" required="1" attrs="{'readonly':[('state','=','finalized')]}"/>
+                                <field name="employee_id" required="1" domain="[('company_id','=',company_id)]"
+                                       options="{'no_create': True, 'no_create_edit':True}"
+                                       attrs="{'readonly':[('state','=','finalized')]}"/>
+                                <field name="employee_name"/>
+                                <field name="identification_name_concatenate" invisible="True"/>
+                                <field name="related_contract" readonly="1" force_save="1"
+                                       attrs="{'invisible':[('model','!=','contract')]}"/>
+                                <field name="document_number" readonly="1" force_save="1"/>
+                                <field name="request_date"
+                                       attrs="{'invisible':[('model','!=','employee')],'readonly':[('state','=','finalized')]}"/>
+                                <field name="filed_date"
+                                       attrs="{'invisible':[('model','!=','employee')],'readonly':[('state','=','finalized')]}"/>
+                                <field name="status_procedure"
+                                       attrs="{'invisible':[('subsystem','=',False)],'required':[('subsystem','!=',False)],'readonly':[('state','=','finalized')]}"/>
+                            </group>
+
+                            <group col="2">
+                                <field name="process"
+                                       attrs="{'invisible':[('model','!=','employee')],'required':[('model','==','employee')],'readonly':[('state','=','finalized')]}"/>
+                                <field name="type_novelty"
+                                       attrs="{'invisible':[('model','=','employee')],'required':[('model','!=','employee')],'readonly':[('state','=','finalized')]}"/>
+                                <field name="subsystem"
+                                       attrs="{'invisible':[('model','=','contract')],'readonly':[('state','=','finalized')], 'required':[('model','=','employee')]}"/>
+                                <field name="start_date"
+                                       attrs="{'invisible':['|',('model','!=','contract'),('check_extend','=',True)],'readonly':[('state','=','finalized')]}"/>
+                                <field name="final_date"
+                                       attrs="{'invisible':['|',('model','!=','contract'),('check_extend','=',True)],'readonly':[('state','=','finalized')]}"/>
+                                <field name="creation_date" readonly="1"/>
+                                <field name="check_change_unity_organizational"/>
+                                <field name="approval_date"
+                                       attrs="{'invisible':[('model','!=','employee')],'required':[('model','==','employee')],'readonly':[('state','=','finalized')]}"/>
+
+                                <field name="check_cost_center"
+                                       attrs="{'invisible':['|',('model','!=','contract'),('check_is_center_cost','=',False)],'readonly':[('state','=','finalized')]}"
+                                       widget="boolean_toggle"/>
+                                <field name="check_cost_center_distribution"
+                                       attrs="{'invisible':[('check_cost_center','=',False)]}" widget="boolean_toggle"/>
+
+
+                                <field name="check_change_organizational_unit"
+                                       attrs="{'invisible':['|',('model','!=','contract'),('check_promotion','=',False)],'readonly':[('state','=','finalized')]}"
+                                       widget="boolean_toggle"/>
+
+                                <!-- Extend -->
+                                <field name="current_extension_number"
+                                       attrs="{'invisible':[('check_extend','=',False)]}" readonly="1" force_save="1"/>
+
+                                <div attrs="{'invisible':['|',('check_extend_number', '=' , False),('check_extend', '=',False)]}">
+                                    <h2 style="color:red;">ALERTA PRORROGA!</h2>
+                                    <h5>El tiempo de contrato no puede ser igual o menor a las prorrogas anteriores</h5>
+                                </div>
+
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Novelties"
+                                  attrs="{'invisible':['|','|',('model','=',False),('check_extend','=',True),('check_change_unity_organizational','!=',True)]}">
+                                <group>
+                                    <group>
+                                        <field name="old_city_id"
+                                               attrs="{'invisible':[('check_change_city','=',False)]}"/>
+                                        <field name="check_change_city" invisible="True"/>
+                                        <field name="check_change_stage" invisible="True"/>
+                                        <!-- Promotion -->
+                                        <field name="department" readonly="1" force_save="1"
+                                               attrs="{'invisible':[('check_promotion','=',False)],'readonly':[('state','=','finalized')]}"/>
+                                        <field name="position" readonly="1" force_save="1"
+                                               attrs="{'invisible':[('check_promotion','=',False)],'readonly':[('state','=','finalized')]}"/>
+
+                                        <field name="current_salary" widget="monetary" readonly="1" force_save="1"
+                                               attrs="{'invisible':[('check_salary','=',False),('check_promotion','=',False)]}"/>
+
+                                        <field name="current_contract_type" readonly="1" force_save="1"
+                                               attrs="{'invisible':[('check_promotion','=',False)]}"/>
+
+                                        <field name="source_entity" readonly="1"
+                                               options="{'no_create': True, 'no_create_edit':True}"
+                                               attrs="{'invisible':[('process','!=','transfers')]}"/>
+
+                                        <field name="destination_entity"
+                                               options="{'no_create': True, 'no_create_edit':True}"
+                                               attrs="{'invisible':[('process','!=','inclusions')],'required':[('process','=','inclusions')], 'readonly':[('process','=','inclusions')]}"/>
+
+                                        <!-- Contract Client/Work -->
+                                        <field name="current_contract_client_work"
+                                               attrs="{'invisible':[('check_promotion','=',False)]}" readonly="1"
+                                               force_save="1"/>
+
+
+                                        <!-- Organization unit -->
+                                        <field name="organization_unit_actual" readonly="1" force_save="1"
+                                               attrs="{'invisible':[('check_change_organizational_unit','=',False),('check_change_unity_organizational','=',False)]}"/>
+
+                                    </group>
+                                    <group>
+
+                                        <field name="new_position" domain="[('company_id','=',company_id)]"
+                                               attrs="
+                                        {'invisible':[('check_promotion','=',False)],'required':[('check_promotion','=',True)],'readonly':[('state','=','finalized')]}"/>
+
+                                        <field name="destination_entity"
+                                               options="{'no_create': True, 'no_create_edit':True}"
+                                               attrs="{'invisible':[('process','!=','transfers')],'required':[('process','=','transfers')],'readonly':[('state','=','finalized')]}"/>
+
+                                        <field name="salary_type"
+                                               attrs="{'invisible':[('check_salary','=',False)],'required':[('check_salary','=',True)],'readonly':[('state','=','finalized')]}"/>
+
+                                        <field name="new_salary" widget="monetary"
+                                               attrs="{'invisible':[('check_salary','=',False),('check_promotion','=',False)],'required':[('check_salary','=',True)],'readonly':[('state','=','finalized')]}"/>
+
+                                        <field name="salary_percent"
+                                               attrs="{'invisible':[('check_salary','=',False),('check_promotion','=',False)],'required':[('check_salary','=',True)],'readonly':[('state','=','finalized')]}"/>
+                                        <field name="new_city_id"
+                                               attrs="{'invisible':[('check_change_city','=',False)],'required':[('check_change_city','!=',False)]}"/>
+                                        <field name="payroll_config_id"
+                                               attrs="{'invisible':[('check_salary','=',False)],'required':[('check_salary','!=',False)]}"/>
+                                        <field name="integral_salary_name"
+                                               attrs="{'invisible':[('check_salary','=',False)]}"/>
+                                        <field name="integral_salary_value"
+                                               attrs="{'invisible':[('check_salary','=',False)]}"/>
+
+                                        <field name="new_apprentice_stage"
+                                               attrs="{'invisible':[('check_change_stage','!=',True)]}"/>
+                                        <field name="new_class_stage_end"
+                                               attrs="{'invisible':[('check_change_stage','!=',True)]}"/>
+                                        <field name="new_start_production_stage"
+                                               attrs="{'invisible':[('check_change_stage','!=',True)]}"/>
+                                        <field name="new_final_production_stage"
+                                               attrs="{'invisible':[('check_change_stage','!=',True)]}"/>
+
+                                        <field name="contract_type_id"
+                                               attrs="{'invisible':[('check_subcontract','=',False)],'readonly':[('state','=','finalized')]}"/>
+
+                                        <field name="new_contract_client_work"
+                                               attrs="{'invisible':[('check_promotion','=',False)],'readonly':[('state','=','finalized')]}"/>
+
+
+                                        <!-- Unit Organization -->
+                                        <field name="new_organization_unit"
+                                               attrs="{'invisible':[('check_change_organizational_unit','=',False)],'readonly':[('state','=','finalized')],'required':[('check_change_organizational_unit','=',True)]}"/>
+
+                                        <h4 attrs="{'invisible':['|',('check_subcontract','=',False),('check_contract_term','=',False)]}">
+                                            Contract duration
+                                        </h4>
+                                        <field name="duration_year"
+                                               attrs="{'invisible':['|',('check_subcontract','=',False),('check_contract_term','=',False)]}"/>
+                                        <field name="duration_month"
+                                               attrs="{'invisible':['|',('check_subcontract','=',False),('check_contract_term','=',False)]}"/>
+                                        <field name="duration_day"
+                                               attrs="{'invisible':['|',('check_subcontract','=',False),('check_contract_term','=',False)]}"/>
+
+
+                                    </group>
+                                </group>
+
+                                <group string="Retroactive" attrs="{'invisible':[('check_salary','=',False)]}">
+                                    <group>
+                                        <field name="generate_retroactive"/>
+                                        <field name="retroactive_event"
+                                               attrs="{'invisible':[('generate_retroactive','=',False)],'required':[('generate_retroactive','=',True)]}"/>
+                                        <field name="retroactive_initial_date"
+                                               attrs="{'invisible':[('generate_retroactive','=',False)],'required':[('generate_retroactive','=',True)]}"/>
+                                        <field name="pv_id" readonly="1" force_save="1"
+                                               attrs="{'invisible':[('generate_retroactive','=',False)]}"/>
+                                    </group>
+                                </group>
+
+
+                                <field name="beneficiary_line_ids"
+                                       attrs="{'invisible':[('process','!=','inclusions')],'readonly':[('state','=','finalized')]}">
+                                    <tree editable="top">
+                                        <field name="first_name"/>
+                                        <field name="second_name"/>
+                                        <field name="first_surname"/>
+                                        <field name="second_surname"/>
+                                        <field name="type_document"/>
+                                        <field name="document"/>
+                                        <field name="date_birth"/>
+                                        <field name="age" readonly="1" force_save="1"/>
+                                        <field name="relationship_id"/>
+                                        <field name="additional_upc"/>
+                                        <field name="subsystem" readonly="1" force_save="1"/>
+                                        <field name="destination_entity" readonly="1" force_save="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Cost Center"
+                                  attrs="{'invisible':['|',('check_cost_center','=',False)]}">
+                                <group>
+                                    <group string="Current Cost Center">
+                                        <!-- Cost Center fields -->
+                                        <field name="current_center_cost_id"
+                                               attrs="{'readonly':[('check_cost_center_distribution','=',False)], 'required':[('check_cost_center_distribution','=',True)]}"
+                                               force_save="1" nolabel="1">
+                                            <tree nocreate="1" editable="bot">
+                                                <field name="name"
+                                                       attrs="{'required':[('parent.check_cost_center_distribution','=',True)]}"/>
+                                                <field name="percent"
+                                                       attrs="{'required':[('parent.check_cost_center_distribution','=',True)]}"/>
+                                                <field name="account_analytic_id"
+                                                       attrs="{'required':[('parent.check_cost_center_distribution','=',True)]}"/>
+                                                <field name="direct_indirect"
+                                                       attrs="{'required':[('parent.check_cost_center_distribution','=',True)]}"/>
+                                            </tree>
+                                        </field>
+                                    </group>
+                                    <group string="New Cost Center"
+                                           attrs="{'invisible':[('check_cost_center_distribution','=',True)]}">
+                                        <field name="new_center_cost_id" nolabel="1"
+                                               attrs="{'required':[('check_cost_center_distribution','=',False)]}">
+                                            <tree editable="bot">
+                                                <field name="name"
+                                                       attrs="{'required':[('parent.check_cost_center_distribution','=',False)]}"/>
+                                                <field name="percent"
+                                                       attrs="{'required':[('parent.check_cost_center_distribution','=',False)]}"/>
+                                                <field name="account_analytic_id"
+                                                       attrs="{'required':[('parent.check_cost_center_distribution','=',False)]}"/>
+                                                <field name="direct_indirect"
+                                                       attrs="{'required':[('parent.check_cost_center_distribution','=',False)]}"/>
+                                            </tree>
+                                        </field>
+                                    </group>
+                                </group>
+                            </page>
+
+                            <page string="Extend" attrs="{'invisible':[('check_extend','=',False)]}">
+                                <group>
+                                    <group>
+                                        <!-- Extend -->
+                                        <field name="date_start_current_contract"
+                                               attrs="{'invisible':[('check_extend','=',False)]}" readonly="1"
+                                               force_save="1"/>
+                                        <field name="date_end_current_contract"
+                                               attrs="{'invisible':[('check_extend','=',False)]}" readonly="1"
+                                               force_save="1"/>
+                                    </group>
+                                    <group>
+                                        <field name="contract_type_id"
+                                               attrs="{'readonly':[('state','=','finalized')]}"/>
+
+                                        <!-- Extend -->
+                                        <field name="date_start_extend"
+                                               attrs="{'readonly':[('state','=','finalized')],'required':[('check_extend','=',True)]}"/>
+                                        <field name="date_end_extend"
+                                               attrs="{'invisible':[('check_date_end_type_contract','=',False)],'readonly':[('state','=','finalized')], 'required':[('check_extend','=',True)]}"/>
+
+                                        <!-- Date Contract -->
+                                        <h4>
+                                            Contract duration
+                                        </h4>
+                                        <field name="duration_year" attrs="{'readonly':[('state','=','finalized')]}"/>
+                                        <field name="duration_month" attrs="{'readonly':[('state','=','finalized')]}"/>
+                                        <field name="duration_day" attrs="{'readonly':[('state','=','finalized')]}"/>
+
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                        <separator string="Observations"/>
+                        <field name="observations" widget="text"/>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="request_for_news_view_tree" model="ir.ui.view">
+            <field name="name">request_for_news_view_tree</field>
+            <field name="model">hr.request.for.news</field>
+            <field name="arch" type="xml">
+                <tree string="request_for_news_tree">
+                    <field name="model"/>
+                    <field name="identification_name_concatenate" invisible="True"/>
+                    <field name="employee_id"/>
+                    <field name="type_novelty"/>
+                    <field name="new_salary"/>
+                    <field name="start_date"/>
+                    <field name="final_date"/>
+                    <field name="process"/>
+                    <field name="subsystem"/>
+                    <field name="status_procedure"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="request_for_news_search_view" model="ir.ui.view">
+            <field name="name">request_for_news_search_view</field>
+            <field name="model">hr.request.for.news</field>
+            <field name="arch" type="xml">
+                <search string="">
+                    <field name="identification_name_concatenate" string="Empleado o Número de identificación"/>
+                    <field name="name"/>
+                    <field name="state"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="request_for_news_action" model="ir.actions.act_window">
+            <field name="name">Request for news</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.request.for.news</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="request_for_news_menu_item"
+                  name="Request for news"
+                  parent="hr.menu_hr_root"
+                  sequence="10"/>
+
+        <menuitem id="request_for_news_sub_menu_item"
+                  name="Request for news"
+                  parent="request_for_news_menu_item"
+                  action="request_for_news_action"
+                  sequence="1"/>
+
+        <!-- Novelty Type Views and Actions-->
+        <record id="novelty_type_view_form" model="ir.ui.view">
+            <field name="name">novelty_type_view_form</field>
+            <field name="model">type.novelty</field>
+            <field name="arch" type="xml">
+                <form string="novelty_type_form">
+                    <sheet>
+                        <separator string="Novelty Type"/>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="sub_contract_check" widget="boolean_toggle"/>
+                                <field name="is_type_promotion" widget="boolean_toggle"/>
+                                <field name="is_type_salary" widget="boolean_toggle"/>
+                                <field name="is_change_city" widget="boolean_toggle"/>
+                                <field name="is_change_stage" widget="boolean_toggle"/>
+                                <field name="is_change_contract" widget="boolean_toggle"/>
+                                <field name="is_type_extend" widget="boolean_toggle"/>
+                                <field name="is_cost_center" widget="boolean_toggle"/>
+                            </group>
+                            <group>
+                                <field name="sequence_id"
+                                       attrs="{'invisible':[('is_type_extend','=',False)], 'required': [('is_type_extend','=',True)]}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="novelty_type_view_tree" model="ir.ui.view">
+            <field name="name">novelty_type_view_tree</field>
+            <field name="model">type.novelty</field>
+            <field name="arch" type="xml">
+                <tree string="novelty_type_tree">
+                    <field name="name"/>
+                    <field name="sub_contract_check"/>
+                    <field name="is_type_promotion"/>
+                    <field name="is_type_salary"/>
+                    <field name="is_change_unity_organization"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="novelty_type_view_search" model="ir.ui.view">
+            <field name="name">novelty.type.view.search</field>
+            <field name="model">type.novelty</field>
+            <field name="arch" type="xml">
+                <search string="Novelty Type">
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="novelty_type_action" model="ir.actions.act_window">
+            <field name="name">Novelty Type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">type.novelty</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="novelty_type_menuitem" name="Novelty Type"
+                  parent="hr.menu_human_resources_configuration"
+                  action="novelty_type_action"
+                  groups="hr.group_hr_user"/>
+
+        <!--Relationship Views and Actions -->
+        <record id="relationship_view_form" model="ir.ui.view">
+            <field name="name">relationship.view.form</field>
+            <field name="model">relationship</field>
+            <field name="arch" type="xml">
+                <form string="relationship_form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Relationship Views and Actions -->
+        <record id="view_hr_e_organization_inherit" model="ir.ui.view">
+            <field name="name">hr.employee.organization.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[1]/group[1]/field[@name='mobile_phone']" position="before">
+                    <group>
+                        <field name="organization_unit_id"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="relationship_view_tree" model="ir.ui.view">
+            <field name="name">relationship.view.tree</field>
+            <field name="model">relationship</field>
+            <field name="arch" type="xml">
+                <tree string="relationship_tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="relationship_action" model="ir.actions.act_window">
+            <field name="name">Relationships</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">relationship</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Center cost -->
+        <record id="center_cost_view_form" model="ir.ui.view">
+            <field name="name">center_cost_view_form</field>
+            <field name="model">hr.center.cost</field>
+            <field name="arch" type="xml">
+                <form string="center_cost_form">
+                    <sheet>
+                        <group string="Cost Center">
+                            <group>
+                                <!--<field name="name"/>-->
+                                <field name="employee_id"/>
+                                <field name="contract_id" readonly="1" force_save="1"/>
+                                <field name="percent"/>
+                                <field name="account_analytic_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="relationship_menu_item"
+                  name="Relationship"
+                  parent="hr.menu_human_resources_configuration_employee"
+                  action="relationship_action"/>
+
+        <!-- Server Actions -->
+        <!-- Server action create sub contract -->
+        <record model="ir.actions.server" id="create_sub_contract">
+            <field name="name">Create SubContract</field>
+            <field name="model_id" ref="model_hr_request_for_news"/>
+            <field name="binding_model_id" ref="model_hr_request_for_news"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                action = record.create_sub_contract()
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,1642 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_payroll_extended
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0-20200617\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-11 00:02+0000\n"
+"PO-Revision-Date: 2020-11-10 19:04-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 2.3.1\n"
+
+#. module: hr_payroll_extended
+#: code:addons/hr_payroll_extended/models/inherited_hr_salary_rule.py:0
+#, python-format
+msgid "%s (copy)"
+msgstr "%s (copia)"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payslip__state
+msgid ""
+"* When the payslip is created the status is 'Draft'\n"
+"                \n"
+"* If the payslip is under verification, the status is 'Waiting'.\n"
+"                \n"
+"* If the payslip is confirmed then status is set to 'Done'.\n"
+"                \n"
+"* When user cancel payslip the status is 'Rejected'."
+msgstr ""
+"* Cuando la nómina es creada el estado es 'Borrador'\n"
+"                \n"
+"* Si la nómina está bajo verificación el estado es 'En Espera'.\n"
+"                \n"
+"* Si la nómina está confirmada entonces el estado se cambia a "
+"'Finalizado'.\n"
+"                \n"
+"* Cuando el usuario cancela la nómina el estado es 'Rechazado'."
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__afc_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__afc_id
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_res_partner_filter_inherit
+msgid "AFC"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_res_partner__is_afp
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_res_users__is_afp
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_res_partner_filter_inherit
+msgid "AFP"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_res_partner__is_afc
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_res_users__is_afc
+msgid "AFC"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__arl_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__arl_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_res_partner__is_arl
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_res_users__is_arl
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_res_partner_filter_inherit
+msgid "ARL"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__arl_percentage
+msgid "ARL Percentage"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__access_warning
+msgid "Access warning"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_salary_rule__accumulate
+msgid "Accumulate"
+msgstr "Acumulado"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__message_needaction
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__message_needaction
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__message_needaction
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_conf_acumulated__active
+msgid "Active"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__activity_ids
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__activity_ids
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__activity_ids
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__activity_exception_decoration
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__activity_exception_decoration
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__activity_exception_decoration
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__activity_state
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__activity_state
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__activity_state
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields.selection,name:hr_payroll_extended.selection__hr_payslip_run__state__acumulate
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payslip_inherit_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payslip_run_inherit_form
+msgid "Acumulate"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee_acumulate__hr_rules_acumulate_id
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.hr_employee_acumulate_view_search
+msgid "Acumulate Rules"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.actions.act_window,name:hr_payroll_extended.hr_conf_acumulated_action
+#: model:ir.ui.menu,name:hr_payroll_extended.hr_conf_acumulated_menu_action
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.hr_conf_acumulated_view_search
+msgid "Acumulated Configuration"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.actions.act_window,name:hr_payroll_extended.hr_acumulated_rules_action
+#: model:ir.ui.menu,name:hr_payroll_extended.hr_acumulated_rules_menu_action
+msgid "Acumulated Rules"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.hr_conf_acumulated_view_form
+msgid "Add Rules"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__allocation_leaves_count
+msgid "Allocation Leaves"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.hr_conf_acumulated_view_search
+msgid "Archive"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_salary_rule__asigned_base
+msgid "Asigned Base"
+msgstr "Base asignada"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__message_attachment_count
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__message_attachment_count
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__message_attachment_count
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_leave_type__autocalculate_leave
+msgid "Auto Calculate Leave"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_salary_rule__autocomplete_flex
+msgid "Autocomplete Flex"
+msgstr "Autocompletar Flex"
+
+#. module: hr_payroll_extended
+#: code:addons/hr_payroll_extended/models/inherited_hr_salary_rule.py:0
+#, python-format
+msgid "Autocomplete Flex already exist in the another record."
+msgstr "La opción de autocompletar flexible ya esta marcado en otro registro"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__bank_account_id
+msgid "Bank Account Number"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip_line__base
+msgid "Base"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields.selection,name:hr_payroll_extended.selection__reprocess_acumulate_wizard__option__better
+msgid "Better"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.actions.server,name:hr_payroll_extended.compute_sheet_all
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payslip_run_inherit_form
+msgid "Calculate All"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_salary_rule__calculate_base
+msgid "Calculate Base"
+msgstr "Calcular Base"
+
+#. module: hr_payroll_extended
+#: model:ir.actions.server,name:hr_payroll_extended.action_payslip_review_parameters
+msgid "Calculate Parameters"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.actions.server,name:hr_payroll_extended.action_payslip_calculate_retention
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payslip_inherit_form
+msgid "Calculate RF"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payslip_run_inherit_form
+msgid "Calculate withholding income"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.other_db_assign_brand_wizard_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.payroll_config_reason_reject_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.reprocess_acumulate_wizard_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.update_leaves_details_wizard_form_view
+msgid "Cancel"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.actions.server,name:hr_payroll_extended.action_payslip_cancel
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payslip_run_inherit_form
+msgid "Cancel Payslip"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields.selection,name:hr_payroll_extended.selection__hr_payslip_run__state__cancelled
+msgid "Cancelled"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_salary_rule__categ
+#: model:ir.model.fields.selection,name:hr_payroll_extended.selection__hr_salary_rule__asigned_base__categ
+msgid "Categ"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_structure__categ_id
+msgid "Category"
+msgstr "Categoría"
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_salary_structure_form
+msgid "Check Rule"
+msgstr "Calcular regla"
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payslip_worked_days_search
+msgid "Code"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: code:addons/hr_payroll_extended/models/inherited_hr_payslip.py:0
+#, python-format
+msgid "Code  doesn't have correct Work Entry Type"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_res_partner__is_compensation_box
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_res_users__is_compensation_box
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_res_partner_filter_inherit
+msgid "Compensation Box"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__compensation_company_id
+msgid "Compensation Company"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.actions.server,name:hr_payroll_extended.action_compute_sheet
+msgid "Compute Sheet"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payslip_run_inherit_form
+msgid "Compute Sheets"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.actions.act_window,name:hr_payroll_extended.hr_payroll_config_action
+#: model:ir.ui.menu,name:hr_payroll_extended.hr_payroll_config_menu_action
+msgid "Config"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__config_line_ids
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.hr_payroll_config_view_form
+msgid "Config Line"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.actions.act_window,name:hr_payroll_extended.hr_payroll_config_parameters_action
+#: model:ir.ui.menu,name:hr_payroll_extended.hr_payroll_config_parameters_menu_action
+msgid "Config Parameters"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: code:addons/hr_payroll_extended/wizard/inherited_hr_payslip_employees.py:0
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.payroll_config_reason_reject_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.reprocess_acumulate_wizard_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payslip_run_inherit_form
+#, python-format
+msgid "Confirm"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields.selection,name:hr_payroll_extended.selection__hr_payslip_run__state__confirmed
+msgid "Confirmed"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payslip_worked_days_search
+msgid "Contract"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__contract_completion
+msgid "Contract Completion?"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_acumulated_rules__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_conf_acumulated__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee_acumulate__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config_lines__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config_parameters__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_structure_categ__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip_employees_confirm_wizard__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_multi_action_accumulate__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_payroll_config_reason_reject__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_reprocess_acumulate_wizard__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_update_leaves_details_wizard__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_acumulated_rules__create_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_conf_acumulated__create_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee_acumulate__create_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__create_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__create_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config_lines__create_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config_parameters__create_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_structure_categ__create_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip_employees_confirm_wizard__create_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__create_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__create_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_multi_action_accumulate__create_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_payroll_config_reason_reject__create_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_reprocess_acumulate_wizard__create_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_update_leaves_details_wizard__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payroll_config__access_url
+msgid "Customer Portal URL"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip_line__days
+msgid "Days"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_contract__struct_id
+msgid ""
+"Defines the rules that have to be applied to this payslip, accordingly to "
+"the contract chosen. If you let empty the field contract, this field isn't "
+"mandatory anymore and thus the rules applied will be all the rules set on "
+"the structure of all contracts of the employee valid for the chosen period"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee_acumulate__description
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__description
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_structure_categ__description
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__description
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__description
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payslip_worked_days_search
+msgid "Description"
+msgstr "Descripción"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__description
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip_line__description
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip_run__description
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip_worked_days__description
+msgid "Description Details"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_acumulated_rules__display_name
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_conf_acumulated__display_name
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee_acumulate__display_name
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__display_name
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__display_name
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config_lines__display_name
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config_parameters__display_name
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_structure_categ__display_name
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip_employees_confirm_wizard__display_name
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__display_name
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__display_name
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_multi_action_accumulate__display_name
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_payroll_config_reason_reject__display_name
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_reprocess_acumulate_wizard__display_name
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_update_leaves_details_wizard__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields.selection,name:hr_payroll_extended.selection__hr_payroll_config__state__done
+msgid "Done"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields.selection,name:hr_payroll_extended.selection__hr_payroll_config__state__draft
+msgid "Draft"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__eps_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__eps_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_res_partner__is_eps
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_res_users__is_eps
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_res_partner_filter_inherit
+msgid "EPS"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_hr_employee
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee_acumulate__employee_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip_worked_days__employee_id
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payslip_worked_days_search
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: hr_payroll_extended
+#: model:ir.actions.act_window,name:hr_payroll_extended.hr_employee_acumulate_action
+#: model:ir.ui.menu,name:hr_payroll_extended.hr_employee_acumulate_menu_action
+msgid "Employee Acumulate"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_hr_contract
+msgid "Employee Contract"
+msgstr "Contrato del empleado"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payslip__bank_account_id
+msgid "Employee bank salary account"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_update_leaves_details_wizard__employee_ids
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.hr_employee_acumulate_view_search
+msgid "Employees"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__end_date
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payroll_config_search
+msgid "End Date"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.hr_salary_rule_form_inherit
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payslip_inherit_form
+msgid "Entities"
+msgstr "Entidades"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_leave_type__exclude_calculate_payslip
+msgid "Exclude Calculate Payslip"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_partner_form_inherit
+msgid "Features"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_salary_rule__field
+msgid "Field"
+msgstr "Campo"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_resource_calendar__fix_days
+msgid "Fix Days"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_salary_rule__fixed
+msgid "Fixed"
+msgstr "Fijo"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_salary_rule__is_flex
+msgid "Flex"
+msgstr "Flexible"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__message_follower_ids
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__message_follower_ids
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__message_follower_ids
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__message_channel_ids
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__message_channel_ids
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__message_channel_ids
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__message_partner_ids
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__message_partner_ids
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__message_partner_ids
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__found_layoffs_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_res_partner__is_found_layoffs
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_res_users__is_found_layoffs
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_res_partner_filter_inherit
+msgid "Found Layoffs"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_employee_form_inherit_leaves_calculate
+msgid "Funds"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payslip_by_employees_inherited
+msgid "Generate"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_hr_payslip_employees
+msgid "Generate payslips for all selected employees"
+msgstr "Generar las nóminas para todos los empleados seleccionados"
+
+#. module: hr_payroll_extended
+#: code:addons/hr_payroll_extended/models/inherited_hr_payslip.py:0
+#, python-format
+msgid "Global Leaves"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.hr_acumulated_rules_view_search
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.hr_employee_acumulate_view_search
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payroll_config_search
+msgid "Group By"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_hr_payroll_structure_categ
+msgid "HR Payroll Structure Categ"
+msgstr "Categorías de las reglas salariales"
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_employee_form_inherit
+msgid "Hr Acumulate"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_hr_acumulated_rules
+msgid "Hr Acumulated Rules"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_hr_conf_acumulated
+msgid "Hr Conf Acumulated"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_acumulated_rules__hr_conf_acumulated_m_id
+msgid "Hr Conf Acumulated M"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_acumulated_rules__hr_conf_acumulated_p_id
+msgid "Hr Conf Acumulated P"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_hr_employee_acumulate
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__hr_employee_acumulate_ids
+msgid "Hr Employee Acumulate"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_hr_payroll_config
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config_lines__hr_payroll_config_id
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payroll_config_search
+msgid "Hr Payroll Config"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_hr_payroll_config_lines
+msgid "Hr Payroll Config Lines"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_hr_payroll_config_parameters
+msgid "Hr Payroll Config Parameters"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_hr_payslip_employees_confirm_wizard
+msgid "Hr Payslip Employees Confirm Wizard"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_reprocess_acumulate_wizard__hr_salary_rule_ids
+msgid "Hr Salary Rule"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_acumulated_rules__id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_conf_acumulated__id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee_acumulate__id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config_lines__id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config_parameters__id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_structure_categ__id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip_employees_confirm_wizard__id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_multi_action_accumulate__id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_payroll_config_reason_reject__id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_reprocess_acumulate_wizard__id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_update_leaves_details_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__activity_exception_icon
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__activity_exception_icon
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__activity_exception_icon
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payment_method__activity_exception_icon
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payroll_config__activity_exception_icon
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_personal_group__activity_exception_icon
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_wage_type__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__ident_issuance_city_id
+msgid "Identification Issuance City"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__ident_issuance_date
+msgid "Identification Issuance Date"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_contract__identification_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__identification_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__identification_id
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.hr_contract_view_search_inherit
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.hr_payslip_search_view_inherit
+msgid "Identification No"
+msgstr "Nº identificación"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__ident_type
+msgid "Identification Type"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payment_method__message_needaction
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payment_method__message_unread
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payroll_config__message_needaction
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payroll_config__message_unread
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_personal_group__message_needaction
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_personal_group__message_unread
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_wage_type__message_needaction
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_wage_type__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payment_method__message_has_error
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payment_method__message_has_sms_error
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payroll_config__message_has_error
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payroll_config__message_has_sms_error
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_personal_group__message_has_error
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_personal_group__message_has_sms_error
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_wage_type__message_has_error
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_wage_type__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__message_is_follower
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__message_is_follower
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__message_is_follower
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_acumulated_rules____last_update
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_conf_acumulated____last_update
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee_acumulate____last_update
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method____last_update
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config____last_update
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config_lines____last_update
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config_parameters____last_update
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_structure_categ____last_update
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip_employees_confirm_wizard____last_update
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group____last_update
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type____last_update
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_multi_action_accumulate____last_update
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_payroll_config_reason_reject____last_update
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_reprocess_acumulate_wizard____last_update
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_update_leaves_details_wizard____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_acumulated_rules__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_conf_acumulated__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee_acumulate__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config_lines__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config_parameters__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_structure_categ__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip_employees_confirm_wizard__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_multi_action_accumulate__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_payroll_config_reason_reject__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_reprocess_acumulate_wizard__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_update_leaves_details_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_acumulated_rules__write_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_conf_acumulated__write_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee_acumulate__write_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__write_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__write_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config_lines__write_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config_parameters__write_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_structure_categ__write_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip_employees_confirm_wizard__write_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__write_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__write_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_multi_action_accumulate__write_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_payroll_config_reason_reject__write_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_reprocess_acumulate_wizard__write_date
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_update_leaves_details_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_employee_form_inherit_leaves_calculate
+msgid "Leaves Status"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__medic_exam_attach
+msgid "Medica Exam Attachment"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip_employees_confirm_wizard__message
+msgid "Message"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__message_has_error
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__message_has_error
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__message_has_error
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__message_ids
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__message_ids
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__message_ids
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_salary_rule__model
+#: model:ir.model.fields.selection,name:hr_payroll_extended.selection__hr_salary_rule__asigned_base__model
+msgid "Model"
+msgstr "Modelo"
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.hr_payroll_config_view_form
+msgid "Move to Done"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.hr_payroll_config_view_form
+msgid "Move to Draft"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.hr_payroll_config_view_form
+msgid "Move to Reject"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_multi_action_accumulate
+msgid "Multi Action Accumulate"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_conf_acumulated__name
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee_acumulate__name
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__name
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__name
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config_lines__name
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config_parameters__name
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_structure_categ__name
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__name
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__name
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.hr_employee_acumulate_view_search
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payroll_config_search
+msgid "Name"
+msgstr "Nombre"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__activity_date_deadline
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__activity_date_deadline
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__activity_date_deadline
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__activity_summary
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__activity_summary
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__activity_summary
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__activity_type_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__activity_type_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__activity_type_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_leave_type__no_count_in_payroll
+msgid "No Count In Payroll"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_leave_type__no_count_rent
+msgid "No Count Rent"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: code:addons/hr_payroll_extended/models/inherited_hr_payslip.py:0
+#, python-format
+msgid "Normal Working Days paid at 100%"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payslip_worked_days_search
+msgid "Number of Days"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payslip_worked_days_search
+msgid "Number of Hours"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payment_method__message_needaction_counter
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payroll_config__message_needaction_counter
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_personal_group__message_needaction_counter
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_wage_type__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payment_method__message_has_error_counter
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payroll_config__message_has_error_counter
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_personal_group__message_has_error_counter
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_wage_type__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payment_method__message_unread_counter
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payroll_config__message_unread_counter
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_personal_group__message_unread_counter
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_wage_type__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.hr_payslip_employees_confirm_wizard
+msgid "OK"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.update_leaves_details_wizard_form_view
+msgid ""
+"Once you click on Update Leaves button it will calculate the leaves details."
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_reprocess_acumulate_wizard__option
+msgid "Option"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.update_leaves_details_wizard_form_view
+msgid "Or"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields.selection,name:hr_payroll_extended.selection__hr_payslip__state__paid
+msgid "Paid"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__pay_annual
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip_run__pay_annual
+msgid "Pay Annual"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__pay_biannual
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip_run__pay_biannual
+msgid "Pay Biannual"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_hr_payslip
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_leave_allocation__payslip_id
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payslip_worked_days_search
+msgid "Pay Slip"
+msgstr "Nómina"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__pay_contributions
+msgid "Pay contributions"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_hr_payment_method
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__payment_method_id
+#: model:ir.ui.menu,name:hr_payroll_extended.menu_hr_payment_method
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payment_method_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payment_method_tree
+msgid "Payment Method"
+msgstr "Método de pago"
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_payroll_config_reason_reject
+msgid "Payroll Config Reason Reject"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:res.groups,name:hr_payroll_extended.group_payroll_draft
+msgid "Payroll Draft"
+msgstr "Cambiar a borrador nóminas"
+
+#. module: hr_payroll_extended
+#: model:res.groups,name:hr_payroll_extended.group_payroll_reprocess_acumulate
+msgid "Payroll Reprocess Acumulate"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_contract__struct_id
+msgid "Payroll Structure"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee_acumulate__pay_slip_id
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.hr_employee_acumulate_view_search
+msgid "Payslip"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: code:addons/hr_payroll_extended/models/hr_payslip.py:0
+#, python-format
+msgid "Payslip %s from %s to %s"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_hr_payslip_run
+msgid "Payslip Batches"
+msgstr "Procesamientos de nóminas"
+
+#. module: hr_payroll_extended
+#: model:res.groups,name:hr_payroll_extended.group_payslip_delete
+msgid "Payslip Delete"
+msgstr "Borrar nóminas"
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_hr_payslip_line
+msgid "Payslip Line"
+msgstr "Línea de nómina"
+
+#. module: hr_payroll_extended
+#: model:ir.actions.act_window,name:hr_payroll_extended.hr_payslip_worked_days_action
+#: model:ir.model,name:hr_payroll_extended.model_hr_payslip_worked_days
+#: model:ir.ui.menu,name:hr_payroll_extended.hr_payslip_worked_days_menu_action
+msgid "Payslip Worked Days"
+msgstr "Días trabajados de la nómina"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_multi_action_accumulate__hr_payslip_ids
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payslip_run_inherit_form
+msgid "Payslips"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields.selection,name:hr_payroll_extended.selection__hr_payslip_run__state__pending_confirm
+msgid "Pending Confirm"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__pension_fund_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__pension_fund_id
+msgid "Pension Fund"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__permit_expire
+msgid "Permit Expire"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_personal_group_tree
+msgid "Persona Group"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_hr_personal_group
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__personal_group_id
+#: model:ir.ui.menu,name:hr_payroll_extended.menu_hr_personal_group
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_personal_group_form
+msgid "Personal Group"
+msgstr "Grupo de personal"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__access_url
+msgid "Portal Access URL"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__prepaid_medicine_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__prepaid_medicine_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_salary_rule__prepaid_medicine_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_res_partner__is_prepaid_medicine
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_res_users__is_prepaid_medicine
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_res_partner_filter_inherit
+msgid "Prepaid Medicine"
+msgstr "Medicina prepagada"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__prepaid_medicine2_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__prepaid_medicine2_id
+msgid "Prepaid Medicine 2"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_salary_rule__print_payslip
+msgid "Print Payslip"
+msgstr "Imprimir nómina"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__private_email
+msgid "Private Email"
+msgstr "Correo electronico privado"
+
+#. module: hr_payroll_extended
+#: code:addons/hr_payroll_extended/models/inherited_hr_employee.py:0
+#, python-format
+msgid "Private mail was changed %s -> %s"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.other_db_assign_brand_wizard_form
+msgid "Process Accumulate"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.actions.act_window,name:hr_payroll_extended.action_multi_action_accumulate_wizard
+msgid "Process Action Accumulate"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.other_db_assign_brand_wizard_form
+msgid "Process Multiple Action Accumulate"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__process_status
+msgid "Process Status"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__progress_action
+msgid "Progress Action"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_salary_rule__projection_exempt
+msgid "Projection Exempt"
+msgstr "Excluir de proyección"
+
+#. module: hr_payroll_extended
+#: code:addons/hr_payroll_extended/models/hr_payroll_config.py:0
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__reason_reject
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_payroll_config_reason_reject__reason_reject
+#, python-format
+msgid "Reason Reject"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields.selection,name:hr_payroll_extended.selection__hr_payroll_config__state__reject
+msgid "Reject"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__remaining_leaves_count
+msgid "Remaining Leaves"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.actions.act_window,name:hr_payroll_extended.reprocess_acumulate_wizard_action
+msgid "Reprocess Acumulate"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_resource_calendar
+msgid "Resource Working Time"
+msgstr "Tiempo de Trabajo de Recursos"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__activity_user_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__activity_user_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__activity_user_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip_run__result_process
+msgid "Result"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__rule_ids
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip_run__rule_ids
+#: model:ir.model.fields.selection,name:hr_payroll_extended.selection__reprocess_acumulate_wizard__option__rules
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payslip_inherit_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payslip_run_inherit_form
+msgid "Rules"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__message_has_sms_error
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__message_has_sms_error
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__message_has_sms_error
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_hr_salary_rule
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_acumulated_rules__rule_id
+msgid "Salary Rule"
+msgstr "Regla salarial"
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_hr_payroll_structure
+msgid "Salary Structure"
+msgstr "Estructura salarial"
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payroll_structure_categ_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payroll_structure_categ_tree
+msgid "Salary Structure Type"
+msgstr "Tipo de estructura salarial"
+
+#. module: hr_payroll_extended
+#: model:ir.actions.act_window,name:hr_payroll_extended.action_view_hr_payroll_structure_categ
+#: model:ir.ui.menu,name:hr_payroll_extended.menu_hr_payroll_structure_categ_menu
+msgid "Salary Structures Categ"
+msgstr "Categoría de estructura salarial"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__access_token
+msgid "Security Token"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_reprocess_acumulate_wizard__sequence
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payslip_worked_days_search
+msgid "Sequence"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: code:addons/hr_payroll_extended/wizard/reprocess_acumulate_wizard.py:0
+#, python-format
+msgid "Sequence value can not be less than 500."
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payslip_run_inherit_form
+msgid "Set to draft"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_acumulated_rules__sign
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.hr_acumulated_rules_view_search
+msgid "Sign"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__start_date
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payroll_config_search
+msgid "Start Date"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__state
+msgid "State"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__state
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip_run__state
+msgid "Status"
+msgstr "Estado"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payment_method__activity_state
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payroll_config__activity_state
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_personal_group__activity_state
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_wage_type__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.hr_conf_acumulated_view_form
+msgid "Subtract Rules"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_leave_type__is_sumar_en_nomina
+msgid "Sumar en Nomina"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__leave_days_count
+msgid "Taken Leaves"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: code:addons/hr_payroll_extended/models/hr_payslip.py:0
+#, python-format
+msgid ""
+"The Accumulate process is generating in this moment please wait Process:- "
+"%s Date:- %s"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: code:addons/hr_payroll_extended/models/hr_payslip.py:0
+#, python-format
+msgid ""
+"The Calculate All is generating in this moment please wait Process:- %s "
+"Date:- %s"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: code:addons/hr_payroll_extended/models/hr_payslip.py:0
+#, python-format
+msgid ""
+"The Calculate Parameters is generating in this moment please wait Process:- "
+"%s Date:- %s"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: code:addons/hr_payroll_extended/models/hr_payslip.py:0
+#, python-format
+msgid ""
+"The Calculate RF is generating in this moment please wait Process:- %s "
+"Date:- %s"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: code:addons/hr_payroll_extended/models/hr_payslip.py:0
+#, python-format
+msgid ""
+"The Calculate payroll is generating in this moment please wait Process:- %s "
+"Date:- %s"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: code:addons/hr_payroll_extended/wizard/inherited_hr_payslip_employees.py:0
+#, python-format
+msgid ""
+"The Compute Sheet process is generating in this moment please wait "
+"Process:- %s Date:- %s"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: code:addons/hr_payroll_extended/models/hr_payslip.py:0
+#, python-format
+msgid ""
+"The Payslip Done process is generating in this moment please wait Process:- "
+"%s Date:- %s"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: code:addons/hr_payroll_extended/models/hr_payslip.py:0
+#, python-format
+msgid "The process Compute Sheet is Completed!"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: code:addons/hr_payroll_extended/models/hr_payslip.py:0
+#, python-format
+msgid "The process Compute Sheet is not Completed"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_employee__ident_type
+msgid "The type of identification"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_hr_leave
+msgid "Time Off"
+msgstr "Ausencias"
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_hr_leave_allocation
+msgid "Time Off Allocation"
+msgstr "Asignación de ausencias"
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_hr_leave_type
+msgid "Time Off Type"
+msgstr "Tipo de tiempo libre"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields.selection,name:hr_payroll_extended.selection__hr_payslip__state__to_confirm
+msgid "To Confirm"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__total
+msgid "Total"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee_acumulate__total_acumulate
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.hr_employee_acumulate_view_search
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.hr_employee_acumulate_view_tree
+msgid "Total Acumulate"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__total_amount
+msgid "Total Amount"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_salary_rule__total_cost
+msgid "Total Cost"
+msgstr "Costo total"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payment_method__activity_exception_decoration
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payroll_config__activity_exception_decoration
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_personal_group__activity_exception_decoration
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_wage_type__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_res_partner__is_unemployee_fund
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_res_users__is_unemployee_fund
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_res_partner_filter_inherit
+msgid "Unemployee Fund"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__unemployment_fund_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__unemployment_fund_id
+msgid "Unemployment Fund"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__unjustified
+msgid "Unjustified"
+msgstr "Sin justa causa"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__message_unread
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__message_unread
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__message_unread
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__message_unread_counter
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__message_unread_counter
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__message_unread_counter
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payslip_inherit_form
+#: model:res.groups,name:hr_payroll_extended.group_update_entities
+msgid "Update Entities"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.update_leaves_details_wizard_form_view
+msgid "Update Leaves"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_update_leaves_details_wizard
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.update_leaves_details_wizard_form_view
+msgid "Update Leaves Details"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_leave_type__vacation_pay_31
+msgid "Vacation Pay 31"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config_lines__value
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_salary_rule__value
+#: model:ir.model.fields.selection,name:hr_payroll_extended.selection__hr_salary_rule__asigned_base__value
+msgid "Value"
+msgstr "Valor"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config_lines__variable
+msgid "Variable"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__voluntary_contribution_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__voluntary_contribution_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_res_partner__is_voluntary_contribution
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_res_users__is_voluntary_contribution
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_res_partner_filter_inherit
+msgid "Voluntary Contribution"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__voluntary_contribution2_id
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__voluntary_contribution2_id
+msgid "Voluntary Contribution2"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_hr_wage_type
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__wage_type_id
+#: model:ir.ui.menu,name:hr_payroll_extended.menu_hr_wage_type
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_wage_type_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_wage_type_tree
+msgid "Wage Type"
+msgstr "Tipo de Salario"
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payment_method__website_message_ids
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config__website_message_ids
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_personal_group__website_message_ids
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_wage_type__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payment_method__website_message_ids
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_payroll_config__website_message_ids
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_personal_group__website_message_ids
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_wage_type__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_salary_rule__work_days_value
+msgid "Work Days Value"
+msgstr "Valores de días"
+
+#. module: hr_payroll_extended
+#: code:addons/hr_payroll_extended/models/hr_payslip.py:0
+#, python-format
+msgid "You can not delete Payslip!"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: code:addons/hr_payroll_extended/models/hr_payroll_config.py:0
+#, python-format
+msgid "You cannot delete Done record!"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: code:addons/hr_payroll_extended/wizard/inherited_hr_payslip_employees.py:0
+#, python-format
+msgid "You must select employee(s) to generate payslip(s)."
+msgstr "Debe seleccionar un empleado(s) para crear la(s) nómina(s)."
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_employee_form_inherit_leaves_calculate
+msgid "days"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.actions.act_window,name:hr_payroll_extended.action_hr_payment_method
+msgid "hr.payment.method.act"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.actions.act_window,name:hr_payroll_extended.action_hr_personal_group
+msgid "hr.personal.group.act"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.actions.act_window,name:hr_payroll_extended.action_hr_wage_type
+msgid "hr.wage.type.act"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model.fields,help:hr_payroll_extended.field_hr_salary_rule__fixed
+msgid "is this rule fixed (it can't be modified)"
+msgstr "Esta es una regla fija(No puede ser modificada)"
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_payment_method_search
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_personal_group_search
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.view_hr_wage_type_search
+msgid "name"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model_terms:ir.ui.view,arch_db:hr_payroll_extended.payroll_config_reason_reject_form
+msgid "payroll.config.reason.reject.form"
+msgstr ""
+
+#. module: hr_payroll_extended
+#: model:ir.model,name:hr_payroll_extended.model_reprocess_acumulate_wizard
+msgid "reprocess.acumulate.wizard"
+msgstr ""

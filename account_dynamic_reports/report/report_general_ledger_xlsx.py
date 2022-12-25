@@ -250,7 +250,6 @@ class InsGeneralLedgerXlsx(models.AbstractModel):
 
                     count, offset, sub_lines = self.record.build_detailed_move_lines(offset=0, account=line,
                                                                                      fetch_range=1000000)
-
                     for sub_line in sub_lines:
                         if sub_line.get('move_name') == 'Initial Balance':
                             self.row_pos += 1

@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!-- Copyright 2020-TODAY Miguel Pardo <ing.miguel.pardo@gmail.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <!-- Add Marital Status and Dcoument fields in employee form view-->
+    <record id="view_hr_employee_form_contract_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.form.contract.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <field name="tz" position="after">
+                <field name="entry_date"/>
+                <label for="seniority" string="Seniority"/>
+                <div>
+                    <div class="o_row o_row_readonly">
+                        <field name="seniority" class="oe_inline"/>
+                    </div>
+                </div>
+            </field>
+            <xpath expr="//field[@name='marital']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <field name="gender" position="after">
+                <field name="marital_status_id" string="Marital Status" groups="hr.group_hr_user"/>
+                <field name="previous_regimen" string="Previous Regimen" groups="hr.group_hr_user"/>
+                <field name="end_date_eps"/>
+            </field>
+
+            <xpath expr="//page[@name='personal_information']" position="after">
+                <page name="contract_history" string="Contract History">
+                    <field name="contract_ids">
+                        <tree>
+                            <field name="name"/>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="wage"/>
+                            <field name="currency_id"/>
+                            <field name="tipo_de_salario_contrato"/>
+                            <field name="state"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+
+
+            <xpath expr="//field[@name='user_id']" position="after">
+                <button name="create_user" string="Create User" type="object" class="btn-primary"
+                        attrs="{'invisible':[('user_id', '!=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Add Marital Status field in employee tree view-->
+    <record id="view_hr_employee_tree_contract_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.tree.contract.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_tree"/>
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <field name="marital_status_id" string="Marital Status" groups="hr.group_hr_user"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

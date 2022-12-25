@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_hr_payslip_inherit_form" model="ir.ui.view">
+        <field name="name">Payslip Inherit</field>
+        <field name="model">hr.payslip</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+        <field name="arch" type="xml">
+            <field name="state" position="before">
+                <button string="Acumulate" name="action_acumulate" states="done" type="object"/>
+                <button string="Calculate RF" name="action_payslip_calculate_retention" type="object"
+                        states="draft,verify"/>
+                <button string="Update Entities" name="action_update_entities"
+                        type="object" states="done" groups="hr_payroll_extended.group_update_entities"/>
+            </field>
+            <field name="struct_id" position="after">
+                <field name="payslip_type_id"/>
+            </field>
+
+            <field name="employee_id" position="attributes">
+                <attribute name="options">{'no_create': True, 'no_create_edit': True}</attribute>
+            </field>
+            <field name="credit_note" position="after">
+                <field name="total_amount"/>
+                <field name="identification_id"/>
+                <field name="pay_annual"/>
+                <field name="pay_biannual"/>
+                <field name="pay_contributions"/>
+                <field name="unjustified"/>
+                <field name="description"/>
+            </field>
+            <xpath expr="//notebook" position="inside">
+                <page string="Entities">
+                    <group>
+                        <group>
+                            <field name="eps_id" attrs="{'readonly':[('employee_id', '!=', False)]}" force_save="1"/>
+                            <field name="compensation_company_id" attrs="{'readonly':[('employee_id', '!=', False)]}"
+                                   force_save="1"
+                                   options="{'no_create': True, 'no_create_edit': True,'no_open': True}"/>
+                            <field name="unemployment_fund_id" attrs="{'readonly':[('employee_id', '!=', False)]}"
+                                   force_save="1"/>
+                            <field name="bank_account_id" attrs="{'readonly':[('employee_id', '!=', False)]}"
+                                   force_save="1"/>
+                            <field name="pension_fund_id" attrs="{'readonly':[('employee_id', '!=', False)]}"
+                                   force_save="1"/>
+                        </group>
+                        <group>
+                            <field name="arl_id" attrs="{'readonly':[('employee_id', '!=', False)]}" force_save="1"/>
+                            <field name="prepaid_medicine_id" attrs="{'readonly':[('employee_id', '!=', False)]}"
+                                   force_save="1"/>
+                            <field name="prepaid_medicine2_id" attrs="{'readonly':[('employee_id', '!=', False)]}"
+                                   force_save="1"/>
+                            <field name="afc_id" attrs="{'readonly':[('employee_id', '!=', False)]}" force_save="1"/>
+                            <field name="voluntary_contribution_id" attrs="{'readonly':[('employee_id', '!=', False)]}"
+                                   force_save="1"/>
+                            <field name="voluntary_contribution2_id" attrs="{'readonly':[('employee_id', '!=', False)]}"
+                                   force_save="1"/>
+                        </group>
+                    </group>
+                </page>
+                <page string="Rules">
+                    <field name="rule_ids"/>
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='line_ids']/tree[1]/field[@name='salary_rule_id']"
+                   position="after">
+                <field name="days"/>
+                <field name="hours"/>
+                <!--field name="base"/-->
+            </xpath>
+            <xpath expr="//field[@name='line_ids']/form[1]/group[1]/field[@name='salary_rule_id']"
+                   position="after">
+                <field name="days"/>
+                <field name="hours"/>
+                <!--field name="base"/-->
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_hr_payslip_inherit_tree" model="ir.ui.view">
+        <field name="name">Payslip Inherit Tree</field>
+        <field name="model">hr.payslip</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_tree"/>
+        <field name="arch" type="xml">
+            <field name="state" position="before">
+                <field name="total_amount"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="hr_payslip_search_view_inherit" model="ir.ui.view">
+        <field name="name">hr.payslip.search.view.inherit</field>
+        <field name="model">hr.payslip</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='state']" position="after">
+                <filter string="Identification No" name="identification_id"
+                        context="{'group_by':'identification_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_hr_payslip_run_inherit_form" model="ir.ui.view">
+        <field name="name">Payslip Run Inherit</field>
+        <field name="model">hr.payslip.run</field>
+        <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+        <field name="arch" type="xml">
+            <button name="action_validate" position="attributes">
+                <attribute name="states">acumulate</attribute>
+            </button>
+            <button name="action_draft" position="before">
+                <button string="Compute Sheets" name="compute_sheet" type="object"
+                        states="draft,verify"/>
+                <button string="Calculate All" name="compute_sheet_all" type="object"
+                        states="draft,verify"/>
+                <button string="Confirm" name="action_payslip_done_thread" type="object"
+                        states="pending_confirm"/>
+                <button string="Cancel Payslip" name="action_payslip_cancel" type="object"
+                        states="confirmed,pending_confirm,acumulate,close"/>
+                <button string="Set to draft" name="action_payslip_draft" type="object"
+                        states="cancelled"/>
+                <button string="Calculate withholding income" name="action_payslip_calculate_retention" type="object"
+                        states="draft,verify"/>
+                <button string="Acumulate" name="action_accumulate_thread" type="object"
+                        states="confirmed"/>
+            </button>
+            <field name="credit_note" position="after">
+                <field name="pay_annual"/>
+                <field name="pay_biannual"/>
+            </field>
+            <xpath expr="//sheet" position="inside">
+                <notebook>
+                    <page string="Payslips">
+                        <field name="slip_ids"/>
+                    </page>
+                    <page string="Rules">
+                        <field name="rule_ids"/>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_compute_sheet" model="ir.actions.server">
+        <field name="name">Compute Sheet</field>
+        <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="binding_model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="state">code</field>
+        <field name="code">
+            for rec in records:
+                if rec.state == 'draft':
+                    rec.compute_sheet()
+        </field>
+    </record>
+
+    <record id="action_payslip_cancel" model="ir.actions.server">
+        <field name="name">Cancel Payslip</field>
+        <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="binding_model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="state">code</field>
+        <field name="code">
+            for rec in records:
+                if rec.state in ['draft', 'hr_check', 'confirm', 'verify', 'done']:
+                    rec.action_payslip_cancel()
+        </field>
+    </record>
+
+    <record id="action_payslip_review_parameters" model="ir.actions.server">
+        <field name="name">Calculate Parameters</field>
+        <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="binding_model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="state">code</field>
+        <field name="code">
+            for rec in records:
+                rec.action_payslip_review_parameters()
+        </field>
+    </record>
+
+    <record id="action_payslip_calculate_retention" model="ir.actions.server">
+        <field name="name">Calculate RF</field>
+        <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="binding_model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="state">code</field>
+        <field name="code">
+            for rec in records:
+                rec.action_payslip_calculate_retention()
+        </field>
+    </record>
+
+    <record id="compute_sheet_all" model="ir.actions.server">
+        <field name="name">Calculate All</field>
+        <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="binding_model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="state">code</field>
+        <field name="code">
+            for rec in records:
+                rec.compute_sheet_all()
+        </field>
+    </record>
+
+
+    <!-- Payslip Types -->
+    <record id="hr_payslip_type_view_form" model="ir.ui.view">
+        <field name="name">hr_payslip_type_view_form</field>
+        <field name="model">hr.payslip.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <h1>
+                        <field name="name" placeholder="Name"/>
+                    </h1>
+                    <group>
+                        <field name="control_payslip" widget="boolean_toggle"/>
+                        <group>
+                            <field name="sequence_id"/>
+                            <field name="control_payslip" widget="boolean_toggle"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="hr_payslip_type_view_tree" model="ir.ui.view">
+        <field name="name">hr_payslip_type_view_tree</field>
+        <field name="model">hr.payslip.type</field>
+        <field name="arch" type="xml">
+            <tree string="hr_payslip_type_tree">
+                <field name="name" width="60%"/>
+                <field name="control_payslip" width="40%"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_payslip_type_action" model="ir.actions.act_window">
+        <field name="name">Payslip Type</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.payslip.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="hr_payslip_type_menuitem"
+              name="Payslip Type"
+              parent="hr_payroll.menu_hr_payroll_employees_configuration"
+              action="hr_payslip_type_action"/>
+
+    <!--act_window id="reprocess_acumulate_wizard_action_bind" name="Reprocess Acumulate"
+                res_model="reprocess.acumulate.wizard" src_model="hr.payslip" multi="True"
+                view_mode="form" target="new"
+                groups="hr_payroll_extended.group_payroll_reprocess_acumulate"/-->
+
+</odoo>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>	
+	
+	<!-- Commission Form Wizard -->
+	<record id="sh_sale_commission_form_view" model="ir.ui.view">
+		<field name="name">sh.sale.commission</field>
+		<field name="model">sale.commission</field>
+		<field name="arch" type="xml">
+			<form string="Sales Commission">
+				<sheet>
+					<group>
+						<group>
+							<field name="name" required="1"/>
+							<field name="user_ids" required="1" widget="many2many_tags"/>
+							
+						</group>
+						<group>
+							<field name="type" required="1"/>
+							<field name="standard_commission_per" attrs="{'invisible':[('type','!=','standard')]}"/>
+						</group>
+					</group>
+					<group attrs="{'invisible':[('type','!=','partner')]}">
+						<group>
+							<field name="affiliated_commission_per" />
+						</group>
+						<group>
+							<field name="non_affiliated_commission_per"/>
+						</group>
+					</group>
+					<group attrs="{'invisible':[('type','!=','product')]}">
+						<field name="product_commission_lines" nolabel="1">
+							<tree string="Sale Commission Line">
+								<field name="based_on"/>
+								<field name="with_commission"/>
+								<field name="product_id" />
+								<field name="category_id" />
+								<field name="target_price" />
+								<field name="above_price_commission"/>
+								<field name="target_margin" />
+								<field name="above_margin_commission"/>
+								<field name="below_margin_commission"/>
+								<field name="exception_commission"/>
+							</tree>
+							<form string="Sale Commission Line">
+								<group>
+									<group>
+										<field name="based_on" required="1"/>
+										<field name="with_commission" required="1"/>
+										<field name="product_id" attrs="{'required':[('based_on','=','product')],'invisible':[('based_on','!=','product')]}"/>
+										<field name="category_id" attrs="{'required':[('based_on','!=','product')],'invisible':[('based_on','=','product')]}"/>
+									</group>
+									<group>
+										<field name="target_price" attrs="{'required':[('with_commission','=','fix')],'invisible':[('with_commission','!=','fix')]}"/>
+										<field name="above_price_commission" attrs="{'required':[('with_commission','=','fix')],'invisible':[('with_commission','!=','fix')]}"/>
+										
+										<field name="target_margin" attrs="{'required':[('with_commission','=','margin')],'invisible':[('with_commission','!=','margin')]}"/>
+										<field name="above_margin_commission" attrs="{'required':[('with_commission','=','margin')],'invisible':[('with_commission','!=','margin')]}"/>
+										<field name="below_margin_commission" attrs="{'required':[('with_commission','=','margin')],'invisible':[('with_commission','!=','margin')]}"/>
+										
+										<field name="exception_commission" attrs="{'required':[('with_commission','=','exception')],'invisible':[('with_commission','!=','exception')]}"/>
+									</group>
+								</group>
+							</form>
+						</field>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	<!--  Tree view -->
+	<record id="sh_sale_commission_tree_form" model="ir.ui.view">
+		<field name="name">sh.sale.commission.tree.view</field>
+		<field name="model">sale.commission</field>
+		<field name="arch" type="xml">
+			<tree string="Sales Commission">
+				<field name="name"/>
+				<!-- <field name="user_ids"/> -->
+				<field name="type"/>
+				<field name="standard_commission_per"/>
+				<field name="affiliated_commission_per"/>
+				<field name="non_affiliated_commission_per"/>
+			</tree>
+		</field>
+	</record>
+	
+     <!--  Action -->
+	  <record id="sh_sale_commission_action" model="ir.actions.act_window">
+	  	<field name="name">Sales Commission</field>
+	  	<field name="res_model">sale.commission</field>
+	  </record>
+	  
+	  
+	  <menuitem
+        id="menu_sale_commission"
+        name="Sales Commission"
+        groups="sh_sales_commision.group_sale_commission"
+        parent="sale.menu_sale_config"
+        sequence="25"
+        action="sh_sale_commission_action"
+        /> 
+</data>	
+</odoo>

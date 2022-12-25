@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+	<data>
+		<record id="account_partner_confirm_move_view_form" model="ir.ui.view">
+			<field name="name">account.move.view.form.inherit.partner_confirm</field>
+			<field name="model">account.move</field>
+			<field name="inherit_id" ref="l10n_co_edi_jorels.account_move_view_form_inherit_l10n_co_edi_jorels"/>
+			<field name="arch" type="xml">
+				<xpath expr="//page[@name='info_Dian']/group" position="inside">
+					<field name="email_response"/>
+					<field name="date_email_send"/>
+					<field name="date_email_acknowledgment"/>
+					<field name="email_reject_reason"/>
+				</xpath>
+			</field>
+		</record>
+		<record id="account.invoice_send" model="ir.actions.act_window">
+			<field name="context" eval="{
+                'default_template_id': ref('l10n_co_edi_partner_confirm.email_template_edi_invoice_dian'),
+                'mark_invoice_as_sent': True,
+                'custom_layout': 'mail.mail_notification_paynow',
+            }"/>
+		</record>
+	</data>
+</odoo>

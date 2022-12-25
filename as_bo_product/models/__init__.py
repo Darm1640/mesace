@@ -1,1 +1,0 @@
-from . import as_product_template

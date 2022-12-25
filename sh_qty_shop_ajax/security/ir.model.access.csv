@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sh_qty_shop_ajax_user,sh_qty_shop_ajax_user_name,stock.model_stock_warehouse,,1,0,0,0
+sh_qty_shop_ajax_location,sh_qty_shop_ajax_user_location,stock.model_stock_location,,1,0,0,0
+sh_qty_shop_ajax_move,sh_qty_shop_ajax_user_move,stock.model_stock_move,,1,0,0,0
+sh_qty_shop_ajax_quant,sh_qty_shop_ajax_user_quant,stock.model_stock_quant,,1,0,0,0
+sh_qty_shop_ajax_uom,sh_qty_shop_ajax_user_quant,stock.model_uom_uom,,1,0,0,0

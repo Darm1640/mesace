@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--    partner form view-->
+    <record id="res_ppartner_form_inhe" model="ir.ui.view">
+        <field name="name">res.partner.form.in</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='purchase']" position="after">
+                <group string="Credit Limit" name="creditlimit" groups="se_customer_credit_limit.configuration_credit_limit">
+                    <field name="check_creditlimit"/>
+                    <field name="credit_limit" attrs="{'invisible':[('check_creditlimit','!=',True)]}"/>
+                    <field name="cl_on_hold" attrs="{'invisible':[('check_creditlimit','!=',True)]}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+<!--    sale order form view-->
+    <record id="ssale_order_form_inhe" model="ir.ui.view">
+        <field name="name">sale.order.form.in</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='sale_order_template_id']" position="after">
+                <field name="manager_ids" invisible="1" widget="many2many_tags"/>
+                <field name="total_exceeded_amount" readonly='True'  attrs="{'invisible': [('state', '!=','credit_limit')]}"/>
+            </xpath>
+            <xpath expr="//button[@name='action_confirm']" position="replace">
+                 <button name="action_confirm_creditlimit" states="sent" string="Confirm Sale" class="btn-primary" type="object" context="{'show_sale': True}"/>
+            </xpath>
+            <xpath expr="//button[@name='action_confirm']" position="attributes">
+                <attribute name="name">action_confirm_creditlimit</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_confirm_creditlimit']" position="after">
+                 <button name="action_confirm" states="credit_limit" string="Confirm Sale" class="btn-primary" type="object" context="{'show_sale': True}" groups="sales_team.group_sale_manager"/>
+            </xpath>
+        </field>
+    </record>
+
+<!--    sale order action-->
+    <record id="sale.action_orders" model="ir.actions.act_window">
+        <field name="domain">[('state', 'not in', ('draft', 'sent', 'cancel','credit_limit'))]</field>
+    </record>
+
+<!--    credit limit action-->
+    <record id="action_customer_creditlimit" model="ir.actions.act_window">
+        <field name="name">Credit Limit Orders</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.order</field>
+        <field name="binding_view_types">form</field>
+        <field name="view_id" ref="sale.view_quotation_tree"/>
+        <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
+        <field name="context">{'create': False}</field>
+        <field name="domain">[('state','=','credit_limit')]</field>
+    </record>
+
+<!--    credit limit menu-->
+    <menuitem id="menu_customer_creditlimit" name="Credit Limit Orders" parent="sale.sale_order_menu" action="action_customer_creditlimit" sequence="12"/>
+
+</odoo>

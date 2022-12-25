@@ -1,0 +1,17 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_payroll_variations_manager,hr.pv manager,model_hr_pv,hr.group_hr_manager,1,1,1,0
+access_hr_payroll_variations_type_manager,hr.pv.type manager,model_hr_pv_type,hr.group_hr_manager,1,1,1,0
+access_hr_payroll_variations_event_manager,hr.pv.event manager,model_hr_pv_event,hr_payroll_variations.group_pv_event,1,1,1,1
+access_hr_payroll_variations_follower_manager,hr.pv follower manager,model_hr_pv_stage_followers,hr.group_hr_manager,1,1,1,1
+access_hr_payroll_variations_subtype_manager,hr.pv.type.subtype manager,model_hr_pv_type_subtype,hr.group_hr_manager,1,1,1,0
+access_hr_payroll_variations,hr.pv,model_hr_pv,hr.group_hr_user,1,1,1,0
+access_hr_payroll_variations_type,hr.pv.type,model_hr_pv_type,hr.group_hr_user,1,0,0,0
+access_hr_payroll_variations_event,hr.pv.event,model_hr_pv_event,hr.group_hr_user,1,0,0,0
+access_hr_payroll_variations_followers,hr.pv follower,model_hr_pv_stage_followers,hr.group_hr_user,1,0,0,0
+access_hr_leave_code,access_hr_leave_code,model_hr_leave_code,base.group_user,1,1,1,1
+access_hr_employee_bonus_type,access_hr_employee_bonus_type,model_hr_employee_bonus_type,base.group_user,1,1,1,1
+access_hr_employee_bonus,access_hr_employee_bonus,model_hr_employee_bonus,base.group_user,1,1,1,1
+access_hr_employee_sena,access_hr_employee_sena,model_hr_employee_sena,base.group_user,1,1,1,1
+access_hr_assignment_configuration,access_hr_assignment_configuration,model_hr_assignment_configuration,base.group_user,1,1,1,1
+access_hr_assignment_employee,access_hr_assignment_employee,model_hr_assignment_employee,base.group_user,1,1,1,1
+access_assignment_lines_configuration,access_assignment_lines_configuration,model_assignment_lines_configuration,base.group_user,1,1,1,1

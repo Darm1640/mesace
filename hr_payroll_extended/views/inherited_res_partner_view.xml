@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019-TODAY Anand Kansagra <anandkansagra@qdata.io>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="view_partner_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.form.view.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="features" string="Features">
+                    <group col="4">
+                        <field name="is_found_layoffs"/>
+                        <field name="is_compensation_box"/>
+                        <field name="is_eps"/>
+                        <field name="required_physical_evidence"/>
+                        <field name="is_unemployee_fund"/>
+                        <field name="is_arl"/>
+                        <field name="is_prepaid_medicine"/>
+                        <field name="is_afc"/>
+                        <field name="is_afp"/>
+                        <field name="is_voluntary_contribution"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_res_partner_filter_inherit" model="ir.ui.view">
+        <field name="name">view.res.partner.filter.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="vat"/>
+            </field>
+
+            <filter name="inactive" position="after">
+                <filter string="Found Layoffs" name="is_found_layoffs"
+                        domain="[('is_found_layoffs','!=',False)]"/>
+                <filter string="Compensation Box" name="is_compensation_box"
+                        domain="[('is_compensation_box','!=',False)]"/>
+                <filter string="EPS" name="is_eps"
+                        domain="[('is_eps','!=',False)]"/>
+                <filter string="Unemployee Fund" name="is_unemployee_fund"
+                        domain="[('is_unemployee_fund','!=',False)]"/>
+                <filter string="ARL" name="is_arl"
+                        domain="[('is_arl','!=',False)]"/>
+                <filter string="Prepaid Medicine" name="is_prepaid_medicine"
+                        domain="[('is_prepaid_medicine','!=',False)]"/>
+                <filter string="AFC" name="is_afc"
+                        domain="[('is_afc','!=',False)]"/>
+                <filter string="AFP" name="is_afp"
+                        domain="[('is_afp','!=',False)]"/>
+                <filter string="Voluntary Contribution" name="is_voluntary_contribution"
+                        domain="[('is_voluntary_contribution','!=',False)]"/>
+            </filter>
+        </field>
+    </record>
+
+    <!-- Inherit Form View to Modify it -->
+    <!--<record id="ln10_latam_identification_type_tree" model="ir.ui.view">
+        <field name="name">l10n_latam_identification_type_form</field>
+        <field name="model">l10n_latam.identification.type</field>
+        <field name="inherit_id" ref="l10n_latam_base.view_l10n_latam_identification_type_tree"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="code"/>
+            </xpath>
+
+        </field>
+    </record>-->
+
+</odoo>

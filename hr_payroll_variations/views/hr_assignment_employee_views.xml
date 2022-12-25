@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Assignment Configuration Form View-->
+        <record id="hr_assignment_employee_configuration_view_form" model="ir.ui.view">
+            <field name="name">hr_assignment_employee_configuration_view_form</field>
+            <field name="model">hr.assignment.configuration</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+
+                        <div>
+                            <h1>
+                                <field name="name" placeholder="Name"/>
+                            </h1>
+                        </div>
+
+                        <group>
+                            <group>
+                                <field name="company_id" required="1"/>
+                                <field name="date_from" required="1"/>
+                                <field name="date_to" required="1"/>
+                            </group>
+                            <group>
+                                <field name="event_id" required="1"/>
+                                <field name="is_active"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Parametrization">
+                                <field name="configuration_line_ids">
+                                    <tree editable="bot">
+                                        <field name="day_from"/>
+                                        <field name="day_to"/>
+                                        <field name="percentage"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Assignment Configuration Tree View -->
+        <record id="hr_assigment_employee_configuration_view_tree" model="ir.ui.view">
+            <field name="name">hr_assigment_employee_view_tree</field>
+            <field name="model">hr.assignment.configuration</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" width="12%"/>
+                    <field name="company_id" width="12%"/>
+                    <field name="date_from" width="12%"/>
+                    <field name="date_to" width="12%"/>
+                    <field name="is_active" width="12%"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--  Assignment Configuration Action -->
+        <record id="hr_assignment_configuration_employee_action" model="ir.actions.act_window">
+            <field name="name">Assignment Configuration</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.assignment.configuration</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Assigment Form View -->
+        <record id="hr_assigment_employee_view_form" model="ir.ui.view">
+            <field name="name">hr_assigment_employee_view_form</field>
+            <field name="model">hr.assignment.employee</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="approve" type="object" string="Approve"
+                                attrs="{'invisible':[('state','!=','draft')]}"/>
+                        <button name="%(assignment_cancel_wizard_action)d" type="action" string="Cancel"
+                                attrs="{'invisible':[('state','in',('draft','canceled'))]}"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <field name="currency_id" invisible="1"/>
+                        <div class="oe_button_box" name="expense_button_box">
+                                <button name="get_pvs"
+                                        type="object"
+                                        class="oe_stat_button"
+                                        icon="fa-list-alt">
+                                        <field name="pv_count" widget="statinfo"/>
+                                </button>
+                        </div>
+
+
+                        <div>
+                            <h1>
+                                <field name="name" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group string="Company">
+                            <group>
+                                <field name="company_id" required="1" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="sequence_id" required="1" domain="[('company_id','=',company_id)]"
+                                       attrs="{'readonly':[('state','!=','draft')]}"/>
+                            </group>
+                        </group>
+                        <group string="Assigment">
+                            <group>
+                                <field name="type_assignment" required="1" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="employee_id" required="1" domain="[('company_id','=',company_id)]" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="contract_id" readonly="1" force_save="1" />
+                                <field name="structure_type_id" readonly="1" force_save="1"/>
+                                <field name="default_schedule_pay" readonly="1" force_save="1" />
+                                <field name="current_wage_employee" readonly="1" force_save="1" />
+                            </group>
+                            <group>
+                                <field name="date_start" required="1" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="date_end" required="1" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="total_days" readonly="1" force_save="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="employee_to_replace_id" domain="[('company_id','=',company_id)]"
+                                       attrs="{'required':[('type_assignment','=','employee')],'invisible':[('type_assignment','!=','employee')],'readonly':[('state','!=','draft')]}"/>
+                                <field name="wage_employee_to_replace" readonly="1" force_save="1"
+                                       attrs="{'invisible':[('type_assignment','!=','employee')]}"/>
+                                <field name="salary_value"
+                                       attrs="{'required':[('type_assignment','=','salary')],'invisible':[('type_assignment','!=','salary')],'readonly':[('state','!=','draft')]}"/>
+                                <field name="fixed_value"
+                                       attrs="{'required':[('type_assignment','=','fixed')],'invisible':[('type_assignment','!=','fixed')],'readonly':[('state','!=','draft')]}"/>
+                            </group>
+
+                            <group>
+                                <field name="wage_difference" readonly="1" force_save="1"/>
+                                <field name="amount" readonly="1" force_save="1"/>
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page string="Pvs">
+                                <field name="pv_ids" readonly="1">
+                                    <tree>
+                                        <field name="name" width="30%"/>
+                                        <field name="start_date" width="30%"/>
+                                        <field name="end_date" width="30%"/>
+                                        <field name="total_days" width="30%"/>
+                                        <field name="amount" width="30%"/>
+                                        <field name="state" width="30%"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+
+                        <separator string="Description"/>
+                        <field name="description" placeholder="Description..."/>
+
+                    </sheet>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+
+                </form>
+            </field>
+        </record>
+
+        <!-- Assignment Tree View -->
+        <record id="hr_assigment_employee_view_tree" model="ir.ui.view">
+            <field name="name">hr_assigment_employee_view_tree</field>
+            <field name="model">hr.assignment.employee</field>
+            <field name="arch" type="xml">
+                <tree string="hr_assigment_employee_tree">
+                    <field name="name" width="15%"/>
+                    <field name="employee_id" width="15%"/>
+                    <field name="total_days" width="15%"/>
+                    <field name="type_assignment" width="15%"/>
+                    <field name="amount" width="15%"/>
+                    <field name="state" width="15%"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Assigment Employee Action -->
+        <record id="hr_assigment_employee_action" model="ir.actions.act_window">
+            <field name="name">Assigment Employee</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.assignment.employee</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- Menu Items -->
+        <!-- Menu Item Configuration Category -->
+        <menuitem name="Assignment"
+                  id="menu_assignment_configuration"
+                  parent="hr.menu_human_resources_configuration"
+                  sequence="10"/>
+
+        <!-- Menu Item Assignment Configuration-->
+        <menuitem id="assignment_configuration_menu_item"
+                  name="Assigment Configuration"
+                  parent="menu_assignment_configuration"
+                  action="hr_assignment_configuration_employee_action"
+                  sequence="1"/>
+
+        <!-- Menu Item Assigment  -->
+        <!-- This Menu Item must have a parent and an action -->
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="menu_item_hr_payroll_variations"
+                  name="Payroll Variations"
+                  parent="menu_hr_payroll_variations"
+                  action="action_hr_payroll_variations"
+                  sequence="1"/>
+
+        <menuitem id="assigment_employee_menu_item"
+                  name="Assigment Employee"
+                  parent="menu_hr_payroll_variations"
+                  action="hr_assigment_employee_action"
+                  sequence="2"/>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,58 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ats_custom_cost
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-11 03:40+0000\n"
+"PO-Revision-Date: 2021-02-11 03:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ats_custom_cost
+#: model_terms:ir.ui.view,arch_db:ats_custom_cost.view_inherit_product_product_pending_form
+#: model_terms:ir.ui.view,arch_db:ats_custom_cost.view_inherit_product_template_pending_form
+msgid "<span class=\"o_stat_text\">Pending quantities</span>"
+msgstr "<span class=\"o_stat_text\">Cantidades pendientes</span>"
+
+#. module: ats_custom_cost
+#: model:ir.actions.act_window,name:ats_custom_cost.pending_quantities_action
+#: model_terms:ir.ui.view,arch_db:ats_custom_cost.pending_quantities_tree_view
+msgid "Pending quantities"
+msgstr "Cantidades pendientes"
+
+#. module: ats_custom_cost
+#: model:ir.model,name:ats_custom_cost.model_product_product
+msgid "Product"
+msgstr "Producto"
+
+#. module: ats_custom_cost
+#: model:ir.model,name:ats_custom_cost.model_product_template
+msgid "Product Template"
+msgstr "Plantilla del Producto"
+
+#. module: ats_custom_cost
+#: model:ir.model,name:ats_custom_cost.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Línea de Orden de Compra"
+
+#. module: ats_custom_cost
+#: model:ir.model.fields,field_description:ats_custom_cost.field_purchase_order_line__related_supplier_id
+msgid "Vendor"
+msgstr "Proveedor"
+
+#. module: ats_custom_cost
+#: model:ir.model.fields,help:ats_custom_cost.field_purchase_order_line__related_supplier_id
+msgid "You can find a vendor by its Name, TIN, Email or Internal Reference."
+msgstr ""
+
+#. module: ats_custom_cost
+#: model:res.groups,name:ats_custom_cost.group_no_margin_no_cost
+msgid "Do not show field margin in sale orders or cost in products form"
+msgstr "No muestra el campo margen en la orden ni el costo en los productos"

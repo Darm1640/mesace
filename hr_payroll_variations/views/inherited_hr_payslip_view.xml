@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY Miguel Pardo <ing.miguel.pardo@gmail.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="view_hr_payslip_line_pv_inherit" model="ir.ui.view">
+        <field name="name">hr.payslip.line.form.pv.view.inherit</field>
+        <field name="model">hr.payslip.line</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_line_tree"/>
+        <field name="arch" type="xml">
+            <field name="employee_id" position="after">
+                <field name="pv_ids" widget="many2many_tags"
+                  options="{'no_create': True, 'no_create_edit': True}"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_hr_payslip_pv_inherit_form" model="ir.ui.view">
+        <field name="name">Payslip PV Inherit</field>
+        <field name="model">hr.payslip</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='line_ids']/form[1]/group[1]/field[@name='salary_rule_id']"
+                   position="after">
+                <field name="pv_ids" widget="many2many_tags"/>
+            </xpath>
+        </field>
+    </record>
+    
+    <menuitem
+        id="hr_holidays.hr_holidays_menu_manager_payroll"
+        name="Payroll"
+        parent="hr_holidays.menu_hr_holidays_approvals"
+        groups="hr_holidays.group_hr_holidays_manager,hr_holidays.group_hr_holidays_user"
+        sequence="3"/>
+
+    <menuitem
+        action="hr_payroll.action_view_hr_payslip_form"
+        id="hr_payroll.menu_department_tree" parent="hr_work_entry_contract.menu_hr_payroll_configuration"
+        groups="hr_payroll.group_hr_payroll_user"/>
+
+    <menuitem action="hr_payroll.action_hr_payslip_run_tree"
+              id="hr_payroll.menu_hr_payslip_run"
+              parent="hr_work_entry_contract.menu_hr_payroll_configuration"/>
+
+    <menuitem id="hr_work_entry_contract.menu_hr_payroll_configuration" name="Payroll"
+              sequence="45" web_icon="hr_payroll,static/description/icon.png"
+              groups="hr_payroll.group_hr_payroll_manager,hr_payroll.group_hr_payroll_user"/>
+
+</odoo>

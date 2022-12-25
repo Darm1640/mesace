@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY Miguel Pardo <ing.miguel.pardo@gmail.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <data noupdate="1">
+
+        <record id="pv_subtype_AUS" model="hr.pv.type.subtype">
+            <field name="name">Ausencia</field>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_TIE"/>
+        </record>
+        <record id="pv_subtype_FIJ" model="hr.pv.type.subtype">
+            <field name="name">Fija</field>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_ECO"/>
+        </record>
+        <record id="pv_subtype_OCA" model="hr.pv.type.subtype">
+            <field name="name">Ocasional</field>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_ECO"/>
+        </record>
+        <record id="pv_subtype_PRO" model="hr.pv.type.subtype">
+            <field name="name">Procedimiento</field>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_PRO"/>
+        </record>
+        <record id="pv_subtype_TERM_CONTR" model="hr.pv.type.subtype">
+            <field name="name">Terminación de Contrato</field>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_PRO"/>
+        </record>
+
+    </data>
+
+</odoo>

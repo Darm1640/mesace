@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY Miguel Pardo <ing.miguel.pardo@gmail.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="view_employee_form_inherit" model="ir.ui.view">
+        <field name="name">view.employee.form.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <page name="personal_information" position="after">
+                <page name="hr_acumulate" string="Hr Acumulate">
+                    <group>
+                        <field name="hr_employee_acumulate_ids"
+                               readonly="1" nolabel="1"
+                               context="{'default_employee_id': active_id}"/>
+                    </group>
+                </page>
+            </page>
+        </field>
+    </record>
+
+    <record id="view_employee_form_inherit_inherit" model="ir.ui.view">
+        <field name="name">view.employee.form.inherit.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr_payroll_extended.view_employee_form_inherit"/>
+        <field name="groups_id" eval="[(4, ref('base.group_system'))]"/>
+        <field name="arch" type="xml">
+            <field name="hr_employee_acumulate_ids"
+                   position="attributes">
+                <attribute name="readonly">0</attribute>
+            </field>
+        </field>
+    </record>
+
+    <!-- Inherit search view of hr_employee-->
+    <record id="view_hr_employee_inherit_search" model="ir.ui.view">
+        <field name="name">hr_employee_search_expand_filter</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_filter"/>
+        <field name="arch" type="xml">
+            <filter name="message_needaction" position="after">
+                <field name="identification_id" select="multi" string="IN identification ID"
+                       filter_domain="[]"
+                       context="{'search_multiple_identification_id':True,'search_multiple_identification_id_value':self}"/>
+                <field name="identification_id" string="NOT identification ID"
+                       filter_domain="[]"
+                       context="{'not_search_multiple_identification_id':True,'not_search_multiple_identification_id_value':self}"/>
+                <field name="contract_ids" string="Contract Active"
+                       filter_domain="[('contract_ids.state', 'in', ('open', 'close'))]"/>
+            </filter>
+        </field>
+    </record>
+
+
+    <record id="view_employee_form_inherit_leaves_calculate" model="ir.ui.view">
+        <field name="name">view.employee.form.inherit.leaves.calculate</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='active_group']" position="after">
+                <group string="Leaves Status" name="leaves_status">
+                    <label for="allocation_leaves_count"/>
+                    <div>
+                        <field name="allocation_leaves_count"
+                               attrs="{'readonly': [('id', '!=', False)], 'invisible': [('id', '=', False)]}"
+                               class="oe_inline"/> days
+                    </div>
+                    <label for="leave_days_count"/>
+                    <div>
+                        <field name="leave_days_count"
+                               attrs="{'readonly': [('id', '!=', False)], 'invisible': [('id', '=', False)]}"
+                               class="oe_inline"/> days
+                    </div>
+                    <label for="remaining_leaves_count"/>
+                    <div>
+                        <field name="remaining_leaves_count"
+                               attrs="{'readonly': [('id', '!=', False)], 'invisible': [('id', '=', False)]}"
+                               class="oe_inline"/> days
+                    </div>
+                </group>
+            </xpath>
+            <page name="hr_settings" position="inside">
+                <group>
+                    <group string="Funds" name="funds">
+                        <field name="found_layoffs_id" options="{'no_create': True, 'no_create_edit': True}"/>
+                        <field name="eps_id" options="{'no_create': True, 'no_create_edit': True}"/>
+                        <field name="pension_fund_id" options="{'no_create': True, 'no_create_edit': True}"/>
+                        <field name="unemployment_fund_id"
+                               context="{'default_is_unemployee_fund':True}"/>
+                        <field name="arl_id" options="{'no_create': True, 'no_create_edit': True}"/>
+                        <field name="prepaid_medicine_id" options="{'no_create': True, 'no_create_edit': True}"/>
+                        <field name="prepaid_medicine2_id" options="{'no_create': True, 'no_create_edit': True}"/>
+                        <field name="afc_id" options="{'no_create': True, 'no_create_edit': True}"/>
+                        <field name="voluntary_contribution_id" options="{'no_create': True, 'no_create_edit': True}"/>
+                        <field name="voluntary_contribution2_id" options="{'no_create': True, 'no_create_edit': True}"/>
+                    </group>
+                </group>
+            </page>
+
+            <field name="identification_id" position="after">
+                <field name="ident_type"/>
+                <field name="ident_issuance_city_id"/>
+                <field name="ident_issuance_date"/>
+                <field name="personal_group_id"/>
+                <field name="wage_type_id"/>
+                <field name="payment_method_id"/>
+            </field>
+
+            <field name="visa_expire" position="after">
+                <field name="permit_expire"/>
+            </field>
+
+        </field>
+    </record>
+
+    <!--act_window
+        id="update_leaves_details"
+        name="Update Leaves Details"
+        res_model="update.leaves.details.wizard"
+        src_model="hr.employee"
+        view_mode="form"
+        multi="True"
+        target="new"
+        key2="client_action_multi"
+    /-->
+
+
+    <!-- This New modules for employee -->
+    <record model="ir.ui.view" id="view_hr_personal_group_form">
+        <field name="name">hr.personal.group.form</field>
+        <field name="model">hr.personal.group</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Personal Group">
+                <sheet>
+                    <group col="2" colspan="2">
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_hr_personal_group_tree">
+        <field name="name">hr.personal.group.tree</field>
+        <field name="model">hr.personal.group</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Persona Group">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hr_personal_group_search" model="ir.ui.view">
+        <field name="name">view.hr.personal.group.search</field>
+        <field name="model">hr.personal.group</field>
+        <field name="arch" type="xml">
+            <search string="name">
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_hr_personal_group">
+        <field name="name">hr.personal.group.act</field>
+        <field name="res_model">hr.personal.group</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_hr_personal_group_search"/>
+    </record>
+
+    <menuitem name="Personal Group"
+              id="menu_hr_personal_group"
+              action="action_hr_personal_group"
+              parent="hr.menu_human_resources_configuration"
+              sequence="100"/>
+
+
+    <record model="ir.ui.view" id="view_hr_wage_type_form">
+        <field name="name">hr.wage.type.form</field>
+        <field name="model">hr.wage.type</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Wage Type">
+                <sheet>
+                    <group col="2" colspan="2">
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_hr_wage_type_tree">
+        <field name="name">hr.wage.type.tree</field>
+        <field name="model">hr.wage.type</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Wage Type">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hr_wage_type_search" model="ir.ui.view">
+        <field name="name">view.hr.wage.type.search</field>
+        <field name="model">hr.wage.type</field>
+        <field name="arch" type="xml">
+            <search string="name">
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_hr_wage_type">
+        <field name="name">hr.wage.type.act</field>
+        <field name="res_model">hr.wage.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_hr_wage_type_search"/>
+    </record>
+
+    <menuitem name="Wage Type"
+              id="menu_hr_wage_type"
+              action="action_hr_wage_type"
+              parent="hr.menu_human_resources_configuration"
+              sequence="101"/>
+
+
+    <record model="ir.ui.view" id="view_hr_payment_method_form">
+        <field name="name">hr.payment.method.form</field>
+        <field name="model">hr.payment.method</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Payment Method">
+                <sheet>
+                    <group col="2" colspan="2">
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_hr_payment_method_tree">
+        <field name="name">hr.payment.method.tree</field>
+        <field name="model">hr.payment.method</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Payment Method">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hr_payment_method_search" model="ir.ui.view">
+        <field name="name">view.hr.payment.method.search</field>
+        <field name="model">hr.payment.method</field>
+        <field name="arch" type="xml">
+            <search string="name">
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_hr_payment_method">
+        <field name="name">hr.payment.method.act</field>
+        <field name="res_model">hr.payment.method</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_hr_payment_method_search"/>
+    </record>
+
+    <menuitem name="Payment Method"
+              id="menu_hr_payment_method"
+              action="action_hr_payment_method"
+              parent="hr.menu_human_resources_configuration"
+              sequence="102"/>
+
+</odoo>

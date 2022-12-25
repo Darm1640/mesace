@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="website_form_view_inh" model="ir.ui.view">
+            <field name="name">website.form.view.inh</field>
+            <field name="model">website</field>
+            <field name="inherit_id" ref="website.view_website_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="hide_price" />
+                    <field name="email" widget="email" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

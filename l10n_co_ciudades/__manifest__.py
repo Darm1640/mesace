@@ -28,11 +28,11 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/country.xml',
-        'views/state.xml',
-        'views/cities.xml',
-        'views/menu.xml',
-        'views/res_partner.xml',
+        # 'views/country.xml',
+        # 'views/state.xml',
+        # 'views/cities.xml',
+        # 'views/menu.xml',
+        # 'views/res_partner.xml',
         'data/cities.xml',
 
 

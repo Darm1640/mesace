@@ -1,0 +1,53 @@
+<odoo>
+    <data>
+      <template id="inherit_expense_frontend" name="web_expense assets"  inherit_id="website.assets_frontend">
+
+      <xpath expr="script[last()]" position="after">
+          <script type="text/javascript" src="/website_order_customer_comment/static/src/js/customer_comment.js"/>
+      </xpath> 
+    </template>
+      <template id="custom_customer_comment_sale_order" inherit_id="website_sale.cart" name="Customer Comment">
+        <xpath expr="//div[@id='oe_structure_website_sale_cart_1']" position="after">
+          <div  class="row custom_customer_comment_probc">
+          <div class="col-md-12 mb-2 mr-4">
+            <input type="hidden" name="order_id" t-attf-value="#{website_sale_order.id}" class="hidden_id"/>
+                <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#customer_comment_probc" id="add_comment">Adicionar Mensaje</button>
+              <!-- <div class="row"> -->
+                <label class="col-md-12 control-label" for="name" t-if="website_sale_order.custom_customer_comment">Your Message:
+                </label>
+                <textarea class="form-control comment_probc" name="comment" t-if="website_sale_order.custom_customer_comment" readonly="readonly"><t t-esc="website_sale_order.custom_customer_comment"/></textarea>
+              <!-- </div> -->
+          </div>
+          <div id="customer_comment_probc" class="modal fade" role="dialog" required="required">
+                  <div class="modal-dialog">
+                    <div class="row modal-content">
+                      <div class="modal-header">
+                        <h6 class="text-left mt-2">
+                          <strong>Adicionar Mensaje</strong>
+                        </h6>
+                      </div>
+                      <div class="modal-body">
+                        <div class='row'>
+                          <div class="col-md-12">
+                           <h6><label class="col-md-12 control-label" for="name"><font color="#808080">Usted puede adicionar un mensaje a su orden, nosotros lo recibiremos cuando usted confirme la orden. Si requiere alguna acción de acuerdo a este mensaje lo tendremos en cuenta.
+                                </font></label></h6>
+                                <div class="col-md-12">
+                                    <textarea class="form-control comment_pop_probc" name="comment" required="True" placeholder="Su Mensaje....." id="comment" ><t t-esc="website_sale_order.custom_customer_comment"></t></textarea>
+                                </div>
+
+                          </div>
+                          <span class="error" id="comment_blank_probc">Por favor adicione su mensaje.</span>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button class="btn btn-primary contract-submit submit_comment" id="submit_comment">Adicionar Mensaje</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </xpath>
+      </template>
+    </data>
+</odoo>

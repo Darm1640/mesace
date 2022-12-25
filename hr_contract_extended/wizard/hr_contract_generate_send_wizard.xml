@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!-- Copyright 2020-TODAY Miguel Pardo <ing.miguel.pardo@gmail.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="notice_letter_wizard_form" model="ir.ui.view">
+        <field name="name">hr.contract.notice.letter.wizard.form</field>
+        <field name="model">hr.contract.notice.letter.wizard</field>
+        <field name="arch" type="xml">
+            <form string='Generate Reports Wizard'>
+                <group>
+                    <field name="download" invisible="1"/>
+                    <field name="file" filename="file_name" readonly="1"
+                           attrs="{'invisible': [('download', '=', False)]}"/>
+                    <field name="file_name" invisible="1"/>
+
+                    <field name="generate_individual_report" attrs="{'invisible': [('download','=',True)]}"/>
+                    <field name="report_id" attrs="{'invisible': [('download','=',True)]}"/>
+                    <field name="send_by_mail" attrs="{'invisible': [('download','=',True)]}"/>
+                    <field name="template_id"
+                           attrs="{'invisible': ['|',('send_by_mail', '=', False),('download','=',True)]}"/>
+                </group>
+                <footer>
+                    <button name="confirm" type="object" string="Confirm" class="oe_right oe_highlight"
+                            attrs="{'invisible': [('send_by_mail', '=', True)]}"/>
+                    <button name="action_send_email_mass" type="object" string="Generate and Send"
+                            class="oe_right oe_highlight"
+                            attrs="{'invisible': [('send_by_mail', '=', False)]}"/>
+                    <button string="Cancel" class="oe_right" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="action_notice_letter_report_wizard"
+                name="Generate and Send"
+                res_model="hr.contract.notice.letter.wizard"
+                binding_model="hr.contract"
+                binding_views="form,list"
+                view_mode="form"
+                target="new"
+    />
+
+</odoo>

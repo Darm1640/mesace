@@ -10,7 +10,6 @@ from odoo.exceptions import UserError
 import json
 import io
 from odoo.tools import date_utils
-import base64
 
 try:
     from odoo.tools.misc import xlsxwriter
@@ -354,8 +353,8 @@ class InsFinancialReport(models.TransientModel):
                         'precision': currency_id.decimal_places,
                         'symbol': currency_id.symbol,
                         'position': currency_id.position,
-                        'list_len':[a for a in range(0, report.level)],
-                        'level': report.level + 1,
+                        'list_len':[a for a in range(0,report.display_detail == 'detail_with_hierarchy' and 4)],
+                        'level': 4,
                         'company_currency_id': self.env.company.currency_id.id,
                         'account_type': account.internal_type,
                         'fin_report_type': report.type,
@@ -580,7 +579,6 @@ class InsFinancialReport(models.TransientModel):
             self.env['res.lang'].search([('code', '=', self.env.user.lang)])[0].date_format)
         report = self.account_report_id.name
 
-
         return {
             'type': 'ir.actions.report',
             'data': {'model': 'ins.financial.report',
@@ -591,8 +589,8 @@ class InsFinancialReport(models.TransientModel):
             'report_type': 'xlsx'
         }
 
-    def action_xlsx(self):
-        data = self.read()[0]
+    def get_xlsx_report(self, data, response):
+
         # Initialize
         #############################################################
         output = io.BytesIO()
@@ -743,7 +741,7 @@ class InsFinancialReport(models.TransientModel):
                 else:
                     tmp_style_str = line_header_string_bold
                     tmp_style_num = line_header_bold
-                sheet.write(row_pos, 0, '   ' * a['level'] + a.get('name'),
+                sheet.write(row_pos, 0, '   ' * len(a.get('list_len', [])) + a.get('name'),
                                         tmp_style_str)
                 sheet.write(row_pos, 1, float(a.get('debit')), tmp_style_num)
                 sheet.write(row_pos, 2, float(a.get('credit')), tmp_style_num)
@@ -772,7 +770,7 @@ class InsFinancialReport(models.TransientModel):
                 else:
                     tmp_style_str = line_header_string_bold
                     tmp_style_num = line_header_bold
-                sheet.write(row_pos, 0, '   ' * a['level'] + a.get('name'),
+                sheet.write(row_pos, 0, '   ' * len(a.get('list_len', [])) + a.get('name'),
                                         tmp_style_str)
                 if data['form']['enable_filter']:
                     sheet.write(row_pos, 1, float(a.get('balance_cmp')), tmp_style_num)
@@ -794,16 +792,7 @@ class InsFinancialReport(models.TransientModel):
         #################################################################
         workbook.close()
         output.seek(0)
-        result = base64.b64encode(output.read())
-        report_id = self.env['common.xlsx.out'].sudo().create({'filedata': result, 'filename': 'FIN.xls'})
-
-        return {
-            'type': 'ir.actions.act_url',
-            'url': '/web/binary/download_document?model=common.xlsx.out&field=filedata&id=%s&filename=%s.xls' % (
-                report_id.id, data['form']['account_report_id'][1]),
-            'target': 'new',
-        }
-
+        response.stream.write(output.read())
         output.close()
 
     def action_view(self):

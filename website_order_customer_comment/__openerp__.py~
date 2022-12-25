@@ -1,0 +1,27 @@
+# -*- coding: utf-8 -*-
+# Part of Probuse Consulting Service Pvt Ltd. See LICENSE file for full copyright and licensing details.
+
+{
+    'name' : 'Website Order Comments',
+    'version': '1.0',
+    'author': 'Probuse Consulting Service Pvt. Ltd.',
+    'summary': 'Allow your customer give comments on website order.',
+    'category' : 'Website',
+    'license': 'Other proprietary',
+    'price': 10.0,
+    'currency': 'EUR',
+    'website': 'https://www.probuse.com',
+    'description': ''' 
+This module allows to add extra comment on website order.
+Website Order Comments / Website Order Notes / Website Comments / Website Sales Comments
+  ''',
+    'depends':['website_sale'],
+    'data' : [
+          'views/template.xml',
+          'views/sale_view.xml'
+              ],
+    'installable':True,
+    'auto_install':False
+}
+
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

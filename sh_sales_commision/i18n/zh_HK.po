@@ -1,0 +1,558 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sh_sales_commision
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-07 05:49+0000\n"
+"PO-Revision-Date: 2021-06-07 05:49+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sh_sales_commision
+#: model:ir.actions.report,print_report_name:sh_sales_commision.action_report_sales_commission
+msgid "'Sales Commission Report'"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.report_sales_commission
+msgid "<b>Salesperson : </b>"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_product_commission_line__above_margin_commission
+msgid "Above Margin Commission %"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_product_commission_line__above_price_commission
+msgid "Above Price Commission %"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_res_partner__affiliated
+#: model:ir.model.fields,field_description:sh_sales_commision.field_res_users__affiliated
+msgid "Affiliated"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission__affiliated_commission_per
+msgid "Affiliated Partner Commission Percentage"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.report_sales_commission
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.sh_so_orderline_form_view_inh
+msgid "Amount"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_product_commission_line__based_on
+msgid "Based on"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_product_commission_line__below_margin_commission
+msgid "Below Margin Commission %"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.sh_inv_create_pro_wizard
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.sh_sale_commission_report_form_view
+msgid "Cancel"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.view_sh_sale_commission_analysis_filter
+msgid "Category"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_product_commission_line__commission_id
+msgid "Commission"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_product_commission_line__exception_commission
+msgid "Commission %"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis__amount
+msgid "Commission Amount"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields.selection,name:sh_sales_commision.selection__product_commission_line__with_commission__exception
+msgid "Commission Exception"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission__name
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis__commission_name
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.report_sales_commission
+msgid "Commission Name"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission__type
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.report_sales_commission
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.view_sh_sale_commission_analysis_filter
+msgid "Commission Type"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_res_company__commission_based_on_invoice
+#: model:ir.model.fields,field_description:sh_sales_commision.field_res_config_settings__commission_based_on_invoice
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.sh_sales_commission_res_config_settings_inherit
+msgid "Commission based on invoice"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_res_company__commission_based_on_payment
+#: model:ir.model.fields,field_description:sh_sales_commision.field_res_config_settings__commission_based_on_payment
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.sh_sales_commission_res_config_settings_inherit
+msgid "Commission based on payment"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_res_company__commission_based_on_so
+#: model:ir.model.fields,field_description:sh_sales_commision.field_res_config_settings__commission_based_on_so
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.sh_sales_commission_res_config_settings_inherit
+msgid "Commission based on sales order"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model,name:sh_sales_commision.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model,name:sh_sales_commision.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model,name:sh_sales_commision.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.actions.act_window,name:sh_sales_commision.sh_create_invoice_form_pro_action
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.sh_inv_create_pro_wizard
+msgid "Create Invoice"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_inv_create_wizard_pro__create_uid
+#: model:ir.model.fields,field_description:sh_sales_commision.field_product_commission_line__create_uid
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission__create_uid
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis__create_uid
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis_report__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_inv_create_wizard_pro__create_date
+#: model:ir.model.fields,field_description:sh_sales_commision.field_product_commission_line__create_date
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission__create_date
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis__create_date
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis_report__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis__date
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.report_sales_commission
+msgid "Date"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis__name
+msgid "Description"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields.selection,name:sh_sales_commision.selection__sale_commission_analysis__type__discount
+msgid "Discount Based"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_account_move__display_name
+#: model:ir.model.fields,field_description:sh_sales_commision.field_account_payment_register__display_name
+#: model:ir.model.fields,field_description:sh_sales_commision.field_inv_create_wizard_pro__display_name
+#: model:ir.model.fields,field_description:sh_sales_commision.field_product_commission_line__display_name
+#: model:ir.model.fields,field_description:sh_sales_commision.field_report_sh_sales_commision_report_sales_commission__display_name
+#: model:ir.model.fields,field_description:sh_sales_commision.field_res_company__display_name
+#: model:ir.model.fields,field_description:sh_sales_commision.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:sh_sales_commision.field_res_partner__display_name
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission__display_name
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis__display_name
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis_report__display_name
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_order__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis_report__end_date
+msgid "End Date"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields.selection,name:sh_sales_commision.selection__product_commission_line__with_commission__fix
+msgid "Fix Price"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.view_sh_sale_commission_analysis_filter
+msgid "Group By"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_inv_create_wizard_pro__group_by_commission_type
+msgid "Group By (Commission Type)"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_account_move__id
+#: model:ir.model.fields,field_description:sh_sales_commision.field_account_payment_register__id
+#: model:ir.model.fields,field_description:sh_sales_commision.field_inv_create_wizard_pro__id
+#: model:ir.model.fields,field_description:sh_sales_commision.field_product_commission_line__id
+#: model:ir.model.fields,field_description:sh_sales_commision.field_report_sh_sales_commision_report_sales_commission__id
+#: model:ir.model.fields,field_description:sh_sales_commision.field_res_company__id
+#: model:ir.model.fields,field_description:sh_sales_commision.field_res_config_settings__id
+#: model:ir.model.fields,field_description:sh_sales_commision.field_res_partner__id
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission__id
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis__id
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis_report__id
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_order__id
+msgid "ID"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.view_sh_sale_commission_analysis_filter
+msgid "Invoice"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_inv_create_wizard_pro__date
+msgid "Invoice Date"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis__invoice_ref
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis__move_id
+msgid "Invoice Reference"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.view_sh_sale_commission_analysis_filter
+msgid "Invoice Remaining"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.report_sales_commission
+msgid "Invoice/Sale Reference"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.view_sh_sale_commission_analysis_filter
+msgid "Invoiced"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis__is_invoice
+msgid "Is Invoice"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model,name:sh_sales_commision.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_account_move____last_update
+#: model:ir.model.fields,field_description:sh_sales_commision.field_account_payment_register____last_update
+#: model:ir.model.fields,field_description:sh_sales_commision.field_inv_create_wizard_pro____last_update
+#: model:ir.model.fields,field_description:sh_sales_commision.field_product_commission_line____last_update
+#: model:ir.model.fields,field_description:sh_sales_commision.field_report_sh_sales_commision_report_sales_commission____last_update
+#: model:ir.model.fields,field_description:sh_sales_commision.field_res_company____last_update
+#: model:ir.model.fields,field_description:sh_sales_commision.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:sh_sales_commision.field_res_partner____last_update
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission____last_update
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis____last_update
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis_report____last_update
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_order____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_inv_create_wizard_pro__write_uid
+#: model:ir.model.fields,field_description:sh_sales_commision.field_product_commission_line__write_uid
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission__write_uid
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis__write_uid
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis_report__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_inv_create_wizard_pro__write_date
+#: model:ir.model.fields,field_description:sh_sales_commision.field_product_commission_line__write_date
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission__write_date
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis__write_date
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis_report__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields.selection,name:sh_sales_commision.selection__product_commission_line__with_commission__margin
+msgid "Margin"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.report_sales_commission
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.view_sh_sale_commission_analysis_filter
+msgid "Name"
+msgstr ""
+
+#. module: sh_sales_commision
+#: code:addons/sh_sales_commision/wizard/wizard.py:0
+#, python-format
+msgid "No account defined for this product: "
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission__non_affiliated_commission_per
+msgid "Non-Affiliated Partner Commission Percentage"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.view_sh_sale_commission_analysis_filter
+msgid "Order"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis__order_id
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis__order_ref
+msgid "Order Reference"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis__partner_id
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.report_sales_commission
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.view_sh_sale_commission_analysis_filter
+msgid "Partner"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields.selection,name:sh_sales_commision.selection__sale_commission__type__partner
+#: model:ir.model.fields.selection,name:sh_sales_commision.selection__sale_commission_analysis__type__partner
+msgid "Partner Based"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis__partner_type
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.view_sh_sale_commission_analysis_filter
+msgid "Partner Type"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.sh_sale_commission_report_form_view
+msgid "Print Commission Report"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_product_commission_line__product_id
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis__product_id
+#: model:ir.model.fields.selection,name:sh_sales_commision.selection__product_commission_line__based_on__product
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.report_sales_commission
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.view_sh_sale_commission_analysis_filter
+msgid "Product"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields.selection,name:sh_sales_commision.selection__product_commission_line__based_on__categories
+msgid "Product Categories"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_product_commission_line__category_id
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis__category_id
+msgid "Product Category"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission__product_commission_lines
+msgid "Product Commission Line"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis__sub_category_id
+msgid "Product Sub-Category"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields.selection,name:sh_sales_commision.selection__sale_commission__type__product
+#: model:ir.model.fields.selection,name:sh_sales_commision.selection__sale_commission_analysis__type__product
+msgid "Product/ Product Category/ Margin Based"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model,name:sh_sales_commision.model_account_payment_register
+msgid "Register Payment"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:res.groups,name:sh_sales_commision.group_sale_commission
+msgid "Sale Commission"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.sh_sale_commission_form_view
+msgid "Sale Commission Line"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.actions.act_window,name:sh_sales_commision.sh_sale_commission_action
+#: model:ir.model.fields,field_description:sh_sales_commision.field_account_bank_statement_line__sales_commission_ids
+#: model:ir.model.fields,field_description:sh_sales_commision.field_account_move__sales_commission_ids
+#: model:ir.model.fields,field_description:sh_sales_commision.field_account_payment__sales_commission_ids
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis__type
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_order__sales_commission_ids
+#: model:ir.ui.menu,name:sh_sales_commision.menu_sale_commission
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.sh_invoice_orderline_form_view_inh
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.sh_sale_commission_form_view
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.sh_sale_commission_tree_form
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.sh_sales_commission_res_config_settings_inherit
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.sh_so_orderline_form_view_inh
+msgid "Sales Commission"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.actions.act_window,name:sh_sales_commision.sh_sale_commission_analysis_action
+#: model:ir.ui.menu,name:sh_sales_commision.menu_sale_commission_analysis
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.sh_sale_commission_analysis_tree_form
+msgid "Sales Commission Analysis"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.actions.act_window,name:sh_sales_commision.sh_sale_commission_analysis_report_action
+#: model:ir.actions.report,name:sh_sales_commision.action_report_sales_commission
+#: model:ir.ui.menu,name:sh_sales_commision.menu_sale_commission_analysis_report
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.sh_sale_commission_report_form_view
+msgid "Sales Commission Report"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.report_sales_commission
+msgid "Sales Invoices Commission"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model,name:sh_sales_commision.model_sale_order
+msgid "Sales Order"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission__user_ids
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis__sales_person_id
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis_report__user_id
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.view_sh_sale_commission_analysis_filter
+msgid "Sales Person"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.view_sh_sale_commission_analysis_filter
+msgid "Search Sales Commission"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_account_bank_statement_line__show_commission
+#: model:ir.model.fields,field_description:sh_sales_commision.field_account_move__show_commission
+#: model:ir.model.fields,field_description:sh_sales_commision.field_account_payment__show_commission
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_order__show_commission
+msgid "Show Commission"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields.selection,name:sh_sales_commision.selection__sale_commission__type__standard
+#: model:ir.model.fields.selection,name:sh_sales_commision.selection__sale_commission_analysis__type__standard
+msgid "Standard"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission__standard_commission_per
+msgid "Standard Commission Percentage"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_sale_commission_analysis_report__start_date
+msgid "Start Date"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_product_commission_line__target_margin
+msgid "Target Margin %"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_product_commission_line__target_price
+msgid "Target Price"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.report_sales_commission
+msgid "To"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model.fields,field_description:sh_sales_commision.field_product_commission_line__with_commission
+msgid "With"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model,name:sh_sales_commision.model_inv_create_wizard_pro
+msgid "inv.create.wizard.pro"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model_terms:ir.ui.view,arch_db:sh_sales_commision.sh_inv_create_pro_wizard
+msgid "or"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model,name:sh_sales_commision.model_product_commission_line
+msgid "product.commission.line"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model,name:sh_sales_commision.model_report_sh_sales_commision_report_sales_commission
+msgid "report.sh_sales_commision.report_sales_commission"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model,name:sh_sales_commision.model_sale_commission
+msgid "sale.commission"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model,name:sh_sales_commision.model_sale_commission_analysis
+msgid "sale.commission.analysis"
+msgstr ""
+
+#. module: sh_sales_commision
+#: model:ir.model,name:sh_sales_commision.model_sale_commission_analysis_report
+msgid "sale.commission.analysis.report"
+msgstr ""
+
+#. module: sh_sales_commision
+#: code:addons/sh_sales_commision/report/sale_analysis_report.py:0
+#, python-format
+msgid "start date must be less than end date."
+msgstr ""

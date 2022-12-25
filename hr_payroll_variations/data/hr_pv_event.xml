@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY Miguel Pardo <ing.miguel.pardo@gmail.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <data noupdate="1">
+
+        <record id="pv_event_1" model="hr.pv.event">
+            <field name="name">Ingresos</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_PRO"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_PRO"/>
+        </record>
+        <record id="pv_event_2" model="hr.pv.event">
+            <field name="name">Temporales</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_PRO"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_PRO"/>
+        </record>
+        <record id="pv_event_3" model="hr.pv.event">
+            <field name="name">Asignación salarial ingreso</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_PRO"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_PRO"/>
+        </record>
+        <record id="pv_event_4" model="hr.pv.event">
+            <field name="name">Aumento IPC</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_OCA"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_ECO"/>
+        </record>
+        <record id="pv_event_5" model="hr.pv.event">
+            <field name="name">aumentos escala nivelacion promoción</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_PRO"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_PRO"/>
+        </record>
+        <record id="pv_event_6" model="hr.pv.event">
+            <field name="name">Cambios de cargo</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_PRO"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_PRO"/>
+        </record>
+        <record id="pv_event_7" model="hr.pv.event">
+            <field name="name">Dotaciones</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_OCA"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_ECO"/>
+        </record>
+        <record id="pv_event_8" model="hr.pv.event">
+            <field name="name">Celulares</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_OCA"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_ECO"/>
+        </record>
+        <record id="pv_event_9" model="hr.pv.event">
+            <field name="name">Descuentos por capacitación</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_OCA"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_ECO"/>
+        </record>
+        <record id="pv_event_10" model="hr.pv.event">
+            <field name="name">Vacaciones</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_AUS"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_TIE"/>
+        </record>
+        <record id="pv_event_12" model="hr.pv.event">
+            <field name="name">Incapacidad</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_AUS"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_TIE"/>
+        </record>
+        <record id="pv_event_13" model="hr.pv.event">
+            <field name="name">Licencias</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_AUS"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_TIE"/>
+        </record>
+        <record id="pv_event_14" model="hr.pv.event">
+            <field name="name">Cesion de contrato</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_PRO"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_PRO"/>
+        </record>
+        <record id="pv_event_15" model="hr.pv.event">
+            <field name="name">Suspensión de contrato</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_PRO"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_PRO"/>
+        </record>
+        <record id="pv_event_16" model="hr.pv.event">
+            <field name="name">Sanciones Disciplinarias</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_PRO"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_PRO"/>
+        </record>
+        <record id="pv_event_17" model="hr.pv.event">
+            <field name="name">Retiros Voluntarios</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_TERM_CONTR"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_PRO"/>
+        </record>
+        <record id="pv_event_18" model="hr.pv.event">
+            <field name="name">Despido sin Justa Causa/mutuo</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_TERM_CONTR"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_PRO"/>
+        </record>
+        <record id="pv_event_19" model="hr.pv.event">
+            <field name="name">Despido con Justa causa</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_TERM_CONTR"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_PRO"/>
+        </record>
+        <record id="pv_event_20" model="hr.pv.event">
+            <field name="name">Horas extra</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_OCA"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_ECO"/>
+        </record>
+        <record id="pv_event_21" model="hr.pv.event">
+            <field name="name">Retiro de cesantias</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_OCA"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_ECO"/>
+        </record>
+        <record id="pv_event_22" model="hr.pv.event">
+            <field name="name">Cartas de incrementos laborales</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_PRO"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_PRO"/>
+        </record>
+        <record id="pv_event_23" model="hr.pv.event">
+            <field name="name">Certificaciones laborales</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_PRO"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_PRO"/>
+        </record>
+        <record id="pv_event_24" model="hr.pv.event">
+            <field name="name">Reportes para declaración de renta</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_PRO"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_PRO"/>
+        </record>
+        <record id="pv_event_25" model="hr.pv.event">
+            <field name="name">Beneficiarios</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_PRO"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_PRO"/>
+        </record>
+        <record id="pv_event_26" model="hr.pv.event">
+            <field name="name">Prestamos</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_FIJ"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_ECO"/>
+        </record>
+        <record id="pv_event_27" model="hr.pv.event">
+            <field name="name">Embargos</field>
+            <field name="subtype_id" ref="hr_payroll_variations.pv_subtype_FIJ"/>
+            <field name="type_id" ref="hr_payroll_variations.pv_type_ECO"/>
+        </record>
+
+    </data>
+</odoo>

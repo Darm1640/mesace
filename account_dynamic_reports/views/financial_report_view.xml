@@ -39,7 +39,7 @@
                             border:1px solid grey;
                         }
                     </style>
-                    <h3><span t-esc="data['form']['company_id'][1]"/>: <t t-esc="data['form']['account_report_id'][1]"/> </h3>
+                    <h3><span t-esc="res_company.name"/>: <t t-esc="data['form']['account_report_id'][1]"/> </h3>
 
                     <div class="row mt32 pims_report_content">
                         <div class="col-3">
@@ -82,16 +82,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="pims_report_line_main_tr" t-foreach="report_lines" t-as="a" t-if="not a.get('account')">
+                            <tr class="pims_report_line_main_tr" t-foreach="report_lines" t-as="a">
                                 <t t-if="a.get('level') &gt; 3">
                                     <t t-set="style" t-value="'font-weight: normal;'"/>
                                 </t>
                                 <t t-if="not a.get('level') &gt; 3">
-                                    <t t-set="style" t-value="'font-weight: bold;font-size:15px;'"/>
+                                    <t t-set="style" t-value="'font-weight: bold;'"/>
                                 </t>
 
                                 <td>
-                                    <span style="color: white;" t-esc="'......' * a.get('level', 0)"/>
+                                    <span style="color: white;" t-esc="'..' * a.get('level', 0)"/>
                                     <span t-att-style="style" t-esc="a.get('name')"/>
                                 </td>
                                 <t t-if="a.get('debit')">
@@ -128,16 +128,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="pims_report_line_main_tr" t-foreach="report_lines" t-as="a" t-if="not a.get('account')">
+                            <tr class="pims_report_line_main_tr" t-foreach="report_lines" t-as="a">
                                 <t t-if="a.get('level') &gt; 3">
                                     <t t-set="style" t-value="'font-weight: normal;'"/>
                                 </t>
                                 <t t-if="not a.get('level') &gt; 3">
-                                    <t t-set="style" t-value="'font-weight: bold;font-size:15px;'"/>
+                                    <t t-set="style" t-value="'font-weight: bold;'"/>
                                 </t>
 
                                 <td>
-                                    <span style="color: white;" t-esc="'......' * a.get('level', 0)"/>
+                                    <span style="color: white;" t-esc="'..' * a.get('level', 0)"/>
                                     <span t-att-style="style" t-esc="a.get('name')"/>
                                 </td>
                                 <t t-if="data['form']['enable_filter']">

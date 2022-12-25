@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020-TODAY Miguel Pardo <ing.miguel.pardo@gmail.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="pv_seq_id" model="ir.sequence">
+        <field name="name">pv_sequence</field>
+        <field name="code">hr.pv</field>
+        <field name="prefix">PV-</field>
+        <field name="padding">6</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="action_view_crossovered_budget">
+            <field name="name">Presupuestos</field>
+            <field name="res_model">crossovered.budget</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Crear un nuevo registro
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_view_account_budget_post">
+            <field name="name">Posiciones presupuestarias</field>
+            <field name="res_model">account.budget.post</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Crear un nuevo registro
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="crossovered_budget" name="Presupuestos" parent="hr_payroll.menu_hr_payroll_root"
+                  action="action_view_crossovered_budget" sequence="39"/>
+
+        <menuitem id="account_budget_post" name="Posiciones presupuestarias" parent="hr_payroll.menu_hr_payroll_root"
+                  action="action_view_account_budget_post" sequence="40"/>
+    </data>
+</odoo>	

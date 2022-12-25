@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
 
 from odoo import api, fields, models, _
+from odoo.exceptions import RedirectWarning, UserError, ValidationError, AccessError
+from datetime import date
 
 
 class ResCompany(models.Model):
     _inherit = 'res.company'
 
     strict_range = fields.Boolean(string='Use Strict Range', default=True,
-                                  help='Use this if you want to show TB with retained earnings section')
+                                help='Use this if you want to show TB with retained earnings section')
     bucket_1 = fields.Integer(string='Bucket 1', required=True, default=30)
     bucket_2 = fields.Integer(string='Bucket 2', required=True, default=60)
     bucket_3 = fields.Integer(string='Bucket 3', required=True, default=90)
@@ -15,15 +17,15 @@ class ResCompany(models.Model):
     bucket_5 = fields.Integer(string='Bucket 5', required=True, default=180)
     date_range = fields.Selection(
         [('today', 'Today'),
-         ('this_week', 'This Week'),
-         ('this_month', 'This Month'),
-         ('this_quarter', 'This Quarter'),
-         ('this_financial_year', 'This financial Year'),
-         ('yesterday', 'Yesterday'),
-         ('last_week', 'Last Week'),
-         ('last_month', 'Last Month'),
-         ('last_quarter', 'Last Quarter'),
-         ('last_financial_year', 'Last Financial Year')],
+        ('this_week', 'This Week'),
+        ('this_month', 'This Month'),
+        ('this_quarter', 'This Quarter'),
+        ('this_financial_year', 'This financial Year'),
+        ('yesterday', 'Yesterday'),
+        ('last_week', 'Last Week'),
+        ('last_month', 'Last Month'),
+        ('last_quarter', 'Last Quarter'),
+        ('last_financial_year', 'Last Financial Year')],
         string='Default Date Range', default='this_financial_year', required=True
     )
     financial_year = fields.Selection([
@@ -45,7 +47,7 @@ class ins_account_financial_report(models.Model):
     @api.depends('parent_id', 'parent_id.level')
     def _get_level(self):
         '''Returns a dictionary with key=the ID of a record and value = the level of this
-           record in the tree structure.'''
+        record in the tree structure.'''
         for report in self:
             level = 0
             if report.parent_id:
@@ -85,8 +87,8 @@ class ins_account_financial_report(models.Model):
         ('current_date_range', 'Based on Current Date Range'),
         ('initial_date_range', 'Based on Initial Date Range')],
         help='"From the beginning" will select all the entries before and on the date range selected.'
-             '"Based on Current Date Range" will select all the entries strictly on the date range selected'
-             '"Based on Initial Date Range" will select only the initial balance for the selected date range',
+            '"Based on Current Date Range" will select all the entries strictly on the date range selected'
+            '"Based on Initial Date Range" will select only the initial balance for the selected date range',
         string='Custom Date Range')
     display_detail = fields.Selection([
         ('no_detail', 'No detail'),
@@ -132,8 +134,43 @@ class AccountAccount(models.Model):
                 {'account_ids': [(3, self._origin.id)]})
 
 
-class CommonXlsxOut(models.TransientModel):
-    _name = 'common.xlsx.out'
+# class AccountPayment(models.Model):
+#     _inherit = 'account.payment'
+    
 
-    filedata = fields.Binary('Download file', readonly=True)
-    filename = fields.Char('Filename', size=64, readonly=True)
+#     @api.depends('move_id.line_ids.reconciled','move_id.line_ids.full_reconcile_id')
+#     def _get_move_reconciled_state(self):
+#         for payment in self:
+#             rec = True
+#             unreconciled_amount = 0.0
+#             amount_in_cc = 0.0
+#             for aml in payment.move_id.line_ids.filtered(lambda x: x.account_id.reconcile):
+#                 if not aml.full_reconcile_id:
+#                     rec = False
+#                     unreconciled_amount += aml.amount_residual
+#                 amount_in_cc += abs(aml.balance)
+#             payment.move_reconciled_state = rec
+#             payment.unreconciled_amount = unreconciled_amount
+#             payment.amount_in_cc = amount_in_cc
+    
+#     move_reconciled_state = fields.Boolean(compute="_get_move_reconciled_state", readonly=True, store=True)
+#     unreconciled_amount = fields.Float(compute="_get_move_reconciled_state", string='Unreconciled Amount', store=True)
+#     amount_in_cc = fields.Float(compute="_get_move_reconciled_state", string='Amount in CC', store=True)
+
+# class AccountInvoice(models.Model):
+#     _inherit = 'account.move'
+    
+    
+#     @api.depends('line_ids.reconciled','line_ids.full_reconcile_id')
+#     def _get_move_reconciled_state(self):
+#         for payment in self:
+#             rec = True
+#             unreconciled_amount = 0.0
+#             amount_in_cc = 0.0
+#             for aml in payment.line_ids.filtered(lambda x: x.account_id.reconcile):
+#                 if not aml.full_reconcile_id:
+#                     rec = False
+
+#             payment.reconciled = rec
+
+#     reconciled = fields.Boolean(compute="_get_move_reconciled_state", readonly=True, store=True)

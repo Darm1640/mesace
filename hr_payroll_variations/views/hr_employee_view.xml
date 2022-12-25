@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<!-- Copyright 2020-TODAY Miguel Pardo <ing.miguel.pardo@gmail.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="view_hr_employee_form_pv_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.form.pv.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+
+            <div name="button_box" position="inside">
+                <button class="oe_stat_button" type="object" name="create_wizard" string="Create Pv" icon="fa-credit-card">
+                </button>
+            </div>
+
+            <field name="work_email" position="replace">
+                <field name="work_email" class="oe_read_only"/>
+                <field name="work_email" class="oe_edit_only"
+                       groups='hr_payroll_variations.group_work_email'/>
+            </field>
+            <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                <button name="view_pv_records" type="object"
+                        class="oe_stat_button" icon="fa-list-alt"
+                        attrs="{'invisible': [('total_remaining_approve_pv', '=', 0)]}">
+                    <field name="total_remaining_approve_pv" widget="statinfo" string="pv(s)"/>
+                </button>
+            </xpath>
+            <xpath expr="//field[@name='identification_id']" position="after">
+                <!--field name="file_name_copy_identification_id" invisible="1"/>
+                <field name="copy_identification_id" widget="binary" height="64"
+                    filename="file_name_copy_identification_id"/-->
+                <field name="date_childbirth"/>
+            </xpath>
+            <xpath expr="//page[@name='personal_information']" position="after">
+                <page name="employee_bonus" string="Bonus" groups="hr.group_hr_user">
+                    <field name="employee_bonus_ids">
+                        <tree>
+                            <field name="card"/>
+                            <field name="bonus_type"/>
+                            <field name="bank_id"/>
+                            <field name="number"/>
+                            <field name="tn"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_hr_contract_employee_form" model="ir.ui.view">
+        <field name="name">hr.contract.employe.form.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr_contract.hr_hr_employee_view_form2"/>
+        <field name="arch" type="xml">
+            <button icon="fa-book" position="attributes">
+                <attribute name="groups">hr.group_hr_manager
+                </attribute>
+            </button>
+        </field>
+    </record>
+
+    <!-- Inherit search view of hr_employee-->
+    <record id="view_hr_employee_inherit_search" model="ir.ui.view">
+        <field name="name">hr_employee_search_expand_filter</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_filter"/>
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="identification_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="employee_bonus_type_view_tree" model="ir.ui.view">
+        <field name="name">employee_bonus_type_view_tree</field>
+        <field name="model">hr.employee.bonus.type</field>
+        <field name="arch" type="xml">
+            <tree string="employee_bonus_type_tree">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="employee_bonus_type_view_form" model="ir.ui.view">
+        <field name="name">employee_bonus_type_view_form</field>
+        <field name="model">hr.employee.bonus.type</field>
+        <field name="arch" type="xml">
+            <form string="employee_bonus_type_form">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="employee_bonus_view_form" model="ir.ui.view">
+        <field name="name">employee_bonus_view_form</field>
+        <field name="model">hr.employee.bonus</field>
+        <field name="arch" type="xml">
+            <form string="employee_bonus_form">
+                <sheet>
+                    <group string="Bonus Information">
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="card"/>
+                            <field name="bonus_type"/>
+                            <field name="bank_id"/>
+                            <field name="number"/>
+                            <field name="tn"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="employee_bonus_view_tree" model="ir.ui.view">
+        <field name="name">employee_bonus_view_tree</field>
+        <field name="model">hr.employee.bonus</field>
+        <field name="arch" type="xml">
+            <tree string="employee_bonus_tree">
+                <field name="employee_id"/>
+                <field name="bank_id"/>
+                <field name="bonus_type"/>
+                <field name="card"/>
+                <field name="number"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="employee_bonus_action" model="ir.actions.act_window">
+        <field name="name">Employee Bonus</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.employee.bonus</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="employee_bonus_type_action" model="ir.actions.act_window">
+        <field name="name">Type Bonus</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.employee.bonus.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="employee_bonus_menu"
+              name="Employee Bonus"
+              action="employee_bonus_action"
+              parent="hr.menu_human_resources_configuration"
+              sequence="50"/>
+
+    <menuitem id="employee_bonus_type_menu"
+              name="Bonus Type"
+              action="employee_bonus_type_action"
+              parent="hr.menu_human_resources_configuration"
+              sequence="51"/>
+
+    <record id="employee_sena_view_tree" model="ir.ui.view">
+        <field name="name">employee_sena_view_tree</field>
+        <field name="model">hr.employee.sena</field>
+        <field name="arch" type="xml">
+            <tree string="employee.sena_tree">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="name_occupation"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="employee_sena_view_form" model="ir.ui.view">
+        <field name="name">employee_sena_view_form</field>
+        <field name="model">hr.employee.sena</field>
+        <field name="arch" type="xml">
+            <form string="_form">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                        </group>
+                        <group>
+                            <field name="name_occupation"/>
+                        </group>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="employee_sena_action" model="ir.actions.act_window">
+        <field name="name">Employee Sena</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.employee.sena</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="employee_sena_menu" name="Employee Sena" parent="hr.menu_human_resources_configuration"
+              action="employee_sena_action" sequence="3"/>
+
+</odoo>

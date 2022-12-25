@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="inherit_contract_form" model="ir.ui.view">
+            <field name="name">inherit_contract_form</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+
+                <field name="job_id" position="after">
+                    <field name="minimum_wage" invisible="1"/>
+                    <field name="unidad_organizativa_requi"/>
+                    <field name="number_extend" readonly="1" force_save="1"/>
+
+                </field>
+
+                <xpath expr="//page[@name='other']" position="after">
+                    <pape string="Cost Center">
+                        <field name="center_cost_ids">
+                            <tree editable="bot">
+                                <!--field name="name"/-->
+                                <field name="account_analytic_id"/>
+                                <field name="percent"/>
+                                <field name="direct_indirect"/>
+                            </tree>
+                        </field>
+
+                    </pape>
+
+                </xpath>
+
+                <!--<field name="trial_date_end" position="before">
+                    <field name="evaluation_date"/>
+                    <field name="evaluation_result"/>
+                </field>-->
+            </field>
+        </record>
+
+        <record id="inherit_hr_contract_view_tree" model="ir.ui.view">
+            <field name="name">inherit_hr_contract_view_tree</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_tree"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="minimum_wage"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="inherit_hr_contract_view_search">
+            <field name="name">hr,contract.view.search</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_search"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="identification_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="hr_contract.action_hr_contract" model="ir.actions.act_window">
+            <field name="context">{'search_default_current': 1, 'search_default_group_by_state': 0,
+                                   'search_default_running': 1}
+            </field>
+        </record>
+
+        <record id="hr_contract.act_hr_employee_2_hr_contract" model="ir.actions.act_window">
+            <field name="context">{
+                'search_default_employee_id': [active_id],
+                'default_employee_id': active_id,
+                'search_default_group_by_state': 1,
+                'search_default_running': 1}
+            </field>
+        </record>
+
+    </data>
+</odoo>

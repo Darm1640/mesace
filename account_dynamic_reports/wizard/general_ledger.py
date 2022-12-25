@@ -7,7 +7,6 @@ from odoo.tools import DEFAULT_SERVER_DATE_FORMAT
 import json
 import io
 from odoo.tools import date_utils
-import base64
 
 try:
     from odoo.tools.misc import xlsxwriter
@@ -191,7 +190,7 @@ class InsGeneralLedger(models.TransientModel):
         'account.account.tag', string='Account Tags'
     )
     analytic_ids = fields.Many2many(
-       'account.analytic.account', string='Analytic Accounts'
+    'account.analytic.account', string='Analytic Accounts'
     )
     analytic_tag_ids = fields.Many2many(
         'account.analytic.tag', string='Analytic Tags'
@@ -407,7 +406,8 @@ class InsGeneralLedger(models.TransientModel):
         move_lines = []
         if data.get('initial_balance'):
             sql = ('''
-                    SELECT 
+                    SELECT
+                        COALESCE(SUM(l.tax_base_amount),0) AS base,
                         COALESCE(SUM(l.debit - l.credit),0) AS balance
                     FROM account_move_line l
                     JOIN account_move m ON (l.move_id=m.id)
@@ -424,7 +424,8 @@ class InsGeneralLedger(models.TransientModel):
             opening_balance += row.get('balance')
 
         sql = ('''
-            SELECT 
+            SELECT
+                COALESCE(SUM(l.tax_base_amount),0) AS base,
                 COALESCE(SUM(l.debit - l.credit),0) AS balance
             FROM account_move_line l
             JOIN account_move m ON (l.move_id=m.id)
@@ -435,7 +436,7 @@ class InsGeneralLedger(models.TransientModel):
             LEFT JOIN res_partner p ON (l.partner_id=p.id)
             JOIN account_journal j ON (l.journal_id=j.id)
             WHERE %s
-            GROUP BY j.code, p.name, l.date, l.move_id
+            GROUP BY l.id, j.code, p.name, l.date, l.move_id
             ORDER BY %s
             OFFSET %s ROWS
             FETCH FIRST %s ROWS ONLY
@@ -463,6 +464,7 @@ class InsGeneralLedger(models.TransientModel):
         if (int(offset_count / fetch_range) == 0) and data.get('initial_balance'):
             sql = ('''
                     SELECT 
+                        COALESCE(SUM(l.tax_base_amount),0) AS base,
                         COALESCE(SUM(l.debit),0) AS debit, 
                         COALESCE(SUM(l.credit),0) AS credit, 
                         COALESCE(SUM(l.debit - l.credit),0) AS balance
@@ -489,10 +491,10 @@ class InsGeneralLedger(models.TransientModel):
                     l.date AS ldate,
                     j.code AS lcode,
                     l.currency_id,
-                    --l.ref AS lref,
                     l.name AS lname,
                     m.id AS move_id,
                     m.name AS move_name,
+                    l.tax_line_id AS tax,
                     c.symbol AS currency_symbol,
                     c.position AS currency_position,
                     c.rounding AS currency_precision,
@@ -501,6 +503,10 @@ class InsGeneralLedger(models.TransientModel):
                     cc.rounding AS company_currency_precision,
                     cc.position AS company_currency_position,
                     p.name AS partner_name,
+                    p.vat AS partner_vat,
+                    anl.name AS analytic_account,
+                    m.ref AS description,
+                    COALESCE(l.tax_base_amount,0) AS base,
                     COALESCE(l.debit,0) AS debit,
                     COALESCE(l.credit,0) AS credit,
                     COALESCE(l.debit - l.credit,0) AS balance,
@@ -510,12 +516,13 @@ class InsGeneralLedger(models.TransientModel):
                 JOIN account_account a ON (l.account_id=a.id)
                 LEFT JOIN account_analytic_account anl ON (l.analytic_account_id=anl.id)
                 LEFT JOIN account_analytic_tag_account_move_line_rel analtag ON analtag.account_move_line_id = l.id
+                LEFT JOIN account_payment pay ON (l.payment_id=pay.id)
                 LEFT JOIN res_currency c ON (l.currency_id=c.id)
                 LEFT JOIN res_currency cc ON (l.company_currency_id=cc.id)
                 LEFT JOIN res_partner p ON (l.partner_id=p.id)
                 JOIN account_journal j ON (l.journal_id=j.id)
                 WHERE %s
-                GROUP BY l.id, l.account_id, l.date, j.code, l.currency_id, l.amount_currency, l.name, m.id, m.name, c.rounding, cc.id, cc.rounding, cc.position, c.position, c.symbol, cc.symbol, p.name
+                GROUP BY l.id, l.account_id, l.date, j.code, l.currency_id, l.amount_currency, l.name, m.id, m.name, c.rounding, cc.id, cc.rounding, cc.position, c.position, c.symbol, cc.symbol, p.name, p.vat, anl.name, m.ref, l.tax_line_id, l.id
                 ORDER BY %s
                 OFFSET %s ROWS
                 FETCH FIRST %s ROWS ONLY
@@ -530,7 +537,8 @@ class InsGeneralLedger(models.TransientModel):
 
         if ((count - offset_count) <= fetch_range) and data.get('initial_balance'):
             sql = ('''
-                    SELECT 
+                    SELECT
+                        COALESCE(SUM(l.tax_base_amount),0) AS base,
                         COALESCE(SUM(l.debit),0) AS debit, 
                         COALESCE(SUM(l.credit),0) AS credit, 
                         COALESCE(SUM(l.debit - l.credit),0) AS balance
@@ -567,7 +575,7 @@ class InsGeneralLedger(models.TransientModel):
 
         WHERE = self.build_where_clause(data)
 
-        account_company_domain = [('company_id','=', self.env.context.get('company_id') or self.env.company.id)]
+        account_company_domain = [('company_id','=', self.env.company.id)]
 
         if data.get('account_tag_ids', []):
             account_company_domain.append(('tag_ids','in', data.get('account_tag_ids', [])))
@@ -606,7 +614,8 @@ class InsGeneralLedger(models.TransientModel):
                 ORDER_BY_CURRENT = 'j.code, p.name, l.move_id'
             if data.get('initial_balance'):
                 sql = ('''
-                    SELECT 
+                    SELECT
+                        COALESCE(SUM(l.tax_base_amount),0) AS base,
                         COALESCE(SUM(l.debit),0) AS debit, 
                         COALESCE(SUM(l.credit),0) AS credit, 
                         COALESCE(SUM(l.debit - l.credit),0) AS balance
@@ -637,8 +646,13 @@ class InsGeneralLedger(models.TransientModel):
                     l.date AS ldate,
                     j.code AS lcode,
                     p.name AS partner_name,
+                    p.vat AS partner_vat,
+                    l.tax_line_id AS tax,
                     m.name AS move_name,
                     l.name AS lname,
+                    anl.name AS analytic_account,
+                    m.ref AS description,
+                    COALESCE(SUM(l.tax_base_amount),0) AS base,
                     COALESCE(l.debit,0) AS debit,
                     COALESCE(l.credit,0) AS credit,
                     COALESCE(l.debit - l.credit,0) AS balance,
@@ -650,10 +664,11 @@ class InsGeneralLedger(models.TransientModel):
                 LEFT JOIN account_analytic_tag_account_move_line_rel analtag ON analtag.account_move_line_id = l.id
                 LEFT JOIN res_currency c ON (l.currency_id=c.id)
                 LEFT JOIN res_currency cc ON (l.company_currency_id=cc.id)
+                LEFT JOIN account_payment pay ON (l.payment_id=pay.id)
                 LEFT JOIN res_partner p ON (l.partner_id=p.id)
                 JOIN account_journal j ON (l.journal_id=j.id)
                 WHERE %s
-                --GROUP BY l.id, l.account_id, l.date, j.code, l.currency_id, l.debit_currency, l.credit_currency, l.ref, l.name, m.id, m.name, c.rounding, cc.rounding, cc.position, c.position, c.symbol, cc.symbol, p.name
+                GROUP BY l.id, l.account_id, l.date, j.code, l.currency_id,  l.ref, l.name, m.id, m.name, c.rounding, cc.rounding, cc.position, c.position, c.symbol, cc.symbol, p.name,p.vat, anl.name, l.tax_line_id, m.ref, l.id 
                 ORDER BY %s
             ''') % (WHERE_CURRENT, ORDER_BY_CURRENT)
             cr.execute(sql)
@@ -675,7 +690,8 @@ class InsGeneralLedger(models.TransientModel):
                     'date_to')
             WHERE_FULL += " AND a.id = %s" % account.id
             sql = ('''
-                SELECT 
+                SELECT
+                    COALESCE(SUM(l.tax_base_amount),0) AS base,
                     COALESCE(SUM(l.debit),0) AS debit, 
                     COALESCE(SUM(l.credit),0) AS credit, 
                     COALESCE(SUM(l.debit - l.credit),0) AS balance
@@ -699,6 +715,7 @@ class InsGeneralLedger(models.TransientModel):
                     move_lines[account.code]['lines'].append(row)
                     move_lines[account.code]['debit'] = row['debit']
                     move_lines[account.code]['credit'] = row['credit']
+                    move_lines[account.code]['base'] = row['base']
                     move_lines[account.code]['balance'] = row['balance']
                     move_lines[account.code]['company_currency_id'] = currency.id
                     move_lines[account.code]['company_currency_symbol'] = symbol
@@ -723,7 +740,8 @@ class InsGeneralLedger(models.TransientModel):
     def get_filters(self, default_filters={}):
 
         self.onchange_date_range()
-        company_domain = [('company_id','=', self.env.context.get('company_id'))]
+
+        company_domain = [('company_id','=', self.env.company.id)]
         partner_company_domain = [('parent_id','=', False),
                                   '|',
                                     ('customer_rank','>',0),
@@ -755,7 +773,6 @@ class InsGeneralLedger(models.TransientModel):
             'date_to': self.date_to,
             'display_accounts': self.display_accounts,
             'include_details': self.include_details,
-
             'journals_list': [(j.id, j.name) for j in journals],
             'accounts_list': [(a.id, a.name) for a in accounts],
             'account_tag_list': [(a.id, a.name) for a in account_tags],
@@ -787,9 +804,28 @@ class InsGeneralLedger(models.TransientModel):
                         'Filters': filters
                         })
 
-
     def action_xlsx(self):
-        data = self.read()[0]
+        ''' Button function for Xlsx '''
+
+        data = self.read()
+        date_from = fields.Date.from_string(self.date_from).strftime(
+            self.env['res.lang'].search([('code', '=', self.env.user.lang)])[0].date_format)
+        date_to = fields.Date.from_string(self.date_to).strftime(
+            self.env['res.lang'].search([('code', '=', self.env.user.lang)])[0].date_format)
+
+        return {
+            'type': 'ir.actions.report',
+            'data': {'model': 'ins.general.ledger',
+                     'options': json.dumps(data[0], default=date_utils.json_default),
+                     'output_format': 'xlsx',
+                     'report_name': 'General Ledger - %s / %s' %(date_from , date_to),
+                     },
+            'report_type': 'xlsx'
+        }
+
+
+    def get_xlsx_report(self, data, response):
+
         # Initialize
         #############################################################
         output = io.BytesIO()
@@ -801,8 +837,7 @@ class InsGeneralLedger(models.TransientModel):
 
         # Get record and data
         record = self.env['ins.general.ledger'].browse(data.get('id', [])) or False
-
-        filter, account_lines = record.with_context(company_id=record.company_id.id).get_report_datas()
+        filter, account_lines = record.get_report_datas()
 
         # Formats
         ############################################################
@@ -1054,16 +1089,7 @@ class InsGeneralLedger(models.TransientModel):
         #################################################################
         workbook.close()
         output.seek(0)
-        result = base64.b64encode(output.read())
-
-        report_id = self.env['common.xlsx.out'].sudo().create({'filedata': result, 'filename': 'GL.xls'})
-        return {
-            'type': 'ir.actions.act_url',
-            'url': '/web/binary/download_document?model=common.xlsx.out&field=filedata&id=%s&filename=%s.xls' % (
-            report_id.id, 'General Ledger.xls'),
-            'target': 'new',
-        }
-
+        response.stream.write(output.read())
         output.close()
 
     def action_view(self):

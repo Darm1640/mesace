@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!-- Copyright 2020-TODAY Miguel Pardo <ing.miguel.pardo@gmail.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <!-- Contract Type tree view-->
+    <record id="hr_contract_type_tree" model="ir.ui.view">
+        <field name="name">Hr Contract type Tree</field>
+        <field name="model">hr.contract.type</field>
+        <field name="arch" type="xml">
+            <tree string="Contract Type">
+                <field name="name"/>
+                <field name="date_end_required"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Contract Type from view-->
+    <record id="hr_contract_type_form" model="ir.ui.view">
+        <field name="name">Hr Contract Type Tree</field>
+        <field name="model">hr.contract.type</field>
+        <field name="arch" type="xml">
+            <form string="Contract Type">
+                <sheet>
+                    <group>
+                        <field name="name" class="oe_inline"/>
+                        <field name="description"/>
+                        <field name="date_end_required"/>
+                        <field name="hr_contract_alert_id"
+                               options="{'no_create': True, 'no_create_edit': True}"/>
+                        <field name="trial_period_duration"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Contract Type Action-->
+    <record model="ir.actions.act_window" id="hr_contract_type_action">
+        <field name="name">Contract Type</field>
+        <field name="res_model">hr.contract.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Contract Type Menu-->
+    <menuitem
+            id="hr_contract_type_menu"
+            action="hr_contract_type_action"
+            parent="hr.menu_human_resources_configuration"
+            groups="hr.group_hr_user"/>
+
+</odoo>

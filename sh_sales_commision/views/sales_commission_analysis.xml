@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+	<!--  Tree view -->
+	<record id="sh_sale_commission_analysis_tree_form" model="ir.ui.view">
+		<field name="name">sh.sale.commission.analysis.tree.view</field>
+		<field name="model">sale.commission.analysis</field>
+		<field name="arch" type="xml">
+			<tree string="Sales Commission Analysis" create="0" edit="0">
+				<field name="name"/>
+				<field name="date"/>
+				<field name="sales_person_id"/> 
+				<field name="move_id"/>
+				<field name="order_id"/>
+				<field name="type"/>
+				<field name="commission_name"/> 
+				<field name="product_id"/>
+				<field name="partner_id"/>
+				<field name="partner_type"/>
+				<field name="category_id"/>
+				<field name="sub_category_id"/> 
+				<field name="amount"/>
+			</tree>
+		</field>
+	</record>
+	<!--  Filter -->
+	<record id="view_sh_sale_commission_analysis_filter" model="ir.ui.view">
+            <field name="name">sale.commission.analysis.select</field>
+            <field name="model">sale.commission.analysis</field>
+            <field name="arch" type="xml">
+                <search string="Search Sales Commission">
+                	 <filter name="invoiced" string="Invoiced" domain="[('is_invoice','=',True)]"/>
+               	 	<filter name="r_invoiced" string="Invoice Remaining" domain="[('is_invoice','=',False)]"/>
+                	<separator/>
+                	
+                    <field name="name" string="Name" />
+                    <group expand="0" string="Group By">
+                        <filter name="group_by_partner_id" string="Partner" context="{'group_by':'partner_id'}"/>
+                        <filter name="partner_type" string="Partner Type" context="{'group_by':'partner_type'}"/>
+                        <filter name="sales_person_id" string="Sales Person" context="{'group_by':'sales_person_id'}"/>
+                        <separator/>
+                        <filter string="Invoice" name="move_id" context="{'group_by':'move_id'}"/>
+                        <filter string="Order" name="order_id" context="{'group_by':'order_id'}"/>
+                        <separator/>
+                        <filter string="Commission Type" name="type" context="{'group_by':'type'}"/>
+                        <filter string="Product" name="product_id" context="{'group_by':'product_id'}"/>
+                        <filter string="Category" name="category_id" context="{'group_by':'category_id'}"/>
+                    </group>
+                </search>
+             </field>
+     </record>
+     <!--  Action -->
+	  <record id="sh_sale_commission_analysis_action" model="ir.actions.act_window">
+	  	<field name="name">Sales Commission Analysis</field>
+	  	<field name="res_model">sale.commission.analysis</field>
+	  	<field name="view_mode">tree</field>
+	  </record>
+	  
+	  
+	  <menuitem
+        id="menu_sale_commission_analysis"
+        name="Sales Commission Analysis"
+        groups="sh_sales_commision.group_sale_commission"
+        parent="sale.menu_sale_report"
+        sequence="25"
+        action="sh_sale_commission_analysis_action"
+        /> 
+      
+	</data>	
+</odoo>
+	

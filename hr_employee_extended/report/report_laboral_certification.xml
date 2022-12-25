@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="laboral_certification">
+        <t t-call="web.html_container">
+            <t t-foreach="employees" t-as="emp">
+                <t t-call="web.external_layout">
+                    <div class="page" style="font-size: 15px !important;">
+                        <br/><br/><br/>
+                        <h5 align="center"><b>A QUIEN INTERESE</b></h5>
+                        <br/>
+                        <div class="text-justify">
+                            Por medio de la presente certificamos que el (la) señor (a) <strong><span
+                                t-esc="emp.name"/></strong> identificado(a) con <span t-field="emp.ident_type"/>
+                            No. <strong><span t-esc="emp.identification_id"/></strong>, desempeña el cargo
+                            de <strong><span t-esc="emp.job_id.name"/></strong>
+                            en la empresa <strong><span t-esc="emp.company_id.name"/></strong> desde <strong><span
+                                t-esc="emp.current_contract.date_start"
+                                t-options='{"widget": "date","format": "MMMM dd yyyy"}'/></strong> a la fecha.
+                            Devengando un salario
+                            mensual de <strong><span t-esc="emp.current_contract.wage"
+                                                     t-options='{"widget": "monetary", "display_currency": emp.company_id.currency_id}'/></strong>
+                            siendo un contrato tipo <strong><span
+                                t-esc="emp.current_contract.contract_type_id.name"/></strong>.
+                        </div>
+                        <br/><br/>
+
+                        <t t-if="emp.history_promotion_ids">
+
+                            <table class="table table-sm o_main_table">
+                                <thead>
+                                    <tr>
+                                        <th>Position</th>
+                                        <th class="text-center">Start Date</th>
+                                        <th class="text-center">End Date</th>
+                                        <th class="text-right">Salary</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="emp.history_promotion_ids" t-as="pos">
+                                        <td>
+                                            <span t-field="pos.position_id.name"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="pos.start_date"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="pos.end_date"/>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="pos.salary"
+                                                  t-options='{"widget": "monetary", "display_currency": pos.company_id.currency_id}'/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </t>
+
+                        <br/><br/>
+                        <div class="text-justify">
+                            La presente se expide a solicitud del interesado en Bogotá, <span
+                                t-esc="datetime.datetime.now()"
+                                t-options='{"widget": "date","format": "MMMM dd yyyy"}'/>
+                        </div>
+                        <br/><br/><br/><br/>
+                        <div>
+                            Cordialmente,
+                        </div>
+                        <br/><br/>
+                        <img t-if="emp.payroll_manager.firm"
+                             t-att-src="'data:image/png;base64,%s' % to_text(emp.payroll_manager.firm)"
+                             style="max-height: 4cm; max-width: 8cm"/>
+                        <br/>
+                        <span>________________________________________________</span><br/>
+                        <strong><span t-esc="emp.payroll_manager.name"/></strong>
+                        <div>
+                            <span t-esc="emp.payroll_manager.job_id.name"/>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

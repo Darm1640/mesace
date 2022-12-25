@@ -29,10 +29,10 @@
     'data': [
         'security/ir.model.access.csv',
         'data/config_fe_details.xml',
-        'data/config_fe.xml',
-        'views/postal_view.xml',
-        'views/postal_config.xml',
-        'views/res_partner.xml',
-        'views/config_fe.xml'
+        #'data/config_fe.xml',
+        # 'views/postal_view.xml',
+        # 'views/postal_config.xml',
+        # 'views/res_partner.xml',
+        # 'views/config_fe.xml'
     ],
 }

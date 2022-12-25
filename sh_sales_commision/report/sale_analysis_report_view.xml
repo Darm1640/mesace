@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+	<!--  Form -->
+	<record id="sh_sale_commission_report_form_view" model="ir.ui.view">
+		<field name="name">sh.sale.commission.analysis.report</field>
+		<field name="model">sale.commission.analysis.report</field>
+		<field name="arch" type="xml">
+			<form string="Sales Commission Report">
+				<sheet>
+					<group>
+						<group>
+							<field name="start_date" required="1"/>
+							<field name="user_id" required="1" options="{'no_create':True,'no_create_edit':True}"/>
+							
+						</group>
+						<group>
+							<field name="end_date" required="1"/>
+							
+						</group>
+					</group>
+					
+				</sheet>
+				 <footer>
+                   	<button name="print_report" string="Print Commission Report" type="object" class="oe_highlight"/>
+                   	<button string="Cancel" class="oe_link" special="cancel" />
+               	</footer>
+           </form>
+			
+		</field>
+	</record>
+	
+	
+     <!--  Action -->
+	  <record id="sh_sale_commission_analysis_report_action" model="ir.actions.act_window">
+	  	<field name="name">Sales Commission Report</field>
+	  	<field name="res_model">sale.commission.analysis.report</field>
+	  	<field name="view_mode">form</field>
+	  	<field name="target">new</field>
+	  </record>
+	  
+	  
+	  <menuitem
+        id="menu_sale_commission_analysis_report"
+        name="Sales Commission Report"
+        groups="sh_sales_commision.group_sale_commission"
+        parent="sale.menu_sale_report"
+        sequence="30"
+        action="sh_sale_commission_analysis_report_action"
+        /> 
+   
+	</data>	
+</odoo>
+	

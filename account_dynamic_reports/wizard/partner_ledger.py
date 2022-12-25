@@ -7,7 +7,6 @@ from odoo.tools import DEFAULT_SERVER_DATE_FORMAT
 import json
 import io
 from odoo.tools import date_utils
-import base64
 
 try:
     from odoo.tools.misc import xlsxwriter
@@ -788,7 +787,25 @@ class InsPartnerLedger(models.TransientModel):
                         })
 
     def action_xlsx(self):
-        data = self.read()[0]
+        ''' Button function for Xlsx '''
+
+        data = self.read()
+        date_from = fields.Date.from_string(self.date_from).strftime(
+            self.env['res.lang'].search([('code', '=', self.env.user.lang)])[0].date_format)
+        date_to = fields.Date.from_string(self.date_to).strftime(
+            self.env['res.lang'].search([('code', '=', self.env.user.lang)])[0].date_format)
+
+        return {
+            'type': 'ir.actions.report',
+            'data': {'model': 'ins.partner.ledger',
+                     'options': json.dumps(data[0], default=date_utils.json_default),
+                     'output_format': 'xlsx',
+                     'report_name': 'Partner Ledger - %s-%s' % (date_from, date_to),
+                     },
+            'report_type': 'xlsx'
+        }
+
+    def get_xlsx_report(self, data, response):
         # Initialize
         #############################################################
         output = io.BytesIO()
@@ -1060,16 +1077,7 @@ class InsPartnerLedger(models.TransientModel):
         #################################################################
         workbook.close()
         output.seek(0)
-        result = base64.b64encode(output.read())
-        report_id = self.env['common.xlsx.out'].sudo().create({'filedata': result, 'filename': 'PartnerLedger.xls'})
-
-        return {
-            'type': 'ir.actions.act_url',
-            'url': '/web/binary/download_document?model=common.xlsx.out&field=filedata&id=%s&filename=%s.xls' % (
-                report_id.id, 'Partner Ledger.xls'),
-            'target': 'new',
-        }
-
+        response.stream.write(output.read())
         output.close()
 
     def action_view(self):

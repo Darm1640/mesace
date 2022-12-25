@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="salary_increase_view_form" model="ir.ui.view">
+            <field name="name">salary_increase_view_form</field>
+            <field name="model">hr.salary.increase</field>
+            <field name="arch" type="xml">
+                <form string="salary_increase_form">
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                        <button name="%(salary_increase_wizard_action)d" type="action" string="Increase Salary"
+                                class="btn-primary"
+                                attrs="{'invisible':[('state','!=','draft')]}"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group string="General Information">
+                                <field name="date" readonly="1" force_save="1"/>
+                                <field name="company_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="type_increase" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="tipo_de_salario_contrato"
+                                       attrs="{'readonly':[('state','!=','draft')], 'invisible':[('type_increase','=','manual')]}"/>
+                                <field name="type_aprentice_sena"
+                                       attrs="{'readonly':[('state','!=','draft')], 'invisible':[('tipo_de_salario_contrato','!=','apoyo_sostenimiento')]}"/>
+                                <field name="percentage"
+                                       attrs="{'invisible':['|','|',('type_increase','=','minimum_wage'),('type_increase','=','ipc'),('type_increase','=','manual')],'readonly':[('state','!=','draft')]}"/>
+                                <field name="amount"
+                                       attrs="{'invisible':['|','|',('type_increase','=','minimum_wage'),('type_increase','=','ipc'),'|',('type_increase','=','manual')],'readonly':[('state','!=','draft')]}"/>
+                                <field name="min_amount"
+                                       attrs="{'invisible':['|',('type_increase','=','minimum_wage'),('type_increase','=','manual')],'readonly':[('state','!=','draft')]}"/>
+                                <field name="max_amount"
+                                       attrs="{'invisible':['|',('type_increase','=','minimum_wage'),('type_increase','=','manual')],'readonly':[('state','!=','draft')]}"/>
+                                <button name="charge_employee" type="object" string="Charge Employees"
+                                        class="btn-outline-primary"
+                                        attrs="{'invisible':['|',('state','!=','draft'),('type_increase','=','manual')]}"/>
+
+                            </group>
+                            <group string="Charge Employee Xlsx" attrs="{'invisible':[('state','!=','draft')]}">
+                                <field name="charge_employee_xlsx" attrs="{'invisible':[('state','!=','draft')]}"/>
+                                <field name="file"
+                                       attrs="{'invisible':['|',('charge_employee_xlsx','=',False),('state','!=','draft')]}"/>
+                                <button name="load_data" type="object" string="Charge Employees Xlsx"
+                                        class="btn-outline-primary"
+                                        attrs="{'invisible':['|',('charge_employee_xlsx','=',False),('state','!=','draft')]}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page>
+                                <field name="increase_lines_ids"
+                                       attrs="{'readonly':[('type_increase','in',('minimum_wage','ipc','fixed'))]}">
+                                    <tree editable="bot">
+                                        <field name="employee_id" width="20%"/>
+                                        <field name="contract_id" width="20%"/>
+                                        <field name="tipo_de_salario_contrato" width="20%"/>
+                                        <field name="current_wage" width="20%"/>
+                                        <field name="new_wage" width="20%"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="salary_increase_view_tree" model="ir.ui.view">
+            <field name="name">salary_increase_view_tree</field>
+            <field name="model">hr.salary.increase</field>
+            <field name="arch" type="xml">
+                <tree string="salary_increase_tree">
+                    <field name="name"/>
+                    <field name="type_increase" width="50%"/>
+                    <field name="date" width="50%"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="salary_increase_contract_action" model="ir.actions.act_window">
+            <field name="name">Salary Increase</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.salary.increase</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- IPC menu Item -->
+        <menuitem id="ipc_menu_item"
+                  name="Salary Increase"
+                  parent="request_for_news_menu_item"
+                  action="salary_increase_contract_action"/>
+
+    </data>
+</odoo>
