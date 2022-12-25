@@ -29,7 +29,7 @@
     'images': [
     ],
     'depends': [
-        'base',
+        'base','account','sale','stock','purchase'
     ],
     'data': [
         'security/ir.model.access.csv',
